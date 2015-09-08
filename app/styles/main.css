@@ -1,84 +1,216 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.page-feeds{
+    display: block;
+    float: left;
+}
+.p-feeds{
+    float: left;
+    position:absolute;
+    min-width: 600px;
+    left:0px;
+    top: 0px;
+    right: 300px;
+    min-height:900px;
+    padding:30px 0 0 30px;
+}
+.right-side{
+    float: left;
+    position:absolute;
+    top: 0px;
+    width: 300px;
+    right:  0px;
+    min-height:900px;
 }
 
-body {
-  padding: 0;
-
+.postform{
+    display: block;
+    float: left;
+    width: 550px;
+    min-height:100px;
+    background:#fff;
+    color: #333333;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.postform .heading{
+    width:100%;
+    height:30px;
+}
+.postform .heading > span{
+    display: block;
+    float: left;
+    height:30px;
+    line-height: 30px;
+    min-width: 60px;
+    font-size: 90%;
+    font-weight: lighter;
+    padding:0 8px;
+    text-align: center;
+    color:#333;
+    border-bottom:2px transparent solid;
+}
+.postform .heading > span:hover{
+    cursor: pointer;
+    border-bottom:2px rgba(95,207,128,.3) solid;
+    color:#111;
+}
+.postform .heading > .active{
+    border-bottom:2px rgba(95,207,128,.6) solid;
+    color:#111;
+}
+.postform .heading > .active:hover{
+    cursor: default;
+    border-bottom:2px rgba(95,207,128,.6) solid;
+}
+.postform .cont,.postform .cont .head,.postform .cont .mid,.postform .cont .foot{
+    display: block;
+    float: left;
+    width: 100%;
+    background:#f5f5f5;
+}
+.postform .cont {
+    display: none;
+    float: left;
+    width: 100%;
+    background:#f5f5f5;
+}
+.postform > .active{
+    display: block;
+}
+.postform .cont .head textarea{
+    border:none;
+    outline: none;
+    min-width: 100%;
+    max-width: 100%;
+    margin-top:20px;
+    padding:0 10px 0 20px;
+    resize: vertical;
+    background:#f5f5f5;
+}
+.postform .cont .head input{
+    border:#ddd 1px solid;
+    outline: none;
+    width:80%;
+    max-width: 600px;
+    min-width: 300px;
+    margin:20px 10px 10px 20px;
+    padding:0 10px 0 10px;
+    resize: none;
+    height:40px;
+    background:#fff;
+}
+.postform .cont .head input[type="checkbox"]{
+    border:#ddd 1px solid;
+    outline: none;
+    width:12px;
+    min-width: 12px;
+    margin: 5px 10px 5px 30px ;
+    padding:0;
+    height:12px;
+    background:#fff;
+}
+.p-dropzone{
+    display: block;
+    float: left;
+    width:80%;
+    max-width: 600px;
+    min-width: 300px;
+    border: 1px dashed #aaa;
+    height:30px;
+    margin:10px 10px 10px 20px;
+    color:#888;
+    line-height: 30px;
+    padding-left:10px;
+}
+.postform .cont .foot{
+    width: 100%;
+    background:#ddd;
+    height:30px;
+}
+.postform .cont .foot > button{
+    float: right;
+    padding:0 6px;
+    font-size: 80%;
+    height:20px;
+    margin:5px 15px 5px 5px;
+    border: none;
+    background: #3ba75b;
+    color:#eee;
+    border-radius: 4px;
+}
+.postform .cont .foot > button:hover{
+    background: #5fcf80;
+    color:#fff;
+}
+.postform .cont .foot > div{
+    float: right;
+    font-size: 80%;
+    line-height: 25px;
+    background: #d0d0d0;
+    color:#444;
+    width: 140px;
+    margin-right:10px;
+}
+.postform .cont .foot > div .text-slot{
+    float: right;
+    text-align: center;
+    height:30px;
+    margin:0 5px;
+    line-height: 30px;
+    color:#444;
+    width: 140px;
+}
+.postform .cont .foot > div .foot{
+    display:none;
+    float: left;
+    width: 150px;
+    margin-left:-5px;
+}
+.postform .cont .foot > div:hover .foot{
+    display:block;
+    cursor: pointer;
+    width: 150px;
+}
+.postform .cont .foot > div .foot > span{
+    display:block;
+    float:left;
+    width: 150px;
+    background: #eeeeee;
+    padding:5px 10px;
+}
+.postform .cont .foot > div .foot > span:hover{
+    background: #c8c8c8;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
 
-.container-narrow > hr {
-  margin: 30px 0;
+.postform .cont .head .half{
+    display: block;
+    float: left;
+    width:80%;
+    max-width: 600px;
+    min-width: 300px;
+    margin:10px 10px 10px 20px;
+    line-height: 30px;
+    padding-left:10px;
 }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+.postform .cont .head .half > div{
+    display: block;
+    float: left;
+    width: 50%;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.postform .cont .head .half > div > div{
+    display: block;
+    float: left;
+    width: calc(100% - 10px);
+    margin-right:10px;
+    padding-left: 10px;
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.postform .cont .head .half > div > select{
+    display: block;
+    float: left;
+    width: calc(100% - 10px);
+    margin-right:10px;
+    border:#ddd 1px solid;
+    background:#fff;
+    height:30px;
+    padding-left: 10px;
 }

@@ -1,2 +1,143 @@
-<div class="">
+<div class="page-feeds">
+    <div class="p-feeds bgrid -bg-s-300-w">
+        <div class="postform">
+            <div class="heading b-btnGrp">
+                <span value="1" class="active">Status</span>
+                <span value="2" >Add Task</span>
+                <span value="3" >Upload file</span>
+                <span value="4" >Post a message</span>
+            </div>
+            <!-- FEEDS -->
+            <div class="cont active tab1">
+                <div class="head">
+                    <textarea name="" placeholder="Type your message here"rows="3"></textarea>
+                </div>
+                <div class="mid">
+                    <div class="p-dropzone">
+                        Drop your files here
+                    </div>
+                </div>
+                <div class="foot b-layer-3">
+                    <button >Submit</button>
+                    <div class="selectGrp">
+                        <input type="hidden" value="0" />
+                        <div class="text-slot">
+                            All users
+                        </div>
+                        <div class="foot">
+                            <span value="0">All users</span>
+                            <span ng-repeat="project in projects" value="{{ project.id }}">{{ project.name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ADD TASK -->
+            <div class="cont tab2">
+                <div class="head">
+                    <input name="" placeholder="Task Title" >
+                </div>
+                <div class="mid">
+                    <div class="p-dropzone">
+                        Drop your files here
+                    </div>
+                </div>
+                <div class="head">
+                    <input type="checkbox"/><span>Make this as a Task list</span>
+                </div>
+                <div class="head">
+                    <textarea name="" placeholder="Type your message here"rows="3"></textarea>
+                </div>
+                <div class="head">
+                    <div class="half">
+                        <div >
+                            <div>Project name</div>
+                            <select>
+                                <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
+                            </select>
+                        </div>
+                        <div >
+                            <div>Task list name</div>
+                            <select>
+                                <option value="1" >General</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot b-layer-3">
+                    <button >Submit</button>
+                </div>
+            </div>
+            <!-- UPLOAD FILES -->
+            <div class="cont tab3">
+                <div class="mid">
+                    <div class="p-dropzone">
+                        Drop your files here
+                    </div>
+                </div>
+                <div class="head">
+                    <textarea name="" placeholder="File description"rows="3"></textarea>
+                </div>
+                <div class="head">
+                    <div class="half">
+                        <div >
+                            <div>Project name</div>
+                            <select>
+                                <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
+                            </select>
+                        </div>
+                        <div >
+                            <div>Folder name</div>
+                            <select>
+                                <option value="1" >Discussion</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot b-layer-3">
+                    <button >Submit</button>
+                </div>
+            </div>
+            <!-- POST A MESSAGE -->
+            <div class="cont tab4">
+                <div class="head">
+                    <input name="" placeholder="Forum Title" >
+                </div>
+                <div class="mid">
+                    <div class="p-dropzone">
+                        Drop your files here
+                    </div>
+                </div>
+                <div class="head">
+                    <input type="checkbox"/><span>Make this as a Task list</span>
+                </div>
+                <div class="head">
+                    <textarea name="" placeholder="Type your message here"rows="3"></textarea>
+                </div>
+                <div class="head">
+                    <div class="half">
+                        <div >
+                            <div>Project name</div>
+                            <select>
+                                <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
+                            </select>
+                        </div>
+                        <div >
+                            <div>Select category</div>
+                            <select>
+                                <option value="1" >General</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot b-layer-3">
+                    <button >Submit</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="bgrid right-side -bg-s-300">
+
+    </div>
 </div>

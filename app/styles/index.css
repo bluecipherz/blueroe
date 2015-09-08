@@ -9,6 +9,8 @@ BCC7D2 - ash
 */
 body{
     font-size:90%;
+    min-width: 100%;
+    min-height: 100%;
 }
 #powerProgress{
     background:#5fcf80;

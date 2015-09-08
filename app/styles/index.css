@@ -1,0 +1,257 @@
+/*
+theme colors
+
+5fcf80 - green
+384047 - dark blue
+B2A3BC - pale pink
+BCC7D2 - ash
+
+*/
+body{
+    font-size:90%;
+}
+#powerProgress{
+    background:#5fcf80;
+}
+
+/*__________________________________________________________________________________________
+                                                                                            |
+                                        MAIN SECTIONS                                       |
+____________________________________________________________________________________________|
+*/
+
+.sec-left{
+    display: block;
+    left: -200px;
+    width:260px;
+    top:50px;
+    bottom:0px;
+    background:#384047;
+    transition: left 0.5s;
+    color:#ccc;
+    padding-top: 20px;
+}
+.sec-left:hover{
+    left:0px;
+}
+
+/* a */
+
+.sec-left > a{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+.sec-left > a:hover{
+    cursor: pointer;
+    background:rgba(95,207,128,.1);
+    color:#ccc;
+}
+.sec-left > a > div:nth-child(1){
+    display: block;
+    float: left;
+    width: 205px;
+    height: 50px;
+    padding-left: 20px;
+}
+.sec-left > a > div:nth-child(2){
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.sec-left > a > div:nth-child(2) > div{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: #000;
+}
+.sec-left > a > div:nth-child(2) > div > img{
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    margin:3px;
+}
+.sec-left > a:hover > div:nth-child(2) > div > img{
+    opacity: .8;
+}
+
+
+
+/* div group */
+
+.sec-left > .secGrpBtn .Gbtn{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+.sec-left > .secGrpBtn .Gbtn:hover{
+    cursor: pointer;
+    background:rgba(95,207,128,.1);
+    color:#ccc;
+}
+.sec-left > .secGrpBtn .Gbtn > div:nth-child(1){
+    display: block;
+    float: left;
+    width: 205px;
+    height: 50px;
+    padding-left: 20px;
+}
+.sec-left > .secGrpBtn .Gbtn > div:nth-child(2){
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.sec-left > .secGrpBtn .Gbtn > div:nth-child(2) > div{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: #000;
+}
+.sec-left > .secGrpBtn .Gbtn > div:nth-child(2) > div > .bl-arrow{
+    width: 18px;
+    height: 18px;
+    opacity: 0.4;
+    transform: rotate(45deg);
+    margin:6px;
+    border-radius:50% 0  50% 50%;
+    background:#ccc;
+    transition: transform 0.5s;
+}
+.sec-left > .secGrpBtn .Gbtn > div:nth-child(2) > div > .bl-arrowDown {
+    transform: rotate(135deg);
+}
+.sec-left > .secGrpBtn .Gbtn:hover > div:nth-child(2) > div > .bl-arrow{
+    opacity: .8;
+}
+
+
+
+
+/* div */
+.secGrpBtn > .btnSec{
+    display: none;
+}
+.sec-left > div{
+    display: block;
+    float: left;
+    width: 100%;
+    min-height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+.sec-left > div:hover{
+    cursor: pointer;
+    background:rgba(95,207,128,.1);
+    color:#ccc;
+}
+.sec-left > div > div:nth-child(1){
+    display: block;
+    float: left;
+    width: 100%;
+    height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+
+.sec-left > div > div:nth-child(2){
+    display: block;
+    float: left;
+    width: 100%;
+    min-height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+
+.sec-left > div > div:nth-child(2) > a{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 50px;
+    color:#aaa;
+    line-height: 50px;
+}
+.sec-left > div > div:nth-child(2) > a:hover{
+    cursor: pointer;
+    background:rgba(95,207,128,.1);
+    color:#ccc;
+}
+.sec-left > div > div:nth-child(2) > a > div:nth-child(1){
+    display: block;
+    float: left;
+    width: 205px;
+    height: 50px;
+    padding-left: 20px;
+}
+.sec-left > div > div:nth-child(2) > a > div:nth-child(2){
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.sec-left > div > div:nth-child(2) > a > div:nth-child(2) > div{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: #000;
+}
+.sec-left > div > div:nth-child(2) > a > div:nth-child(2) > div > img{
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    margin:3px;
+}
+.sec-left > div > div:nth-child(2) > a:hover > div:nth-child(2) > div > img{
+    opacity: .8;
+}
+
+
+/*active*/
+.sec-left > .secGrpBtn > .btnSec > .active > div:nth-child(2) > div,
+.sec-left > .active > div:nth-child(2) > div{
+    background: #424242;
+}
+.sec-left > .secGrpBtn > .btnSec > .active,
+.sec-left > .active{
+    background:rgba(95,207,128,1);
+    color:#fff;
+}
+.sec-left > .secGrpBtn > .btnSec > .active div:nth-child(2) > div > img,
+.sec-left > .active div:nth-child(2) > div > img{
+    opacity: 1;
+}
+.sec-left > .secGrpBtn > .btnSec > .active:hover,
+.sec-left > .active:hover{
+    background:rgba(95,207,128,1);
+    color:#fff;
+    cursor: default;
+}
+.sec-left > .secGrpBtn > .btnSec > .active:hover div:nth-child(2) > div > img,
+.sec-left > .active:hover div:nth-child(2) > div > img{
+    opacity: 1;
+}
+
+
+
+
+.sec-mid{
+    display: block;
+    left:60px;
+    right:0px;
+    top:50px;
+    min-height:calc( 100% - 50px );
+    background:#fff;
+}

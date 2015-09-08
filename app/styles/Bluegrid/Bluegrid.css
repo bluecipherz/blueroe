@@ -1,10 +1,13 @@
 
 .bgrid{
-	display:block;
-	float:left;
+    display:block;
+    float:left;
 }
-
-
+.dis-in{ display:inline-block;  }
+.dis-bl{ display:block;  }
+.dis-none{ display:none;  }
+.float-r{ float:right; }
+.float-l{ float:left; }
 
 /*
 ____________________________________________________________________________________________________________________________________________
@@ -22,52 +25,52 @@ small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
 }
 /* remember to define focus styles! */
 :focus {
-	outline: 0;
+    outline: 0;
 }
 body {
-	line-height: 1;
-	color: black;
-	background: white;
-	font-family: Geneva,Tahoma,Verdana,sans-serif;
+    line-height: 1;
+    color: black;
+    background: white;
+    font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 /* tables still need 'cellspacing="0"' in the markup */
 table {
-	border-collapse: separate;
-	border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 caption, th, td {
-	text-align: left;
-	font-weight: normal;
+    text-align: left;
+    font-weight: normal;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: "";
+    content: "";
 }
 blockquote, q {
-	quotes: "" "";
+    quotes: "" "";
 }
 
 #page td {
-   padding:0; margin:0;
+    padding:0; margin:0;
 }
 
 #page {
-   border-collapse: collapse;
+    border-collapse: collapse;
 }
 a,a:focus,a:visited,a:link{color:#3e98cc; text-decoration:none;}
 a:active{color:#005382; text-decoration:none;}
@@ -352,22 +355,38 @@ ________________________________________________________________________________
 
 .blueNav{
     position:absolute;
-	display:block;
-	float:left;
-	background:#000;
-	width:100%;
-	min-height:30px;
-	margin-bottom:0px;
+    display:block;
+    float:left;
+    background:#000;
+    width:100%;
+    min-height:30px;
+    margin-bottom:0px;
     z-index:30;
     top:0;
     left:0;
 }
 .blueNav .navH{
-	display:block;
-	float:left;
-	height:100%;
+    display:block;
+    float:left;
+    height:100%;
 }
-
+.bn-group > div{
+    position: relative;
+}
+.bn-group > div:after{
+    content: "";
+    display: block;
+    float: left;
+    position:absolute;
+    height:40px;
+    width: 2px;
+    top: 5px;
+    left: -2px;
+    background: #444;
+}
+.bn-group > div:nth-last-child(1):after{
+    display:none;
+}
 /*
 ____________________________________________________________________________________________________________________________________________
 |																																			|
@@ -446,14 +465,14 @@ ________________________________________________________________________________
  */
 
 .bl-ul{
-	display:block;
-	float:left;
-	height:100%;
+    display:block;
+    float:left;
+    height:100%;
 }
 .bl-ul > li,.bl-ul > li > a{
-	display:inline-block;
-	float:left;
-	height:100%;
+    display:inline-block;
+    float:left;
+    height:100%;
 }
 .bl-ul > li > a{
     width:100%;
@@ -473,16 +492,16 @@ ________________________________________________________________________________
 */
 
 #powerProgress{
-	displaY:block;
-	float:left;
-	position:absolute;
-	left:0px;
-	bottom:-4px;
-	height:4px;
-	width:0;
-	background:#006ba2;
-	z-index:20;
-	transition:width 1s;
+    displaY:block;
+    float:left;
+    position:absolute;
+    left:0px;
+    bottom:-4px;
+    height:4px;
+    width:0;
+    background:#006ba2;
+    z-index:20;
+    transition:width 1s;
 }
 
 .bg-text-c *,.bg-text-c {text-align:center; }

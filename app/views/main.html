@@ -24,7 +24,7 @@
                         <div class="text-slot">
                             All users
                         </div>
-                        <div class="foot">
+                        <div class="foot b-p-rel b-layer-2">
                             <span value="0">All users</span>
                             <span ng-repeat="project in projects" value="{{ project.id }}">{{ project.name }}</span>
                         </div>
@@ -132,10 +132,65 @@
                 <div class="foot b-layer-3">
                     <button >Submit</button>
                 </div>
-            </div>
-
-
+            </div> 
         </div>
+			
+		<!-- FEEDS -->	
+			
+		<div class="feed-slot bgrid ">
+            <!--FEED SET-->
+
+			<div class="feedSet" ng-repeat="feed in feeds">
+				<div class="cont">
+					<div class="left bgrid -bg-s-80">
+						<div class="img">
+						
+						</div>
+					</div>
+					<div class="right  bgrid -bg-s-80-w">
+						<div class="head">
+							{{ feed.origin.email }}
+						</div>
+						<div class="mid">
+							This message is posted just for testing the whole thing
+						</div>
+						<div class="foot">
+							<div class="head">
+								<span class="cnmtBtn">Comment</span> - <span class="date">Date</span>
+							</div>
+							<div class="comment-slot">
+							<!--COMMENT SLOT-->
+                                <div class="commentSet">
+                                    <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
+                                        <div class="img"> </div>
+                                    </div>
+                                    <div class="contSec bgrid -bg-s-80-w">
+                                        <div class="head"> Basith </div>
+                                        <div class="mid"> This is a bad bad commad </div>
+                                        <div class="foot">
+                                            <div >
+                                                <span class="date" >Date</span>
+                                                <span class="b-link"> Delete </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+							</div>
+							<div class="foot">
+                                <textarea class="bgrid" type="text"></textarea>
+                                <div>
+							        <button class="b-btn-sm" >Submit</button>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
     </div>
     <div class="bgrid right-side -bg-s-300">
 

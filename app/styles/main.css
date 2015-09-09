@@ -162,7 +162,7 @@
     display:none;
     float: left;
     width: 150px;
-    margin-left:-5px;
+    margin-left:-5px; 
 }
 .postform .cont .foot > div:hover .foot{
     display:block;
@@ -213,4 +213,155 @@
     background:#fff;
     height:30px;
     padding-left: 10px;
+}
+
+.feed-slot{
+	display:block;
+	float:left;
+	border-top:#eee solid 1px; 
+	min-height:200px;
+	width:80%; 
+	max-width:900px;
+	min-width:550px;
+	margin-top:50px;
+}
+.feed-slot > .feedSet{
+	display:block;
+	float:left;
+	width:100%;
+	min-height:100px;
+	border-bottom:#ddd 1px solid;
+}
+
+.feed-slot > .feedSet .cont .left{ 
+}
+.feed-slot > .feedSet .cont .left > .img{
+	width:60px;
+	height:60px;
+	margin:10px;
+	background:#aaa; 
+}
+.feed-slot > .feedSet .cont .right { 
+	font-size:90%;
+	color:#333;
+}
+.feed-slot > .feedSet .cont .right .head{ 
+	line-height:30px;
+	color:#666;
+}
+.feed-slot > .feedSet .cont .right > .head,
+.feed-slot > .feedSet .cont .right > .mid,
+.feed-slot > .feedSet .cont .right > .foot
+{
+	min-height:30px; 
+	width:100%; 
+	padding-left:10px;
+} 
+.feed-slot > .feedSet .cont .right > .mid
+{
+	background:#fff;
+	min-height:50px;
+	width:100%; 
+	padding:10px;
+}
+.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn,
+.feed-slot > .feedSet .cont .right .foot .head .date
+{
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+}
+.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn {
+    color:#1B98C2;
+}
+.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn:hover,
+.feed-slot > .feedSet .cont .right .foot .head .date:hover {
+    cursor: pointer;
+    color:#0EAFE6;
+    text-decoration:underline;
+}
+.feed-slot > .feedSet .cont .right > .foot .head .date {
+    color:#aaa;
+}
+.feed-slot > .feedSet .cont .right > .foot > .foot > textarea {
+    display: block;
+    float: left;
+    margin: 10px;
+    width:100%;
+    max-width: 400px;
+
+}
+
+.feed-slot > .feedSet .cont .right > .foot > .foot > div {
+    display: block;
+    float: left;
+    width:100%;
+}
+.feed-slot > .feedSet .cont .right > .foot > .foot .b-btn-sm{
+    margin-left:10px;
+}
+
+.b-btn-sm{
+    display: block;
+    float: left;
+    padding:0 6px;
+    font-size: 80%;
+    height:20px;
+    margin:5px 15px 5px 5px;
+    border: none;
+    background: #3ba75b;
+    color:#eee;
+    border-radius: 4px;
+}
+.b-btn-sm:hover{
+    background: #5fcf80;
+    color:#fff;
+}
+
+.commentSet > .contSec > div  {
+    display: block;
+    float: left;
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+    width:100%;
+    color:#333;
+}
+.commentSet > .imgSec > .img  {
+    display: block;
+    float: left;
+    height:50px;
+    width:50px;
+    margin:5px;
+    background: #ddd;
+}
+.commentSet > div > .foot > div > .date{
+    display: block;
+    float: left;
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+    color: #aaa;
+}
+.commentSet > div > .head  ,
+.commentSet > div > .mid  {
+    display: block;
+    float: left;
+    line-height: 30px;
+    padding:0 10px;
+    margin: 0px;
+    color: #aaa;
+}
+.b-link{
+    display: block;
+    float: left;
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+    color:#1B98C2;
+}
+.b-link:hover {
+    cursor: pointer;
+    color:#0EAFE6;
+    text-decoration:underline;
 }

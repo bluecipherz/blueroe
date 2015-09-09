@@ -10,7 +10,8 @@
  */
 angular
   .module('bluroeApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngResource'
   ])
   .config(function ($routeProvider) {
     $routeProvider

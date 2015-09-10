@@ -19,6 +19,29 @@ angular.module('bluroeApp')
             // $promise.then allows us to intercept the results
             // which we will use later
             return Feed.query().$promise.then(function(results) {
+
+                angular.forEach(results , function(value, key) {
+                    value.filtered = {};
+                    if(value.type == 'ProjectCreated'){
+
+                        value.filtered.description = value.subject.description ;
+
+                    }else if(value.type == 'UserRemovedFromProject'){
+
+                        value.filtered.description = value.context.description ;
+
+                    }else if(value.type == 'TaskCreated'){
+
+                        value.filtered.description = value.context.description ;
+
+                    }else{
+
+                        value.filtered.description = value.context.description ;
+
+                    }
+
+                });
+
                 return results;
             }, function(error) { // Check for errors
                 console.log(error);

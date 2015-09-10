@@ -13,8 +13,9 @@ angular
     'ngRoute',
     'ngResource'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
+  .config(function ($routeProvider, $locationProvider) {
+
+        $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
@@ -33,6 +34,12 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+        // enable html5Mode for pushstate ('#'-less URLs)
+        if(window.history && window.history.pushState){
+            $locationProvider.html5Mode(false);
+        }
+
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$routeChangeStart', function() {

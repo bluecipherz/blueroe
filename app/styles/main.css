@@ -30,11 +30,11 @@
     color: #333333;
 }
 
-.postform .heading{
+.postform > .heading{
     width:100%;
     height:30px;
 }
-.postform .heading > span{
+.postform > .heading > span{
     display: block;
     float: left;
     height:30px;
@@ -47,27 +47,26 @@
     color:#333;
     border-bottom:2px transparent solid;
 }
-.postform .heading > span:hover{
+.postform > .heading > span:hover{
     cursor: pointer;
     border-bottom:2px rgba(95,207,128,.3) solid;
     color:#111;
 }
-.postform .heading > .active{
+.postform > .heading > .active{
     border-bottom:2px rgba(95,207,128,.6) solid;
     color:#111;
 }
-.postform .heading > .active:hover{
+.postform > .heading > .active:hover{
     cursor: default;
     border-bottom:2px rgba(95,207,128,.6) solid;
 }
-.postform .cont,.postform .cont .head,.postform .cont .mid,.postform .cont .foot{
+.postform .cont,.postform .cont > .head,.postform .cont > .mid,.postform .cont > .foot{
     display: block;
     float: left;
     width: 100%;
     background:#f5f5f5;
 }
-.postform .cont {
-    display: none;
+.postform > .cont {
     float: left;
     width: 100%;
     background:#f5f5f5;
@@ -75,7 +74,7 @@
 .postform > .active{
     display: block;
 }
-.postform .cont .head textarea{
+.postform .cont > .head textarea{
     border:none;
     outline: none;
     min-width: 100%;
@@ -85,7 +84,7 @@
     resize: vertical;
     background:#f5f5f5;
 }
-.postform .cont .head input{
+.postform .cont > .head input{
     border:#ddd 1px solid;
     outline: none;
     width:80%;
@@ -97,7 +96,7 @@
     height:40px;
     background:#fff;
 }
-.postform .cont .head input[type="checkbox"]{
+.postform .cont > .head input[type="checkbox"]{
     border:#ddd 1px solid;
     outline: none;
     width:12px;
@@ -120,12 +119,12 @@
     line-height: 30px;
     padding-left:10px;
 }
-.postform .cont .foot{
+.postform .cont > .foot{
     width: 100%;
     background:#ddd;
     height:30px;
 }
-.postform .cont .foot > button{
+.postform .cont > .foot > button{
     float: right;
     padding:0 6px;
     font-size: 80%;
@@ -136,11 +135,11 @@
     color:#eee;
     border-radius: 4px;
 }
-.postform .cont .foot > button:hover{
+.postform .cont > .foot > button:hover{
     background: #5fcf80;
     color:#fff;
 }
-.postform .cont .foot > div{
+.postform .cont > .foot > div{
     float: right;
     font-size: 80%;
     line-height: 25px;
@@ -149,7 +148,7 @@
     width: 140px;
     margin-right:10px;
 }
-.postform .cont .foot > div .text-slot{
+.postform .cont > .foot > div .text-slot{
     float: right;
     text-align: center;
     height:30px;
@@ -158,31 +157,31 @@
     color:#444;
     width: 140px;
 }
-.postform .cont .foot > div .foot{
+.postform .cont > .foot > div > .foot{
     display:none;
     float: left;
     width: 150px;
     margin-left:-5px; 
 }
-.postform .cont .foot > div:hover .foot{
+.postform .cont > .foot > div:hover > .foot{
     display:block;
     cursor: pointer;
     width: 150px;
 }
-.postform .cont .foot > div .foot > span{
+.postform .cont > .foot > div > .foot > span{
     display:block;
     float:left;
     width: 150px;
     background: #eeeeee;
     padding:5px 10px;
 }
-.postform .cont .foot > div .foot > span:hover{
+.postform .cont > .foot > div > .foot > span:hover{
     background: #c8c8c8;
 }
 
 
 
-.postform .cont .head .half{
+.postform .cont > .head .half{
     display: block;
     float: left;
     width:80%;
@@ -192,19 +191,19 @@
     line-height: 30px;
     padding-left:10px;
 }
-.postform .cont .head .half > div{
+.postform .cont > .head .half > div{
     display: block;
     float: left;
     width: 50%;
 }
-.postform .cont .head .half > div > div{
+.postform .cont > .head .half > div > div{
     display: block;
     float: left;
     width: calc(100% - 10px);
     margin-right:10px;
     padding-left: 10px;
 }
-.postform .cont .head .half > div > select{
+.postform .cont > .head .half > div > select{
     display: block;
     float: left;
     width: calc(100% - 10px);
@@ -219,7 +218,7 @@
 	display:block;
 	float:left;
 	border-top:#eee solid 1px; 
-	min-height:200px;
+	min-height:10px;
 	width:80%; 
 	max-width:900px;
 	min-width:550px;
@@ -229,75 +228,80 @@
 	display:block;
 	float:left;
 	width:100%;
-	min-height:100px;
+	min-height:10px;
 	border-bottom:#ddd 1px solid;
 }
 
-.feed-slot > .feedSet .cont .left{ 
+.feed-slot > .feedSet .contHead > div {
+    padding:10px 10px 4px 10px ;
+    border-bottom: 1px solid #f4f4f4;
+    color:#444;
 }
-.feed-slot > .feedSet .cont .left > .img{
+.feed-slot > .feedSet .cont> .left{
+}
+.feed-slot > .feedSet .cont> .left > .img{
 	width:60px;
 	height:60px;
 	margin:10px;
 	background:#aaa; 
 }
-.feed-slot > .feedSet .cont .right { 
+.feed-slot > .feedSet .cont> .right {
 	font-size:90%;
 	color:#333;
 }
-.feed-slot > .feedSet .cont .right .head{ 
+.feed-slot > .feedSet .cont> .right > .head{
 	line-height:30px;
 	color:#666;
 }
-.feed-slot > .feedSet .cont .right > .head,
-.feed-slot > .feedSet .cont .right > .mid,
-.feed-slot > .feedSet .cont .right > .foot
+.feed-slot > .feedSet .cont> .right > .head,
+.feed-slot > .feedSet .cont> .right > .mid,
+.feed-slot > .feedSet .cont> .right > .foot
 {
-	min-height:30px; 
+	min-height:0px;
 	width:100%; 
 	padding-left:10px;
 } 
-.feed-slot > .feedSet .cont .right > .mid
+.feed-slot > .feedSet .cont> .right > .mid
 {
 	background:#fff;
-	min-height:50px;
+	min-height:0px;
 	width:100%; 
-	padding:10px;
+	padding:2 10px;
 }
-.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn,
-.feed-slot > .feedSet .cont .right .foot .head .date
+.feed-slot > .feedSet .cont> .right > .foot > .head .cnmtBtn,
+.feed-slot > .feedSet .cont> .right > .foot > .head .date
 {
     height:30px;
     line-height: 30px;
     padding:0 10px;
 }
-.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn {
+.feed-slot > .feedSet .cont> .right > .foot > .head .cnmtBtn {
     color:#1B98C2;
 }
-.feed-slot > .feedSet .cont .right .foot .head .cnmtBtn:hover,
-.feed-slot > .feedSet .cont .right .foot .head .date:hover {
+.feed-slot > .feedSet .cont> .right > .foot > .head .cnmtBtn:hover,
+.feed-slot > .feedSet .cont> .right > .foot > .head .date:hover {
     cursor: pointer;
     color:#0EAFE6;
     text-decoration:underline;
 }
-.feed-slot > .feedSet .cont .right > .foot .head .date {
+.feed-slot > .feedSet .cont> .right > .foot > .head .date {
     color:#aaa;
 }
-.feed-slot > .feedSet .cont .right > .foot > .foot > textarea {
+.feed-slot > .feedSet .cont> .right > .foot > .foot > textarea {
     display: block;
     float: left;
-    margin: 10px;
+    margin:2px 10px;
     width:100%;
     max-width: 400px;
 
 }
 
-.feed-slot > .feedSet .cont .right > .foot > .foot > div {
+.feed-slot > .feedSet .cont> .right > .foot > .foot > div {
     display: block;
     float: left;
     width:100%;
 }
-.feed-slot > .feedSet .cont .right > .foot > .foot .b-btn-sm{
+.feed-slot > .feedSet .cont> .right > .foot > .foot .b-btn-sm{
     margin-left:10px;
 }
 
@@ -321,7 +325,7 @@
 .commentSet > .contSec > div  {
     display: block;
     float: left;
-    height:30px;
+    min-height:20px;
     line-height: 30px;
     padding:0 10px;
     width:100%;
@@ -345,13 +349,14 @@
 }
 .commentSet > div > .head  ,
 .commentSet > div > .mid  {
-    display: block;
-    float: left;
-    line-height: 30px;
-    padding:0 10px;
-    margin: 0px;
-    color: #aaa;
-}
+     display: block;
+     float: left;
+     line-height: 20px;
+     padding:0 10px;
+     margin: 0px;
+     color: #aaa;
+     min-height:20px;
+ }
 .b-link{
     display: block;
     float: left;

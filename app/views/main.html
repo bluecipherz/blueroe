@@ -1,14 +1,14 @@
 <div class="page-feeds">
     <div class="p-feeds bgrid -bg-s-300-w">
-        <div class="postform">
-            <div class="heading b-btnGrp">
-                <span value="1" class="active">Status</span>
-                <span value="2" >Add Task</span>
-                <span value="3" >Upload file</span>
-                <span value="4" >Post a message</span>
+        <div class="postform"  ng-controller="TabController as panel" >
+            <div class="heading ">
+                <span   ng-class="{active:panel.isSelected(1) }"  ng-click="panel.selectTab(1)" >Status</span>
+                <span   ng-class="{active:panel.isSelected(2) }"  ng-click="panel.selectTab(2)" >Add Task</span>
+                <span   ng-class="{active:panel.isSelected(3) }"  ng-click="panel.selectTab(3)" >Upload file</span>
+                <span   ng-class="{active:panel.isSelected(4) }"  ng-click="panel.selectTab(4)" >Post a message</span>
             </div>
             <!-- FEEDS -->
-            <div class="cont active tab1">
+            <div class="cont  tab1"  ng-show="panel.isSelected(1)">
                 <div class="head">
                     <textarea name="" placeholder="Type your message here"rows="3"></textarea>
                 </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <!-- ADD TASK -->
-            <div class="cont tab2">
+            <div class="cont tab2"  ng-show="panel.isSelected(2)">
                 <div class="head">
                     <input name="" placeholder="Task Title" >
                 </div>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <!-- UPLOAD FILES -->
-            <div class="cont tab3">
+            <div class="cont tab3"  ng-show="panel.isSelected(3)">
                 <div class="mid">
                     <div class="p-dropzone">
                         Drop your files here
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <!-- POST A MESSAGE -->
-            <div class="cont tab4">
+            <div class="cont tab4"  ng-show="panel.isSelected(4)">
                 <div class="head">
                     <input name="" placeholder="Forum Title" >
                 </div>
@@ -141,35 +141,52 @@
             <!--FEED SET-->
 
 			<div class="feedSet" ng-repeat="feed in feeds">
+				<div  class="contHead">
+                    <div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }} project</div>
+                </div>
 				<div class="cont">
 					<div class="left bgrid -bg-s-80">
 						<div class="img">
-						
+
 						</div>
 					</div>
 					<div class="right  bgrid -bg-s-80-w">
 						<div class="head">
-							{{ feed.origin.email }}
-						</div>
+
+							<div ng-show="feed.type =='ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
+							<div ng-show="feed.type =='ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
+							<div ng-show="feed.type =='ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
+
+							<div ng-show="feed.type =='UserRemovedFromProject'">{{ feed.origin.email }} removed {{ feed.subject.email }} from {{ feed.context.name }} project</div>
+							<div ng-show="feed.type =='UserAddedToProject'">{{ feed.origin.email }} added {{ feed.subject.email }} to {{ feed.context.name }} project</div>
+
+                            <div ng-show="feed.type =='TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
+							<div ng-show="feed.type =='TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} project</div>
+							<div ng-show="feed.type =='TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
+
+							<div ng-show="feed.type =='CommentPosted'">{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }} project</div>
+
+                        </div>
+
 						<div class="mid">
-							This message is posted just for testing the whole thing
+                            {{ feed.filtered.description }}
 						</div>
 						<div class="foot">
 							<div class="head">
-								<span class="cnmtBtn">Comment</span> - <span class="date">Date</span>
+								<span class="cnmtBtn">Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
 							</div>
 							<div class="comment-slot">
 							<!--COMMENT SLOT-->
-                                <div class="commentSet">
+                                <div ng-repeat="comment in feed.comments" class="commentSet">
                                     <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
                                         <div class="img"> </div>
                                     </div>
                                     <div class="contSec bgrid -bg-s-80-w">
-                                        <div class="head"> Basith </div>
-                                        <div class="mid"> This is a bad bad commad </div>
+                                        <div class="head">{{ comment.user_id }}</div>
+                                        <div class="mid">{{ comment.comment }}</div>
                                         <div class="foot">
                                             <div >
-                                                <span class="date" >Date</span>
+                                                <span class="date" >{{ comment.updated_at }}</span>
                                                 <span class="b-link"> Delete </span>
                                             </div>
                                         </div>

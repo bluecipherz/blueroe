@@ -37,7 +37,7 @@ angular
 
         // enable html5Mode for pushstate ('#'-less URLs)
         if(window.history && window.history.pushState){
-            $locationProvider.html5Mode(false);
+            $locationProvider.html5Mode(true);
         }
 
   })

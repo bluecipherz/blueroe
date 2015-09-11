@@ -23,19 +23,20 @@ $(window).ready(function(){
             console.log(x);
         }
     }
+
 });
 $(document).on('click','.b-btnGrp > span',function(){
     $(this).parent().find('span').removeClass('active');
     $(this).addClass('active');
 });
-//$(document).on('click','.selectGrp > .foot > span',function(){
-//    var that = $(this);
-//    var id = that.attr('value');
-//    var name = that.html();
-//    that.parent().parent().find('.text-slot').html(name);
-//    that.parent().parent().find('input').val(id);
-//    //that.parent().hide();
-//});
+$(document).on('click','.selectGrp > .foot > span',function(){
+    var that = $(this);
+    var id = that.attr('value');
+    var name = that.html();
+    that.parent().parent().find('.text-slot').html(name);
+    that.parent().parent().find('input').val(id);
+    //that.parent().hide();
+});
 //$(document).on('click','.postform > .heading > span',function(){
 //    var that = $(this);
 //    var passid = that.attr('value');

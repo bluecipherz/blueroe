@@ -173,7 +173,7 @@
 						</div>
 						<div class="foot">
 							<div class="head">
-								<span class="cnmtBtn">Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
+								<span class="cnmtBtn" ng-click="showDetails = ! showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
 							</div>
 							<div class="comment-slot">
 							<!--COMMENT SLOT-->
@@ -192,9 +192,8 @@
                                         </div>
                                     </div>
                                 </div>
-
 							</div>
-							<div class="foot">
+							<div  class="commentForm foot" ng-class="{ 'hidden': ! showDetails }" >
                                 <textarea class="bgrid" type="text"></textarea>
                                 <div>
 							        <button class="b-btn-sm" >Submit</button>
@@ -204,12 +203,9 @@
 					</div>
 				</div>
 			</div>
-
-
-
 		</div>
     </div>
     <div class="bgrid right-side -bg-s-300">
-
+        <div ng-click="loadNewFilter()">LoadNew</div>
     </div>
 </div>

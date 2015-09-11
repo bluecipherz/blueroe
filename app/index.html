@@ -49,7 +49,7 @@
         <div id="powerProgress"></div>
     </div>
 
-    <div class="b-p-fix sec-left b-layer-2">
+    <div ng-controller="AsideCtrl" class="b-p-fix sec-left b-layer-2">
 
         <a class="active secBtn">
             <div> Feeds </div>
@@ -120,6 +120,15 @@
             </div>
         </a>
 
+        <a ng-repeat="project in projects" class="secBtn">
+            <div> Settings </div>
+            <div>
+                <div>
+                    <img src="images/icons/fb-50.png">
+                </div>
+            </div>
+        </a>
+
     </div>
     <div class="b-p-abs sec-mid b-layer-1">
         <div ng-view=""></div>
@@ -164,6 +173,7 @@
         <script src="scripts/controllers/projects.js"></script>
         <script src="scripts/services/buttongroup.js"></script>
         <script src="scripts/services/feedfactory.js"></script>
+        <script src="scripts/services/asidebarserv.js"></script>
         <!-- endbuild -->
 </body>
 </html>

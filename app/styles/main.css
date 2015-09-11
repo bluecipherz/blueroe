@@ -161,19 +161,22 @@
     display:none;
     float: left;
     width: 150px;
-    margin-left:-5px; 
+    margin-left:-5px;
+    border:1px solid #aaa;
 }
 .postform .cont > .foot > div:hover > .foot{
     display:block;
     cursor: pointer;
-    width: 150px;
 }
 .postform .cont > .foot > div > .foot > span{
     display:block;
     float:left;
-    width: 150px;
+    width: 100%;
     background: #eeeeee;
     padding:5px 10px;
+}
+.postform .cont > .foot > div > .foot > .active{
+    background: red;
 }
 .postform .cont > .foot > div > .foot > span:hover{
     background: #c8c8c8;
@@ -260,6 +263,7 @@
 	min-height:0px;
 	width:100%; 
 	padding-left:10px;
+    transition: 1s;
 } 
 .feed-slot > .feedSet .cont> .right > .mid
 {
@@ -357,6 +361,9 @@
      color: #aaa;
      min-height:20px;
  }
+ .commentForm{
+    transition: .8s; 
+}
 .b-link{
     display: block;
     float: left;

@@ -8,8 +8,9 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-    .controller('MainCtrl', function ($scope, feedFactory) {
-        $scope.projects = [{'id':'1','name':'project 1'},
+    .controller('MainCtrl', function ($scope,$controller, feedFactory, AsideBarServ) {
+        $scope.projects = [
+            {'id':'1','name':'project 1'},
             {'id':'2','name':'project 2'},
             {'id':'3','name':'project 3'}
         ];
@@ -25,7 +26,24 @@ angular.module('bluroeApp')
             console.log(error);
         });
 
-    }).controller('TabController', function (){
+        AsideBarServ.setAside('Hello');
+
+        $scope.loadNewFilter = function (){
+            AsideBarServ.updateAside;
+        }
+
+        //
+        //var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
+        ////Provide the scope, you can also do $scope.$new(true) in order to create an isolated scope.
+        ////In this case it is the child scope of this scope.
+        //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
+        //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
+
+    }).controller('AsideCtrl', ['$log', function ($log) {
+        this.myMethod = function () {
+            $log.debug("TestCtrl1 - myMethod");
+        }
+    }]).controller('TabController', function (){
         this.tab = 1;
 
         this.selectTab = function (setTab){

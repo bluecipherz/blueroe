@@ -25,110 +25,144 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="blueNav bn-group cust-header b-p-fix">
-        <div class="bgrid navH -bg-s-200 ">
-            <div class="bgrid -bg-s-60">
-                asd
+    <div  ng-controller="IndexCtrl as AsController">
+        <div class="blueNav bn-group cust-header b-p-fix">
+            <div class="bgrid navH -bg-s-200 ">
+                <div class="bgrid -bg-s-60">
+                    asd
+                </div>
+                <div class="bgrid -bg-s-140">
+                    <ul class="bl-ul bg-text-c">
+                        <li ng-click="tabHome()" class="active -bg-s-60"><a ng-href="/">Home</a></li>
+                        <li ng-click="tabProject()" class="-bg-s-80"><a ng-href="/projects">Projects</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="bgrid -bg-s-140">
-                <ul class="bl-ul bg-text-c">
-                    <li class="active -bg-s-60"><a href="#/">Home</a></li>
-                    <li class="-bg-s-80"><a href="#/projects">Projects</a></li>
-                </ul>
+            <div class="bgrid -bg-s-500-w">
+                a
             </div>
+            <div class="bgrid -bg-s-200">
+                a
+            </div>
+            <div class="bgrid -bg-s-100">
+                a
+            </div>
+            <div id="powerProgress"></div>
         </div>
-        <div class="bgrid -bg-s-500-w">
-            a
-        </div>
-        <div class="bgrid -bg-s-200">
-            a
-        </div>
-        <div class="bgrid -bg-s-100">
-            a
-        </div>
-        <div id="powerProgress"></div>
-    </div>
 
-    <div ng-controller="AsideCtrl" class="b-p-fix sec-left b-layer-2">
+        <div class="b-p-fix Aside sec-left b-layer-2" >
 
-        <a class="active secBtn">
-            <div> Feeds </div>
-            <div>
-                <div>
-                    <img src="images/icons/fb-50.png">
-                </div>
-            </div>
-        </a>
-        <a class="secBtn">
-            <div> News </div>
-            <div>
-                <div>
-                    <img src="images/icons/gplus-50.png">
-                </div>
-            </div>
-        </a>
-        <div class="secGrpBtn ">
-            <div class="Gbtn">
-                <div> Extras  </div>
-                <div>
-                    <div>
-                        <div class="bl-arrow"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="btnSec dis-no" style="display: none" >
-                <a class="secBtn">
-                    <div> Extras 1 </div>
-                    <div>
-                        <div>
-                            <img src="images/icons/fb-50.png">
+            <!--<a class="active secBtn">-->
+                <!--<div> Feeds </div>-->
+                <!--<div>-->
+                    <!--<div>-->
+                        <!--<img src="images/icons/fb-50.png">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a class="secBtn">-->
+                <!--<div> News </div>-->
+                <!--<div>-->
+                    <!--<div>-->
+                        <!--<img src="images/icons/gplus-50.png">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<div class="secGrpBtn ">-->
+                <!--<div class="Gbtn">-->
+                    <!--<div> Extras  </div>-->
+                    <!--<div>-->
+                        <!--<div>-->
+                            <!--<div class="bl-arrow"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="btnSec dis-no" style="display: none" >-->
+                    <!--<a class="secBtn">-->
+                        <!--<div> Extras 1 </div>-->
+                        <!--<div>-->
+                            <!--<div>-->
+                                <!--<img src="images/icons/fb-50.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="secBtn">-->
+                        <!--<div> Extras 2 </div>-->
+                        <!--<div>-->
+                            <!--<div>-->
+                                <!--<img src="images/icons/twitter-50.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="secBtn">-->
+                        <!--<div> Extras 3 </div>-->
+                        <!--<div>-->
+                            <!--<div>-->
+                                <!--<img src="images/icons/fb-50.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                    <!--<a class="secBtn">-->
+                        <!--<div> Extras 4 </div>-->
+                        <!--<div>-->
+                            <!--<div>-->
+                                <!--<img src="images/icons/gplus-50.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<a class="secBtn">-->
+                <!--<div> Settings </div>-->
+                <!--<div>-->
+                    <!--<div>-->
+                        <!--<img src="images/icons/fb-50.png">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</a>-->
+
+
+
+
+
+            <a ng-repeat="aside in asideList" class="asideButton">
+                <!--Aside Link-->
+                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:AsController.isSelected(aside.id) }"  ng-click="AsController.selectTab(aside.id);  aside.ngClick ">
+                    <div class="asideName"> {{ aside.name }} </div>
+                    <div class="asideIcon">
+                        <div class="img">
+                            <img src="images/{{ aside.img }}">
                         </div>
                     </div>
-                </a>
-                <a class="secBtn">
-                    <div> Extras 2 </div>
-                    <div>
-                        <div>
-                            <img src="images/icons/twitter-50.png">
+                </div>
+                <!--Aside LinkList-->
+                <div class="asideLinkList " ng-if="checkIsLinkList(aside)" >
+                    <!--Aside LinkBase-->
+                    <div  ng-click="showDetails = ! showDetails"  class="asideButton asideListBase" >
+                        <div class="asideName"> {{ aside.name }} </div>
+                        <div class="asideIcon">
+                            <div class="img">
+                                <img src="images/{{ aside.img }}">
+                            </div>
                         </div>
                     </div>
-                </a>
-                <a class="secBtn">
-                    <div> Extras 3 </div>
-                    <div>
-                        <div>
-                            <img src="images/icons/fb-50.png">
+                    <!--Aside LinkList-->
+                    <div  ng-class="{ 'hidden': ! showDetails }" >
+                        <div class="asideButton"  ng-repeat="asideL in aside.list ">
+                            <div class="NestedAsideLink"   ng-class="{active:AsController.isSelected(asideL.id) }"  ng-click="AsController.selectTab(asideL.id); asideL.ngClick ">
+                                <div class="asideName"> {{ asideL.name }} </div>
+                                <div class="asideIcon">
+                                    <div class="img">
+                                        <img src="images/{{ asideL.img }}">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </a>
-                <a class="secBtn">
-                    <div> Extras 4 </div>
-                    <div>
-                        <div>
-                            <img src="images/icons/gplus-50.png">
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            </a>
+
         </div>
-        <a class="secBtn">
-            <div> Settings </div>
-            <div>
-                <div>
-                    <img src="images/icons/fb-50.png">
-                </div>
-            </div>
-        </a>
-
-        <a ng-repeat="project in projects" class="secBtn">
-            <div> Settings </div>
-            <div>
-                <div>
-                    <img src="images/icons/fb-50.png">
-                </div>
-            </div>
-        </a>
-
     </div>
     <div class="b-p-abs sec-mid b-layer-1">
         <div ng-view=""></div>

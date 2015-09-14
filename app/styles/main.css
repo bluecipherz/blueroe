@@ -60,7 +60,7 @@
     cursor: default;
     border-bottom:2px rgba(95,207,128,.6) solid;
 }
-.postform .cont,.postform .cont > .head,.postform .cont > .mid,.postform .cont > .foot{
+.postform .cont,.postform .cont form > .head,.postform .cont form > .mid,.postform .cont form > .foot{
     display: block;
     float: left;
     width: 100%;
@@ -74,7 +74,7 @@
 .postform > .active{
     display: block;
 }
-.postform .cont > .head textarea{
+.postform .cont form > .head textarea{
     border:none;
     outline: none;
     min-width: 100%;
@@ -84,7 +84,7 @@
     resize: vertical;
     background:#f5f5f5;
 }
-.postform .cont > .head input{
+.postform .cont form > .head input{
     border:#ddd 1px solid;
     outline: none;
     width:80%;
@@ -96,7 +96,7 @@
     height:40px;
     background:#fff;
 }
-.postform .cont > .head input[type="checkbox"]{
+.postform .cont form > .head input[type="checkbox"]{
     border:#ddd 1px solid;
     outline: none;
     width:12px;
@@ -119,12 +119,12 @@
     line-height: 30px;
     padding-left:10px;
 }
-.postform .cont > .foot{
+.postform .cont form > .foot{
     width: 100%;
     background:#ddd;
     height:30px;
 }
-.postform .cont > .foot > button{
+.postform .cont form > .foot > button{
     float: right;
     padding:0 6px;
     font-size: 80%;
@@ -135,11 +135,11 @@
     color:#eee;
     border-radius: 4px;
 }
-.postform .cont > .foot > button:hover{
+.postform .cont form > .foot > button:hover{
     background: #5fcf80;
     color:#fff;
 }
-.postform .cont > .foot > div{
+.postform .cont form > .foot > div{
     float: right;
     font-size: 80%;
     line-height: 25px;
@@ -148,7 +148,7 @@
     width: 140px;
     margin-right:10px;
 }
-.postform .cont > .foot > div .text-slot{
+.postform .cont form > .foot > div .text-slot{
     float: right;
     text-align: center;
     height:30px;
@@ -157,34 +157,34 @@
     color:#444;
     width: 140px;
 }
-.postform .cont > .foot > div > .foot{
+.postform .cont form > .foot > div > .foot{
     display:none;
     float: left;
     width: 150px;
     margin-left:-5px;
     border:1px solid #aaa;
 }
-.postform .cont > .foot > div:hover > .foot{
+.postform .cont form > .foot > div:hover > .foot{
     display:block;
     cursor: pointer;
 }
-.postform .cont > .foot > div > .foot > span{
+.postform .cont form > .foot > div > .foot > span{
     display:block;
     float:left;
     width: 100%;
     background: #eeeeee;
     padding:5px 10px;
 }
-.postform .cont > .foot > div > .foot > .active{
+.postform .cont form > .foot > div > .foot > .active{
     background: red;
 }
-.postform .cont > .foot > div > .foot > span:hover{
+.postform .cont form > .foot > div > .foot > span:hover{
     background: #c8c8c8;
 }
 
 
 
-.postform .cont > .head .half{
+.postform .cont form > .head .half{
     display: block;
     float: left;
     width:80%;
@@ -194,19 +194,19 @@
     line-height: 30px;
     padding-left:10px;
 }
-.postform .cont > .head .half > div{
+.postform .cont form > .head .half > div{
     display: block;
     float: left;
     width: 50%;
 }
-.postform .cont > .head .half > div > div{
+.postform .cont form > .head .half > div > div{
     display: block;
     float: left;
     width: calc(100% - 10px);
     margin-right:10px;
     padding-left: 10px;
 }
-.postform .cont > .head .half > div > select{
+.postform .cont form > .head .half > div > select{
     display: block;
     float: left;
     width: calc(100% - 10px);

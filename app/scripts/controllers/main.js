@@ -10,30 +10,53 @@
 angular.module('bluroeApp')
     .controller('IndexCtrl', function ($scope, sidenav, $state) {
 
-    $scope.currState = $state;
-    $scope.$watch('currState.current.name', function(newValue, oldValue) {
-      if(newValue == 'home') {
-        $scope.asideList = sidenav.getHomeNavs();
-      } else if(newValue == 'projects') {
-        $scope.asideList = sidenav.getProjectNavs();
-      }
-    });  
-
-    $scope.checkIsLink = function(message) {
-        return message.type == 'link';
-    }
-    $scope.checkIsLinkList = function(message) {
-        return message.type == 'linkList';
-    }
-
-        this.tab = 1;
-
-        this.selectTab = function (setTab){
-            this.tab = setTab;
+        $scope.dropzoneConfig = {
+            'options': { // passed into the Dropzone constructor
+                'url': 'upload.php'
+            },
+            'eventHandlers': {
+                'sending': function (file, xhr, formData) {
+                    console.log('sending');
+                },
+                'success': function (file, response) {
+                }
+            }
         };
-        this.isSelected = function(checkTab) {
-            return this.tab === checkTab;
-        };
+
+        $scope.currState = $state;
+        // sidenav factory holds the sidebar data.
+        // check for state change and display approriate sidebar
+        $scope.$watch('currState.current.name', function(newValue, oldValue) {
+          if(newValue == 'home') {
+            $scope.asideList = sidenav.getHomeNavs();
+          } else if(newValue == 'projects') {
+            $scope.asideList = sidenav.getProjectNavs();
+          }
+        });  
+
+        $scope.checkIsLink = function(message) {
+            return message.type == 'link';
+        }
+        $scope.checkIsLinkList = function(message) {
+            return message.type == 'linkList';
+        }
+
+            this.tab = 1;
+
+            this.selectTab = function (setTab){
+                this.tab = setTab;
+            };
+            this.isSelected = function(checkTab) {
+                return this.tab === checkTab;
+            };
+
+        $scope.postStatus = function() {
+            var data = {
+                message: $scope.status.message,
+                project: $scope.status.project
+            };
+            console.log(data);
+        }
 
 
     }).controller('MainCtrl', function ($scope,$controller, feedFactory, AsideBarServ) {

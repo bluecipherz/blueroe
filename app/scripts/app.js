@@ -11,42 +11,34 @@
 angular
   .module('bluroeApp', [
     'ngRoute',
-    'ngResource'
+    'ngResource',
+    'ui.router'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
-        $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/projects', {
-        templateUrl: 'views/projects.html',
-        controller: 'ProjectsCtrl',
-        controllerAs: 'projects'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+      $urlRouterProvider.otherwise('/home');
 
-        // enable html5Mode for pushstate ('#'-less URLs)
-        if(window.history && window.history.pushState){
-            $locationProvider.html5Mode(true);
-        }
+      $stateProvider
+        .state('home', {
+          url: '/',
+          templateUrl: 'views/main.html',
+          controller: 'MainCtrl',
+          controllerAs: 'main'
+        })
+        .state('projects', {
+          url: '/projects',
+          templateUrl: 'views/projects.html',
+          controller: 'ProjectsCtrl',
+          controllerAs: 'projects'
+        });
 
   })
   .run(function($rootScope, powerProgress) {
-	  $rootScope.$on('$routeChangeStart', function() {
-		powerProgress.loadProgress();
+	  $rootScope.$on('$stateChangeStart', function() {
+		  powerProgress.loadProgress();
 	  });
 
-	  $rootScope.$on('$routeChangeSuccess', function() {
-	  
+	  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+
 	  });
   });

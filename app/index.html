@@ -33,8 +33,8 @@
                 </div>
                 <div class="bgrid -bg-s-140">
                     <ul class="bl-ul bg-text-c">
-                        <li ng-click="tabHome()" class="active -bg-s-60"><a ng-href="/">Home</a></li>
-                        <li ng-click="tabProject()" class="-bg-s-80"><a ng-href="/projects">Projects</a></li>
+                        <li class="active -bg-s-60"><a ui-sref="home">Home</a></li>
+                        <li class="-bg-s-80"><a ui-sref="projects">Projects</a></li>
                     </ul>
                 </div>
             </div>
@@ -165,7 +165,7 @@
         </div>
     </div>
     <div class="b-p-abs sec-mid b-layer-1">
-        <div ng-view=""></div>
+        <div ui-view=""></div>
     </div>
 
     <div class="cust-footer">
@@ -187,13 +187,14 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -208,6 +209,7 @@
         <script src="scripts/services/buttongroup.js"></script>
         <script src="scripts/services/feedfactory.js"></script>
         <script src="scripts/services/asidebarserv.js"></script>
+        <script src="scripts/services/sidenav.js"></script>
         <!-- endbuild -->
 </body>
 </html>

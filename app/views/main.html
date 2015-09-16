@@ -2,13 +2,13 @@
     <div class="p-feeds bgrid -bg-s-300-w">
         <div class="postform"  ng-controller="TabController as panel" >
             <div class="heading ">
-                <span   ng-class="{active:panel.isSelected(1) }"  ng-click="panel.selectTab(1)" >Status</span>
-                <span   ng-class="{active:panel.isSelected(2) }"  ng-click="panel.selectTab(2)" >Add Task</span>
-                <span   ng-class="{active:panel.isSelected(3) }"  ng-click="panel.selectTab(3)" >Upload file</span>
-                <span   ng-class="{active:panel.isSelected(4) }"  ng-click="panel.selectTab(4)" >Post a message</span>
+                <span   ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
+                <span   ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
+                <span   ng-class="{active:isSelected(3)}"  ng-click="selectTab(3)" >Upload file</span>
+                <span   ng-class="{active:isSelected(4)}"  ng-click="selectTab(4)" >Post a message</span>
             </div>
             <!-- STATUSES -->
-            <div class="cont  tab1"  ng-show="panel.isSelected(1)">
+            <div class="cont tab1"  ng-show="isSelected(1)">
                 <form name="statusForm" novalidate>
                     <div ng-messages="statusForm.message.$error" ng-if="statusForm.$submitted">
                         <p ng-message="minlength">Status message must be atleast 5 characters long.</p>
@@ -38,13 +38,13 @@
                 </form>
             </div>
             <!-- ADD TASK -->
-            <div class="cont tab2"  ng-show="panel.isSelected(2)">
+            <div class="cont tab2"  ng-show="isSelected(2)">
                 <form name="taskForm" novalidate>
                     <div class="head">
                         <input name="" placeholder="Task Title" >
                     </div>
                     <div class="mid">
-                        <div class="p-dropzone">
+                        <div class="p-dropzone" dropzone="dropzoneConfig">
                             Drop your files here
                         </div>
                     </div>
@@ -71,15 +71,15 @@
                         </div>
                     </div>
                     <div class="foot b-layer-3">
-                        <button >Submit</button>
+                        <button ng-click="addTask()">Submit</button>
                     </div>
                 </form>
             </div>
             <!-- UPLOAD FILES -->
-            <div class="cont tab3"  ng-show="panel.isSelected(3)">
+            <div class="cont tab3"  ng-show="isSelected(3)">
                 <form name="uploadForm">
                     <div class="mid">
-                        <div class="p-dropzone">
+                        <div class="p-dropzone" dropzone="dropzoneConfig">
                             Drop your files here
                         </div>
                     </div>
@@ -103,18 +103,18 @@
                         </div>
                     </div>
                     <div class="foot b-layer-3">
-                        <button >Submit</button>
+                        <button ng-click="uploadFile()">Submit</button>
                     </div>
                 </form>
             </div>
             <!-- POST A MESSAGE -->
-            <div class="cont tab4"  ng-show="panel.isSelected(4)">
-                <form name="forumForum">
+            <div class="cont tab4"  ng-show="isSelected(4)">
+                <form name="forumForm">
                     <div class="head">
                         <input name="" placeholder="Forum Title" >
                     </div>
                     <div class="mid">
-                        <div class="p-dropzone">
+                        <div class="p-dropzone" dropzone="dropzoneConfig">
                             Drop your files here
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                         <input type="checkbox"/><span>Make this as a Task list</span>
                     </div>
                     <div class="head">
-                        <textarea name="" placeholder="Type your message here"rows="3"></textarea>
+                        <textarea name="" placeholder="Type your message here" rows="3"></textarea>
                     </div>
                     <div class="head">
                         <div class="half">
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="foot b-layer-3">
-                        <button >Submit</button>
+                        <button ng-click="postForum()">Submit</button>
                     </div>
                 </form>
             </div> 
@@ -174,9 +174,9 @@
 
                             <div ng-show="feed.type =='TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
 							<div ng-show="feed.type =='TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} project</div>
-							<div ng-show="feed.type =='TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
+							<div ng-show="feed.type =='TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task</div>
 
-							<div ng-show="feed.type =='CommentPosted'">{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }} project</div>
+							<div ng-show="feed.type =='CommentPosted'">{{ feed.origin.email }} did {{ feed.context.type }}</div>
 
                         </div>
 
@@ -208,7 +208,7 @@
 							<div  class="commentForm foot" ng-class="{ 'hidden': ! showDetails }" >
                                 <textarea class="bgrid" type="text"></textarea>
                                 <div>
-							        <button class="b-btn-sm" >Submit</button>
+							        <button class="b-btn-sm" ng-click="postComment()">Submit</button>
                                 </div>
 							</div>
 						</div>

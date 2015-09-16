@@ -10,19 +10,6 @@
 angular.module('bluroeApp')
     .controller('IndexCtrl', function ($scope, sidenav, $state) {
 
-        $scope.dropzoneConfig = {
-            'options': { // passed into the Dropzone constructor
-                'url': 'upload.php'
-            },
-            'eventHandlers': {
-                'sending': function (file, xhr, formData) {
-                    console.log('sending');
-                },
-                'success': function (file, response) {
-                }
-            }
-        };
-
         $scope.currState = $state;
         // sidenav factory holds the sidebar data.
         // check for state change and display approriate sidebar
@@ -58,6 +45,10 @@ angular.module('bluroeApp')
             console.log(data);
         }
 
+        $scope.postComment = function(feedId) {
+            console.log($scope.feed.id);
+        }
+
 
     }).controller('MainCtrl', function ($scope,$controller, feedFactory, AsideBarServ) {
         $scope.projects = [
@@ -70,12 +61,17 @@ angular.module('bluroeApp')
 
         // Fetches the time entries from the static JSON file
         // and puts the results on the vm.timeentries array
-        feedFactory.getFeeds().then(function(results) {
-            $scope.feeds = results;
-            console.log($scope.feeds);
-        }, function(error) { // Check for errors
-            console.log(error);
-        });
+        var updateFeeds = function() {
+            feedFactory.getFeeds().then(function(results) {
+                console.log(results);
+                $scope.feeds = results;
+            }, function(error) { // Check for errors
+                console.log(error);
+            });
+        }
+
+        feedFactory.onFetchFeeds(updateFeeds);
+        
 
         AsideBarServ.setAside('Hello');
 
@@ -90,15 +86,47 @@ angular.module('bluroeApp')
         //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
         //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
 
-    }).controller('TabController', function (){
-        this.tab = 1;
+    }).controller('TabController', function ($scope){
+        $scope.selectedTab = 1;
 
-        this.selectTab = function (setTab){
-            this.tab = setTab;
+        $scope.selectTab = function(tab) {
+            $scope.selectedTab = tab;
+        }
+
+        $scope.isSelected = function(tab) {
+            return $scope.selectedTab == tab;
+        }
+
+        $scope.dropzoneConfig = {
+            'options': { // passed into the Dropzone constructor
+                'url': 'upload.php'
+            },
+            'eventHandlers': {
+                'sending': function (file, xhr, formData) {
+                    console.log('sending');
+                },
+                'success': function (file, response) {
+                }
+            }
         };
-        this.isSelected = function(checkTab) {
-            return this.tab === checkTab;
-        };
+
+        $scope.postStatus = function() {
+            console.log('poststatus');
+        }
+
+        $scope.addTask = function() {
+            console.log('addtask')
+        }
+
+        $scope.uploadFile = function() {
+            console.log('uploadfile')
+        }
+
+        $scope.postForum = function() {
+            console.log('postforum')
+        }
+
+
     }).controller('AsideController', function (){
         this.tab = 1;
 

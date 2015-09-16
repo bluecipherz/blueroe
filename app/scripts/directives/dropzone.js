@@ -11,8 +11,6 @@ angular.module('bluroeApp')
 	return function (scope, element, attrs) {
 	    var config, dropzone;
 
-	    // console.log(attrs.dropzone);
-
 	    config = scope[attrs.dropzone];
 
 	    // create a Dropzone for the element with the given options

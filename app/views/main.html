@@ -164,7 +164,6 @@
 					</div>
 					<div class="right  bgrid -bg-s-80-w">
 						<div class="head">
-
 							<div ng-show="feed.type =='ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
 							<div ng-show="feed.type =='ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
 							<div ng-show="feed.type =='ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
@@ -176,7 +175,20 @@
 							<div ng-show="feed.type =='TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} project</div>
 							<div ng-show="feed.type =='TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task</div>
 
-							<div ng-show="feed.type =='CommentPosted'">{{ feed.origin.email }} did {{ feed.context.type }}</div>
+							<div ng-show="feed.type =='CommentPosted'">
+
+                                <div ng-show="feed.context.type =='ProjectCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
+                                <div ng-show="feed.context.type =='ProjectDeleted'">{{ feed.context.origin.email }} deleted {{ feed.context.subject.name }} project</div>
+                                <div ng-show="feed.context.type =='ProjectCompleted'">{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} project</div>
+
+                                <div ng-show="feed.context.type =='UserRemovedFromProject'">{{ feed.context.origin.email }} removed {{ feed.context.subject.email }} from {{ feed.context.name }} project</div>
+                                <div ng-show="feed.context.type =='UserAddedToProject'">{{ feed.context.origin.email }} added {{ feed.context.subject.email }} to {{ feed.context.name }} project</div>
+
+                                <div ng-show="feed.context.type =='TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
+                                <div ng-show="feed.context.type =='TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} project</div>
+                                <div ng-show="feed.context.type =='TaskCompleted'">as{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task</div>
+
+                            </div>
 
                         </div>
 

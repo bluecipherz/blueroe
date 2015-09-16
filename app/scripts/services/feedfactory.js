@@ -28,6 +28,7 @@ angular.module('bluroeApp')
         $http.post('http://localhost:8000/api/authenticate', {email:'asd@g.com',password:'asdasd'})
             .then(function(response, status, header, config) {
                 token = response.data.token;
+                console.log('token : ' + token);
                 Feed = $resource('http://localhost:8000/api/me/feeds', {token:token});
                 notifyObservers();
             }, function(data, status, header, config) {
@@ -38,7 +39,7 @@ angular.module('bluroeApp')
             // $promise.then allows us to intercept the results
             // which we will use later
             return Feed.query().$promise.then(function(results) {
-
+                console.log(results);
                 angular.forEach(results , function(value, key) {
                     value.filtered = {};
                     if(value.type == 'ProjectCreated'){

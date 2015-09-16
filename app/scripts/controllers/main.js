@@ -18,6 +18,8 @@ angular.module('bluroeApp')
             $scope.asideList = sidenav.getHomeNavs();
           } else if(newValue == 'projects') {
             $scope.asideList = sidenav.getProjectNavs();
+          } else {
+            $scope.asideList = sidenav.getHomeNavs(); // default
           }
         });  
 
@@ -72,7 +74,6 @@ angular.module('bluroeApp')
 
         feedFactory.onFetchFeeds(updateFeeds);
         
-
         AsideBarServ.setAside('Hello');
 
         $scope.loadNewFilter = function (){

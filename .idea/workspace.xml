@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d4e300b-d588-4981-a6a9-081e054baf6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/index.css" afterPath="$PROJECT_DIR$/app/styles/index.css" />
+      <change type="DELETED" beforePath="E:\BCZ\WORKS\Project\Front end\Angular\bluroe\app\styles\index.css" afterPath="" />
+      <change type="DELETED" beforePath="E:\BCZ\WORKS\Project\Front end\Angular\bluroe\app\styles\main.css" afterPath="" />
+      <change type="DELETED" beforePath="E:\BCZ\WORKS\Project\Front end\Angular\bluroe\app\styles\style.scss" afterPath="" />
+      <change type="DELETED" beforePath="E:\BCZ\WORKS\Project\Front end\Angular\bluroe\app\styles\styles.less" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/sidenav.js" afterPath="$PROJECT_DIR$/app/scripts/services/sidenav.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bluroe.iws" />
@@ -34,18 +39,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.307692" vertical-offset="408" max-vertical-offset="3723">
-              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.034483" vertical-offset="4817" max-vertical-offset="5559">
-              <caret line="309" column="16" selection-start-line="309" selection-start-column="16" selection-end-line="309" selection-end-column="16" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="2737">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -54,38 +49,91 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8363636" vertical-offset="367" max-vertical-offset="3689">
-              <caret line="34" column="62" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="62" />
+            <state vertical-scroll-proportion="-130.76923" vertical-offset="306" max-vertical-offset="4318">
+              <caret line="218" column="5" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="asidebarserv.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/asidebarserv.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5825" max-vertical-offset="6528">
-              <caret line="362" column="2" selection-start-line="362" selection-start-column="2" selection-end-line="362" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16927454" vertical-offset="102" max-vertical-offset="2159">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2170" max-vertical-offset="2873">
+              <caret line="147" column="112" selection-start-line="147" selection-start-column="112" selection-end-line="147" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orange-theme.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/orange-theme.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="612">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="green-theme.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/green-theme.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="612">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/sass/application.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="119">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_index.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/styles/sass/modules/_index.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.595679" vertical-offset="1331" max-vertical-offset="2431">
+              <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="952">
+              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="themes.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home/themes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
+              <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_theme.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/_theme.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="221">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -95,9 +143,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -110,14 +155,28 @@
         <option value="$PROJECT_DIR$/app/styles/Bluegrid/Bluegrid.css" />
         <option value="$PROJECT_DIR$/app/data/feeds.json" />
         <option value="$PROJECT_DIR$/app/scripts/services/feedfactory.js" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/index.js" />
-        <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/scripts/services/asidebarserv.js" />
+        <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="$PROJECT_DIR$/app/styles/index.css" />
+        <option value="$PROJECT_DIR$/app/styles/sass/sMain.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/functions/_baseFunctions.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/index.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/main.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/theme/_theme.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/theme/default-theme.scss" />
+        <option value="$PROJECT_DIR$/app/styles/sass/application.scss" />
+        <option value="$PROJECT_DIR$/app/scripts/services/sidenav.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/cssinjector.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/injectcss.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/styles/sass/modules/_main.scss" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/styles/sass/themes/green-theme.scss" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/app/views/home/themes.html" />
+        <option value="$PROJECT_DIR$/app/styles/sass/modules/_index.scss" />
       </list>
     </option>
   </component>
@@ -150,7 +209,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -161,83 +220,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bluroe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="icons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -310,8 +293,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1168" height="840" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1168" height="840" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -323,7 +306,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14409722" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -335,6 +317,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -361,43 +344,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="867">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="833">
-          <caret line="43" column="3" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/powerprogress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="612">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1539" max-vertical-offset="2941">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5461" max-vertical-offset="6324">
-          <caret line="329" column="25" selection-start-line="329" selection-start-column="25" selection-end-line="329" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="3519">
@@ -428,14 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4488">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="867">
@@ -461,14 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2285" max-vertical-offset="2958">
           <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5370" max-vertical-offset="6324">
-          <caret line="329" column="25" selection-start-line="329" selection-start-column="25" selection-end-line="329" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -503,14 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="4488">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="850">
@@ -532,14 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="4658">
-          <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
@@ -552,14 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="374">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="4488">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -608,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.tmp/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1796" max-vertical-offset="4454">
-          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/Bluegrid/Bluegrid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
@@ -626,13 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="8772">
           <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.tmp/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10526316" vertical-offset="1133" max-vertical-offset="4454">
-          <caret line="71" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="256" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -654,14 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48784193" vertical-offset="2705" max-vertical-offset="10302">
           <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8307255" vertical-offset="79" max-vertical-offset="986">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -679,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/feedfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8065434" vertical-offset="300" max-vertical-offset="1003">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6045519" vertical-offset="0" max-vertical-offset="850">
@@ -693,50 +570,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/asidebarserv.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8363636" vertical-offset="367" max-vertical-offset="3689">
-          <caret line="34" column="62" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.58036983" vertical-offset="0" max-vertical-offset="703">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/grunt-google-cdn/node_modules/bower/lib/commands/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/css/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/index.css">
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/functions/_baseFunctions.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.034483" vertical-offset="4817" max-vertical-offset="5559">
-          <caret line="309" column="16" selection-start-line="309" selection-start-column="16" selection-end-line="309" selection-end-column="16" />
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/sidenav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1054">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/cssinjector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55618775" vertical-offset="0" max-vertical-offset="703">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/feedfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1139">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/injectcss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/modules/_main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="6664">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="119">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="952">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.307692" vertical-offset="408" max-vertical-offset="3723">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="2737">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+    <entry file="file://$PROJECT_DIR$/app/styles/css/themes/green-theme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5774" max-vertical-offset="6528">
-          <caret line="362" column="2" selection-start-line="362" selection-start-column="2" selection-end-line="362" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.16927454" vertical-offset="0" max-vertical-offset="703">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/asidebarserv.js">
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/_theme.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="221">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/green-theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="612">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-130.76923" vertical-offset="306" max-vertical-offset="4318">
+          <caret line="218" column="5" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/themes/orange-theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="612">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16927454" vertical-offset="102" max-vertical-offset="2159">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2170" max-vertical-offset="2873">
+          <caret line="147" column="112" selection-start-line="147" selection-start-column="112" selection-end-line="147" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/themes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
+          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/sass/modules/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.595679" vertical-offset="1331" max-vertical-offset="2431">
+          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
           <folding />
         </state>
       </provider>

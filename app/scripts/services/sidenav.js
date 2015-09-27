@@ -13,14 +13,17 @@ angular.module('bluroeApp')
     // ...
 
     var AsideListHome = [
-        {'id':'1','type':'link','name':'Feeds','ngClick':' ','img':'icons/fb-50.png'},
-        {'id':'2','type':'link','name':'News','ngClick':' ','img':'icons/gplus-50.png'},
+        {'id':'1','type':'link','name':'Feeds','ngClick':'home','img':'icons/fb-50.png'},
+        {'id':'2','type':'link','name':'Tasks','ngClick':' ','img':'icons/twitter-50.png'},
+        {'id':'3','type':'link','name':'Milestones','ngClick':' ','img':'icons/gplus-50.png'},
+        {'id':'4','type':'link','name':'Bugs','ngClick':' ','img':'icons/twitter-50.png'},
+        {'id':'5','type':'link','name':'Calender','ngClick':' ','img':'icons/fb-50.png'},
+        {'id':'6','type':'link','name':'Reports ','ngClick':' ','img':'icons/gplus-50.png'},
         {'type':'linkList','name':'Extras','img':'icons/twitter-50.png','list': [
-            {'id':'3','type':'link','name':'Extra 1','ngClick':' ','img':'icons/fb-50.png'},
-            {'id':'4','type':'link','name':'Extra 2','ngClick':' ','img':'icons/gplus-50.png'},
-            {'id':'5','type':'link','name':'Extra 3','ngClick':' ','img':'icons/twitter-50.png'},
+            {'id':'7','type':'link','name':'Themes','ngClick':'themes','img':'icons/fb-50.png'},
+            {'id':'8','type':'link','name':'Templates','ngClick':' ','img':'icons/gplus-50.png'},
         ]},
-        {'id':'6','type':'link','name':'Settings','ngClick':' ','img':'icons/gplus-50.png'},
+        {'id':'10','type':'link','name':'Settings','ngClick':' ','img':'icons/gplus-50.png'},
     ];
 
     var AsideListProject = [

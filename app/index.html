@@ -16,8 +16,8 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/Bluegrid/Bluegrid.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/css/application.css">
+      <div id="cssHead"></div>
     <!-- endbuild -->
   </head>
   <body ng-app="bluroeApp">
@@ -52,83 +52,9 @@
         </div>
 
         <div class="b-p-fix Aside sec-left b-layer-2" >
-
-            <!--<a class="active secBtn">-->
-                <!--<div> Feeds </div>-->
-                <!--<div>-->
-                    <!--<div>-->
-                        <!--<img src="images/icons/fb-50.png">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</a>-->
-            <!--<a class="secBtn">-->
-                <!--<div> News </div>-->
-                <!--<div>-->
-                    <!--<div>-->
-                        <!--<img src="images/icons/gplus-50.png">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</a>-->
-            <!--<div class="secGrpBtn ">-->
-                <!--<div class="Gbtn">-->
-                    <!--<div> Extras  </div>-->
-                    <!--<div>-->
-                        <!--<div>-->
-                            <!--<div class="bl-arrow"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="btnSec dis-no" style="display: none" >-->
-                    <!--<a class="secBtn">-->
-                        <!--<div> Extras 1 </div>-->
-                        <!--<div>-->
-                            <!--<div>-->
-                                <!--<img src="images/icons/fb-50.png">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</a>-->
-                    <!--<a class="secBtn">-->
-                        <!--<div> Extras 2 </div>-->
-                        <!--<div>-->
-                            <!--<div>-->
-                                <!--<img src="images/icons/twitter-50.png">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</a>-->
-                    <!--<a class="secBtn">-->
-                        <!--<div> Extras 3 </div>-->
-                        <!--<div>-->
-                            <!--<div>-->
-                                <!--<img src="images/icons/fb-50.png">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</a>-->
-                    <!--<a class="secBtn">-->
-                        <!--<div> Extras 4 </div>-->
-                        <!--<div>-->
-                            <!--<div>-->
-                                <!--<img src="images/icons/gplus-50.png">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<a class="secBtn">-->
-                <!--<div> Settings </div>-->
-                <!--<div>-->
-                    <!--<div>-->
-                        <!--<img src="images/icons/fb-50.png">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</a>-->
-
-
-
-
-
             <a ng-repeat="aside in asideList" class="asideButton">
                 <!--Aside Link-->
-                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:AsController.isSelected(aside.id) }"  ng-click="AsController.selectTab(aside.id);  aside.ngClick ">
+                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:AsController.isSelected(aside.id) }"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
                     <div class="asideName"> {{ aside.name }} </div>
                     <div class="asideIcon">
                         <div class="img">
@@ -137,7 +63,7 @@
                     </div>
                 </div>
                 <!--Aside LinkList-->
-                <div class="asideLinkList " ng-if="checkIsLinkList(aside)" >
+                <div class="asideLinkList listHead" ng-if="checkIsLinkList(aside)" >
                     <!--Aside LinkBase-->
                     <div  ng-click="showDetails = ! showDetails"  class="asideButton asideListBase" >
                         <div class="asideName"> {{ aside.name }} </div>
@@ -148,9 +74,9 @@
                         </div>
                     </div>
                     <!--Aside LinkList-->
-                    <div  ng-class="{ 'hidden': ! showDetails }" >
+                    <div  ng-class="{ 'hiddenList': ! showDetails }" >
                         <div class="asideButton"  ng-repeat="asideL in aside.list ">
-                            <div class="NestedAsideLink"   ng-class="{active:AsController.isSelected(asideL.id) }"  ng-click="AsController.selectTab(asideL.id); asideL.ngClick ">
+                            <div class="NestedAsideLink"   ng-class="{active:AsController.isSelected(asideL.id) }"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
                                 <div class="asideName"> {{ asideL.name }} </div>
                                 <div class="asideIcon">
                                     <div class="img">
@@ -222,6 +148,8 @@
         <script src="scripts/services/status.js"></script>
         <script src="scripts/services/task.js"></script>
         <script src="scripts/services/forum.js"></script>
+        <script src="scripts/services/cssinjector.js"></script>
+        <script src="scripts/services/injectcss.js"></script>
         <!-- endbuild -->
 </body>
 </html>

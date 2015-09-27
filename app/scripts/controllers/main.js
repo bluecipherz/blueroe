@@ -143,4 +143,21 @@ angular.module('bluroeApp')
         this.isSelected = function(checkTab) {
             return this.tab === checkTab;
         };
+    })
+    .controller('ThemesCtrl', function ($scope, sidenav, $state) {
+        $scope.themes = [{'id':'1','name':'Orange' , 'url':'styles/css/themes/orange-theme.css','color':'#ec741a'},
+                        {'id':'2','name':'Green' , 'url':'styles/css/themes/green-theme.css','color':'#55cc82'}];
+            var loadedTheme = new Array();
+        $scope.changeTheme = function($url,$id){
+            $('#cssHead link').attr("disabled", "disabled");
+            $('link','#cssHead').each(function(){
+                loadedTheme.push($(this).attr('id'));
+            });
+                $('#cssHead').append( $('<link rel="stylesheet" type="text/css" />').attr('href', $url) );
+
+
+        }
+        $scope.disableTheme = function(){
+            $('#cssHead link').attr("disabled", "disabled");
+        }
     });

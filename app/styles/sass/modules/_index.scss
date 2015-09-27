@@ -1,0 +1,137 @@
+
+
+// Base Rules
+@import "../base/normalize";
+@import "../base/baseRules";
+
+// Theme
+@import "../themes/theme";
+
+// Functions
+@import "../functions/baseFunctions";
+
+body{
+  font-size:90%;
+  min-width: 100%;
+  min-height: 100%;
+}
+#powerProgress{
+  background:$themeColor;
+}
+
+/*__________________________________________________________________________________________
+                                                                                            |
+                                        MAIN SECTIONS                                       |
+____________________________________________________________________________________________|
+*/
+
+
+.sec-left{
+  display: block;
+  left: -140px;
+  width:200px;
+  top:50px;
+  bottom:0px;
+  background:$themeAsh;
+  transition: left 0.5s;
+  color:#ccc;
+  padding-top: 20px;
+  font-size: 95%;
+}
+.sec-left:hover{
+  left:0px;
+}
+
+.asideButton{
+  display:block;
+  float: left;
+  width:100%;
+  min-height:40px;
+}
+.asideButton:hover{
+  cursor: pointer;
+  background:rgba($themeColorR,$themeColorG,$themeColorB,.2);
+  color:#eee;
+}
+.asideButton:hover .asideIcon img{
+  opacity: 0.7;
+}
+.asideButton ,
+.asideButton:focus,
+.asideButton:active{
+  color:#ccc;
+}
+.asideName{
+  display: inline-block;
+  float: left;
+  line-height: 40px;
+  padding-left:10px;
+  width:140px;
+  height:100%;
+}
+.asideIcon{
+  display: inline-block;
+  float: left;
+  width:60px;
+  height:100%;
+}
+.asideIcon > .img{
+  display: block;
+  float: left;
+  width:30px;
+  height:30px;
+  margin:5px 15px;
+  background:rgba(0,0,0,0.2);
+}
+.asideIcon > .img > img{
+  height:30px;
+  width:30px;
+  opacity:0.4;
+}
+.Aside .active { background: $themeColor; color:#fff;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;}
+.Aside .active:hover { cursor:pointer; background: $themeColor; color:#fff;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -ms-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s; }
+.Aside .active .asideIcon .img { background:rgba(0,0,0,0.3);  }
+.Aside .active .asideIcon .img > img { opacity: 0.8; }
+
+.NestedAsideLink,
+.asideLink{
+  display:block;
+  float: left;
+  width:100%;
+  min-height:40px;
+}
+.NestedAsideLink .asideName{
+  width:130px;
+  border-left: 2px solid rgba(255,255,255,0.05);
+  margin-left: 10px;
+}
+.sec-mid{
+  display: block;
+  left:60px;
+  right:0px;
+  top:50px;
+  min-height:calc( 100% - 50px );
+  background:#fff;
+}
+.listHead > div{
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+}
+.listHead .hiddenList{
+  overflow: hidden;
+  height:0px;
+}
+

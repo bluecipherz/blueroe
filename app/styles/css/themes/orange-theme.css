@@ -1,0 +1,25 @@
+.asideButton:hover {
+  background: rgba(236, 116, 26, 0.2); }
+
+.postform > .heading > span:hover {
+  border-bottom: 2px rgba(236, 116, 26, 0.3) solid; }
+
+.postform > .heading > .active {
+  border-bottom: 2px rgba(236, 116, 26, 0.6) solid; }
+
+.postform > .heading > .active:hover {
+  border-bottom: 2px rgba(236, 116, 26, 0.6) solid; }
+
+.Aside .active {
+  background: #ec741a; }
+
+.Aside .active:hover {
+  background: #ec741a; }
+
+#powerProgress {
+  background: #ec741a; }
+
+.sec-left {
+  background: #313131; }
+
+/*# sourceMappingURL=orange-theme.css.map */

@@ -39,20 +39,7 @@ angular.module('bluroeApp')
                 return this.tab === checkTab;
             };
 
-        $scope.postStatus = function() {
-            var data = {
-                message: $scope.status.message,
-                project: $scope.status.project
-            };
-            console.log(data);
-        }
-
-        $scope.postComment = function(feedId) {
-            console.log($scope.feed.id);
-        }
-
-
-    }).controller('MainCtrl', function ($scope,$controller, feedFactory, AsideBarServ) {
+    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment) {
         $scope.projects = [
             {'id':'1','name':'project 1'},
             {'id':'2','name':'project 2'},
@@ -80,6 +67,21 @@ angular.module('bluroeApp')
             AsideBarServ.updateAside;
         }
 
+        $scope.postComment = function(feed) {
+            console.log('MainCtrl');
+            Comment.postComment({
+                feedid:feed.id, comment:feed.comment
+            });
+            feed.comment = "";
+            feed.showDetails = false;
+        }
+
+        $scope.deleteComment = function(feed, comment) {
+            var d = Comment.deleteComment({
+                feedid:feed.id, commentid:comment.id
+            });
+            $scope.feed.comments.pop(comment);
+        }
         //
         //var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
         ////Provide the scope, you can also do $scope.$new(true) in order to create an isolated scope.
@@ -113,6 +115,11 @@ angular.module('bluroeApp')
 
         $scope.postStatus = function() {
             console.log('poststatus');
+            var data = {
+                message: $scope.status.message,
+                project: $scope.status.project
+            };
+            console.log(data);
         }
 
         $scope.addTask = function() {
@@ -126,7 +133,6 @@ angular.module('bluroeApp')
         $scope.postForum = function() {
             console.log('postforum')
         }
-
 
     }).controller('AsideController', function (){
         this.tab = 1;

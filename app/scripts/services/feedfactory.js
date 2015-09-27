@@ -7,35 +7,28 @@
  * # feedFactory
  * Factory in the bluroeApp.
  */
-angular.module('bluroeApp')
-  .factory('feedFactory', feedFactory);
+ angular.module('bluroeApp')
+ .factory('feedFactory', feedFactory);
 
-    function feedFactory($resource, $http) {
+ function feedFactory(TokenHandler, $resource, Hoster) {
 
-        var observerCallbacks = [];
+    var observerCallbacks = [];
 
-        var token;
+    var Feed = $resource(Hoster.getHost() + '/api/me/feeds');
 
-        // ngResource call to our static data
-        var Feed;
+    TokenHandler.onTempLogin(function() {
+        Feed = TokenHandler.wrapActions(Feed, ['query']); // auto inject auth token to requests
+        notifyObservers();
+    });
 
-        var notifyObservers = function() {
-            angular.forEach(observerCallbacks, function(callback) {
-                callback();
-            });
-        };
+    var notifyObservers = function() {
+        angular.forEach(observerCallbacks, function(callback) {
+            callback();
+        });
+    };
 
-        $http.post('http://localhost:8000/api/authenticate', {email:'asd@g.com',password:'asdasd'})
-            .then(function(response, status, header, config) {
-                token = response.data.token;
-                console.log('token : ' + token);
-                Feed = $resource('http://localhost:8000/api/me/feeds', {token:token});
-                notifyObservers();
-            }, function(data, status, header, config) {
-                console.log('feeds error')
-            });
 
-        function getFeeds() {
+    function getFeeds() {
             // $promise.then allows us to intercept the results
             // which we will use later
             return Feed.query().$promise.then(function(results) {
@@ -43,25 +36,16 @@ angular.module('bluroeApp')
                 angular.forEach(results , function(value, key) {
                     value.filtered = {};
                     if(value.type == 'ProjectCreated'){
-
                         value.filtered.description = value.subject.description ;
-
                     }else if(value.type == 'UserRemovedFromProject'){
-
                         value.filtered.description = value.context.description ;
-
                     }else if(value.type == 'TaskCreated'){
-
                         value.filtered.description = value.context.description ;
-
                     }else{
-
                         value.filtered.description = value.context.description ;
-
                     }
 
                 });
-
                 return results;
             }, function(error) { // Check for errors
                 console.log(error);
@@ -74,4 +58,5 @@ angular.module('bluroeApp')
                 observerCallbacks.push(callback);
             }
         }
+
     }

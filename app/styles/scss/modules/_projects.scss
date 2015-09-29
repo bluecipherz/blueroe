@@ -1,0 +1,13 @@
+@import '../base/variables';
+.projects {
+  color:$defFont;
+  .mid {
+    th{
+      color:$teal;
+      font-weight: 300;
+      background:#e8eef3;
+    }
+    td{  padding:10px;  }
+    tr:nth-child(1){ border-bottom:1px solid #ddd; }
+  }
+}

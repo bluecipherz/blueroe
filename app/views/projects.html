@@ -1,1 +1,21 @@
-<p>This is the projects view.</p>
+<div class="projects">
+    <div class="head">View by Group</div>
+    <div class="mid">
+        <table>
+            <tr>
+                <th>PROJECT NAME</th>
+                <th>OWNER</th>
+                <th>TASK</th>
+                <th>MILESTONE</th>
+                <th>%</th>
+            </tr>
+            <tr ng-repeat="project in projectList">
+                <td>{{project.name}}</td>
+                <td>{{project.owner}}</td>
+                <td>{{project.task}} / {{project.completedTask}}</td>
+                <td>{{project.mileStone}} / {{project.completedMileStone}}</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.sec-left:hover {
+  left: 0px; }
+
+.asideButton:hover {
+  cursor: pointer;
+  background: rgba(183, 0, 122, 0.2);
+  color: #eee; }
+
+.asideButton:hover .asideIcon img {
+  opacity: 0.7; }
+
+.asideButton,
+.asideButton:focus,
+.asideButton:active {
+  color: #ccc; }
+
+.Aside .active {
+  background: #b7007a;
+  color: #fff; }
+
+.Aside .active:hover {
+  cursor: pointer;
+  background: #b7007a;
+  color: #fff; }
+
+.Aside .active .asideIcon .img {
+  background: rgba(0, 0, 0, 0.3); }
+
+.Aside .active .asideIcon .img > img {
+  opacity: 0.8; }
+
+.postform > .heading > span:hover {
+  cursor: pointer;
+  border-bottom: 2px rgba(183, 0, 122, 0.3) solid;
+  color: #111; }
+
+.postform > .heading > .active {
+  border-bottom: 2px rgba(183, 0, 122, 0.6) solid;
+  color: #111; }
+
+.postform > .heading > .active:hover {
+  cursor: default;
+  border-bottom: 2px rgba(183, 0, 122, 0.6) solid; }
+
+.postform .cont form > .foot > button:hover {
+  background: #5fcf80;
+  color: #fff; }
+
+.postform .cont form > .foot > div:hover > .foot {
+  display: block;
+  cursor: pointer; }
+
+.postform .cont form > .foot > div > .foot > .active {
+  background: red; }
+
+.postform .cont form > .foot > div > .foot > span:hover {
+  background: #c8c8c8; }
+
+.feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn:hover,
+.feed-slot > .feedSet .cont > .right > .foot > .head .date:hover {
+  cursor: pointer;
+  color: #0EAFE6;
+  text-decoration: underline; }
+
+.b-btn-sm:hover {
+  background: #5fcf80;
+  color: #fff; }
+
+.b-link:hover {
+  cursor: pointer;
+  color: #0EAFE6;
+  text-decoration: underline; }
+
+/*# sourceMappingURL=states.css.map */

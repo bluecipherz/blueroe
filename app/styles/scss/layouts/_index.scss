@@ -1,0 +1,60 @@
+
+.sec-left{
+  display: block;
+  left: -140px;
+  width:200px;
+  top:50px;
+  bottom:0px;
+  padding-top: 20px;
+}
+
+.asideButton{
+  display:block;
+  float: left;
+  width:100%;
+  min-height:40px;
+}
+.asideName{
+  display: inline-block;
+  float: left;
+  line-height: 40px;
+  padding-left:10px;
+  width:140px;
+  height:100%;
+}
+.asideIcon{
+  display: inline-block;
+  float: left;
+  width:60px;
+  height:100%;
+}
+.asideIcon > .img{
+  display: block;
+  float: left;
+  width:30px;
+  height:30px;
+  margin:5px 15px;
+}
+.asideIcon > .img > img{
+  height:30px;
+  width:30px;
+}
+.NestedAsideLink,
+.asideLink{
+  display:block;
+  float: left;
+  width:100%;
+  min-height:40px;
+}
+.NestedAsideLink .asideName{
+  width:130px;
+  margin-left: 10px;
+}
+.sec-mid{
+  display: block;
+  left:60px;
+  right:0px;
+  top:50px;
+  min-height:calc( 100% - 50px );
+}
+

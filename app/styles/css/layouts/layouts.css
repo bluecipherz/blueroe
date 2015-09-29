@@ -1,49 +1,16 @@
-body {
-  font-size: 90%;
-  min-width: 100%;
-  min-height: 100%; }
-
-#powerProgress {
-  background: #b7007a; }
-
-/*__________________________________________________________________________________________
-                                                                                            |
-                                        MAIN SECTIONS                                       |
-____________________________________________________________________________________________|
-*/
 .sec-left {
   display: block;
   left: -140px;
   width: 200px;
   top: 50px;
   bottom: 0px;
-  background: #313131;
-  transition: left 0.5s;
-  color: #ccc;
-  padding-top: 20px;
-  font-size: 95%; }
-
-.sec-left:hover {
-  left: 0px; }
+  padding-top: 20px; }
 
 .asideButton {
   display: block;
   float: left;
   width: 100%;
   min-height: 40px; }
-
-.asideButton:hover {
-  cursor: pointer;
-  background: rgba(183, 0, 122, 0.2);
-  color: #eee; }
-
-.asideButton:hover .asideIcon img {
-  opacity: 0.7; }
-
-.asideButton,
-.asideButton:focus,
-.asideButton:active {
-  color: #ccc; }
 
 .asideName {
   display: inline-block;
@@ -64,38 +31,11 @@ ________________________________________________________________________________
   float: left;
   width: 30px;
   height: 30px;
-  margin: 5px 15px;
-  background: rgba(0, 0, 0, 0.2); }
+  margin: 5px 15px; }
 
 .asideIcon > .img > img {
   height: 30px;
-  width: 30px;
-  opacity: 0.4; }
-
-.Aside .active {
-  background: #b7007a;
-  color: #fff;
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -ms-transition: background 1s;
-  -o-transition: background 1s;
-  transition: background 1s; }
-
-.Aside .active:hover {
-  cursor: pointer;
-  background: #b7007a;
-  color: #fff;
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -ms-transition: background 1s;
-  -o-transition: background 1s;
-  transition: background 1s; }
-
-.Aside .active .asideIcon .img {
-  background: rgba(0, 0, 0, 0.3); }
-
-.Aside .active .asideIcon .img > img {
-  opacity: 0.8; }
+  width: 30px; }
 
 .NestedAsideLink,
 .asideLink {
@@ -106,7 +46,6 @@ ________________________________________________________________________________
 
 .NestedAsideLink .asideName {
   width: 130px;
-  border-left: 2px solid rgba(255, 255, 255, 0.05);
   margin-left: 10px; }
 
 .sec-mid {
@@ -114,19 +53,7 @@ ________________________________________________________________________________
   left: 60px;
   right: 0px;
   top: 50px;
-  min-height: calc( 100% - 50px );
-  background: #fff; }
-
-.listHead > div {
-  -webkit-transition: height 0.5s;
-  -moz-transition: height 0.5s;
-  -ms-transition: height 0.5s;
-  -o-transition: height 0.5s;
-  transition: height 0.5s; }
-
-.listHead .hiddenList {
-  overflow: hidden;
-  height: 0px; }
+  min-height: calc( 100% - 50px ); }
 
 .page-feeds {
   display: block;
@@ -154,9 +81,7 @@ ________________________________________________________________________________
   display: block;
   float: left;
   width: 550px;
-  min-height: 100px;
-  background: #fff;
-  color: #333333; }
+  min-height: 100px; }
 
 .postform > .heading {
   width: 100%;
@@ -168,71 +93,40 @@ ________________________________________________________________________________
   height: 30px;
   line-height: 30px;
   min-width: 60px;
-  font-size: 90%;
-  font-weight: lighter;
-  padding: 0 8px;
-  text-align: center;
-  color: #333;
-  border-bottom: 2px transparent solid; }
-
-.postform > .heading > span:hover {
-  cursor: pointer;
-  border-bottom: 2px rgba(183, 0, 122, 0.3) solid;
-  color: #111; }
-
-.postform > .heading > .active {
-  border-bottom: 2px rgba(183, 0, 122, 0.6) solid;
-  color: #111; }
-
-.postform > .heading > .active:hover {
-  cursor: default;
-  border-bottom: 2px rgba(183, 0, 122, 0.6) solid; }
+  padding: 0 8px; }
 
 .postform .cont, .postform .cont form > .head, .postform .cont form > .mid, .postform .cont form > .foot {
   display: block;
   float: left;
-  width: 100%;
-  background: #f5f5f5; }
+  width: 100%; }
 
 .postform > .cont {
   float: left;
-  width: 100%;
-  background: #f5f5f5; }
+  width: 100%; }
 
 .postform > .active {
   display: block; }
 
 .postform .cont form > .head textarea {
-  border: none;
-  outline: none;
   min-width: 100%;
   max-width: 100%;
   margin-top: 20px;
-  padding: 0 10px 0 20px;
-  resize: vertical;
-  background: #f5f5f5; }
+  padding: 0 10px 0 20px; }
 
 .postform .cont form > .head input {
-  border: #ddd 1px solid;
-  outline: none;
   width: 80%;
   max-width: 600px;
   min-width: 300px;
   margin: 20px 10px 10px 20px;
   padding: 0 10px 0 10px;
-  resize: none;
-  height: 40px;
-  background: #fff; }
+  height: 40px; }
 
 .postform .cont form > .head input[type="checkbox"] {
-  border: #ddd 1px solid;
-  outline: none;
   width: 12px;
   min-width: 12px;
   margin: 5px 10px 5px 30px;
   padding: 0;
-  height: 12px;
-  background: #fff; }
+  height: 12px; }
 
 .p-dropzone {
   display: block;
@@ -240,16 +134,12 @@ ________________________________________________________________________________
   width: 80%;
   max-width: 600px;
   min-width: 300px;
-  border: 1px dashed #aaa;
   height: 30px;
   margin: 10px 10px 10px 20px;
-  color: #888;
-  line-height: 30px;
   padding-left: 10px; }
 
 .postform .cont form > .foot {
   width: 100%;
-  background: #ddd;
   height: 30px; }
 
 .postform .cont form > .foot > button {
@@ -258,59 +148,34 @@ ________________________________________________________________________________
   font-size: 80%;
   height: 20px;
   margin: 5px 15px 5px 5px;
-  border: none;
-  background: #3ba75b;
-  color: #eee;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
-.postform .cont form > .foot > button:hover {
-  background: #5fcf80;
-  color: #fff; }
-
 .postform .cont form > .foot > div {
   float: right;
-  font-size: 80%;
   line-height: 25px;
-  background: #d0d0d0;
-  color: #444;
   width: 140px;
   margin-right: 10px; }
 
 .postform .cont form > .foot > div .text-slot {
   float: right;
-  text-align: center;
   height: 30px;
   margin: 0 5px;
-  line-height: 30px;
-  color: #444;
   width: 140px; }
 
 .postform .cont form > .foot > div > .foot {
   display: none;
   float: left;
   width: 150px;
-  margin-left: -5px;
-  border: 1px solid #aaa; }
-
-.postform .cont form > .foot > div:hover > .foot {
-  display: block;
-  cursor: pointer; }
+  margin-left: -5px; }
 
 .postform .cont form > .foot > div > .foot > span {
   display: block;
   float: left;
   width: 100%;
-  background: #eeeeee;
   padding: 5px 10px; }
-
-.postform .cont form > .foot > div > .foot > .active {
-  background: red; }
-
-.postform .cont form > .foot > div > .foot > span:hover {
-  background: #c8c8c8; }
 
 .postform .cont form > .head .half {
   display: block;
@@ -319,7 +184,6 @@ ________________________________________________________________________________
   max-width: 600px;
   min-width: 300px;
   margin: 10px 10px 10px 20px;
-  line-height: 30px;
   padding-left: 10px; }
 
 .postform .cont form > .head .half > div {
@@ -339,15 +203,12 @@ ________________________________________________________________________________
   float: left;
   width: calc(100% - 10px);
   margin-right: 10px;
-  border: #ddd 1px solid;
-  background: #fff;
   height: 30px;
   padding-left: 10px; }
 
 .feed-slot {
   display: block;
   float: left;
-  border-top: #eee solid 1px;
   min-height: 10px;
   width: 80%;
   max-width: 900px;
@@ -358,56 +219,32 @@ ________________________________________________________________________________
   display: block;
   float: left;
   width: 100%;
-  min-height: 10px;
-  border-bottom: #ddd 1px solid; }
+  min-height: 10px; }
 
 .feed-slot > .feedSet .contHead > div {
-  padding: 10px 10px 4px 10px;
-  border-bottom: 1px solid #f4f4f4;
-  color: #444; }
+  padding: 10px 10px 4px 10px; }
 
 .feed-slot > .feedSet .cont > .left > .img {
   width: 60px;
   height: 60px;
-  margin: 10px;
-  background: #aaa; }
-
-.feed-slot > .feedSet .cont > .right {
-  font-size: 90%;
-  color: #333; }
-
-.feed-slot > .feedSet .cont > .right > .head {
-  line-height: 30px;
-  color: #666; }
+  margin: 10px; }
 
 .feed-slot > .feedSet .cont > .right > .head,
 .feed-slot > .feedSet .cont > .right > .mid,
 .feed-slot > .feedSet .cont > .right > .foot {
   min-height: 0px;
   width: 100%;
-  padding-left: 10px;
-  transition: 1s; }
+  padding-left: 10px; }
 
 .feed-slot > .feedSet .cont > .right > .mid {
-  background: #fff;
   min-height: 0px;
   width: 100%;
-  padding: 2 10px; }
+  padding: 2px 10px; }
 
 .feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn,
 .feed-slot > .feedSet .cont > .right > .foot > .head .date {
   height: 30px;
-  line-height: 30px;
   padding: 0 10px; }
-
-.feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn {
-  color: #1B98C2; }
-
-.feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn:hover,
-.feed-slot > .feedSet .cont > .right > .foot > .head .date:hover {
-  cursor: pointer;
-  color: #0EAFE6;
-  text-decoration: underline; }
 
 .feed-slot > .feedSet .cont > .right > .foot > .head .date {
   color: #aaa; }
@@ -431,17 +268,8 @@ ________________________________________________________________________________
   display: block;
   float: left;
   padding: 0 6px;
-  font-size: 80%;
   height: 20px;
-  margin: 5px 15px 5px 5px;
-  border: none;
-  background: #3ba75b;
-  color: #eee;
-  border-radius: 4px; }
-
-.b-btn-sm:hover {
-  background: #5fcf80;
-  color: #fff; }
+  margin: 5px 15px 5px 5px; }
 
 .commentSet > .contSec > div {
   display: block;
@@ -449,24 +277,21 @@ ________________________________________________________________________________
   min-height: 20px;
   line-height: 30px;
   padding: 0 10px;
-  width: 100%;
-  color: #333; }
+  width: 100%; }
 
 .commentSet > .imgSec > .img {
   display: block;
   float: left;
   height: 50px;
   width: 50px;
-  margin: 5px;
-  background: #ddd; }
+  margin: 5px; }
 
 .commentSet > div > .foot > div > .date {
   display: block;
   float: left;
   height: 30px;
   line-height: 30px;
-  padding: 0 10px;
-  color: #aaa; }
+  padding: 0 10px; }
 
 .commentSet > div > .head,
 .commentSet > div > .mid {
@@ -475,23 +300,12 @@ ________________________________________________________________________________
   line-height: 20px;
   padding: 0 10px;
   margin: 0px;
-  color: #aaa;
   min-height: 20px; }
-
-.commentForm {
-  transition: .8s; }
 
 .b-link {
   display: block;
   float: left;
   height: 30px;
-  line-height: 30px;
-  padding: 0 10px;
-  color: #1B98C2; }
+  padding: 0 10px; }
 
-.b-link:hover {
-  cursor: pointer;
-  color: #0EAFE6;
-  text-decoration: underline; }
-
-/*# sourceMappingURL=application.css.map */
+/*# sourceMappingURL=layouts.css.map */

@@ -153,7 +153,8 @@ angular.module('bluroeApp')
             $('link','#cssHead').each(function(){
                 loadedTheme.push($(this).attr('id'));
             });
-                $('#cssHead').append( $('<link rel="stylesheet" type="text/css" />').attr('href', $url) );
+            
+            $('#cssHead').append( $('<link rel="stylesheet" type="text/css" />').attr('href', $url) );
 
 
         }

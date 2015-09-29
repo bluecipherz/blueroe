@@ -30,7 +30,7 @@
                                 All users
                             </div>
                             <div class="foot b-p-rel b-layer-2">
-                                <span value="0">All users</span>
+                                <span value="0" ng-click="status.project = 0">All users</span>
                                 <span ng-repeat="project in projects" value="{{ project.id }}" ng-click="status.project = project.id">{{ project.name }}</span>
                             </div>
                         </div>
@@ -164,7 +164,8 @@
 					</div>
 					<div class="right  bgrid -bg-s-80-w">
 						<div class="head">
-							<div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
+                            <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status</div>
+                            <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
 							<div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
 							<div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
 

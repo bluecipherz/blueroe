@@ -8,16 +8,37 @@
  * Factory in the bluroeApp.
  */
 angular.module('bluroeApp')
-  .factory('Status', function () {
+  .factory('Status', function ($resource, TokenHandler, Hoster) {
     // Service logic
     // ...
 
-    var meaningOfLife = 42;
+    var Status = TokenHandler.wrapActions(
+      $resource(Hoster.getHost() + '/api/statuses/:statusid'),
+      ['all', 'save', 'delete', 'update']
+    );
+    
+    var ProjectStatus = TokenHandler.wrapActions(
+      $resource(Hoster.getHost() + '/api/projects/:projectid/statuses/:statusid'),
+      ['all', 'save', 'delete', 'update']
+    );
 
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      postStatus: function (data) {
+        if(data['projectid']) {
+          console.log('poststatus projectid specified');
+          return ProjectStatus.save(data);
+        } else {
+          console.log('poststatus projectid not specified');
+          return Status.save(data);
+        }
+      },
+      deleteStatus: function(data) {
+        if(projectid in data) {
+          return ProjectStatus.delete(data);
+        } else {
+          return Status.delete(data);
+        }
       }
     };
   });

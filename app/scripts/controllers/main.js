@@ -89,7 +89,7 @@ angular.module('bluroeApp')
         //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
         //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
 
-    }).controller('TabController', function ($scope){
+    }).controller('TabController', function ($scope, Status){
         $scope.selectedTab = 1;
 
         $scope.selectTab = function(tab) {
@@ -117,9 +117,10 @@ angular.module('bluroeApp')
             console.log('poststatus');
             var data = {
                 message: $scope.status.message,
-                project: $scope.status.project
+                projectid: $scope.status.project
             };
             console.log(data);
+            Status.postStatus(data);
         }
 
         $scope.addTask = function() {

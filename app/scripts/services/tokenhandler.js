@@ -13,11 +13,12 @@ angular.module('bluroeApp')
     // ...
 
     var tokenHandler = {};
-    var token;
+    var token = false;
 
     var observerCallbacks = [];
 
     // temp login
+    if(!token)
     $http.post(Hoster.getHost() + '/api/authenticate', {email:'asd@g.com',password:'asdasd'})
         .then(function(response, status, header, config) {
             token = response.data.token;

@@ -35,14 +35,16 @@
                 console.log(results);
                 angular.forEach(results , function(value, key) {
                     value.filtered = {};
-                    if(value.type == 'ProjectCreated'){
-                        value.filtered.description = value.subject.description ;
-                    }else if(value.type == 'UserRemovedFromProject'){
-                        value.filtered.description = value.context.description ;
-                    }else if(value.type == 'TaskCreated'){
-                        value.filtered.description = value.context.description ;
-                    }else{
-                        value.filtered.description = value.context.description ;
+                    if(value.type == 'ProjectCreated') {
+                        value.filtered.description = value.subject.description;
+                    } else if(value.type == 'UserRemovedFromProject') {
+                        // value.filtered.description = value.context.description;
+                    } else if(value.type == 'TaskCreated') {
+                        // value.filtered.description = value.context.description;
+                    } else if(value.type == 'StatusPosted') {
+                        value.filtered.description = value.subject.message;
+                    } else {
+                        // value.filtered.description = value.context.description;
                     }
 
                 });

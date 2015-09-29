@@ -1,0 +1,28 @@
+@import "../base/variables";
+.sec-left{
+  background:$themeAsh;
+  transition: left 0.5s;
+  color:#ccc;
+  font-size: 95%;
+}
+.asideIcon > .img{
+  background:rgba(0,0,0,0.2);
+}
+.asideIcon > .img > img{
+  opacity:0.4;
+}
+.NestedAsideLink .asideName{
+  border-left: 2px solid rgba(255,255,255,0.05);
+}
+.listHead > div{
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+}
+.listHead .hiddenList{
+  overflow: hidden;
+  height:0px;
+}
+

@@ -1,0 +1,23 @@
+@import "../base/variables";
+.sec-left:hover{
+  left:0px;
+}
+.asideButton:hover{
+  cursor: pointer;
+  background:rgba($themeColorR,$themeColorG,$themeColorB,.2);
+  color:#eee;
+}
+.asideButton:hover .asideIcon img{
+  opacity: 0.7;
+}
+.asideButton ,
+.asideButton:focus,
+.asideButton:active{
+  color:#ccc;
+}
+.Aside .active { background: $themeColor; color:#fff;
+}
+.Aside .active:hover { cursor:pointer; background: $themeColor; color:#fff;
+}
+.Aside .active .asideIcon .img { background:rgba(0,0,0,0.3);  }
+.Aside .active .asideIcon .img > img { opacity: 0.8; }

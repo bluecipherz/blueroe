@@ -145,8 +145,8 @@ angular.module('bluroeApp')
         };
     })
     .controller('ThemesCtrl', function ($scope, sidenav, $state) {
-        $scope.themes = [{'id':'1','name':'Orange' , 'url':'styles/css/themes/orange-theme.css','color':'#ec741a'},
-                        {'id':'2','name':'Green' , 'url':'styles/css/themes/green-theme.css','color':'#55cc82'}];
+        $scope.themes = [{'id':'1','name':'Orange' , 'url':'styles/css/theme/orange-theme.css','color':'#ec741a'},
+                        {'id':'2','name':'Green' , 'url':'styles/css/theme/green-theme.css','color':'#55cc82'}];
             var loadedTheme = new Array();
         $scope.changeTheme = function($url,$id){
             $('#cssHead link').attr("disabled", "disabled");

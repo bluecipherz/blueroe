@@ -1,6 +1,6 @@
 <div class="page-feeds">
     <div class="p-feeds bgrid -bg-s-300-w">
-        <div class="postform"  ng-controller="TabController as panel" >
+        <div class="postform" ng-controller="TabController as panel" >
             <div class="heading ">
                 <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
                 <span ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
@@ -38,7 +38,7 @@
                 </form>
             </div>
             <!-- ADD TASK -->
-            <div class="cont tab2"  ng-show="isSelected(2)">
+            <div class="cont tab2" ng-show="isSelected(2)">
                 <form name="taskForm" novalidate>
                     <div class="head">
                         <input name="" placeholder="Task Title" >
@@ -76,7 +76,7 @@
                 </form>
             </div>
             <!-- UPLOAD FILES -->
-            <div class="cont tab3"  ng-show="isSelected(3)">
+            <div class="cont tab3" ng-show="isSelected(3)">
                 <form name="uploadForm">
                     <div class="mid">
                         <div class="p-dropzone" dropzone="dropzoneConfig">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="head">
-                        <textarea name="" placeholder="File description"rows="3"></textarea>
+                        <textarea name="" placeholder="File description" rows="3"></textarea>
                     </div>
                     <div class="head">
                         <div class="half">
@@ -97,7 +97,7 @@
                             <div >
                                 <div>Folder name</div>
                                 <select>
-                                    <option value="1" >Discussion</option>
+                                    <option value="1">Discussion</option>
                                 </select>
                             </div>
                         </div>
@@ -108,10 +108,10 @@
                 </form>
             </div>
             <!-- POST A MESSAGE -->
-            <div class="cont tab4"  ng-show="isSelected(4)">
+            <div class="cont tab4" ng-show="isSelected(4)">
                 <form name="forumForm">
                     <div class="head">
-                        <input name="" placeholder="Forum Title" >
+                        <input name="" placeholder="Forum Title">
                     </div>
                     <div class="mid">
                         <div class="p-dropzone" dropzone="dropzoneConfig">
@@ -149,12 +149,12 @@
 			
 		<!-- FEEDS -->	
 			
-		<div class="feed-slot bgrid ">
+		<div class="feed-slot bgrid">
             <!--FEED SET-->
 
 			<div class="feedSet" ng-repeat="feed in feeds">
 				<div  class="contHead">
-                    <div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
+                    <div  ng-show="feed.type == 'CommentPosted'">{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
                 </div>
 				<div class="cont">
 					<div class="left bgrid -bg-s-80">
@@ -162,7 +162,7 @@
 
 						</div>
 					</div>
-					<div class="right  bgrid -bg-s-80-w">
+					<div class="right bgrid -bg-s-80-w">
 						<div class="head">
                             <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status</div>
                             <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>

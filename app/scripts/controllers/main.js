@@ -69,8 +69,10 @@ angular.module('bluroeApp')
 
         $scope.postComment = function(feed) {
             console.log('MainCtrl');
-            Comment.postComment({
-                feedid:feed.id, comment:feed.comment
+            Comment.postComment({feedid:feed.id,comment:feed.comment}).$promise.then(function(result) {
+                var comment = result.comment;
+                comment.owner.email = 'asd@g.com';
+                feed.context.comments.push(comment);
             });
             feed.comment = "";
             feed.showDetails = false;
@@ -120,7 +122,7 @@ angular.module('bluroeApp')
                 projectid: $scope.status.project
             };
             console.log(data);
-            Status.postStatus(data);
+            Status.postStatus(data);po
         }
 
         $scope.addTask = function() {

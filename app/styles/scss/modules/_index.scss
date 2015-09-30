@@ -1,9 +1,11 @@
 @import "../base/variables";
+@import "../functions/baseFunctions";
 .sec-left{
   background:$themeAsh;
   transition: left 0.5s;
   color:#ccc;
   font-size: 95%;
+  @include shadow(0,0,4px,#aaa);
 }
 .asideIcon > .img{
   background:rgba(0,0,0,0.2);

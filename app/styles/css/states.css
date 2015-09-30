@@ -3,7 +3,7 @@
 
 .asideButton:hover {
   cursor: pointer;
-  background: rgba(183, 0, 122, 0.2);
+  background: rgba(231, 76, 60, 0.2);
   color: #eee; }
 
 .asideButton:hover .asideIcon img {
@@ -15,12 +15,12 @@
   color: #ccc; }
 
 .Aside .active {
-  background: #b7007a;
+  background: #e74c3c;
   color: #fff; }
 
 .Aside .active:hover {
   cursor: pointer;
-  background: #b7007a;
+  background: #e74c3c;
   color: #fff; }
 
 .Aside .active .asideIcon .img {

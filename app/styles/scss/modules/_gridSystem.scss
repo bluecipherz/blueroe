@@ -1,0 +1,6 @@
+@import "../functions/baseFunctions";
+.fluidGrid{
+  border-radius: 2px;
+  @include shadow(0,0,4px,#ddd);
+  background:#fff;
+}

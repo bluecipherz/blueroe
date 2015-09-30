@@ -4,3 +4,8 @@
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
+@mixin shadow( $hoff , $voff, $blur , $color) {
+  -webkit-box-shadow:$hoff $voff $blur $color;
+  -moz-box-shadow:$hoff $voff $blur $color;
+  box-shadow: $hoff $voff $blur $color;
+}

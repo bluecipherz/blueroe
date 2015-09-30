@@ -1,3 +1,8 @@
+.fluidGrid {
+  display: block;
+  float: left;
+  padding: 10px; }
+
 .sec-left {
   display: block;
   left: -140px;

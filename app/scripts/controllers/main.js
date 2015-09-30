@@ -39,7 +39,7 @@ angular.module('bluroeApp')
                 return this.tab === checkTab;
             };
 
-    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler) {
+    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler, Status) {
         $scope.projects = [
             {'id':'1','name':'project 1'},
             {'id':'2','name':'project 2'},
@@ -84,15 +84,28 @@ angular.module('bluroeApp')
             feed.showDetails = false;
         }
 
-        $scope.deleteComment = function(feed, comment) {
+        $scope.deleteComment = function(index, feed, comment) {
             var d = Comment.deleteComment({
                 feedid:feed.id, commentid:comment.id
             }).$promise.then(function(result) {
                 if(feed.type == 'CommentPosted') {
-                    feed.context.comments.pop(comment);
+                    feed.context.comments.splice(index, 1);
                 } else {
-                    feed.comments.pop(comment);
+                    feed.comments.splice(index, 1);
                 }
+            });
+        }
+
+        $scope.removeStatus = function(index, feed) {
+            var status = {
+                statusid: feed.subject.id
+            };
+            if(feed.project) {
+                status.projectid = feed.project.id;
+            }
+            Status.deleteStatus(status).$promise.then(function(result) {
+                $scope.feeds.splice(index, 1);
+                console.log($scope.feeds);
             });
         }
         //
@@ -102,7 +115,7 @@ angular.module('bluroeApp')
         //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
         //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
 
-    }).controller('TabController', function ($scope, Status){
+    }).controller('TabController', function ($scope, Status, Hoster){
         $scope.selectedTab = 1;
 
         $scope.selectTab = function(tab) {
@@ -114,20 +127,23 @@ angular.module('bluroeApp')
         }
 
         $scope.dropzoneConfig = {
-            'options': { // passed into the Dropzone constructor
-                'url': 'upload.php'
+            options: { // passed into the Dropzone constructor
+                url: Hoster.getHost() + '/api/attachments'
             },
-            'eventHandlers': {
-                'sending': function (file, xhr, formData) {
+            eventHandlers: {
+                sending: function (file, xhr, formData) {
                     console.log('sending');
                 },
-                'success': function (file, response) {
+                success: function (file, response) {
+                },
+                fail: function(response) {
+                    console.log('upload failed');
                 }
             }
         };
 
         $scope.postStatus = function() {
-            console.log('poststatus');
+            console.log('poststatus ' + $scope.status.project);
             var data = {
                 message: $scope.status.message,
                 projectid: $scope.status.project
@@ -135,6 +151,7 @@ angular.module('bluroeApp')
             console.log(data);
             Status.postStatus(data).$promise.then(function(results) {
                 $scope.feeds.push(results.feed)
+                $scope.status.message = "";
             });
         }
 

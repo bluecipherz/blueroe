@@ -34,7 +34,7 @@ angular.module('bluroeApp')
         }
       },
       deleteStatus: function(data) {
-        if(projectid in data) {
+        if(data['projectid']) {
           return ProjectStatus.delete(data);
         } else {
           return Status.delete(data);

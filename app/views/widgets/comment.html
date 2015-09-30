@@ -7,7 +7,7 @@
     <div class="foot">
         <div >
             <span class="date" >{{ comment.updated_at }}</span>
-            <span class="b-link" ng-click="deleteComment(feed, comment)"> Delete </span>
+            <span class="b-link" ng-click="deleteComment($index, feed, comment)"> Delete </span>
         </div>
     </div>
 </div>

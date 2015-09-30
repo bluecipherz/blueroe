@@ -2,7 +2,12 @@
 
 @import "../../base/variables";
 @import "../../functions/baseFunctions";
-
+.feedSetMain{
+  display:block;
+  float:left;
+  position:relative;
+  width:100%;
+}
 .page-feeds{
   display: block;
   float: left;

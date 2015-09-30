@@ -39,8 +39,10 @@
                         value.filtered.description = value.subject.description;
                     } else if(value.type == 'UserRemovedFromProject') {
                         // value.filtered.description = value.context.description;
+                    } else if(value.type == 'TaskCompleted') {
+                        value.filtered.description = value.subject.description;
                     } else if(value.type == 'TaskCreated') {
-                        // value.filtered.description = value.context.description;
+                        value.filtered.description = value.subject.description;
                     } else if(value.type == 'StatusPosted') {
                         value.filtered.description = value.subject.message;
                     } else {

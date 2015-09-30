@@ -13,20 +13,22 @@ angular.module('bluroeApp')
     // ...
 
     var tokenHandler = {};
-    var token = false;
+    var token;
+    var user;
 
     var observerCallbacks = [];
 
     // temp login
-    if(!token)
     $http.post(Hoster.getHost() + '/api/authenticate', {email:'asd@g.com',password:'asdasd'})
-        .then(function(response, status, header, config) {
-            token = response.data.token;
-            console.log('token : ' + token);
-            notifyObservers();
-        }, function(data, status, header, config) {
-            console.log('login error')
-        });
+      .then(function(response, status, header, config) {
+          token = response.data.token;
+          user = response.data.user;
+          console.log('token : ' + token);
+          notifyObservers();
+      }, function(data, status, header, config) {
+          console.log('login error')
+      });
+    
     // end temp login
 
     var notifyObservers = function() {
@@ -73,6 +75,9 @@ angular.module('bluroeApp')
     return {
       tokenHandler : tokenHandler,
       onTempLogin : onTempLogin,
-      wrapActions : wrapActions
+      wrapActions : wrapActions,
+      getUser : function() {
+        return user;
+      }
     };
   });

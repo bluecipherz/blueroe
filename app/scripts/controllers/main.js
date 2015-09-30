@@ -39,7 +39,7 @@ angular.module('bluroeApp')
                 return this.tab === checkTab;
             };
 
-    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment) {
+    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler) {
         $scope.projects = [
             {'id':'1','name':'project 1'},
             {'id':'2','name':'project 2'},
@@ -69,10 +69,16 @@ angular.module('bluroeApp')
 
         $scope.postComment = function(feed) {
             console.log('MainCtrl');
-            Comment.postComment({feedid:feed.id,comment:feed.comment}).$promise.then(function(result) {
+            Comment.postComment({
+                feedid:feed.id, comment:feed.comment
+            }).$promise.then(function(result) {
                 var comment = result.comment;
-                comment.owner.email = 'asd@g.com';
-                feed.context.comments.push(comment);
+                comment.owner = TokenHandler.getUser();
+                if(feed.type == 'CommentPosted') {
+                    feed.context.comments.push(comment);
+                } else {
+                    feed.comments.push(comment);
+                }
             });
             feed.comment = "";
             feed.showDetails = false;
@@ -81,8 +87,13 @@ angular.module('bluroeApp')
         $scope.deleteComment = function(feed, comment) {
             var d = Comment.deleteComment({
                 feedid:feed.id, commentid:comment.id
+            }).$promise.then(function(result) {
+                if(feed.type == 'CommentPosted') {
+                    feed.context.comments.pop(comment);
+                } else {
+                    feed.comments.pop(comment);
+                }
             });
-            $scope.feed.comments.pop(comment);
         }
         //
         //var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
@@ -122,7 +133,9 @@ angular.module('bluroeApp')
                 projectid: $scope.status.project
             };
             console.log(data);
-            Status.postStatus(data);po
+            Status.postStatus(data).$promise.then(function(results) {
+                $scope.feeds.push(results.feed)
+            });
         }
 
         $scope.addTask = function() {

@@ -1,249 +1,71 @@
-<div class="page-feeds">
-    <div class="p-feeds bgrid -bg-s-300-w">
-        <div class="postform"  ng-controller="TabController as panel" >
-            <div class="heading ">
-                <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
-                <span ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
-                <span ng-class="{active:isSelected(3)}"  ng-click="selectTab(3)" >Upload file</span>
-                <span ng-class="{active:isSelected(4)}"  ng-click="selectTab(4)" >Post a message</span>
-            </div>
-            <!-- STATUSES -->
-            <div class="cont tab1" ng-show="isSelected(1)">
-                <form name="statusForm" novalidate>
-                    <div ng-messages="statusForm.message.$error" ng-if="statusForm.$submitted">
-                        <p ng-message="minlength">Status message must be atleast 5 characters long.</p>
-                        <p ng-message="required">Status message required.</p>
-                    </div>
-                    <div class="head">
-                        <textarea name="message" placeholder="Type your message here" rows="3" ng-model="status.message" ng-minlength="5" required></textarea>
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button type="submit" ng-click="postStatus()">Submit</button>
-                        <div class="selectGrp">
-                            <input type="hidden" value="0" />
-                            <div class="text-slot">
-                                All users
-                            </div>
-                            <div class="foot b-p-rel b-layer-2">
-                                <span value="0" ng-click="status.project = 0">All users</span>
-                                <span ng-repeat="project in projects" value="{{ project.id }}" ng-click="status.project = project.id">{{ project.name }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- ADD TASK -->
-            <div class="cont tab2"  ng-show="isSelected(2)">
-                <form name="taskForm" novalidate>
-                    <div class="head">
-                        <input name="" placeholder="Task Title" >
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-                        </div>
-                    </div>
-                    <div class="head">
-                        <input type="checkbox"/><span>Make this as a Task list</span>
-                    </div>
-                    <div class="head">
-                        <textarea name="" placeholder="Type your message here" rows="3"></textarea>
-                    </div>
-                    <div class="head">
-                        <div class="half">
-                            <div >
-                                <div>Project name</div>
-                                <select>
-                                    <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
-                                </select>
-                            </div>
-                            <div >
-                                <div>Task list name</div>
-                                <select>
-                                    <option value="1" >General</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="addTask()">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <!-- UPLOAD FILES -->
-            <div class="cont tab3"  ng-show="isSelected(3)">
-                <form name="uploadForm">
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-                        </div>
-                    </div>
-                    <div class="head">
-                        <textarea name="" placeholder="File description"rows="3"></textarea>
-                    </div>
-                    <div class="head">
-                        <div class="half">
-                            <div >
-                                <div>Project name</div>
-                                <select>
-                                    <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
-                                </select>
-                            </div>
-                            <div >
-                                <div>Folder name</div>
-                                <select>
-                                    <option value="1" >Discussion</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="uploadFile()">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <!-- POST A MESSAGE -->
-            <div class="cont tab4"  ng-show="isSelected(4)">
-                <form name="forumForm">
-                    <div class="head">
-                        <input name="" placeholder="Forum Title" >
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-                        </div>
-                    </div>
-                    <div class="head">
-                        <input type="checkbox"/><span>Make this as a Task list</span>
-                    </div>
-                    <div class="head">
-                        <textarea name="" placeholder="Type your message here" rows="3"></textarea>
-                    </div>
-                    <div class="head">
-                        <div class="half">
-                            <div >
-                                <div>Project name</div>
-                                <select>
-                                    <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
-                                </select>
-                            </div>
-                            <div >
-                                <div>Select category</div>
-                                <select>
-                                    <option value="1" >General</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="postForum()">Submit</button>
-                    </div>
-                </form>
+<div class="feedSetMain">
+    <div class="RoundDropDown" >
+        <div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>
+        <div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>
+        <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
+            <button>Delete</button>
+            <button>Deleteshit</button>
+            <button>fuckme</button>
+        </div>
+    </div>
+    <div  class="contHead">
+        <div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
+    </div>
+    <div class="cont">
+        <div class="left bgrid -bg-s-80">
+            <div class="img">
+
             </div>
         </div>
+        <div class="right  bgrid -bg-s-80-w">
+            <div class="head">
+                <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status</div>
+                <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
+                <div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
+                <div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
 
-        <!-- FEEDS -->
+                <div ng-if="feed.type == 'UserRemovedFromProject'">{{ feed.origin.email }} removed {{ feed.subject.email }} from {{ feed.context.name }} project</div>
+                <div ng-if="feed.type == 'UserAddedToProject'">{{ feed.origin.email }} added {{ feed.subject.email }} to {{ feed.context.name }} project</div>
 
-        <div class="feed-slot bgrid ">
-            <!--FEED SET-->
+                <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
+                <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
 
-            <div class="feedSet" ng-repeat="feed in feeds">
-                <div  class="contHead">
-                    <div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
+                <div ng-if="feed.type == 'CommentPosted'">
+                    <div ng-if="feed.context.type == 'ProjectCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
+                    <div ng-if="feed.context.type == 'ProjectDeleted'">{{ feed.context.origin.email }} deleted {{ feed.context.subject.name }} project</div>
+                    <div ng-if="feed.context.type == 'ProjectCompleted'">{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} project</div>
+
+                    <div ng-if="feed.context.type == 'UserRemovedFromProject'">{{ feed.context.origin.email }} removed {{ feed.context.subject.email }} from {{ feed.context.name }} project</div>
+                    <div ng-if="feed.context.type == 'UserAddedToProject'">{{ feed.context.origin.email }} added {{ feed.context.subject.email }} to {{ feed.context.name }} project</div>
+
+                    <div ng-if="feed.context.type == 'TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
+                    <div ng-if="feed.context.type == 'TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} project</div>
+                    <div ng-if="feed.context.type == 'TaskCompleted'">asd{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task</div>
                 </div>
-                <div class="cont">
-                    <div class="left bgrid -bg-s-80">
-                        <div class="img">
+            </div>
 
-                        </div>
-                    </div>
-                    <div class="right  bgrid -bg-s-80-w">
-                        <div class="head">
-                            <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status</div>
-                            <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
-                            <div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
-                            <div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
-
-                            <div ng-if="feed.type == 'UserRemovedFromProject'">{{ feed.origin.email }} removed {{ feed.subject.email }} from {{ feed.context.name }} project</div>
-                            <div ng-if="feed.type == 'UserAddedToProject'">{{ feed.origin.email }} added {{ feed.subject.email }} to {{ feed.context.name }} project</div>
-
-                            <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
-                            <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} project</div>
-                            <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task</div>
-
-                            <div ng-if="feed.type == 'CommentPosted'">
-                                <div ng-if="feed.context.type == 'ProjectCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
-                                <div ng-if="feed.context.type == 'ProjectDeleted'">{{ feed.context.origin.email }} deleted {{ feed.context.subject.name }} project</div>
-                                <div ng-if="feed.context.type == 'ProjectCompleted'">{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} project</div>
-
-                                <div ng-if="feed.context.type == 'UserRemovedFromProject'">{{ feed.context.origin.email }} removed {{ feed.context.subject.email }} from {{ feed.context.name }} project</div>
-                                <div ng-if="feed.context.type == 'UserAddedToProject'">{{ feed.context.origin.email }} added {{ feed.context.subject.email }} to {{ feed.context.name }} project</div>
-
-                                <div ng-if="feed.context.type == 'TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
-                                <div ng-if="feed.context.type == 'TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} project</div>
-                                <div ng-if="feed.context.type == 'TaskCompleted'">{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task</div>
-                            </div>
-
-                        </div>
-
-                        <div class="mid">
-                            {{ feed.filtered.description }}
-                        </div>
-                        <div class="foot">
-                            <div class="head">
-                                <span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
-                            </div>
-                            <div class="comment-slot">
-                                <!--COMMENT SLOT-->
-                                <div ng-if="feed.type != 'CommentPosted'" ng-repeat="comment in feed.comments" class="commentSet">
-                                    <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
-                                        <div class="img"> </div>
-                                    </div>
-                                    <div class="contSec bgrid -bg-s-80-w">
-                                        <div class="head">{{ comment.owner.email }}</div>
-                                        <div class="mid">{{ comment.comment }}</div>
-                                        <div class="foot">
-                                            <div >
-                                                <span class="date" >{{ comment.updated_at }}</span>
-                                                <span class="b-link" ng-click="deleteComment(feed, comment)"> Delete </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div ng-if="feed.type == 'CommentPosted'" ng-repeat="comment in feed.context.comments" class="commentSet">
-                                    <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
-                                        <div class="img"> </div>
-                                    </div>
-                                    <div class="contSec bgrid -bg-s-80-w">
-                                        <div class="head">{{ comment.owner.email }}</div>
-                                        <div class="mid">{{ comment.comment }}</div>
-                                        <div class="foot">
-                                            <div >
-                                                <span class="date" >{{ comment.updated_at }}</span>
-                                                <span class="b-link" ng-click="deleteComment(feed, comment)"> Delete </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
-                                <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
-                                <div>
-                                    <button class="b-btn-sm" ng-click="postComment(feed)">Submit</button>
-                                </div>
-                            </div>
-                        </div>
+            <div class="mid">
+                {{ feed.filtered.description }}
+            </div>
+            <div class="foot">
+                <div class="head">
+                    <span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
+                </div>
+                <div class="comment-slot">
+                    <!--COMMENT SLOT-->
+                    <comment ng-if="feed.type != 'CommentPosted'" ng-repeat="comment in feed.comments" class="commentSet">
+                    </comment>
+                    <comment ng-if="feed.type == 'CommentPosted'" ng-repeat="comment in feed.context.comments" class="commentSet">
+                    </comment>
+                </div>
+                <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
+                    <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
+                    <div>
+                        <button class="b-btn-sm" ng-click="postComment(feed)">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bgrid right-side -bg-s-300">
-        <div ng-click="loadNewFilter()">LoadNew</div>
-    </div>
+    </div
 </div>

@@ -1,0 +1,13 @@
+<div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
+    <div class="img"> </div>
+</div>
+<div class="contSec bgrid -bg-s-80-w">
+    <div class="head">{{ comment.owner.email }}</div>
+    <div class="mid">{{ comment.comment }}</div>
+    <div class="foot">
+        <div >
+            <span class="date" >{{ comment.updated_at }}</span>
+            <span class="b-link" ng-click="deleteComment(feed, comment)"> Delete </span>
+        </div>
+    </div>
+</div>

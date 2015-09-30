@@ -54,6 +54,7 @@ angular.module('bluroeApp')
             feedFactory.getFeeds().then(function(results) {
                 console.log(results);
                 $scope.feeds = results;
+                console.log(results);
             }, function(error) { // Check for errors
                 console.log(error);
             });

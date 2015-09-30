@@ -1,7 +1,72 @@
 .fluidGrid {
   display: block;
+  position: relative;
   float: left;
+  padding: 10px;
+  width: 100%;
+  height: 100%; }
+
+.flexPage {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
   padding: 10px; }
+  .flexPage .flex-1, .flexPage .flex-2, .flexPage .flex-3, .flexPage .flex-4, .flexPage .flex-5,
+  .flexPage .flex-6, .flexPage .flex-7, .flexPage .flex-8, .flexPage .flex-9, .flexPage .flex-10 {
+    display: block;
+    float: left; }
+  .flexPage .flex-1 {
+    width: 10%; }
+  .flexPage .flex-2 {
+    width: 20%; }
+  .flexPage .flex-3 {
+    width: 30%; }
+  .flexPage .flex-4 {
+    width: 40%; }
+  .flexPage .flex-5 {
+    width: 50%; }
+  .flexPage .flex-6 {
+    width: 60%; }
+  .flexPage .flex-7 {
+    width: 70%; }
+  .flexPage .flex-8 {
+    width: 80%; }
+  .flexPage .flex-9 {
+    width: 90%; }
+  .flexPage .flex-10 {
+    width: 100%; }
+  .flexPage .-m {
+    margin: 5px; }
+  .flexPage .-p {
+    padding: 5px; }
+  .flexPage .-a {
+    width: 100%;
+    height: 100%; }
+  .flexPage .-h-50 {
+    height: 50px; }
+  .flexPage .-h-100 {
+    height: 100px; }
+  .flexPage .-h-150 {
+    height: 150px; }
+  .flexPage .-h-200 {
+    height: 200px; }
+  .flexPage .-h-250 {
+    height: 250px; }
+  .flexPage .-h-300 {
+    height: 300px; }
+  .flexPage .-h-350 {
+    height: 350px; }
+  .flexPage .-h-400 {
+    height: 400px; }
+  .flexPage .-h-450 {
+    height: 450px; }
+  .flexPage .-h-500 {
+    height: 500px; }
+  .flexPage .-h-550 {
+    height: 550px; }
+  .flexPage .-h-600 {
+    height: 600px; }
 
 .sec-left {
   display: block;
@@ -74,6 +139,8 @@
   right: 0px;
   min-height: 900px; }
 
+/* Colors */
+/* images */
 .projects .head, .projects .mid {
   display: block;
   float: left;

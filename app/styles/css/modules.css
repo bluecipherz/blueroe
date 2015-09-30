@@ -1,0 +1,46 @@
+.sec-left {
+  background: #313131;
+  transition: left 0.5s;
+  color: #ccc;
+  font-size: 95%; }
+
+.asideIcon > .img {
+  background: rgba(0, 0, 0, 0.2); }
+
+.asideIcon > .img > img {
+  opacity: 0.4; }
+
+.NestedAsideLink .asideName {
+  border-left: 2px solid rgba(255, 255, 255, 0.05); }
+
+.listHead > div {
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s; }
+
+.listHead .hiddenList {
+  overflow: hidden;
+  height: 0px; }
+
+.BCZIcon {
+  text-align: center;
+  line-height: 50px;
+  color: #b7007a;
+  font-family: Dosis;
+  font-size: 130%;
+  font-weight: 500; }
+
+.projects {
+  color: #555; }
+  .projects .mid th {
+    color: #3faac9;
+    font-weight: 300;
+    background: #e8eef3; }
+  .projects .mid td {
+    padding: 10px; }
+  .projects .mid tr:nth-child(1) {
+    border-bottom: 1px solid #ddd; }
+
+/*# sourceMappingURL=modules.css.map */

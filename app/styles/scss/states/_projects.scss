@@ -1,0 +1,7 @@
+@import '../base/variables';
+.projects {
+  .mid {
+    tr:nth-child(1):hover{ cursor: default; background:#e8eef3;  }
+    tr:hover{ cursor: pointer; background:#f2f6f9;  }
+  }
+}

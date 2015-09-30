@@ -159,7 +159,6 @@ angular.module('bluroeApp')
             
             $('#cssHead').append( $('<link rel="stylesheet" type="text/css" />').attr('href', $url) );
 
-
         }
         $scope.disableTheme = function(){
             $('#cssHead link').attr("disabled", "disabled");

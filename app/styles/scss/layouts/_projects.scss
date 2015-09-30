@@ -1,0 +1,18 @@
+@import '../base/variables';
+.projects {
+  .head, .mid{
+    display: block;
+    float: left;
+    width: 100%;
+    padding:20px 30px;
+  }
+  .mid {
+    table{
+      width: 100%;
+    }
+    th{
+      padding:10px;
+    }
+    td{  padding:10px;  }
+  }
+}

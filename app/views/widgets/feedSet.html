@@ -3,9 +3,7 @@
         <div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>
         <div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>
         <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
-            <button>Delete</button>
-            <button>Deleteshit</button>
-            <button>fuckme</button>
+            <button ng-if="feed.type == 'StatusPosted'" ng-click="removeStatus($index, feed)">Delete</button>
         </div>
     </div>
     <div  class="contHead">
@@ -19,7 +17,7 @@
         </div>
         <div class="right  bgrid -bg-s-80-w">
             <div class="head">
-                <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status</div>
+                <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status <span ng-if="feed.project">in {{ feed.project.name }}</span></div>
                 <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
                 <div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
                 <div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
@@ -39,14 +37,17 @@
                     <div ng-if="feed.context.type == 'UserRemovedFromProject'">{{ feed.context.origin.email }} removed {{ feed.context.subject.email }} from {{ feed.context.name }} project</div>
                     <div ng-if="feed.context.type == 'UserAddedToProject'">{{ feed.context.origin.email }} added {{ feed.context.subject.email }} to {{ feed.context.name }} project</div>
 
-                    <div ng-if="feed.context.type == 'TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
-                    <div ng-if="feed.context.type == 'TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} project</div>
-                    <div ng-if="feed.context.type == 'TaskCompleted'">asd{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task</div>
+                    <div ng-if="feed.context.type == 'TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} task <span ng-if="feed.project">in {{ feed.project.name }}</span></div>
+                    <div ng-if="feed.context.type == 'TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} task </div>
+                    <div ng-if="feed.context.type == 'TaskCompleted'">asd{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task </div>
                 </div>
             </div>
 
             <div class="mid">
-                {{ feed.filtered.description }}
+                <span ng-if="feed.type == 'ProjectCreated'">{{ feed.subject.description }}</span>
+                <span ng-if="feed.type == 'TaskCreated'">{{ feed.subject.description }}</span>
+                <span ng-if="feed.type == 'TaskCompleted'">{{ feed.subject.description }}</span>
+                <span ng-if="feed.type == 'StatusPosted'">{{ feed.subject.message }}</span>
             </div>
             <div class="foot">
                 <div class="head">

@@ -1,5 +1,8 @@
 <div class="projects">
-    <div class="head">View by Group</div>
+    <div class="head">
+        View by Group
+        <button>New Project</button>
+    </div>
     <div class="mid">
         <table>
             <tr>
@@ -11,10 +14,10 @@
             </tr>
             <tr ng-repeat="project in projectList">
                 <td>{{project.name}}</td>
-                <td>{{project.owner}}</td>
-                <td>{{project.task}} / {{project.completedTask}}</td>
-                <td>{{project.mileStone}} / {{project.completedMileStone}}</td>
-                <td>0</td>
+                <td>{{project.owner.email}}</td>
+                <td>{{project.completedTasks}} / {{project.tasks.length}}</td>
+                <td>{{project.completedMilestones}} / {{project.milestones.length}}</td>
+                <td>{{project.projectCompletion}} %</td>
             </tr>
         </table>
     </div>

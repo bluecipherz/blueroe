@@ -48,20 +48,17 @@ angular.module('bluroeApp')
 
         $scope.feeds = [];
 
-        // Fetches the time entries from the static JSON file
-        // and puts the results on the vm.timeentries array
         var updateFeeds = function() {
-            feedFactory.getFeeds().then(function(results) {
-                console.log(results);
-                $scope.feeds = results;
-            }, function(error) { // Check for errors
-                console.log(error);
-            });
+            $scope.feeds = feedFactory.getFeeds();
         }
 
-        feedFactory.onFetchFeeds(updateFeeds);
-        
-        AsideBarServ.setAside('Hello');
+        if(feedFactory.feedsAlreadyFetched()) {
+            console.log('feeds already fetched');
+            updateFeeds();
+        } else {
+            console.log('fetching feeds');
+            feedFactory.onFetchFeeds(updateFeeds);
+        }
 
         $scope.loadNewFilter = function (){
             AsideBarServ.updateAside;
@@ -157,6 +154,10 @@ angular.module('bluroeApp')
 
         $scope.addTask = function() {
             console.log('addtask')
+        }
+
+        $scope.addMilestone = function() {
+            console.log('addmilestone')
         }
 
         $scope.uploadFile = function() {

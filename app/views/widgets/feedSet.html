@@ -27,7 +27,7 @@
 
                 <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
                 <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
-                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project }}</div>
 
                 <div ng-if="feed.type == 'CommentPosted'">
                     <div ng-if="feed.context.type == 'ProjectCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>

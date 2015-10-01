@@ -1,41 +1,15 @@
-<<<<<<< HEAD
-
-<div class="page-feeds">
-    <div class="p-feeds bgrid -bg-s-300-w">
-        <div class="postform"  ng-controller="TabController as panel" >
-            <div class="heading ">
-                <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
-                <span ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
-                <span ng-class="{active:isSelected(3)}"  ng-click="selectTab(3)" >Add MileStone</span>
-                <span ng-class="{active:isSelected(4)}"  ng-click="selectTab(4)" >Upload file</span>
-                <span ng-class="{active:isSelected(5)}"  ng-click="selectTab(5)" >Post a message</span>
-            </div>
-            <!-- STATUSES -->
-            <div class="cont tab1" ng-show="isSelected(1)">
-                <form name="statusForm" novalidate>
-                    <div ng-messages="statusForm.message.$error" ng-if="statusForm.$submitted">
-                        <p ng-message="minlength">Status message must be atleast 5 characters long.</p>
-                        <p ng-message="required">Status message required.</p>
-                    </div>
-                    <div class="head">
-                        <textarea name="message" placeholder="Type your message here" rows="3" ng-model="status.message" ng-minlength="5" required></textarea>
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-=======
 <div class="flexPage ">
     <div class="flex-5 -p">
         <div class="fluidGrid">
             <div class="page-feeds ">
                 <div class="p-feeds bgrid ">
                     <div class="postform"  ng-controller="TabController as panel" >
-                        <div class="heading ">
+                        <div class="heading">
                             <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
                             <span ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
-                            <span ng-class="{active:isSelected(3)}"  ng-click="selectTab(3)" >Upload file</span>
-                            <span ng-class="{active:isSelected(4)}"  ng-click="selectTab(4)" >Post a message</span>
->>>>>>> 936cbd1451366225dac4bca8c662e482f03afdcb
+                            <span ng-class="{active:isSelected(3)}"  ng-click="selectTab(3)" >Add MileStone</span>
+                            <span ng-class="{active:isSelected(4)}"  ng-click="selectTab(4)" >Upload file</span>
+                            <span ng-class="{active:isSelected(5)}"  ng-click="selectTab(5)" >Post a message</span>
                         </div>
                         <!-- STATUSES -->
                         <div class="cont tab1" ng-show="isSelected(1)">
@@ -105,51 +79,37 @@
                                 </div>
                             </form>
                         </div>
-<<<<<<< HEAD
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="addTask()">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <!-- ADD MILESTONE -->
-            <div class="cont tab2"  ng-show="isSelected(3)">
-                <form name="milestoneForm" novalidate>
-                    <div class="head">
-                        <input name="" placeholder="Milestone Title" >
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
+                        <!-- ADD MILESTONE -->
+                        <div class="cont tab2"  ng-show="isSelected(3)">
+                            <form name="milestoneForm" novalidate>
+                                <div class="head">
+                                    <input name="" placeholder="Milestone Title" >
+                                </div>
+                                <div class="mid">
+                                    <div class="p-dropzone" dropzone="dropzoneConfig">
+                                        Drop your files here
+                                    </div>
+                                </div>
+                                <div class="head">
+                                    <textarea name="" placeholder="Type your message here" rows="3"></textarea>
+                                </div>
+                                <div class="head">
+                                    <div class="half">
+                                        <div >
+                                            <div>Project name</div>
+                                            <select>
+                                                <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="foot b-layer-3">
+                                    <button ng-click="addMilestone()">Submit</button>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                    <div class="head">
-                        <textarea name="" placeholder="Type your message here" rows="3"></textarea>
-                    </div>
-                    <div class="head">
-                        <div class="half">
-                            <div >
-                                <div>Project name</div>
-                                <select>
-                                    <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="addMilestone()">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <!-- UPLOAD FILES -->
-            <div class="cont tab3"  ng-show="isSelected(4)">
-                <form name="uploadForm">
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-=======
                         <!-- UPLOAD FILES -->
-                        <div class="cont tab3"  ng-show="isSelected(3)">
+                        <div class="cont tab3"  ng-show="isSelected(4)">
                             <form name="uploadForm">
                                 <div class="mid">
                                     <div class="p-dropzone" dropzone="dropzoneConfig">
@@ -179,10 +139,9 @@
                                     <button ng-click="uploadFile()">Submit</button>
                                 </div>
                             </form>
->>>>>>> 936cbd1451366225dac4bca8c662e482f03afdcb
                         </div>
                         <!-- POST A MESSAGE -->
-                        <div class="cont tab4"  ng-show="isSelected(4)">
+                        <div class="cont tab4"  ng-show="isSelected(5)">
                             <form name="forumForm">
                                 <div class="head">
                                     <input name="" placeholder="Forum Title" >
@@ -232,7 +191,6 @@
                 </div>
 
             </div>
-<<<<<<< HEAD
             <!-- POST A MESSAGE -->
             <div class="cont tab4"  ng-show="isSelected(5)">
                 <form name="forumForm">
@@ -267,9 +225,8 @@
                         <button ng-click="postForum()">Submit</button>
                     </div>
                 </form>
-=======
+            </div>
         </div>
-    </div>
 
     <div class="flex-5 -p">
         <div class="fluidGrid -h-200 grey">
@@ -280,8 +237,6 @@
     <div class="flex-5">
         <div class="flex-5 -p">
             <div class="fluidGrid -h-200 greenBlue">
-
->>>>>>> 936cbd1451366225dac4bca8c662e482f03afdcb
             </div>
         </div>
         <div class="flex-5 -p ">

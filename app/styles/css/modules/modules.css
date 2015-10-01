@@ -1,8 +1,13 @@
+/* Colors */
+/* images */
 .sec-left {
   background: #313131;
-  transition: left 0.5s;
+  transition: left 0.3s;
   color: #ccc;
-  font-size: 95%; }
+  font-size: 95%;
+  -webkit-box-shadow: 0 0 4px #aaa;
+  -moz-box-shadow: 0 0 4px #aaa;
+  box-shadow: 0 0 4px #aaa; }
 
 .asideIcon > .img {
   background: rgba(0, 0, 0, 0.2); }
@@ -24,155 +29,12 @@
   overflow: hidden;
   height: 0px; }
 
-.postform {
-  background: #fff;
-  color: #333333; }
-
-.postform > .heading > span {
-  line-height: 30px;
-  font-size: 90%;
-  font-weight: lighter;
+.BCZIcon {
   text-align: center;
-  color: #333;
-  border-bottom: 2px transparent solid; }
-
-.postform .cont, .postform .cont form > .head, .postform .cont form > .mid, .postform .cont form > .foot {
-  background: #f5f5f5; }
-
-.postform > .cont {
-  background: #f5f5f5; }
-
-.postform .cont form > .head textarea {
-  border: none;
-  outline: none;
-  resize: vertical;
-  background: #f5f5f5; }
-
-.postform .cont form > .head input {
-  resize: none; }
-
-.postform .cont form > .head input,
-.postform .cont form > .head input[type="checkbox"] {
-  border: #ddd 1px solid;
-  outline: none; }
-
-.p-dropzone {
-  border: 1px dashed #aaa;
-  color: #888;
-  line-height: 30px; }
-
-.postform .cont form > .foot {
-  width: 100%;
-  background: #ddd;
-  height: 30px; }
-
-.postform .cont form > .foot > button {
-  font-size: 80%;
-  border: none;
-  background: #3ba75b;
-  color: #eee;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px; }
-
-.postform .cont form > .foot > button:hover {
-  background: #5fcf80;
-  color: #fff; }
-
-.postform .cont form > .foot > div {
-  font-size: 80%;
-  line-height: 25px;
-  background: #d0d0d0;
-  color: #444; }
-
-.postform .cont form > .foot > div .text-slot {
-  text-align: center;
-  line-height: 30px;
-  color: #444; }
-
-.postform .cont form > .foot > div > .foot {
-  border: 1px solid #aaa; }
-
-.postform .cont form > .foot > div:hover > .foot {
-  cursor: pointer; }
-
-.postform .cont form > .foot > div > .foot > span {
-  background: #eeeeee; }
-
-.postform .cont form > .head .half {
-  line-height: 30px; }
-
-.postform .cont form > .head .half > div > select {
-  border: #ddd 1px solid;
-  background: #fff; }
-
-.feed-slot {
-  border-top: #eee solid 1px; }
-
-.feed-slot > .feedSet {
-  border-bottom: #ddd 1px solid; }
-
-.feed-slot > .feedSet .contHead > div {
-  border-bottom: 1px solid #f4f4f4;
-  color: #444; }
-
-.feed-slot > .feedSet .cont > .left > .img {
-  background: #aaa; }
-
-.feed-slot > .feedSet .cont > .right {
-  font-size: 90%;
-  color: #333; }
-
-.feed-slot > .feedSet .cont > .right > .head {
-  line-height: 30px;
-  color: #666; }
-
-.feed-slot > .feedSet .cont > .right > .head,
-.feed-slot > .feedSet .cont > .right > .mid,
-.feed-slot > .feedSet .cont > .right > .foot {
-  transition: 1s; }
-
-.feed-slot > .feedSet .cont > .right > .mid {
-  background: #fff; }
-
-.feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn,
-.feed-slot > .feedSet .cont > .right > .foot > .head .date {
-  line-height: 30px; }
-
-.feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn {
-  color: #1B98C2; }
-
-.feed-slot > .feedSet .cont > .right > .foot > .head .date {
-  color: #aaa; }
-
-.b-btn-sm {
-  font-size: 80%;
-  border: none;
-  background: #3ba75b;
-  color: #eee;
-  border-radius: 4px; }
-
-.commentSet > .contSec > div {
-  line-height: 30px;
-  color: #333; }
-
-.commentSet > .imgSec > .img {
-  background: #ddd; }
-
-.commentSet > div > .foot > div > .date {
-  line-height: 30px;
-  color: #aaa; }
-
-.commentSet > div > .head,
-.commentSet > div > .mid {
-  line-height: 20px;
-  color: #aaa; }
-
-.commentForm {
-  transition: .8s; }
-
-.b-link {
-  color: #1B98C2; }
+  line-height: 50px;
+  color: #e74c3c;
+  font-family: Dosis;
+  font-size: 130%;
+  font-weight: 500; }
 
 /*# sourceMappingURL=modules.css.map */

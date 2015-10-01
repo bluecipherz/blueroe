@@ -1,10 +1,32 @@
 @charset "UTF-8";
-$themeColor : #b7007a;
-  $themeColorR : 183;
-  $themeColorG : 0;
-  $themeColorB : 122;
+$themeColor : #e74c3c;
+    $themeColorR : 231;
+    $themeColorG : 76;
+    $themeColorB : 60;
 $themeDark : #3d0042;
 $themeAsh : #313131;
 $defFont : #555;
 
 $teal:#3faac9;
+
+/* Colors */
+
+$blue:#3498db;
+    $blueR:52;
+    $blueG:152;
+    $blueB:219;
+
+$asphalt:#34495e;
+$yellow :#f1c40f;
+$greenBlue : #1abc9c;
+$green : #27ae60;
+$red : #c0392b;
+$orange : #e67e22;
+$grey : #95a5a6;
+$cloud : #ecf0f1;
+
+/* images */
+
+$bg1 : '../../images/backgrounds/1.jpg';
+$bg2 : '../../images/backgrounds/2.jpg';
+$bg3 : '../../images/backgrounds/3.jpg';

@@ -3,16 +3,16 @@
 @import "../../functions/baseFunctions";
 .postform > .heading > span:hover{
   cursor: pointer;
-  border-bottom:2px rgba($themeColorR,$themeColorG,$themeColorB,.3) solid;
+  border-bottom:2px rgba($blueR,$blueG,$blueB,.3) solid;
   color:#111;
 }
 .postform > .heading > .active{
-  border-bottom:2px rgba($themeColorR,$themeColorG,$themeColorB,.6) solid;
+  border-bottom:2px rgba($blueR,$blueG,$blueB,.6) solid;
   color:#111;
 }
 .postform > .heading > .active:hover{
   cursor: default;
-  border-bottom:2px rgba($themeColorR,$themeColorG,$themeColorB,.6) solid;
+  border-bottom:2px rgba($blueR,$blueG,$blueB,.6) solid;
 }
 .postform .cont form > .foot > button:hover{
   background: #5fcf80;
@@ -22,11 +22,15 @@
   display:block;
   cursor: pointer;
 }
+.postform .cont form > .foot > div:hover{
+   @include shadow(0,0,5px,#ccc);
+}
 .postform .cont form > .foot > div > .foot > .active{
   background: red;
 }
 .postform .cont form > .foot > div > .foot > span:hover{
-  background: #c8c8c8;
+  background: rgba($blueR,$blueG,$blueB,1);
+  color:#fff;
 }
 .feed-slot > .feedSet .cont> .right > .foot > .head .cnmtBtn:hover,
 .feed-slot > .feedSet .cont> .right > .foot > .head .date:hover {

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAQA,cAAc;EACZ,UAAU,EARE,OAAO",
-"sources": ["../../scss/theme/default-theme.scss"],
+"mappings": ";;AACA,cAAc;EACZ,UAAU,ECDE,OAAO",
+"sources": ["../../scss/theme/default-theme.scss","../../scss/base/_variables.scss"],
 "names": [],
 "file": "default-theme.css"
 }

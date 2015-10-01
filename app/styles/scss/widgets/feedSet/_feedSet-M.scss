@@ -15,16 +15,16 @@
   border-bottom:2px transparent solid;
 }
 .postform .cont,.postform .cont form > .head,.postform .cont form > .mid,.postform .cont form > .foot{
-  background:#f5f5f5;
+  background:rgba($blueR,$blueG,$blueB,0.02);
 }
 .postform > .cont {
-  background:#f5f5f5;
+  background:rgba($blueR,$blueG,$blueB,0.02);
 }
 .postform .cont form > .head textarea{
   border:none;
   outline: none;
   resize: vertical;
-  background:#f5f5f5;
+  background:rgba($blueR,$blueG,$blueB,0.02);
 }
 .postform .cont form > .head input{
   resize: none;
@@ -41,7 +41,7 @@
 }
 .postform .cont form > .foot{
   width: 100%;
-  background:#ddd;
+  background:rgba($blueR,$blueG,$blueB,0.2);
   height:30px;
 }
 .postform .cont form > .foot > button{
@@ -51,14 +51,10 @@
   color:#eee;
   @include border-radius(4px);
 }
-.postform .cont form > .foot > button:hover{
-  background: #5fcf80;
-  color:#fff;
-}
 .postform .cont form > .foot > div{
   font-size: 80%;
   line-height: 25px;
-  background: #d0d0d0;
+  background: rgba($blueR,$blueG,$blueB,0.3);
   color:#444;
 }
 .postform .cont form > .foot > div .text-slot{
@@ -67,13 +63,9 @@
   color:#444;
 }
 .postform .cont form > .foot > div > .foot{
-  border:1px solid #aaa;
-}
-.postform .cont form > .foot > div:hover > .foot{
-  cursor: pointer;
 }
 .postform .cont form > .foot > div > .foot > span{
-  background: #eeeeee;
+  background: #fff;
 }
 
 .postform .cont form > .head .half{

@@ -1,8 +1,43 @@
+/* Colors */
+/* images */
+.fluidGrid {
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 4px #ddd;
+  -moz-box-shadow: 0 0 4px #ddd;
+  box-shadow: 0 0 4px #ddd;
+  background: #fff; }
+
+.asphalt {
+  background: #34495e; }
+
+.yellow {
+  background: #f1c40f; }
+
+.greenBlue {
+  background: #1abc9c; }
+
+.green {
+  background: #27ae60; }
+
+.red {
+  background: #c0392b; }
+
+.orange {
+  background: #e67e22; }
+
+.grey {
+  background: #95a5a6; }
+
+/* Colors */
+/* images */
 .sec-left {
   background: #313131;
-  transition: left 0.5s;
+  transition: left 0.3s;
   color: #ccc;
-  font-size: 95%; }
+  font-size: 95%;
+  -webkit-box-shadow: 0 0 4px #aaa;
+  -moz-box-shadow: 0 0 4px #aaa;
+  box-shadow: 0 0 4px #aaa; }
 
 .asideIcon > .img {
   background: rgba(0, 0, 0, 0.2); }
@@ -27,11 +62,13 @@
 .BCZIcon {
   text-align: center;
   line-height: 50px;
-  color: #b7007a;
+  color: #e74c3c;
   font-family: Dosis;
   font-size: 130%;
   font-weight: 500; }
 
+/* Colors */
+/* images */
 .projects {
   color: #555; }
   .projects .mid th {

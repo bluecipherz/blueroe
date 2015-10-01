@@ -189,45 +189,9 @@
                         </feed>
                     </div>
                 </div>
-
             </div>
-            <!-- POST A MESSAGE -->
-            <div class="cont tab4"  ng-show="isSelected(5)">
-                <form name="forumForm">
-                    <div class="head">
-                        <input name="" placeholder="Forum Title" >
-                    </div>
-                    <div class="mid">
-                        <div class="p-dropzone" dropzone="dropzoneConfig">
-                            Drop your files here
-                        </div>
-                    </div>
-                    <div class="head">
-                        <textarea name="" placeholder="Type your message here" rows="3"></textarea>
-                    </div>
-                    <div class="head">
-                        <div class="half">
-                            <div >
-                                <div>Project name</div>
-                                <select>
-                                    <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
-                                </select>
-                            </div>
-                            <div >
-                                <div>Select category</div>
-                                <select>
-                                    <option value="1" >General</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="foot b-layer-3">
-                        <button ng-click="postForum()">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
 
+            
     <div class="flex-5 -p">
         <div class="fluidGrid -h-200 grey">
 

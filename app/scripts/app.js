@@ -31,12 +31,18 @@ angular
           controller: 'ThemesCtrl',
           controllerAs: 'Themes'
         })
-          .state('projects', {
-              url: '/projects',
-              templateUrl: 'views/projects.html',
-              controller: 'ProjectsCtrl',
-              controllerAs: 'projects'
-          });
+        .state('projects', {
+            url: '/projects',
+            templateUrl: 'views/projects.html',
+            controller: 'ProjectsCtrl',
+            controllerAs: 'projects'
+        })
+        .state('projectShow', {
+            url: '/projects/:id',
+            templateUrl: 'views/project.show.html',
+            controller: 'ProjectsCtrl',
+            controllerAs: 'projects'
+        });
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$stateChangeStart', function() {

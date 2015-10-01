@@ -35,7 +35,7 @@ angular.module('bluroeApp')
     var notifyObservers = function() {
       angular.forEach(observers, function(callback) {
         callback();
-      })
+      });
     };
 
     var setProjects = function(projectList) {

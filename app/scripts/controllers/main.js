@@ -39,16 +39,22 @@ angular.module('bluroeApp')
                 return this.tab === checkTab;
             };
 
-    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler, Status) {
-
-        $scope.projects = [
-            {'id':'1','name':'project 1'},
-            {'id':'2','name':'project 2'},
-            {'id':'3','name':'project 3'}
-        ];
+    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler, Status, Project) {
+        $scope.projects = [];
 
         $scope.feeds = [];
 
+        var updateProjects = function() {
+            $scope.projects = Project.getProjects();
+            // console.log($scope.projects);
+        }
+
+        if(Project.alreadyFetched()) {
+            updateProjects();
+        } else {
+            Project.onFetchProjects(updateProjects);
+        }
+        
         var updateFeeds = function() {
             $scope.feeds = feedFactory.getFeeds();
             console.log(feedFactory.getFeeds());

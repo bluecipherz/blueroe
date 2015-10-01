@@ -4,6 +4,7 @@
         <!--<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>-->
         <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
             <button ng-if="feed.type == 'StatusPosted'" ng-click="removeStatus($index, feed)">Delete</button>
+            <button ng-if="feed.subject_type == 'App\\Task'">Change Completion</button>
         </div>
     </div>
     <div  class="contHead">

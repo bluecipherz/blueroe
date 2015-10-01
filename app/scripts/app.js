@@ -37,7 +37,6 @@ angular
               controller: 'ProjectsCtrl',
               controllerAs: 'projects'
           });
-
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$stateChangeStart', function() {

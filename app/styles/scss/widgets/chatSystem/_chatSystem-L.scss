@@ -1,0 +1,13 @@
+.chatSystem{
+	display:block;
+	float:left;
+	position:fixed;
+	right:-250px;
+	top:50px;
+	bottom:0px;
+	width:300px;
+	z-index:3;
+}
+.chatSystemAct{
+	right:0px;
+}

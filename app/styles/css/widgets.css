@@ -426,7 +426,8 @@
   background: red; }
 
 .postform .cont form > .foot > div > .foot > span:hover {
-  background: rgba(52, 152, 219, 0.01); }
+  background: #3498db;
+  color: #fff; }
 
 .feed-slot > .feedSet .cont > .right > .foot > .head .cnmtBtn:hover,
 .feed-slot > .feedSet .cont > .right > .foot > .head .date:hover {
@@ -442,5 +443,21 @@
   cursor: pointer;
   color: #0EAFE6;
   text-decoration: underline; }
+
+.chatSystem {
+  display: block;
+  float: left;
+  position: fixed;
+  right: -250px;
+  top: 50px;
+  bottom: 0px;
+  width: 300px;
+  z-index: 3; }
+
+.chatSystemAct {
+  right: 0px; }
+
+.chatSystem {
+  background: red; }
 
 /*# sourceMappingURL=widgets.css.map */

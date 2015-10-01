@@ -29,7 +29,8 @@
   background: red;
 }
 .postform .cont form > .foot > div > .foot > span:hover{
-  background: rgba($blueR,$blueG,$blueB,0.01);
+  background: rgba($blueR,$blueG,$blueB,1);
+  color:#fff;
 }
 .feed-slot > .feedSet .cont> .right > .foot > .head .cnmtBtn:hover,
 .feed-slot > .feedSet .cont> .right > .foot > .head .date:hover {

@@ -8,11 +8,19 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('ProjectsCtrl', function ($scope) {
-        var projects = [{'name':'Bluroe','owner':'shaaji','task':'7','completedTask':'4','mileStone':'4','completedMileStone':'1'},
-                        {'name':'Linkon','owner':'Basi','task':'5','completedTask':'3','mileStone':'15','completedMileStone':'11'},
-                        {'name':'Urban Cartel','owner':'Roshan','task':'20','completedTask':'2','mileStone':'25','completedMileStone':'8'}];
+  .controller('ProjectsCtrl', function ($scope, Project) {
 
-        $scope.projectList = projects;
-        console.log('hello');
+  		$scope.projectList = [];
+
+  		if(Project.alreadyFetched()) {
+  			console.log('projects already fetched');
+  			updateProjects();
+  		} else {
+  			console.log('fetching projects');
+	  		Project.onFetchProjects(updateProjects);
+  		}
+
+  		function updateProjects() {
+  			$scope.projectList = Project.getProjects();
+  		}
     });

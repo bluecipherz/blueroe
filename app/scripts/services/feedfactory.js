@@ -14,12 +14,22 @@
 
     var observerCallbacks = [];
 
-    var Feed = $resource(Hoster.getHost() + '/api/me/feeds');
+    var reloadEverytime = false;
 
-    TokenHandler.onTempLogin(function() {
-        Feed = TokenHandler.wrapActions(Feed, ['query']); // auto inject auth token to requests
-        notifyObservers();
-    });
+    var fetched = false;
+
+    var feeds;
+
+    var Feed = TokenHandler.wrapActions(
+        $resource(Hoster.getHost() + '/api/me/feeds'),
+        ['query']
+    );
+
+    if(TokenHandler.isTempLogged()) {
+        fetchFeeds();
+    } else {
+        TokenHandler.onTempLogin(fetchFeeds);
+    }
 
     var notifyObservers = function() {
         angular.forEach(observerCallbacks, function(callback) {
@@ -27,23 +37,27 @@
         });
     };
 
+    function fetchFeeds() {
+        Feed.query().$promise.then(function(results) {
+            feeds = results;
+            fetched = true;
+            notifyObservers();
+        });
+    }
 
     function getFeeds() {
-            // $promise.then allows us to intercept the results
-            // which we will use later
-            return Feed.query().$promise.then(function(results) {
-                console.log(results);
-                return results;
-            }, function(error) { // Check for errors
-                console.log(error);
-            });
-        }
-
-        return {
-            getFeeds: getFeeds,
-            onFetchFeeds: function(callback) {
-                observerCallbacks.push(callback);
-            }
-        }
-
+        return feeds;
     }
+
+    return {
+        getFeeds: getFeeds,
+        onFetchFeeds: function(callback) {
+            observerCallbacks.push(callback);
+        },
+        feedsAlreadyFetched: function() {
+            if(reloadEverytime) return false;
+            return fetched;
+        }
+    }
+
+}

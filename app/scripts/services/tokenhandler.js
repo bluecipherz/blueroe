@@ -15,6 +15,8 @@ angular.module('bluroeApp')
     var tokenHandler = {};
     var token;
     var user;
+    var projects; // temp implementation
+    var tempLoggedin = false;
 
     var observerCallbacks = [];
 
@@ -23,7 +25,9 @@ angular.module('bluroeApp')
       .then(function(response, status, header, config) {
           token = response.data.token;
           user = response.data.user;
+          projects = response.data.projects;
           console.log('token : ' + token);
+          tempLoggedin = true;
           notifyObservers();
       }, function(data, status, header, config) {
           console.log('login error')
@@ -78,6 +82,12 @@ angular.module('bluroeApp')
       wrapActions : wrapActions,
       getUser : function() {
         return user;
+      },
+      getProjects : function() {
+        return projects;
+      },
+      isTempLogged: function() {
+        return tempLoggedin;
       }
     };
   });

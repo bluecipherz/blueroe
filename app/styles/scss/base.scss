@@ -5,6 +5,27 @@ body{
   min-height: 100%;
   background:#eee;
 }
+.blueNav{
+	color:#ddd;
+}
+.navLink{
+	display:block;
+	float:left;
+	height:50px;
+	line-height:50px;
+	padding:0px 5px;
+	min-width:60px;
+	color:#ccc;
+	text-align:center;
+}
+.navLink:hover{
+	cursor:pointer;
+	background:rgba(255,255,255,0.1);
+	color:#fff;
+}
+.-f-right{
+	float:right;
+}
 .RoundDropDown{
 	display:block;
 	float:left;

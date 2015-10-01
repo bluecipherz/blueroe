@@ -448,16 +448,20 @@
   display: block;
   float: left;
   position: fixed;
-  right: -250px;
+  right: -310px;
   top: 50px;
   bottom: 0px;
   width: 300px;
-  z-index: 3; }
+  z-index: 3;
+  transition: right 0.3s; }
 
 .chatSystemAct {
   right: 0px; }
 
 .chatSystem {
-  background: red; }
+  background: #fff;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); }
 
 /*# sourceMappingURL=widgets.css.map */

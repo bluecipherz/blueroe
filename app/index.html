@@ -48,11 +48,8 @@
             <div class="bgrid -bg-s-500-w">
                 a
             </div>
-            <div class="bgrid -bg-s-200">
-                a
-            </div>
-            <div class="bgrid -bg-s-100">
-                a
+            <div class="bgrid -bg-s-300"> 
+                <div class="navLink -f-right" ng-click="chatSystemAct = ! chatSystemAct"> CHAT </div>
             </div>
             <div id="powerProgress"></div>
         </div>
@@ -94,7 +91,10 @@
                     </div>
                 </div>
             </a>
+        </div>
 
+        <div class="chatSystem "ng-class="{ 'chatSystemAct':  chatSystemAct }">
+             
         </div>
     </div>
     <div class="b-p-abs sec-mid b-layer-1">
@@ -102,10 +102,6 @@
     </div>
 
     <div class="cust-footer">
-    </div>
-
-    <div class="chatSystem">
-        this is chat
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

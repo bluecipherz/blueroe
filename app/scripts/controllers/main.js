@@ -40,6 +40,7 @@ angular.module('bluroeApp')
             };
 
     }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler, Status) {
+
         $scope.projects = [
             {'id':'1','name':'project 1'},
             {'id':'2','name':'project 2'},

@@ -27,6 +27,9 @@ body {
 .-f-right {
   float: right; }
 
+a:hover {
+  cursor: pointer; }
+
 .RoundDropDown {
   display: block;
   float: left;

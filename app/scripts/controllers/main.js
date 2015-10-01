@@ -51,6 +51,7 @@ angular.module('bluroeApp')
 
         var updateFeeds = function() {
             $scope.feeds = feedFactory.getFeeds();
+            console.log(feedFactory.getFeeds());
         }
 
         if(feedFactory.feedsAlreadyFetched()) {

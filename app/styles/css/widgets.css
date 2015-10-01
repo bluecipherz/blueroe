@@ -257,6 +257,53 @@
   height: 30px;
   padding: 0 10px; }
 
+.feedFile {
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 5px 0; }
+  .feedFile .feedFileImg {
+    display: block;
+    float: left;
+    width: 150px;
+    max-width: 150px; }
+    .feedFile .feedFileImg .head {
+      display: block;
+      width: 150px;
+      min-height: 10px;
+      max-width: 150px;
+      border: 1px solid #eee;
+      margin: 0px;
+      padding: 0px; }
+      .feedFile .feedFileImg .head img {
+        max-width: 100%;
+        max-height: 100%; }
+    .feedFile .feedFileImg .foot {
+      display: block;
+      float: left;
+      width: 100%;
+      min-height: 20px;
+      background: #ddd;
+      color: #333;
+      margin: 0px;
+      padding: 7px;
+      text-align: center; }
+  .feedFile .feedFileUnknown {
+    display: block;
+    float: left;
+    min-width: 100%;
+    margin: 5px 0; }
+    .feedFile .feedFileUnknown .foot {
+      display: block;
+      float: left;
+      min-width: 150px;
+      min-height: 20px;
+      background: #ddd;
+      color: #333;
+      margin: 0px;
+      padding: 7px;
+      text-align: center; }
+
 /* Colors */
 /* images */
 .postform {

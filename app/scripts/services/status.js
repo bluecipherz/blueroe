@@ -32,6 +32,7 @@ angular.module('bluroeApp')
           console.log('poststatus projectid not specified');
           return Status.save(data);
         }
+          return Status.save(data);
       },
       deleteStatus: function(data) {
         if(data['projectid']) {

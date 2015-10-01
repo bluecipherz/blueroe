@@ -39,7 +39,7 @@ angular.module('bluroeApp')
                 return this.tab === checkTab;
             };
 
-    }).controller('MainCtrl', function ($scope, feedFactory, AsideBarServ, Comment, TokenHandler, Status, Project) {
+    }).controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,$interval, $timeout) {
         $scope.projects = [];
 
         $scope.feeds = [];
@@ -119,6 +119,37 @@ angular.module('bluroeApp')
         ////In this case it is the child scope of this scope.
         //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
         //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
+
+
+        /* Grid Stuffs */
+
+         var dailyNotesData = [ {'head':'Time is wasting','description': 'The time you think which is wasted is not actually wasted','foot':'08 Jan'},
+            {'head':'You think this is shit ?','description': 'No it is not','foot':'08 Jan' },
+            {'head':'Die with Memories','description': 'Not Dreams','foot':'08 Jan' },
+            {'head':'Its Really Killing me','description': 'Yeah the memories','foot':'08 Jan' },
+            {'head':'Go get it !','description': 'Some times the Best gain is to loss','foot':'08 Jan' },
+            {'head':'Angular','description': 'Taking so much time to learn, SORRY!!! :) ','foot':'08 Jan' }
+         ];
+
+        $scope.dailyNotes = dailyNotesData;
+        $(".Bslider .Bframe").first().show();
+
+        var index = 0;
+        var count = dailyNotesData.length;
+        console.log($('.Bslider').children().length);
+        var SliderEngine = function() {
+            $('.Bslider .Bframe').eq(index).fadeOut(function() {
+                if (index+1 == count){
+                    index = -1;
+                }
+
+                $('.Bslider .Bframe').eq(index + 1).fadeIn(function() {
+                    index++;
+                });
+            });
+        }
+        $interval(SliderEngine, 5000);
+
 
     }).controller('TabController', function ($scope, Status, Hoster){
         $scope.selectedTab = 1;

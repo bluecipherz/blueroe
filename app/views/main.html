@@ -22,8 +22,8 @@
                                     <textarea name="message" placeholder="Type your message here" rows="3" ng-model="status.message" ng-minlength="5" required></textarea>
                                 </div>
                                 <div class="mid">
-                                    <div class="p-dropzone" dropzone="dropzoneConfig">
-                                        Drop your files here
+                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                        <div class="dz-message">Drop your files here</div>
                                     </div>
                                 </div>
                                 <div class="foot b-layer-3">
@@ -47,15 +47,15 @@
                                 <div class="head">
                                     <input name="" placeholder="Task Title" >
                                 </div>
-                                <div class="mid">
+                                <div class="head">
+                                    <input ng-click="taskListAct = ! taskListAct" type="checkbox"/><span>Make this as a Task list</span>
+                                </div>
+                                <div class="mid" ng-class="{ 'hidden':  taskListAct }" >
                                     <div class="p-dropzone" dropzone="dropzoneConfig">
                                         Drop your files here
                                     </div>
                                 </div>
-                                <div class="head">
-                                    <input type="checkbox"/><span>Make this as a Task list</span>
-                                </div>
-                                <div class="head">
+                                <div class="head" ng-class="{ 'hidden':  taskListAct }">
                                     <textarea name="" placeholder="Type your message here" rows="3"></textarea>
                                 </div>
                                 <div class="head">
@@ -66,8 +66,8 @@
                                                 <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
                                             </select>
                                         </div>
-                                        <div >
-                                            <div>Task list name</div>
+                                        <div ng-class="{ 'hidden':  taskListAct }">
+                                            <div >Task list name</div>
                                             <select>
                                                 <option value="1" >General</option>
                                             </select>
@@ -152,9 +152,6 @@
                                     </div>
                                 </div>
                                 <div class="head">
-                                    <input type="checkbox"/><span>Make this as a Task list</span>
-                                </div>
-                                <div class="head">
                                     <textarea name="" placeholder="Type your message here" rows="3"></textarea>
                                 </div>
                                 <div class="head">
@@ -191,7 +188,6 @@
                 </div>
             </div>
 
-            
     <div class="flex-5 -p">
         <div class="fluidGrid -h-200 grey">
 

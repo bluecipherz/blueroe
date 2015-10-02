@@ -10,7 +10,7 @@
         </div>
     </div>
     <div  class="contHead">
-        <div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
+        <div  ng-show="feed.additional_type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
     </div>
     <div class="cont">
         <div class="left bgrid -bg-s-80">
@@ -31,19 +31,6 @@
                 <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
                 <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
                 <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project }}</div>
-
-                <div ng-if="feed.type == 'CommentPosted'">
-                    <div ng-if="feed.context.type == 'ProjectCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} project</div>
-                    <div ng-if="feed.context.type == 'ProjectDeleted'">{{ feed.context.origin.email }} deleted {{ feed.context.subject.name }} project</div>
-                    <div ng-if="feed.context.type == 'ProjectCompleted'">{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} project</div>
-
-                    <div ng-if="feed.context.type == 'UserRemovedFromProject'">{{ feed.context.origin.email }} removed {{ feed.context.subject.email }} from {{ feed.context.name }} project</div>
-                    <div ng-if="feed.context.type == 'UserAddedToProject'">{{ feed.context.origin.email }} added {{ feed.context.subject.email }} to {{ feed.context.name }} project</div>
-
-                    <div ng-if="feed.context.type == 'TaskCreated'">{{ feed.context.origin.email }} created {{ feed.context.subject.name }} task <span ng-if="feed.project">in {{ feed.project.name }}</span></div>
-                    <div ng-if="feed.context.type == 'TaskRemoved'">{{ feed.context.origin.email }} removed {{ feed.context.subject.name }} task </div>
-                    <div ng-if="feed.context.type == 'TaskCompleted'">asd{{ feed.context.origin.email }} completed {{ feed.context.subject.name }} task </div>
-                </div>
             </div>
 
             <div class="mid">
@@ -53,23 +40,8 @@
                 <span ng-if="feed.type == 'StatusPosted'">{{ feed.subject.message }}</span>
             </div>
             <div class="mid">
-                <div class="feedFile">
-                    <!--if it is a image file-->
-                    <div class="feedFileImg">
-                        <div class="head">
-                            <img src="images/backgrounds/2.jpg">
-                        </div>
-                        <div class="foot">
-                            <a>filename.png</a>
-                        </div>
-                    </div>
-                    <!--if it is unknow file-->
-                    <div class="feedFileUnknown">
-                        <div class="foot">
-                            <a>Some other unknown file.exe</a>
-                        </div>
-                    </div>
-                </div>
+                <attachment ng-repeat="attachment in feed.attachments"  > 
+                </attachment>
             </div>
             <div class="foot">
                 <div class="head">
@@ -77,11 +49,8 @@
                 </div>
                 <div class="comment-slot">
                     <!--COMMENT SLOT-->
-                    <comment ng-if="feed.type != 'CommentPosted'" ng-repeat="comment in feed.comments" class="commentSet">
+                    <comment ng-repeat="comment in feed.comments" class="commentSet">
                     </comment>
-                    <comment ng-if="feed.type == 'CommentPosted'" ng-repeat="comment in feed.context.comments" class="commentSet">
-                    </comment>
-                </div>
                 <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
                     <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
                     <div>

@@ -37,12 +37,36 @@ angular
             controller: 'ProjectsCtrl',
             controllerAs: 'projects'
         })
-        .state('projectShow', {
-            url: '/projects/:id',
-            templateUrl: 'views/project.show.html',
-            controller: 'ProjectsCtrl',
-            controllerAs: 'projects'
-        });
+        // .state('projectShow', {
+            // url: '/projects/:id',
+            // templateUrl: 'views/project.show.html',
+            // controller: 'ProjectsCtrl',
+            // controllerAs: 'projects'
+        // })
+		.state('mytasks', {
+			url: '/mytasks',
+			templateUrl: 'views/tasks.html',
+			controller: 'TasksCtrl',
+			controllerAs: 'tasks'
+		})
+		.state('mymilestones', {
+			url: '/mymilestones',
+			templateUrl: 'views/milestones.html',
+			controller: 'MilestonesCtrl',
+			controllerAs: 'milestones'
+		})
+		.state('mybugs', {
+			url: '/mybugs',
+			templateUrl: 'views/bugs.html',
+			controller: 'BugsCtrl',
+			controllerAs: 'bugs'
+		})
+		.state('mycalendar', {
+			url: '/mycalendar',
+			templateUrl: 'views/calendar.html',
+			controller: 'CalendarCtrl',
+			controllerAs: 'calendar'
+		});
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$stateChangeStart', function() {

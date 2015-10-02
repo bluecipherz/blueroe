@@ -1,0 +1,17 @@
+<div class="feedFile">
+	<!--if it is a image file-->
+	<div ng-if="attachment.type == 'image'" class="feedFileImg">
+		<div class="head">
+			<img src="{{ attachment.url }}">
+		</div>
+		<div class="foot">
+			<a>{{ attachment.filename }}</a>
+		</div>
+	</div>
+	<!--if it is unknow file-->
+	<div ng-if="attachment.type == 'unknown'" class="feedFileUnknown">
+		<div class="foot">
+			<a href="{{ attachment.url }}">{{ attachment.filename }}</a>
+		</div>
+	</div>
+</div>

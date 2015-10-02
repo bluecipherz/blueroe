@@ -8,8 +8,10 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-    .controller('IndexCtrl', function ($scope, sidenav, $state) {
+    .controller('IndexCtrl', function ($rootScope, $scope, sidenav, $state) {
 
+		$rootScope.$state = $state;
+	
         $scope.currState = $state;
         // sidenav factory holds the sidebar data.
         // check for state change and display approriate sidebar
@@ -151,7 +153,7 @@ angular.module('bluroeApp')
         $interval(SliderEngine, 5000);
 
 
-    }).controller('TabController', function ($scope, Status, Hoster){
+    }).controller('TabController', function ($scope, Status, Hoster, TokenHandler){
         $scope.selectedTab = 1;
 
         $scope.selectTab = function(tab) {
@@ -168,6 +170,7 @@ angular.module('bluroeApp')
             },
             eventHandlers: {
                 sending: function (file, xhr, formData) {
+					formData.append('token', TokenHandler.getToken())
                     console.log('sending');
                 },
                 success: function (file, response) {

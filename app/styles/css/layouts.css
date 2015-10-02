@@ -3,7 +3,8 @@
   float: left;
   padding: 10px;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 .flexPage {
   display: block;
@@ -66,6 +67,65 @@
     height: 550px; }
   .flexPage .-h-600 {
     height: 600px; }
+
+.Bframe {
+  display: none;
+  float: left;
+  color: #fff;
+  height: 100%; }
+  .Bframe .head,
+  .Bframe .mid,
+  .Bframe .foot {
+    display: block;
+    float: left;
+    width: 100%; }
+    .Bframe .head div,
+    .Bframe .mid div,
+    .Bframe .foot div {
+      padding: 3px; }
+  .Bframe .bf-1 {
+    height: 10%; }
+  .Bframe .bf-2 {
+    height: 20%; }
+  .Bframe .bf-3 {
+    height: 30%; }
+  .Bframe .bf-4 {
+    height: 40%; }
+  .Bframe .bf-5 {
+    height: 50%; }
+  .Bframe .bf-6 {
+    height: 60%; }
+  .Bframe .bf-7 {
+    height: 70%; }
+  .Bframe .bf-8 {
+    height: 80%; }
+  .Bframe .bf-9 {
+    height: 90%; }
+  .Bframe .bf-10 {
+    height: 100%; }
+  .Bframe .bf-FS-1 {
+    font-size: 90%; }
+  .Bframe .bf-FS-2 {
+    font-size: 110%; }
+  .Bframe .bf-FS-3 {
+    font-size: 140%; }
+  .Bframe .bf-FS-4 {
+    font-size: 200%; }
+  .Bframe .bf-FS-5 {
+    font-size: 230%; }
+  .Bframe .bf-FO-1 {
+    color: rgba(255, 255, 255, 0.4); }
+  .Bframe .bf-FO-2 {
+    color: rgba(255, 255, 255, 0.5); }
+  .Bframe .bf-FO-3 {
+    color: rgba(255, 255, 255, 0.6); }
+  .Bframe .bf-FO-4 {
+    color: rgba(255, 255, 255, 0.7); }
+  .Bframe .bf-FO-5 {
+    color: rgba(255, 255, 255, 0.8); }
+
+.Bframe:nth-child(1) {
+  display: block; }
 
 .sec-left {
   display: block;

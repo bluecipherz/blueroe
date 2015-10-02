@@ -83,8 +83,8 @@
                                     <input name="" placeholder="Milestone Title" >
                                 </div>
                                 <div class="mid">
-                                    <div class="p-dropzone" dropzone="dropzoneConfig">
-                                        Drop your files here
+                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                        <div class="dz-message">Drop your files here</div>
                                     </div>
                                 </div>
                                 <div class="head">
@@ -109,8 +109,8 @@
                         <div class="cont tab3"  ng-show="isSelected(4)">
                             <form name="uploadForm">
                                 <div class="mid">
-                                    <div class="p-dropzone" dropzone="dropzoneConfig">
-                                        Drop your files here
+                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                        <div class="dz-message">Drop your files here</div>
                                     </div>
                                 </div>
                                 <div class="head">
@@ -144,8 +144,8 @@
                                     <input name="" placeholder="Forum Title" >
                                 </div>
                                 <div class="mid">
-                                    <div class="p-dropzone" dropzone="dropzoneConfig">
-                                        Drop your files here
+                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                        <div class="dz-message">Drop your files here</div>
                                     </div>
                                 </div>
                                 <div class="head">
@@ -181,10 +181,82 @@
 
                         <feed class="feedSet" ng-repeat="feed in feeds">
                         </feed>
+
+                        <!--<div class="feedSet">-->
+                        <!--<div class="feedSetMain">-->
+                            <!--<div class="RoundDropDown" >-->
+                                <!--<div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>-->
+                                <!--&lt;!&ndash;<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>&ndash;&gt;-->
+                                <!--<div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">-->
+                                    <!--<button ng-if="feed.type == 'StatusPosted'" ng-click="removeStatus($index, feed)">Delete</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div  class="contHead">-->
+                                <!--<div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>-->
+                            <!--</div>-->
+                            <!--<div class="cont">-->
+                                <!--<div class="left bgrid -bg-s-80">-->
+                                    <!--<div class="img">-->
+
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="right  bgrid -bg-s-80-w">-->
+                                    <!--<div class="head">-->
+                                        <!--<div >Test shit</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="mid">-->
+                                        <!--<div>-->
+                                            <!--<span >shitty description</span>-->
+                                        <!--</div>-->
+                                        <!--<div class="feedFile">-->
+                                            <!--&lt;!&ndash;if it is a image file&ndash;&gt;-->
+                                            <!--<div class="feedFileImg">-->
+                                                <!--<div class="head">-->
+                                                    <!--<img src="images/backgrounds/2.jpg">-->
+                                                <!--</div>-->
+                                                <!--<div class="foot">-->
+                                                    <!--<a>filename.png</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--&lt;!&ndash;if it is unknow file&ndash;&gt;-->
+                                            <!--<div class="feedFileUnknown">-->
+                                                <!--<div class="foot">-->
+                                                    <!--<a>Some other unknown file.exe</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="foot">-->
+                                        <!--<div class="head">-->
+                                            <!--<span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>-->
+                                        <!--</div>-->
+                                        <!--<div class="comment-slot">-->
+                                            <!--&lt;!&ndash;COMMENT SLOT&ndash;&gt;-->
+                                            <!--<comment ng-if="feed.type != 'CommentPosted'" ng-repeat="comment in feed.comments" class="commentSet">-->
+                                            <!--</comment>-->
+                                            <!--<comment ng-if="feed.type == 'CommentPosted'" ng-repeat="comment in feed.context.comments" class="commentSet">-->
+                                            <!--</comment>-->
+                                        <!--</div>-->
+                                        <!--<div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >-->
+                                            <!--<textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>-->
+                                            <!--<div>-->
+                                                <!--<button class="b-btn-sm" ng-click="postComment(feed)">Submit</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+
+
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
     <div class="flex-5 -p">
         <div class="fluidGrid -h-200 grey">
 
@@ -193,7 +265,15 @@
 
     <div class="flex-5">
         <div class="flex-5 -p">
-            <div class="fluidGrid -h-200 greenBlue">
+            <div class="fluidGrid -h-200 Bslider greenBlue">
+
+                <div  ng-repeat="data in dailyNotes" class="Bframe">
+                    <div class="bf-4"> </div>
+                    <div class="bf-1 bf-FS-1 bf-FO-4">{{ data.foot }}</div>
+                    <div class="bf-FS-4">{{ data.head }} </div>
+                    <div class="bf-FS-2  bf-FO-3">{{ data.description }}</div>
+                </div>
+
             </div>
         </div>
         <div class="flex-5 -p ">

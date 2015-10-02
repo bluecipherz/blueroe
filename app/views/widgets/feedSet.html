@@ -52,6 +52,25 @@
                 <span ng-if="feed.type == 'TaskCompleted'">{{ feed.subject.description }}</span>
                 <span ng-if="feed.type == 'StatusPosted'">{{ feed.subject.message }}</span>
             </div>
+            <div class="mid">
+                <div class="feedFile">
+                    <!--if it is a image file-->
+                    <div class="feedFileImg">
+                        <div class="head">
+                            <img src="images/backgrounds/2.jpg">
+                        </div>
+                        <div class="foot">
+                            <a>filename.png</a>
+                        </div>
+                    </div>
+                    <!--if it is unknow file-->
+                    <div class="feedFileUnknown">
+                        <div class="foot">
+                            <a>Some other unknown file.exe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="foot">
                 <div class="head">
                     <span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>

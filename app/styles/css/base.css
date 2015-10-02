@@ -27,6 +27,9 @@ body {
 .-f-right {
   float: right; }
 
+a:hover {
+  cursor: pointer; }
+
 .RoundDropDown {
   display: block;
   float: left;
@@ -176,5 +179,26 @@ div::-webkit-scrollbar-track {
 
 div::-webkit-scrollbar-thumb {
   background-color: #3498db; }
+
+@font-face {
+  font-family: Walkway;
+  src: url("../../fonts/Dosis-Light.ttf");
+  font-weight: 100; }
+@font-face {
+  font-family: Walkway;
+  src: url("../../fonts/Dosis-Book.ttf");
+  font-weight: 200; }
+@font-face {
+  font-family: Walkway;
+  src: url("../../fonts/Dosis-Medium.ttf");
+  font-weight: 300; }
+@font-face {
+  font-family: Walkway;
+  src: url("../../fonts/Dosis-SemiBold.ttf");
+  font-weight: 400; }
+@font-face {
+  font-family: Walkway;
+  src: url("../../fonts/Dosis-Bold.ttf");
+  font-weight: 500; }
 
 /*# sourceMappingURL=base.css.map */

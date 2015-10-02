@@ -4,6 +4,7 @@
   padding:10px;
   width:100%;
   height:100%;
+  overflow: hidden;
 }
 .flexPage{
   display: block;
@@ -43,4 +44,44 @@
   .-h-500{ height:500px; }
   .-h-550{ height:550px; }
   .-h-600{ height:600px; }
+}
+.Bframe{
+  display: none;
+  float: left;
+  color:#fff;
+  height:100%;
+  .head,
+  .mid,
+  .foot{
+    display: block;
+    float: left;
+    width: 100%;
+    div{
+      padding:3px;
+    }
+  }
+  .bf-1{height:10%}
+  .bf-2{height:20%}
+  .bf-3{height:30%}
+  .bf-4{height:40%}
+  .bf-5{height:50%}
+  .bf-6{height:60%}
+  .bf-7{height:70%}
+  .bf-8{height:80%}
+  .bf-9{height:90%}
+  .bf-10{height:100%}
+
+  .bf-FS-1{font-size: 90%;}
+  .bf-FS-2{font-size: 110%;}
+  .bf-FS-3{font-size: 140%;}
+  .bf-FS-4{font-size: 200%;}
+  .bf-FS-5{font-size: 230%;}
+  .bf-FO-1{ color:rgba(255,255,255,.4); }
+  .bf-FO-2{ color:rgba(255,255,255,.5); }
+  .bf-FO-3{ color:rgba(255,255,255,.6); }
+  .bf-FO-4{ color:rgba(255,255,255,.7); }
+  .bf-FO-5{ color:rgba(255,255,255,.8); }
+}
+.Bframe:nth-child(1) {
+  display: block;
 }

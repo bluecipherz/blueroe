@@ -271,3 +271,57 @@
   height:30px;
   padding:0 10px;
 }
+
+.feedFile{
+  display: block;
+  float: left;
+  width:100%;
+  margin:5px 0;
+  .feedFileImg{
+     display: block;
+     float: left;
+     width: 150px;
+     max-width: 150px;
+     .head{
+       display: block;
+       width:150px;
+       min-height:10px;
+       max-width: 150px;
+       border:1px solid #eee;
+       margin:0px;
+       padding:0px;
+       img{
+         max-width: 100%;
+         max-height: 100%;
+       }
+     }
+     .foot{
+       display: block;
+       float: left;
+       width: 100%;
+       min-height: 20px;
+       background: #ddd;
+       color:#333;
+       margin:0px;
+       padding:7px;
+       text-align: center;
+     }
+   }
+  .feedFileUnknown{
+    display: block;
+    float: left;
+    min-width: 100%;
+    margin:5px 0;
+    .foot{
+      display: block;
+      float: left;
+      min-width: 150px;
+      min-height: 20px;
+      background: #ddd;
+      color:#333;
+      margin:0px;
+      padding:7px;
+      text-align: center;
+    }
+  }
+}

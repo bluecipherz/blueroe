@@ -93,6 +93,11 @@ angular.module('bluroeApp')
       //   projectFactory.setProjects(TokenHandler.getProjects());
       // });
     }
+
+        this.users = [ {'name':'Basi'},
+            {'name':'Roshan'},
+            {'name':'Waxx'},
+            {'name':'Anu'},];
     
 
     return projectFactory;

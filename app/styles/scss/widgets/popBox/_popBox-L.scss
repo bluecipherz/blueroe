@@ -1,0 +1,36 @@
+@import "../../functions/baseFunctions";
+.popBox{
+  display: block;
+  float: left;
+  position: absolute;
+  top:40px;
+  min-height: 50px;
+  min-width: 50px;
+  .topArrow{
+    display: block;
+    float: left;
+    position: absolute;
+    top:-6px;
+    right:20px;
+    width:15px;
+    height:15px;
+  }
+  .cont{
+    display: block;
+    float: left;
+    position: relative;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  .closeBtn{
+    display: block;
+    float: left;
+    position: absolute;
+    top:2px;
+    right:2px;
+    width:7px;
+    height:8px;
+  }
+}
+.popBox.-l{  right:0px; .topArrow{ right:20px; }}
+.popBox.-r{  left:0px; .topArrow{ left:20px; }}

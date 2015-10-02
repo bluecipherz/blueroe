@@ -27,6 +27,25 @@ body {
 .-f-right {
   float: right; }
 
+.rowspace {
+  display: block;
+  float: left;
+  width: 100%;
+  min-width: 10px;
+  height: 20px; }
+
+.overflow-s {
+  overflow: scroll; }
+
+.overflow-s-y {
+  overflow-y: scroll; }
+
+.overflow-s-x {
+  overflow-x: scroll; }
+
+.overflow-h {
+  overflow-x: hidden; }
+
 a:hover {
   cursor: pointer; }
 
@@ -200,5 +219,57 @@ div::-webkit-scrollbar-thumb {
   font-family: Walkway;
   src: url("../../fonts/Dosis-Bold.ttf");
   font-weight: 500; }
+.custButton {
+  display: block;
+  float: left;
+  background: #ddd;
+  margin: 5px;
+  padding: 7px 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 90%; }
+
+.custButton:hover {
+  cursor: pointer;
+  background: #d5d5d5; }
+
+.custButton.-blue {
+  background: #3498db;
+  color: #eee; }
+
+.custButton.-blue:hover {
+  background: #3498db;
+  color: #fff; }
+
+.custButton.-right {
+  float: right; }
+
+input[type='text'], input[type='password'], textarea, select {
+  min-height: 30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  padding: 0 7px; }
+
+textarea {
+  line-height: 100%;
+  padding: 5px; }
+
+h5 {
+  border-bottom: 1px solid rgba(52, 152, 219, 0.4);
+  padding: 10px 0 7px 0;
+  margin: 5px 0 5px 0; }
+
+h6 {
+  margin: 5px 0 0 0; }
+
+option {
+  min-height: 30px;
+  line-height: 30px;
+  margin: 0; }
+
+option {
+  margin: 0; }
 
 /*# sourceMappingURL=base.css.map */

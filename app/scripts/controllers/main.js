@@ -8,10 +8,14 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-    .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,$interval, $timeout) {
+    .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,Spinner) {
         $scope.projects = [];
-
         $scope.feeds = [];
+        var feedSpinner = new Spinner('feedSpinner');
+
+        var StateSpinner = new Spinner('StatsSpinner');
+        StateSpinner.startSpin();
+
 
         var updateProjects = function() {
             $scope.projects = Project.getProjects();
@@ -26,7 +30,8 @@ angular.module('bluroeApp')
         
         var updateFeeds = function() {
             $scope.feeds = feedFactory.getFeeds();
-            console.log(feedFactory.getFeeds());
+            console.log('feedFecthing complete');
+            feedSpinner.stopSpin();
         }
 
         if(feedFactory.feedsAlreadyFetched()) {
@@ -34,11 +39,12 @@ angular.module('bluroeApp')
             updateFeeds();
         } else {
             console.log('fetching feeds');
+            feedSpinner.startSpin();
             feedFactory.onFetchFeeds(updateFeeds);
         }
 
-        $scope.loadNewFilter = function (){
-            AsideBarServ.updateAside;
+        $scope.updateFeeds = function(){
+            // Put your update code here
         }
 
         $scope.postComment = function(feed) {
@@ -82,6 +88,9 @@ angular.module('bluroeApp')
                 console.log($scope.feeds);
             });
         }
+
+
+
         //
         //var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
         ////Provide the scope, you can also do $scope.$new(true) in order to create an isolated scope.

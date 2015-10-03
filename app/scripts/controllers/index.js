@@ -46,10 +46,6 @@ angular.module('bluroeApp')
             return this.tab === checkTab;
         };
     });
-
-$(document).ready(function(){
-    $("html").niceScroll();
-});
 $(document).on('click','.selectGrp > .foot > span',function(){
     var that = $(this);
     var id = that.attr('value');

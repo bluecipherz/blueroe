@@ -170,6 +170,31 @@
 
 /* Colors */
 /* images */
+.Spinner .sBtn {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 10; }
+.Spinner .cover {
+  transition: background 1s;
+  overflow: hidden; }
+.Spinner .contCover {
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.7); }
+
+.MultiBars .head {
+  line-height: 30px;
+  padding-left: 10px;
+  color: #fff; }
+.MultiBars .Mchat .bar .line .bar1 {
+  background: #fff; }
+.MultiBars .Mchat .bar .line .bar2 {
+  background: rgba(255, 255, 255, 0.4); }
+
+/* Colors */
+/* images */
 .fluidGrid {
   border-radius: 2px;
   -webkit-box-shadow: 0 0 4px #ddd;
@@ -191,6 +216,9 @@
 
 .red {
   background: #c0392b; }
+
+.blue {
+  background: #3498db; }
 
 .orange {
   background: #e67e22; }

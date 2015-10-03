@@ -1,6 +1,16 @@
 <div class="flexPage ">
     <div class="flex-5 -p ">
-        <div class="fluidGrid">
+        <div class="fluidGrid b-p-rel ">
+
+            <div class="Spinner" id="feedSpinner" >
+                <div class="sBtn" ng-click="updateFeeds()"></div>
+                <div class="cover">
+                    <div class="loaderOuter">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="page-feeds ">
                 <div class="p-feeds bgrid">
                     <div class="postform"  ng-controller="CreatepostCtrl as panel" >
@@ -198,15 +208,36 @@
                 </div>
             </div>
         </div>
-        <div class="flex-5 -h-200 -p ">
-            <div class="fluidGrid  bg2">
+        <div ng-controller="DailystatsCtrl as DS" class="flex-5 -h-200 -p " >
+            <div class="fluidGrid  blue" >
+                <div class="MultiBars">
+                    <div class="head">Monthly Progress</div>
+                    <div class="Mchat">
 
+                        <div class="bar"ng-repeat="data in DS.dailyStats" style="width: calc( 100% / {{ data.barWidth }} );">
+                            <div class="line" >
+                                <div class="bar2" style="top: {{ data.bar2 }}%"></div>
+                                <div class="bar1" style="top: {{ data.bar1 }}%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="flex-5 -h-500 -p">
-        <div class="fluidGrid  cloud">
+        <div class="fluidGrid  cloud b-p-rel">
+
+            <div class="Spinner" id="StatsSpinner" >
+                <div class="sBtn" ng-click="updateFeeds()"></div>
+                <div class="cover">
+                    <div class="loaderOuter">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

@@ -1,4 +1,5 @@
 <div>
+    {{ $state.current.name }}
     <div> Available themes </div>
     <div ng-click="disableTheme()"> Default Theme <span style="background: #b7007a" >a</span></div>
     <div ng-repeat="theme in themes" ng-click="changeTheme(theme.url,theme.id)"> {{ theme.name }} <span style="background: {{ theme.color }}" >a</span> </div>

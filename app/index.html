@@ -41,8 +41,8 @@
                 </div>
                 <div class="bgrid -bg-s-140">
                     <ul class="bl-ul bg-text-c">
-                        <li class="active -bg-s-60"><a ui-sref="home">Home</a></li>
-                        <li class="-bg-s-80"><a ui-sref="projects">Projects</a></li>
+                        <li class="-bg-s-60" ng-class="{'active' : currView == 'home'}" ><a ui-sref="home">Home</a></li>
+                        <li class="-bg-s-80"ng-class="{'active' : currView == 'projects'}"><a ui-sref="projects">Projects</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +58,7 @@
         <div class="b-p-fix Aside sec-left b-layer-2" >
             <a ng-repeat="aside in asideList" class="asideButton">
                 <!--Aside Link-->
-                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:AsController.isSelected(aside.id) }"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
+                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
                     <div class="asideName"> {{ aside.name }} </div>
                     <div class="asideIcon">
                         <div class="img">
@@ -80,7 +80,7 @@
                     <!--Aside LinkList-->
                     <div  ng-class="{ 'hiddenList': ! showDetails }" >
                         <div class="asideButton"  ng-repeat="asideL in aside.list ">
-                            <div class="NestedAsideLink"   ng-class="{active:AsController.isSelected(asideL.id) }"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
+                            <div class="NestedAsideLink"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
                                 <div class="asideName"> {{ asideL.name }} </div>
                                 <div class="asideIcon">
                                     <div class="img">
@@ -168,6 +168,10 @@
         <script src="scripts/controllers/bugs.js"></script>
         <script src="scripts/controllers/calendar.js"></script>
         <script src="scripts/directives/attachment.js"></script>
+        <script src="scripts/controllers/dailynotes.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/controllers/createpost.js"></script>
+        <script src="scripts/controllers/reports.js"></script>
         <!-- endbuild -->
 </body>
 </html>

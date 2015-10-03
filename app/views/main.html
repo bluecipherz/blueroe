@@ -3,7 +3,7 @@
         <div class="fluidGrid">
             <div class="page-feeds ">
                 <div class="p-feeds bgrid">
-                    <div class="postform"  ng-controller="TabController as panel" >
+                    <div class="postform"  ng-controller="CreatepostCtrl as panel" >
                         <div class="heading">
                             <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
                             <span ng-class="{active:isSelected(2)}"  ng-click="selectTab(2)" >Add Task</span>
@@ -51,8 +51,8 @@
                                     <input ng-click="taskListAct = ! taskListAct" type="checkbox"/><span>Make this as a Task list</span>
                                 </div>
                                 <div class="mid" ng-class="{ 'hidden':  taskListAct }" >
-                                    <div class="p-dropzone" dropzone="dropzoneConfig">
-                                        Drop your files here
+                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                        <div class="dz-message">Drop your files here</div>
                                     </div>
                                 </div>
                                 <div class="head">
@@ -188,16 +188,14 @@
         </div>
     </div>
     <div class="flex-5">
-        <div class="flex-5 -h-200 -p">
+        <div class="flex-5 -h-200 -p"  ng-controller="DailynotesCtrl as ds" >
             <div class="fluidGrid  Bslider greenBlue">
-
-                <div  ng-repeat="data in dailyNotes" class="Bframe">
+                <div  ng-repeat="data in ds.dailyNotes" class="Bframe">
                     <div class="bf-4"> </div>
                     <div class="bf-1 bf-FS-1 bf-FO-4">{{ data.foot }}</div>
                     <div class="bf-FS-4">{{ data.head }} </div>
                     <div class="bf-FS-2  bf-FO-3">{{ data.description }}</div>
                 </div>
-
             </div>
         </div>
         <div class="flex-5 -h-200 -p ">

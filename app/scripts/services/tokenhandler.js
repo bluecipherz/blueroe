@@ -23,9 +23,9 @@ angular.module('bluroeApp')
     // temp login
     $http.post(Hoster.getHost() + '/api/authenticate', {email:'asd@g.com',password:'asdasd'})
       .then(function(response, status, header, config) {
-          token = response.data.token;
-          user = response.data.user;
-          projects = response.data.projects;
+          set(response.data.token);
+          // user = response.data.user;
+          // projects = response.data.projects;
           console.log('token : ' + token);
           tempLoggedin = true;
           notifyObservers();
@@ -41,7 +41,7 @@ angular.module('bluroeApp')
         });
     };
 
-    tokenHandler.set = function(newToken) {
+    var set = function(newToken) {
       token = newToken;
     }
 
@@ -71,14 +71,8 @@ angular.module('bluroeApp')
       };
     };
 
-    var onTempLogin = function(callback) {
-      observerCallbacks.push(callback);
-    }
-
     // Public API here
     return {
-      tokenHandler : tokenHandler,
-      onTempLogin : onTempLogin,
       wrapActions : wrapActions,
       getUser : function() {
         return user;
@@ -86,8 +80,12 @@ angular.module('bluroeApp')
       getProjects : function() {
         return projects;
       },
+      onTempLogin: function(callback) {
+        observerCallbacks.push(callback);
+      },
       isTempLogged: function() {
         return tempLoggedin;
-      }
+      },
+      getToken: tokenHandler.get
     };
   });

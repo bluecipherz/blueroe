@@ -153,8 +153,10 @@ angular.module('bluroeApp')
         $interval(SliderEngine, 5000);
 
 
-    }).controller('TabController', function ($scope, Status, Hoster, TokenHandler){
+    }).controller('TabController', function ($scope, Status, Hoster, TokenHandler, Document){
         $scope.selectedTab = 1;
+
+        var vm = this;
 
         $scope.selectTab = function(tab) {
             $scope.selectedTab = tab;
@@ -164,19 +166,24 @@ angular.module('bluroeApp')
             return $scope.selectedTab == tab;
         }
 
+        // DROPZONE
         $scope.dropzoneConfig = {
             options: { // passed into the Dropzone constructor
-                url: Hoster.getHost() + '/api/attachments'
+                url: Hoster.getHost() + '/api/tempupload'
+                // paramName: 'file'
             },
             eventHandlers: {
                 sending: function (file, xhr, formData) {
-					formData.append('token', TokenHandler.getToken())
+        			// formData.append('token', TokenHandler.getToken());
+                    xhr.setRequestHeader('Authorization', 'Bearer: ' + TokenHandler.getToken());
                     console.log('sending');
                 },
                 success: function (file, response) {
+                    console.log('tempfile : ' + response.file);
+                    vm.file = response.file;
                 },
-                fail: function(response) {
-                    console.log('upload failed');
+                error: function(response) {
+                    console.log(response);
                 }
             }
         };
@@ -189,7 +196,7 @@ angular.module('bluroeApp')
             };
             console.log(data);
             Status.postStatus(data).$promise.then(function(results) {
-                $scope.feeds.push(results.feed)
+                $scope.feeds.push(results.feed);
                 $scope.status.message = "";
             });
         }
@@ -203,7 +210,18 @@ angular.module('bluroeApp')
         }
 
         $scope.uploadFile = function() {
-            console.log('uploadfile')
+            console.log('uploadfile');
+            var data = {
+                file: vm.file,
+                projectid: $scope.uploadfile.project,
+                description: $scope.uploadfile.description
+            };
+            Document.uploadFile(data).$promise.then(function(response) {
+                $scope.feeds.push(response.feed);
+                // console.log(response);
+            }, function(response) {
+                console.log("errr")
+            });
         }
 
         $scope.postForum = function() {

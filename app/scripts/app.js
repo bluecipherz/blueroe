@@ -37,12 +37,12 @@ angular
             controller: 'ProjectsCtrl',
             controllerAs: 'projects'
         })
-        // .state('projectShow', {
-            // url: '/projects/:id',
-            // templateUrl: 'views/project.show.html',
-            // controller: 'ProjectsCtrl',
-            // controllerAs: 'projects'
-        // })
+        .state('projectShow', {
+            url: '/projects/:id',
+            templateUrl: 'views/main.html',
+            controller: 'ProjectsCtrl',
+            controllerAs: 'projects'
+        })
 		.state('mytasks', {
 			url: '/mytasks',
 			templateUrl: 'views/tasks.html',
@@ -76,4 +76,8 @@ angular
 	  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 
 	  });
-  });
+  }).filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});;

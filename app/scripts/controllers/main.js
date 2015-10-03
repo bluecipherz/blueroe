@@ -125,12 +125,13 @@ angular.module('bluroeApp')
 
         /* Grid Stuffs */
 
-         var dailyNotesData = [ {'head':'Time is wasting','description': 'The time you think which is wasted is not actually wasted','foot':'08 Jan'},
-            {'head':'You think this is shit ?','description': 'No it is not','foot':'08 Jan' },
-            {'head':'Die with Memories','description': 'Not Dreams','foot':'08 Jan' },
-            {'head':'Its Really Killing me','description': 'Yeah the memories','foot':'08 Jan' },
+
+         var dailyNotesData = [ {'head':'Sorry man','description': 'I cant complete the whole shit you,ve told me to','foot':'08 Jan'},
+            {'head':'You know ?','description': 'i worked till 4 and am im dissapointed cuz i cant complete it','foot':'08 Jan' },
+            {'head':'Popup box','description': 'I have written some code for the stander popup box, so next time its gonna be easy','foot':'08 Jan' },
+            {'head':'Yeah thats enough for today #Sleeping','description': 'zzz..!!!','foot':'08 Jan' },
             {'head':'Go get it !','description': 'Some times the Best gain is to loss','foot':'08 Jan' },
-            {'head':'Angular','description': 'Taking so much time to learn, SORRY!!! :) ','foot':'08 Jan' }
+            {'head':'Angular','description': 'Taking too much time to learn, SORRY!!! :) ','foot':'08 Jan' }
          ];
 
         $scope.dailyNotes = dailyNotesData;
@@ -150,7 +151,7 @@ angular.module('bluroeApp')
                 });
             });
         }
-        $interval(SliderEngine, 5000);
+        $interval(SliderEngine, 10000);
 
 
     }).controller('TabController', function ($scope, Status, Hoster, TokenHandler, Document){

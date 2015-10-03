@@ -4,7 +4,6 @@
   padding:10px;
   width:100%;
   height:100%;
-  overflow: hidden;
 }
 .flexPage{
   display: block;
@@ -16,6 +15,7 @@
   .flex-6,.flex-7,.flex-8,.flex-9,.flex-10
   { display: block;
     float:left;
+    overflow: hidden;
   }
 
   .flex-1{ width:10%; }
@@ -44,12 +44,21 @@
   .-h-500{ height:500px; }
   .-h-550{ height:550px; }
   .-h-600{ height:600px; }
+  .-h-650{ height:650px; }
+  .-h-700{ height:700px; }
 }
 .Bframe{
   display: none;
   float: left;
   color:#fff;
   height:100%;
+
+  -webkit-transition:margin 0.5s;
+  -moz-transition:margin 0.5s;
+  -ms-transition:margin 0.5s;
+  -o-transition:margin 0.5s;
+  transition:margin 0.5s;
+
   .head,
   .mid,
   .foot{
@@ -81,7 +90,7 @@
   .bf-FO-3{ color:rgba(255,255,255,.6); }
   .bf-FO-4{ color:rgba(255,255,255,.7); }
   .bf-FO-5{ color:rgba(255,255,255,.8); }
+
+
 }
-.Bframe:nth-child(1) {
-  display: block;
-}
+.Bframe:nth-child(1) { display: block;  }

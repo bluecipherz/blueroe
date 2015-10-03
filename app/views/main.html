@@ -1,8 +1,8 @@
 <div class="flexPage ">
-    <div class="flex-5 -p">
+    <div class="flex-5 -p ">
         <div class="fluidGrid">
             <div class="page-feeds ">
-                <div class="p-feeds bgrid ">
+                <div class="p-feeds bgrid">
                     <div class="postform"  ng-controller="TabController as panel" >
                         <div class="heading">
                             <span ng-class="{active:isSelected(1)}"  ng-click="selectTab(1)" >Status</span>
@@ -179,93 +179,17 @@
                     <div class="feed-slot bgrid ">
                         <!--FEED SET-->
 
-                        <feed class="feedSet" ng-repeat="feed in feeds">
+                        <feed class="feedSet" ng-repeat="feed in feeds  | reverse">
                         </feed>
-
-                        <!--<div class="feedSet">-->
-                        <!--<div class="feedSetMain">-->
-                            <!--<div class="RoundDropDown" >-->
-                                <!--<div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>-->
-                                <!--&lt;!&ndash;<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>&ndash;&gt;-->
-                                <!--<div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">-->
-                                    <!--<button ng-if="feed.type == 'StatusPosted'" ng-click="removeStatus($index, feed)">Delete</button>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div  class="contHead">-->
-                                <!--<div  ng-show="feed.type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>-->
-                            <!--</div>-->
-                            <!--<div class="cont">-->
-                                <!--<div class="left bgrid -bg-s-80">-->
-                                    <!--<div class="img">-->
-
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="right  bgrid -bg-s-80-w">-->
-                                    <!--<div class="head">-->
-                                        <!--<div >Test shit</div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="mid">-->
-                                        <!--<div>-->
-                                            <!--<span >shitty description</span>-->
-                                        <!--</div>-->
-                                        <!--<div class="feedFile">-->
-                                            <!--&lt;!&ndash;if it is a image file&ndash;&gt;-->
-                                            <!--<div class="feedFileImg">-->
-                                                <!--<div class="head">-->
-                                                    <!--<img src="images/backgrounds/2.jpg">-->
-                                                <!--</div>-->
-                                                <!--<div class="foot">-->
-                                                    <!--<a>filename.png</a>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                            <!--&lt;!&ndash;if it is unknow file&ndash;&gt;-->
-                                            <!--<div class="feedFileUnknown">-->
-                                                <!--<div class="foot">-->
-                                                    <!--<a>Some other unknown file.exe</a>-->
-                                                <!--</div>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="foot">-->
-                                        <!--<div class="head">-->
-                                            <!--<span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>-->
-                                        <!--</div>-->
-                                        <!--<div class="comment-slot">-->
-                                            <!--&lt;!&ndash;COMMENT SLOT&ndash;&gt;-->
-                                            <!--<comment ng-if="feed.type != 'CommentPosted'" ng-repeat="comment in feed.comments" class="commentSet">-->
-                                            <!--</comment>-->
-                                            <!--<comment ng-if="feed.type == 'CommentPosted'" ng-repeat="comment in feed.context.comments" class="commentSet">-->
-                                            <!--</comment>-->
-                                        <!--</div>-->
-                                        <!--<div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >-->
-                                            <!--<textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>-->
-                                            <!--<div>-->
-                                                <!--<button class="b-btn-sm" ng-click="postComment(feed)">Submit</button>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex-5 -p">
-        <div class="fluidGrid -h-200 grey">
-
-        </div>
-    </div>
-
     <div class="flex-5">
-        <div class="flex-5 -p">
-            <div class="fluidGrid -h-200 Bslider greenBlue">
+        <div class="flex-5 -h-200 -p">
+            <div class="fluidGrid  Bslider greenBlue">
 
                 <div  ng-repeat="data in dailyNotes" class="Bframe">
                     <div class="bf-4"> </div>
@@ -276,18 +200,16 @@
 
             </div>
         </div>
-        <div class="flex-5 -p ">
-            <div class="fluidGrid -h-200 bg2">
+        <div class="flex-5 -h-200 -p ">
+            <div class="fluidGrid  bg2">
 
-                <div class="imageCover"></div>
             </div>
         </div>
     </div>
 
-    <div class="flex-5 -p">
-        <div class="fluidGrid -h-300 bg1">
+    <div class="flex-5 -h-500 -p">
+        <div class="fluidGrid  cloud">
 
-            <div class="imageCover"></div>
         </div>
     </div>
     <!--New row-->
@@ -313,7 +235,7 @@
                 </div>
             </div>
             <div class="flex-10 -h-150 -p">
-                <div class="fluidGrid  orange">
+                <div class="fluidGrid  cloud">
 
                 </div>
             </div>

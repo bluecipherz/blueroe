@@ -37,9 +37,6 @@ $(document).on('click','.selectGrp > .foot > span',function(){
     that.parent().parent().find('input').val(id);
     //that.parent().hide();
 });
-//$(document).on('click','.postform > .heading > span',function(){
-//    var that = $(this);
-//    var passid = that.attr('value');
-//    $(this).parent().parent().find('.cont').removeClass('active');
-//    $(this).parent().parent().find('.tab' + passid).addClass('active');
-//});
+$(document).ready(function(){
+    $("html").niceScroll();
+});

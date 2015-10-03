@@ -1,4 +1,5 @@
 @import 'base/variables';
+@import 'functions/baseFunctions';
 body{
   font-size:88%;
   min-width: 100%;
@@ -26,6 +27,12 @@ body{
 .-f-right{
 	float:right;
 }
+.rowspace{display: block;float: left;width: 100%; min-width: 10px;height: 20px;}
+.overflow-s{ overflow:scroll; }
+.overflow-s-y{ overflow-y:scroll; }
+.overflow-s-x{ overflow-x:scroll; }
+.overflow-h{ overflow-x:hidden; }
+
 a:hover{cursor:pointer;}
 .RoundDropDown{
 	display:block;
@@ -192,3 +199,47 @@ div::-webkit-scrollbar-thumb {
 @font-face{font-family:Walkway;src:url('../../fonts/Dosis-Medium.ttf');font-weight:300}
 @font-face{font-family:Walkway;src:url('../../fonts/Dosis-SemiBold.ttf');font-weight:400}
 @font-face{font-family:Walkway;src:url('../../fonts/Dosis-Bold.ttf');font-weight:500}
+
+.custButton{
+  display: block;
+  float: left;
+  background:#ddd;
+  margin: 5px;
+  padding:7px 10px;
+  @include border-radius(3px);
+  font-size: 90%;
+}
+.custButton:hover{
+  cursor: pointer;
+  background:#d5d5d5;
+}
+.custButton.-blue{  background: $blue;  color: #eee;  }
+.custButton.-blue:hover{  background: $blue;  color: #fff;  }
+.custButton.-right{
+  float: right;
+}
+
+input[type='text'],input[type='password'],textarea,select{
+  min-height:30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  padding:0 7px;
+}
+textarea{line-height: 100%; padding:5px;}
+h5{
+  border-bottom: 1px solid rgba($blueR,$blueG,$blueB,0.4);
+  padding:10px 0 7px 0;
+  margin:5px 0 5px 0;
+}
+h6{
+  margin:5px 0 0 0;
+}
+option{
+  min-height:30px;
+  line-height: 30px;
+  margin:0;
+}
+option{
+  margin: 0;
+}
+

@@ -124,13 +124,13 @@
                                     </div>
                                 </div>
                                 <div class="head">
-                                    <textarea name="" placeholder="File description"rows="3"></textarea>
+                                    <textarea name="" placeholder="File description" rows="3" ng-model="uploadfile.description"></textarea>
                                 </div>
                                 <div class="head">
                                     <div class="half">
                                         <div >
                                             <div>Project name</div>
-                                            <select>
+                                            <select ng-model="uploadfile.project">
                                                 <option value="{{ project.id }}" ng-repeat="project in projects">{{ project.name }}</option>
                                             </select>
                                         </div>

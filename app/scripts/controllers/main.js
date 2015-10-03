@@ -8,7 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-    .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,Spinner) {
+    .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,Spinner,$interval) {
         $scope.projects = [];
         $scope.feeds = [];
         var feedSpinner = new Spinner('feedSpinner');

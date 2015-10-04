@@ -20,13 +20,15 @@
 
     var feeds;
 
+    var params = {};
+
     var Feed = TokenHandler.wrapActions(
-        $resource(Hoster.getHost() + '/api/me/feeds'),
+        $resource(Hoster.getHost() + '/api/me/feeds/:project'),
         ['query']
     );
 
     if(TokenHandler.isTempLogged()) {
-        fetchFeeds();
+        fetchFeeds({});
     } else {
         TokenHandler.onTempLogin(fetchFeeds);
     }
@@ -38,7 +40,9 @@
     };
 
     function fetchFeeds() {
-        Feed.query().$promise.then(function(results) {
+        console.log('params')
+        console.log(params)
+        Feed.query(params).$promise.then(function(results) {
             feeds = results;
             fetched = true;
             notifyObservers();
@@ -57,6 +61,10 @@
         feedsAlreadyFetched: function() {
             if(reloadEverytime) return false;
             return fetched;
+        },
+        setProject: function(projectid) {
+            params = {project:projectid};
+            // params['project'] = projectid;
         }
     }
 

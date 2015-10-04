@@ -14,10 +14,12 @@ angular.module('bluroeApp')
     }
     Spinner.prototype.stopSpin = function() {
         var sel = this.selector;
+        $('#'+sel).find('.spinner').removeClass('act');
         $('#'+sel).find('.cover').removeClass('contCover');
     }
     Spinner.prototype.startSpin = function() {
         var sel = this.selector;
+        $('#'+sel).find('.spinner').addClass('act');
         $('#'+sel).find('.cover').addClass('contCover');
         console.log(sel);
     }

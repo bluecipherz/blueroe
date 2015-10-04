@@ -1,15 +1,8 @@
 <div class="flexPage ">
-    <div class="flex-5 -p ">
+    <div class="flex-6 -p ">
         <div class="fluidGrid b-p-rel ">
-
-            <div class="Spinner" id="feedSpinner" >
-                <div class="sBtn" ng-click="updateFeeds()"></div>
-                <div class="cover">
-                    <div class="loaderOuter">
-                        <div class="loader"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="sBtn -r20 "></div>
+			<spinner ng-class="{'hidden':main.feedLoader}"></spinner>
 
             <div class="page-feeds ">
                 <div class="p-feeds bgrid">
@@ -189,7 +182,7 @@
                     <div class="feed-slot bgrid ">
                         <!--FEED SET-->
 
-                        <feed class="feedSet" ng-repeat="feed in feeds  | reverse">
+                        <feed class="feedSet" ng-repeat="feed in main.feeds  | reverse">
                         </feed>
 
                     </div>
@@ -197,7 +190,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-5">
+    <div class="flex-4">
         <div class="flex-5 -h-200 -p"  ng-controller="DailynotesCtrl as ds" >
             <div class="fluidGrid  Bslider greenBlue">
                 <div  ng-repeat="data in ds.dailyNotes" class="Bframe">
@@ -208,37 +201,30 @@
                 </div>
             </div>
         </div>
-        <div ng-controller="DailystatsCtrl as DS" class="flex-5 -h-200 -p " >
+        <div ng-controller="TaskstatsCtrl as TS" class="flex-5 -h-200 -p " >
             <div class="fluidGrid  blue" >
                 <div class="MultiBars">
                     <div class="head">Monthly Progress</div>
-                    <div class="Mchat">
 
-                        <div class="bar"ng-repeat="data in DS.dailyStats" style="width: calc( 100% / {{ data.barWidth }} );">
+                        <nvd3 options="options" data="data"></nvd3>
+
+                        <!-- <div class="bar"ng-repeat="data in DS.dailyStats" style="width: calc( 100% / {{ data.barWidth }} );">
                             <div class="line" >
                                 <div class="bar2" style="top: {{ data.bar2 }}%"></div>
                                 <div class="bar1" style="top: {{ data.bar1 }}%"></div>
                             </div>
-                        </div>
+                        </div> -->
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="flex-5 -h-500 -p">
+    <div class="flex-4 -h-500 -p" ng-controller="DailystatsCtrl as DS" >
         <div class="fluidGrid  cloud b-p-rel">
 
-            <div class="Spinner" id="StatsSpinner" >
-                <div class="sBtn" ng-click="updateFeeds()"></div>
-                <div class="cover">
-                    <div class="loaderOuter">
-                        <div class="loader"></div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- <spinner ng-class="{'hidden':StateSpinner}"></spinner> -->
+            <nvd3 options="options" data="data"></nvd3>
         </div>
     </div>
     <!--New row-->

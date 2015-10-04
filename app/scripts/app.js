@@ -12,7 +12,8 @@ angular
   .module('bluroeApp', [
     'ngMessages',
     'ngResource',
-    'ui.router'
+    'ui.router',
+    'nvd3'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/');
@@ -72,7 +73,7 @@ angular
             url: '/projects/:id',
             templateUrl: 'views/main.html',
             controller: 'ProjectsCtrl',
-            controllerAs: 'projects'
+            controllerAs: 'main'
         });
   })
   .run(function($rootScope, powerProgress) {

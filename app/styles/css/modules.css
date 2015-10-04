@@ -170,17 +170,19 @@
 
 /* Colors */
 /* images */
-.Spinner .sBtn {
+.sBtn {
   border: 4px solid rgba(0, 0, 0, 0.3);
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
   z-index: 10; }
-.Spinner .cover {
+
+.cover {
   transition: background 1s;
   overflow: hidden; }
-.Spinner .contCover {
+
+.spinnerCover {
   z-index: 9;
   background: rgba(255, 255, 255, 0.7); }
 

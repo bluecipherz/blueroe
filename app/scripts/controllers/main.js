@@ -9,16 +9,14 @@
  */
 angular.module('bluroeApp')
     .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,Spinner,$interval) {
-        $scope.projects = [];
-        $scope.feeds = [];
-        var feedSpinner = new Spinner('feedSpinner');
 
-        var StateSpinner = new Spinner('StatsSpinner');
-        StateSpinner.startSpin();
+        var vm = this;
 
+        vm.projects = [];
+        vm.feeds = []; 
 
         var updateProjects = function() {
-            $scope.projects = Project.getProjects();
+            vm.projects = Project.getProjects();
             // console.log($scope.projects);
         }
 
@@ -29,9 +27,9 @@ angular.module('bluroeApp')
         }
         
         var updateFeeds = function() {
-            $scope.feeds = feedFactory.getFeeds();
+            vm.feeds = feedFactory.getFeeds();
             console.log('feedFecthing complete');
-            feedSpinner.stopSpin();
+            vm.feedLoader = true;
         }
 
         if(feedFactory.feedsAlreadyFetched()) {
@@ -39,11 +37,11 @@ angular.module('bluroeApp')
             updateFeeds();
         } else {
             console.log('fetching feeds');
-            feedSpinner.startSpin();
+            vm.feedLoader = false;
             feedFactory.onFetchFeeds(updateFeeds);
         }
 
-        $scope.updateFeeds = function(){
+        this.updateFeeds = function(){
             // Put your update code here
         }
 
@@ -145,7 +143,8 @@ angular.module('bluroeApp')
         // DROPZONE
         $scope.dropzoneConfig = {
             options: { // passed into the Dropzone constructor
-                url: Hoster.getHost() + '/api/tempupload'
+                url: Hoster.getHost() + '/api/tempupload',
+                 
                 // paramName: 'file'
             },
             eventHandlers: {

@@ -34,7 +34,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div  ng-controller="IndexCtrl as AsController">
+    <div ng-controller="IndexCtrl as AsController">
         <div class="blueNav bn-group cust-header b-p-fix">
             <div class="bgrid navH -bg-s-200 ">
                 <div class="bgrid -bg-s-60">
@@ -70,7 +70,7 @@
                 <!--Aside LinkList-->
                 <div class="asideLinkList listHead" ng-if="checkIsLinkList(aside)" >
                     <!--Aside LinkBase-->
-                    <div  ng-click="showDetails = ! showDetails"  class="asideButton asideListBase" >
+                    <div ng-click="showDetails = ! showDetails"  class="asideButton asideListBase" >
                         <div class="asideName"> {{ aside.name }} </div>
                         <div class="asideIcon">
                             <div class="img">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <!--Aside LinkList-->
-                    <div  ng-class="{ 'hiddenList': ! showDetails }" >
+                    <div ng-class="{ 'hiddenList': ! showDetails }" >
                         <div class="asideButton"  ng-repeat="asideL in aside.list ">
                             <div class="NestedAsideLink"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
                                 <div class="asideName"> {{ asideL.name }} </div>
@@ -182,6 +182,7 @@
         <script src="scripts/services/document.js"></script>
         <script src="scripts/controllers/taskstats.js"></script>
         <script src="scripts/services/users.js"></script>
+        <script src="scripts/controllers/allprojects.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -85,6 +85,6 @@ angular.module('bluroeApp')
         function stream_index(d, i) {
             return {x: i, y: Math.max(0, d)};
         }
-        console.log('its calling');
+        // console.log('its calling');
 
     });

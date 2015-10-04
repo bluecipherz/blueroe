@@ -18,7 +18,7 @@
 
     var fetched = false;
 
-    var feeds;
+    var feeds = [];
 
     var params = {};
 
@@ -34,8 +34,9 @@
     }
 
     var notifyObservers = function() {
-        angular.forEach(observerCallbacks, function(callback) {
+        angular.forEach(observerCallbacks, function(callback, key) {
             callback();
+            observerCallbacks.splice(key, 1);
         });
     };
 
@@ -49,14 +50,18 @@
         });
     }
 
-    function getFeeds() {
-        return feeds;
-    }
-
     return {
-        getFeeds: getFeeds,
-        onFetchFeeds: function(callback) {
+        getFeeds: function() {
+            return feeds;
+        },
+        onFetchFeeds: function(callback, data) {
             observerCallbacks.push(callback);
+            // new auto refresh on every page load "implementation"
+            if(TokenHandler.isTempLogged()) {
+                if(params == undefined) fetchFeeds(params);
+                else fetchFeeds(data);
+            } // end
+            console.log('feedFactory callbacks : ' + observerCallbacks.length);
         },
         feedsAlreadyFetched: function() {
             if(reloadEverytime) return false;
@@ -65,6 +70,13 @@
         setProject: function(projectid) {
             params = {project:projectid};
             // params['project'] = projectid;
+        },
+        pushFeed: function(feed) {
+            feeds.push(feed);
+        },
+        update: function(callback) {
+            observerCallbacks.push(callback);
+            fetchFeeds(params);
         }
     }
 

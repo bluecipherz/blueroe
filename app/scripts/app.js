@@ -64,9 +64,9 @@ angular
           /*project section*/
 
         .state('projects', {
-            url: '/projects',
+            url: '/allprojects',
             templateUrl: 'views/projects.html',
-            controller: 'ProjectsCtrl',
+            controller: 'AllprojectsCtrl',
             controllerAs: 'projects'
         })
         .state('projectShow', {

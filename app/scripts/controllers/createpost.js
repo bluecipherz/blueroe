@@ -8,27 +8,41 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler){
-        $scope.selectedTab = 1;
+  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory){
+        
+        var vm = this;
 
-        $scope.selectTab = function(tab) {
-            $scope.selectedTab = tab;
+        vm.selectedTab = 1;
+
+        vm.selectTab = function(tab) {
+            vm.selectedTab = tab;
         }
 
-        $scope.isSelected = function(tab) {
-            return $scope.selectedTab == tab;
+        vm.isSelected = function(tab) {
+            return vm.selectedTab == tab;
+        }
+
+        if($state.current.name == 'projectShow') {
+            vm.status = {project: $stateParams.id};
+            vm.task = {project: $stateParams.id};
+            vm.milestone = {project: $stateParams.id};
+            vm.fileupload = {project: $stateParams.id};
+            vm.forum = {project: $stateParams.id};
+            vm.bug = {project: $stateParams.id};
         }
 
         $scope.dropzoneConfig = {
             options: { // passed into the Dropzone constructor
-                url: Hoster.getHost() + '/api/attachments'
+                url: Hoster.getHost() + '/api/tempupload'
             },
             eventHandlers: {
                 sending: function (file, xhr, formData) {
-                    formData.append('token', TokenHandler.getToken())
+                    // formData.append('token', TokenHandler.getToken())
+                    xhr.setRequestHeader('Authorization', 'Bearer: ' + TokenHandler.getToken());
                     console.log('sending');
                 },
                 success: function (file, response) {
+                    console.log('tempfile : ' + response.file);
                 },
                 fail: function(response) {
                     console.log('upload failed');
@@ -36,32 +50,43 @@ angular.module('bluroeApp')
             }
         };
 
-        $scope.postStatus = function() {
-            console.log('poststatus ' + $scope.status.project);
+        vm.postStatus = function() {
+            console.log('poststatus ' + vm.status.project);
             var data = {
-                message: $scope.status.message,
-                projectid: $scope.status.project
+                message: vm.status.message,
+                projectid: vm.status.project
             };
             console.log(data);
             Status.postStatus(data).$promise.then(function(results) {
-                $scope.feeds.push(results.feed)
-                $scope.status.message = "";
+                feedFactory.pushFeed(results.feed)
+                vm.status.message = "";
             });
         }
 
-        $scope.addTask = function() {
+        vm.addTask = function() {
             console.log('addtask')
         }
 
-        $scope.addMilestone = function() {
+        vm.addMilestone = function() {
             console.log('addmilestone')
         }
 
-        $scope.uploadFile = function() {
+        vm.uploadFile = function() {
             console.log('uploadfile')
+            var data = {
+                file: vm.file,
+                projectid: vm.uploadfile.project,
+                description: vm.uploadfile.description
+            };
+            Document.uploadFile(data).$promise.then(function(response) {
+                feedFactory.push(response.feed);
+                // console.log(response);
+            }, function(response) {
+                console.log("errr")
+            });
         }
 
-        $scope.postForum = function() {
+        vm.postForum = function() {
             console.log('postforum')
         }
 

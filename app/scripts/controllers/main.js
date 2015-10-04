@@ -28,21 +28,24 @@ angular.module('bluroeApp')
         
         var updateFeeds = function() {
             vm.feeds = feedFactory.getFeeds();
-            console.log('feedFecthing complete');
+            console.log('feedFetching complete : ' + vm.feeds.length);
             vm.feedLoader = true;
         }
 
-        if(feedFactory.feedsAlreadyFetched()) {
-            console.log('feeds already fetched');
-            updateFeeds();
-        } else {
-            console.log('fetching feeds');
-            vm.feedLoader = false;
+        // if(feedFactory.feedsAlreadyFetched()) {
+            // console.log('feeds already fetched');
+            // updateFeeds();
+        // } else {
+            // console.log('fetching feeds');
+            // vm.feedLoader = false;
             feedFactory.onFetchFeeds(updateFeeds);
-        }
+        // }
 
-        this.updateFeeds = function(){
-            // Put your update code here
+        this.refreshFeeds = function(){
+            vm.feedLoader = false;
+            feedFactory.update(function() {
+                vm.feedLoader = true;
+            });
         }
 
         $scope.postComment = function(feed) {
@@ -112,7 +115,7 @@ angular.module('bluroeApp')
 
         var index = 0;
         var count = dailyNotesData.length;
-        console.log($('.Bslider').children().length);
+        // console.log($('.Bslider').children().length);
         var SliderEngine = function() {
             $('.Bslider .Bframe').eq(index).fadeOut(function() {
                 if (index+1 == count){
@@ -127,106 +130,4 @@ angular.module('bluroeApp')
         $interval(SliderEngine, 10000);
 
 
-    }).controller('TabController', function ($scope, Status, Hoster, TokenHandler, Document){
-        $scope.selectedTab = 1;
-
-        var vm = this;
-
-        $scope.selectTab = function(tab) {
-            $scope.selectedTab = tab;
-        }
-
-        $scope.isSelected = function(tab) {
-            return $scope.selectedTab == tab;
-        }
-
-        // DROPZONE
-        $scope.dropzoneConfig = {
-            options: { // passed into the Dropzone constructor
-                url: Hoster.getHost() + '/api/tempupload',
-                 
-                // paramName: 'file'
-            },
-            eventHandlers: {
-                sending: function (file, xhr, formData) {
-        			// formData.append('token', TokenHandler.getToken());
-                    xhr.setRequestHeader('Authorization', 'Bearer: ' + TokenHandler.getToken());
-                    console.log('sending');
-                },
-                success: function (file, response) {
-                    console.log('tempfile : ' + response.file);
-                    vm.file = response.file;
-                },
-                error: function(response) {
-                    console.log(response);
-                }
-            }
-        };
-
-        $scope.postStatus = function() {
-            console.log('poststatus ' + $scope.status.project);
-            var data = {
-                message: $scope.status.message,
-                projectid: $scope.status.project
-            };
-            console.log(data);
-            Status.postStatus(data).$promise.then(function(results) {
-                $scope.feeds.push(results.feed);
-                $scope.status.message = "";
-            });
-        }
-
-        $scope.addTask = function() {
-            console.log('addtask')
-        }
-
-        $scope.addMilestone = function() {
-            console.log('addmilestone')
-        }
-
-        $scope.uploadFile = function() {
-            console.log('uploadfile');
-            var data = {
-                file: vm.file,
-                projectid: $scope.uploadfile.project,
-                description: $scope.uploadfile.description
-            };
-            Document.uploadFile(data).$promise.then(function(response) {
-                $scope.feeds.push(response.feed);
-                // console.log(response);
-            }, function(response) {
-                console.log("errr")
-            });
-        }
-
-        $scope.postForum = function() {
-            console.log('postforum')
-        }
-
-    }).controller('AsideController', function (){
-        this.tab = 1;
-
-        this.selectTab = function (setTab){
-            this.tab = setTab;
-        };
-        this.isSelected = function(checkTab) {
-            return this.tab === checkTab;
-        };
-    })
-    .controller('ThemesCtrl', function ($scope, sidenav, $state) {
-        $scope.themes = [{'id':'1','name':'Orange' , 'url':'styles/css/theme/orange-theme.css','color':'#ec741a'},
-                        {'id':'2','name':'Green' , 'url':'styles/css/theme/green-theme.css','color':'#55cc82'}];
-            var loadedTheme = new Array();
-        $scope.changeTheme = function($url,$id){
-            $('#cssHead link').attr("disabled", "disabled");
-            $('link','#cssHead').each(function(){
-                loadedTheme.push($(this).attr('id'));
-            });
-            
-            $('#cssHead').append( $('<link rel="stylesheet" type="text/css" />').attr('href', $url) );
-
-        }
-        $scope.disableTheme = function(){
-            $('#cssHead link').attr("disabled", "disabled");
-        }
     });

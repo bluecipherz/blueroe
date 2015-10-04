@@ -30,7 +30,8 @@
 
                 <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
                 <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
-                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project }}</div>
+                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'DocumentUploaded'">{{ feed.origin.email }} uploaded document in {{ feed.project.name }}</div>
             </div>
 
             <div class="mid">
@@ -38,9 +39,19 @@
                 <span ng-if="feed.type == 'TaskCreated'">{{ feed.subject.description }}</span>
                 <span ng-if="feed.type == 'TaskCompleted'">{{ feed.subject.description }}</span>
                 <span ng-if="feed.type == 'StatusPosted'">{{ feed.subject.message }}</span>
+                <div class="feedFile" ng-if="feed.type == 'DocumentUploaded'">
+                    <div class="feedFileImg">
+                        <div class="head">
+                            <img src="{{ document.url }}">
+                        </div>
+                        <div class="foot">
+                            <a>{{ document.url }}</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="mid">
-                <attachment ng-repeat="attachment in feed.attachments"  > 
+                <attachment ng-repeat="attachment in feed.attachments"> 
                 </attachment>
             </div>
             <div class="foot">

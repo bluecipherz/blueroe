@@ -179,7 +179,7 @@
                     <div class="feed-slot bgrid ">
                         <!--FEED SET-->
 
-                        <feed class="feedSet" ng-repeat="feed in feeds  | reverse">
+                        <feed class="feedSet" ng-repeat="feed in feeds  | orderBy: 'updated_at':true">
                         </feed>
 
                     </div>

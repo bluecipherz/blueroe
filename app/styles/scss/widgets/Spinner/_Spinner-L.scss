@@ -1,0 +1,51 @@
+
+.sBtn {
+  display: block;
+  float: left;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+}
+.spinnerCover{
+    display: block;
+    float: left;
+    position: absolute;
+    top: 0px; 
+    right: 0px; 
+    left:0px;
+    bottom:0px;
+
+    .loaderOuter{
+      display: block;
+      float: left;
+      position: absolute;
+      left: calc(50% - 20px);
+      top: calc(50% - 20px);
+      width: 40px;
+      height: 40px;
+    }
+    .loader{
+      display: block;
+      float: left;
+      position: relative;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .sBtn.-r5{ right: 5px; }
+  .sBtn.-r10{ right: 10px; }
+  .sBtn.-r15{ right: 15px; }
+  .sBtn.-r20{ right: 20px; }
+
+  .sBtn.-t5{ top: 5px; }
+  .sBtn.-t10{ top: 10px; }
+  .sBtn.-t15{ top: 15px; }
+  .sBtn.-t20{ top: 20px; }
+
+.act{
+	bottom:0px;
+	left:0px;
+}

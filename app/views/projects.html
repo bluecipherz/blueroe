@@ -4,22 +4,16 @@
             <div class="head">
                 View by Group
                 <div class="bgrid -bg-s-100 -f-right b-p-rel ">
-                    <div class="custButton -blue" ng-click="showNoti = ! showNoti" >New Project</div>
+                    <div class="custButton -blue" ng-click="showNoti = ! showNoti">New Project</div>
                     <div class="popBox -l" ng-class="{ 'hidden' : ! showNoti }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showNoti = ! showNoti"></div>
                         <div class="cont">
                             <div class="createProjectPopup">
                                 <h5>Create New Project</h5>
-                                <input type="text" placeholder="Project name" />
-                                <h6>Owner</h6>
-                                <select>
-                                    <option  value="asd">Test user</option>
-                                    <option  value="asd">Test user 2</option>
-                                    <option ng-repeat="user in users" value="{{ user.name }}"> {{ user.name }}</option>
-                                </select>
+                                <input type="text" placeholder="Project name" ng-model="projects.projectname"/>
                                 <h6>Project Overview</h6>
-                                <textarea placeholder="project overview" rows="4"></textarea>
+                                <textarea placeholder="project overview" rows="4" ng-model="projects.projectoverview"></textarea>
                                 <div>
                                     <table>
                                         <tr>
@@ -32,18 +26,18 @@
                                 <form>
                                     <table>
                                         <tr>
-                                            <td><input type="radio" name="sex" value="male" checked></td>
-                                            <td>Show this project overview by default</td>
+                                            <td><input type="radio" name="private" ng-model="projects.private" value="true" checked="checked"></td>
+                                            <td>Private - Only project users can access</td>
                                         </tr>
                                         <tr>
-                                            <td><input type="radio" name="sex" value="female"></td>
-                                            <td>Show this project overview by default</td>
+                                            <td><input type="radio" name="private" ng-model="projects.private" value="false"></td>
+                                            <td>Public - Portal users can view/follow</td>
                                         </tr>
                                     </table>
                                 </form>
                                 <div class="rowspace"></div>
                                 <div>
-                                    <div class="custButton -blue">Create Project</div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Project</div>
                                     <div class="custButton " ng-click="showNoti = ! showNoti">Cancel</div>
                                 </div>
                             </div>
@@ -60,7 +54,7 @@
                         <th>MILESTONE</th>
                         <th>%</th>
                     </tr>
-                    <tr ng-repeat="project in projectList" ui-sref="projectShow({id:project.id})">
+                    <tr ng-repeat="project in projects.projectList" ui-sref="projectShow({id:project.id})">
                         <td>{{project.name}}</td>
                         <td>{{project.owner.email}}</td>
                         <td>{{project.completedTasks}} / {{project.tasks.length}}</td>

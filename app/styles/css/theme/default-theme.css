@@ -1,6 +1,13 @@
 /* Colors */
 /* images */
 #powerProgress {
-  background: #e74c3c; }
+  background: #e74c3c;
+  height: 3px;
+  bottom: -3px; }
+
+.bl-ul > .active > a {
+  background: #434343;
+  color: #fff;
+  border-bottom: #e74c3c 2px solid; }
 
 /*# sourceMappingURL=default-theme.css.map */

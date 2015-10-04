@@ -8,46 +8,15 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-    .controller('IndexCtrl', function ($rootScope, $scope, sidenav, $state) {
+    .controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,Spinner,$interval) {
 
-		$rootScope.$state = $state;
-	
-        $scope.currState = $state;
-        // sidenav factory holds the sidebar data.
-        // check for state change and display approriate sidebar
-        $scope.$watch('currState.current.name', function(newValue, oldValue) {
-          if(newValue == 'home') {
-            $scope.asideList = sidenav.getHomeNavs();
-          } else if(newValue == 'projects') {
-            $scope.asideList = sidenav.getProjectNavs();
-          } else {
-            $scope.asideList = sidenav.getHomeNavs(); // default
-          }
-        });  
+        var vm = this;
 
-        $scope.checkIsLink = function(message) {
-            return message.type == 'link';
-        }
-        $scope.checkIsLinkList = function(message) {
-            return message.type == 'linkList';
-        }
-
-            this.tab = 1;
-
-            this.selectTab = function (setTab){
-                this.tab = setTab;
-            };
-            this.isSelected = function(checkTab) {
-                return this.tab === checkTab;
-            };
-
-    }).controller('MainCtrl', function ($scope, feedFactory, SliderService, Comment, TokenHandler, Status, Project ,$interval, $timeout) {
-        $scope.projects = [];
-
-        $scope.feeds = [];
+        vm.projects = [];
+        vm.feeds = []; 
 
         var updateProjects = function() {
-            $scope.projects = Project.getProjects();
+            vm.projects = Project.getProjects();
             // console.log($scope.projects);
         }
 
@@ -58,8 +27,9 @@ angular.module('bluroeApp')
         }
         
         var updateFeeds = function() {
-            $scope.feeds = feedFactory.getFeeds();
-            console.log(feedFactory.getFeeds());
+            vm.feeds = feedFactory.getFeeds();
+            console.log('feedFecthing complete');
+            vm.feedLoader = true;
         }
 
         if(feedFactory.feedsAlreadyFetched()) {
@@ -67,11 +37,12 @@ angular.module('bluroeApp')
             updateFeeds();
         } else {
             console.log('fetching feeds');
+            vm.feedLoader = false;
             feedFactory.onFetchFeeds(updateFeeds);
         }
 
-        $scope.loadNewFilter = function (){
-            AsideBarServ.updateAside;
+        this.updateFeeds = function(){
+            // Put your update code here
         }
 
         $scope.postComment = function(feed) {
@@ -115,13 +86,15 @@ angular.module('bluroeApp')
                 console.log($scope.feeds);
             });
         }
+
+
+
         //
         //var testCtrl1ViewModel = $scope.$new(); //You need to supply a scope while instantiating.
         ////Provide the scope, you can also do $scope.$new(true) in order to create an isolated scope.
         ////In this case it is the child scope of this scope.
         //$controller('AsideCtrl',{$scope : testCtrl1ViewModel });
         //testCtrl1ViewModel.myMethod(); //And call the method on the newScope.
-
 
         /* Grid Stuffs */
 
@@ -170,7 +143,8 @@ angular.module('bluroeApp')
         // DROPZONE
         $scope.dropzoneConfig = {
             options: { // passed into the Dropzone constructor
-                url: Hoster.getHost() + '/api/tempupload'
+                url: Hoster.getHost() + '/api/tempupload',
+                 
                 // paramName: 'file'
             },
             eventHandlers: {

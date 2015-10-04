@@ -1,4 +1,11 @@
 @import "../base/variables";
 #powerProgress{
   background:$themeColor;
+  height:3px;
+  bottom:-3px;
+}
+.bl-ul > .active > a{
+  background:#434343;
+  color:#fff;
+  border-bottom:$themeColor 2px solid;
 }

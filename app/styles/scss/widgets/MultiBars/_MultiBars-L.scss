@@ -1,0 +1,40 @@
+.MultiBars{
+  display: block;
+  float: left;
+  width: 100%;
+  height: 100%;
+  .head{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 30px;
+  }
+  .Mchat{
+    display: table;
+    float: left;
+    width: calc(100% - 20px);
+    margin-left:10px;
+    height: calc(100% - 30px );
+    .bar{
+      display: table-cell;
+      float: left;
+      width: calc( 100% / 7 );
+      height:100%;
+      position: relative;
+      .line{
+        display: block;
+        float: left;
+        width: 100%;
+        height:90%;
+        position: relative;
+        .bar1,.bar2,.dummy{
+          display: block;
+          float: left;
+          width: 80%;
+          bottom:0px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

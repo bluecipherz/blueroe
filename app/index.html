@@ -10,6 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/dropzone/dist/min/dropzone.min.css" />
     <!-- endbower -->
@@ -41,8 +42,8 @@
                 </div>
                 <div class="bgrid -bg-s-140">
                     <ul class="bl-ul bg-text-c">
-                        <li class="active -bg-s-60"><a ui-sref="home">Home</a></li>
-                        <li class="-bg-s-80"><a ui-sref="projects">Projects</a></li>
+                        <li class="-bg-s-60" ng-class="{'active' : currView == 'home'}" ><a ui-sref="home">Home</a></li>
+                        <li class="-bg-s-80"ng-class="{'active' : currView == 'projects'}"><a ui-sref="projects">Projects</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +59,7 @@
         <div class="b-p-fix Aside sec-left b-layer-2" >
             <a ng-repeat="aside in asideList" class="asideButton">
                 <!--Aside Link-->
-                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:AsController.isSelected(aside.id) }"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
+                <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
                     <div class="asideName"> {{ aside.name }} </div>
                     <div class="asideIcon">
                         <div class="img">
@@ -80,7 +81,7 @@
                     <!--Aside LinkList-->
                     <div  ng-class="{ 'hiddenList': ! showDetails }" >
                         <div class="asideButton"  ng-repeat="asideL in aside.list ">
-                            <div class="NestedAsideLink"   ng-class="{active:AsController.isSelected(asideL.id) }"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
+                            <div class="NestedAsideLink"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(asideL.id);"  ui-sref="{{ asideL.ngClick }}">
                                 <div class="asideName"> {{ asideL.name }} </div>
                                 <div class="asideIcon">
                                     <div class="img">
@@ -123,6 +124,9 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/build/nv.d3.js"></script>
+    <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -135,7 +139,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/plugins/dropzone.js"></script>
-        <script src="scripts/plugins/jquery.nicescroll.js"></script>
+        <script src="scripts/plugins/jqBarGraph.1.1.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/index.js"></script>
@@ -168,7 +172,16 @@
         <script src="scripts/controllers/bugs.js"></script>
         <script src="scripts/controllers/calendar.js"></script>
         <script src="scripts/directives/attachment.js"></script>
+        <script src="scripts/controllers/dailynotes.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/controllers/createpost.js"></script>
+        <script src="scripts/controllers/reports.js"></script>
+        <script src="scripts/services/spinner.js"></script>
+        <script src="scripts/directives/spinner.js"></script>
+        <script src="scripts/controllers/dailystats.js"></script>
         <script src="scripts/services/document.js"></script>
+        <script src="scripts/controllers/taskstats.js"></script>
+        <script src="scripts/services/users.js"></script>
         <!-- endbuild -->
 </body>
 </html>

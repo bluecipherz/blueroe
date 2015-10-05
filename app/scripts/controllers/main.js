@@ -76,7 +76,9 @@ angular.module('bluroeApp')
             });
         }
 
-        $scope.removeStatus = function(feed) {
+        $scope.removeStatus = function(index, feed) {
+            console.log('removing feed:');
+            console.log(feed);
             var status = {
                 statusid: feed.subject.id
             };

@@ -13,7 +13,7 @@ angular.module('bluroeApp')
         var vm = this;
 
         vm.projects = [];
-        vm.feeds = []; 
+        vm.feeds = feedFactory.getFeeds; 
 
         var updateProjects = function() {
             vm.projects = Project.getProjects();
@@ -43,9 +43,7 @@ angular.module('bluroeApp')
 
         this.refreshFeeds = function(){
             vm.feedLoader = false;
-            feedFactory.update(function() {
-                vm.feedLoader = true;
-            });
+            feedFactory.update(updateFeeds);
         }
 
         $scope.postComment = function(feed) {
@@ -55,11 +53,12 @@ angular.module('bluroeApp')
             }).$promise.then(function(result) {
                 var comment = result.comment;
                 comment.owner = TokenHandler.getUser();
-                if(feed.type == 'CommentPosted') {
-                    feed.context.comments.push(comment);
-                } else {
-                    feed.comments.push(comment);
+                if(feed.additional_type != 'CommentPosted') {
+                    feed.additional_type == 'CommentPosted';
+                    feed.additional_subject_id = comment.id;
+                    feed.additional_subject_type = 'App\\Comment';
                 }
+                feed.comments.push(comment);
             });
             feed.comment = "";
             feed.showDetails = false;
@@ -77,7 +76,7 @@ angular.module('bluroeApp')
             });
         }
 
-        $scope.removeStatus = function(index, feed) {
+        $scope.removeStatus = function(feed) {
             var status = {
                 statusid: feed.subject.id
             };
@@ -85,8 +84,8 @@ angular.module('bluroeApp')
                 status.projectid = feed.project.id;
             }
             Status.deleteStatus(status).$promise.then(function(result) {
-                $scope.feeds.splice(index, 1);
-                console.log($scope.feeds);
+                feedFactory.removeFeed(feed);
+                updateFeeds();
             });
         }
 

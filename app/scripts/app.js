@@ -25,35 +25,36 @@ angular
           controller: 'MainCtrl',
           controllerAs: 'main'
         })
-		.state('mytasks', {
-			url: '/home/mytasks',
-			templateUrl: 'views/home/tasks.html',
-			controller: 'TasksCtrl',
-			controllerAs: 'tasks'
-		})
-		.state('mymilestones', {
-			url: '/home/mymilestones',
-			templateUrl: 'views/home/milestones.html',
-			controller: 'MilestonesCtrl',
-			controllerAs: 'milestones'
-		})
-		.state('mybugs', {
-			url: '/home/mybugs',
-			templateUrl: 'views/home/bugs.html',
-			controller: 'BugsCtrl',
-			controllerAs: 'bugs'
-		})
-		.state('mycalendar', {
-			url: '/home/mycalendar',
-			templateUrl: 'views/home/calendar.html',
-			controller: 'CalendarCtrl',
-			controllerAs: 'calendar'
-		}).state('reports', {
-			url: '/home/reports',
-			templateUrl: 'views/home/reports.html',
-			controller: 'ReportsCtrl',
-			controllerAs: 'reports'
-		})
+    		.state('mytasks', {
+    			url: '/home/mytasks',
+    			templateUrl: 'views/home/tasks.html',
+    			controller: 'TasksCtrl',
+    			controllerAs: 'tasks'
+    		})
+    		.state('mymilestones', {
+    			url: '/home/mymilestones',
+    			templateUrl: 'views/home/milestones.html',
+    			controller: 'MilestonesCtrl',
+    			controllerAs: 'milestones'
+    		})
+    		.state('mybugs', {
+    			url: '/home/mybugs',
+    			templateUrl: 'views/home/bugs.html',
+    			controller: 'BugsCtrl',
+    			controllerAs: 'bugs'
+    		})
+    		.state('mycalendar', {
+    			url: '/home/mycalendar',
+    			templateUrl: 'views/home/calendar.html',
+    			controller: 'CalendarCtrl',
+    			controllerAs: 'calendar'
+    		})
+        .state('reports', {
+    			url: '/home/reports',
+    			templateUrl: 'views/home/reports.html',
+    			controller: 'ReportsCtrl',
+    			controllerAs: 'reports'
+    		})
         .state('themes', {
             url: '/home/themes',
             templateUrl: 'views/home/themes.html',
@@ -84,8 +85,4 @@ angular
 	  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 
 	  });
-  }).filter('reverse', function() {
-  return function(items) {
-    return items.slice().reverse();
-  };
-});;
+  });

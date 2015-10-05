@@ -77,6 +77,10 @@
         update: function(callback) {
             observerCallbacks.push(callback);
             fetchFeeds(params);
+        },
+        removeFeed: function(feed) {
+            console.log('splicing ' + feeds.indexOf(feed) + ' feed');
+            feeds.splice(feeds.indexOf(feed), 1);
         }
     }
 

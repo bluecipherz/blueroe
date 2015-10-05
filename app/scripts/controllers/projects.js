@@ -18,7 +18,7 @@ angular.module('bluroeApp')
       
       var updateFeeds = function() {
       	vm.feeds = feedFactory.getFeeds();
-      	console.log('feedFecthing complete');
+      	console.log('feedFecthing complete ' + vm.feeds.length);
       	vm.feedLoader = true;
       }
 
@@ -33,7 +33,8 @@ angular.module('bluroeApp')
 
       this.refreshFeeds = function(){
           // Put your update code here
-          feedFactory.update();
+          vm.feedLoader = false;
+          feedFactory.update(updateFeeds);
       }
 
 

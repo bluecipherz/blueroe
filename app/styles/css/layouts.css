@@ -105,7 +105,8 @@
   -ms-border-radius: 4px;
   border-radius: 4px; }
 
-.postform .cont form > .foot > div {
+.postform .cont form > .foot > .Sel,
+.postform .cont form > .foot > input {
   float: right;
   line-height: 25px;
   width: 140px;
@@ -304,6 +305,43 @@
       padding: 7px;
       text-align: center; }
 
+.feedFooterLeft {
+  display: block;
+  float: left;
+  height: 100%; }
+  .feedFooterLeft .block {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 40px; }
+    .feedFooterLeft .block .Btn {
+      display: block;
+      float: left;
+      height: 100%;
+      width: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      line-height: 30px;
+      border-right: 1px solid rgba(0, 0, 0, 0.15); }
+    .feedFooterLeft .block .selPerson {
+      display: block;
+      float: left;
+      width: 300px;
+      min-height: 150px;
+      max-height: 500px;
+      overflow-y: scroll; }
+      .feedFooterLeft .block .selPerson .head, .feedFooterLeft .block .selPerson .foot {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px; }
+      .feedFooterLeft .block .selPerson .cont {
+        display: block;
+        float: left;
+        padding: 10px; }
+
 .chatSystem {
   display: block;
   float: left;
@@ -311,9 +349,25 @@
   right: -310px;
   top: 50px;
   bottom: 0px;
-  width: 300px;
-  z-index: 3;
-  transition: right 0.3s; }
+  width: 300px; }
+  .chatSystem .head {
+    display: block;
+    float: left;
+    width: 100%; }
+    .chatSystem .head .rows {
+      display: block;
+      float: left;
+      width: 100%;
+      height: "30px"; }
+      .chatSystem .head .rows .Btn, .chatSystem .head .rows .title, .chatSystem .head .rows .clBtn {
+        display: block;
+        float: left;
+        width: calc( 100% / 3);
+        height: "30px"; }
+      .chatSystem .head .rows .title {
+        width: 100%; }
+      .chatSystem .head .rows .clBtn {
+        width: 10%; }
 
 .chatSystemAct {
   right: 0px; }
@@ -330,9 +384,9 @@
     float: left;
     position: absolute;
     top: -6px;
-    right: 20px;
     width: 15px;
-    height: 15px; }
+    height: 15px;
+    z-index: 30px; }
   .popBox .cont {
     display: block;
     float: left;
@@ -351,12 +405,23 @@
 .popBox.-l {
   right: 0px; }
   .popBox.-l .topArrow {
-    right: 20px; }
+    right: 10px; }
 
 .popBox.-r {
   left: 0px; }
   .popBox.-r .topArrow {
-    left: 20px; }
+    left: 10px; }
+
+.popBox.-r-10 {
+  left: 10px; }
+  .popBox.-r-10 .topArrow {
+    left: 10px; }
+
+.popBox.-t-20 {
+  top: 20px; }
+
+.popBox.-t-30 {
+  top: 30px; }
 
 .sBtn {
   display: block;

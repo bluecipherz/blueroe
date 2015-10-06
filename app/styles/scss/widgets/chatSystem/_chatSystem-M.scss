@@ -1,4 +1,21 @@
+ @import '../../base/variables';
 .chatSystem{
 	background:#fff;
 	@include shadow(0,0,7px,rgba(0,0,0,0.3));
+	z-index:100;
+	transition:right 0.3s;
+	.head{ 
+	color:#aaa;
+		.rows{ 
+			background:#000;
+			.Btn,.title,.clBtn{ 
+				line-height:30px;
+				text-align:center;
+			}
+			.title{
+				font-size:110%;
+				color:$blue;
+			}
+		}
+	}
 }

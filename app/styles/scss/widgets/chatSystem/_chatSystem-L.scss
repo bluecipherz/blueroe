@@ -1,3 +1,4 @@
+$navHeight : '30px';
 .chatSystem{
 	display:block;
 	float:left;
@@ -5,9 +6,33 @@
 	right:-310px;
 	top:50px;
 	bottom:0px;
-	width:300px;
-	z-index:3;
-	transition:right 0.3s;
+	width:300px; 
+	.head{
+		display:block;
+		float:left;
+		width:100%; 
+		.rows{
+			display:block;
+			float:left;
+			width:100%;
+			height:$navHeight; 
+			.Btn,.title,.clBtn{
+				display:block;
+				float:left;
+				width:calc( 100% / 3);
+				height:$navHeight;  
+			}
+			.title{
+				width:100%;
+			}
+			.clBtn{
+				width:10%; 
+			}
+		}
+	}
+	.cont{
+
+	}
 }
 .chatSystemAct{
 	right:0px;

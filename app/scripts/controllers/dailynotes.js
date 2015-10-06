@@ -10,16 +10,9 @@
 angular.module('bluroeApp')
   .controller('DailynotesCtrl', function ($scope,$interval) {
 
-        var dailyNotesData = [ {'head':'Sorry man','description': 'I cant complete the whole shit you,ve told me to','foot':'03 Oct'},
-            {'head':'You know ?','description': 'i worked till 4 and am im dissapointed cuz i cant complete it','foot':'03 Oct' },
-            {'head':'Popup box','description': 'I have written some code for the stander popup box, so next time its gonna be easy','foot':'03 Oct' },
-            {'head':'Yeah thats enough for today #Sleeping','description': 'zzz..!!!','foot':'03 Oct' },
-            {'head':'Go get it !','description': 'Some times the Best gain is to loss','foot':'03 Oct' },
-            {'head':'Angular','description': 'Taking too much time to learn, SORRY!!! :) ','foot':'03 Oct' },
-            {'head':'Grow a dick!','description': 'Stop crying like a baby...','foot':'04 Oct' },
-            {'head':'EAT! SLEEP! CODE!','description': 'Thats our way baby!!! :D','foot':'04 Oct' },
-            {'head':'Relax','description': 'Try to get some heat off your ass.., i also got shit to take care of mahn..','foot':'04 Oct' },
-            {'head':'False Pretense!','description': 'The worlds got a funny way of turning round on you...','foot':'04 Oct' }
+        var dailyNotesData = [ {'head':'Enth kundi aneda ith ???','description': 'Puller onnum ponnilla bellatha kali','foot':'03 Oct'},
+            {'head':'Ninte andi njan nale kanchera...!!!','description': 'shaaji','foot':'03 Oct' },
+            {'head':'baaa baa ','description': 'sagaav basi','foot':'03 Oct' },
         ];
 
         this.dailyNotes = dailyNotesData;

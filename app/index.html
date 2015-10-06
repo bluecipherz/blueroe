@@ -95,8 +95,22 @@
             </a>
         </div>
 
-        <div class="chatSystem "ng-class="{ 'chatSystemAct':  chatSystemAct }">
-             
+        <div ng-class="{ 'chatSystemAct':  chatSystemAct }" ng-controller="ChatsystemCtrl as CS" class="chatSystem" >
+             <div class="head" >
+                <div class="rows">
+                    <div ng-click="CS.VNotes = true; CS.VAlerts = false; CS.VChats = false;" ng-class="{'active':CS.VNotes}" class="Btn">NOTES</div>
+                    <div ng-click="CS.VNotes = false; CS.VAlerts = true; CS.VChats = false;" ng-class="{'active':CS.VAlerts}" class="Btn">ALERTS</div>
+                    <div ng-click="CS.VNotes = false; CS.VAlerts = false; CS.VChats = true;" ng-class="{'active':CS.VChats}" class="Btn">CHATS</div> 
+                </div>
+               <!--  <div class="rows">
+                    <div ng-class="{'hidden':!CS.VNotes}" class="title">DAILY NOTES</div>
+                    <div ng-class="{'hidden':!CS.VAlerts}" class="title">NOTIFICATIONS</div>
+                    <div ng-class="{'hidden':!CS.VChats}" class="title">CHAT LIST</div>
+                </div> -->
+             </div>
+             <div class="cont">
+
+             </div>
         </div>
     </div>
     <div class="b-p-abs sec-mid b-layer-1">

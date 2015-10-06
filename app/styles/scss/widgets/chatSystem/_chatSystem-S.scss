@@ -1,0 +1,15 @@
+
+.chatSystem{ 
+	.head{  
+		.rows{  
+			.Btn:hover,.clBtn:hover{ 
+				cursor:pointer;
+				color:#ddd;
+				background:#222;
+			} 
+			.Btn.active{
+				background:#333;
+			}
+		}
+	}
+}

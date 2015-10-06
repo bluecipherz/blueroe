@@ -141,14 +141,29 @@
 .b-link {
   color: #1B98C2; }
 
+/* Colors */
+/* images */
 .chatSystem {
   background: #fff;
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: right 0.3s; }
+  .chatSystem .head {
+    color: #aaa; }
+    .chatSystem .head .rows {
+      background: #000; }
+      .chatSystem .head .rows .Btn, .chatSystem .head .rows .title, .chatSystem .head .rows .clBtn {
+        line-height: 30px;
+        text-align: center; }
+      .chatSystem .head .rows .title {
+        font-size: 110%;
+        color: #3498db; }
 
 .popBox {
   background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); }
@@ -177,10 +192,6 @@
   -ms-border-radius: 50%;
   border-radius: 50%;
   z-index: 10; }
-
-.cover {
-  transition: background 1s;
-  overflow: hidden; }
 
 .spinnerCover {
   z-index: 9;

@@ -18,17 +18,17 @@
   background: #5fcf80;
   color:#fff;
 }
-.postform .cont form > .foot > div:hover > .foot{
+.postform .cont form > .foot > .Sel:hover > .foot{
   display:block;
   cursor: pointer;
 }
-.postform .cont form > .foot > div:hover{
+.postform .cont form > .foot > .Sel:hover{
    @include shadow(0,0,5px,#ccc);
 }
-.postform .cont form > .foot > div > .foot > .active{
+.postform .cont form > .foot > .Sel > .foot > .active{
   background: red;
 }
-.postform .cont form > .foot > div > .foot > span:hover{
+.postform .cont form > .foot > .Sel > .foot > span:hover{
   background: rgba($blueR,$blueG,$blueB,1);
   color:#fff;
 }
@@ -47,3 +47,11 @@
   color:#0EAFE6;
   text-decoration:underline;
 }
+.feedFooterLeft{ 
+  .block{
+    .Btn:hover{ 
+      cursor:pointer;
+    }
+  }
+}
+

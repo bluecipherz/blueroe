@@ -8,10 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('ChatsystemCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ChatsystemCtrl', function ($rootScope) { 
+  	var vm = this;
+  	vm.VChats = true;
   });

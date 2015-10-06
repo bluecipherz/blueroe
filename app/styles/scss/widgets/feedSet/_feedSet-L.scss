@@ -107,7 +107,8 @@
   margin:5px 15px 5px 5px;
   @include border-radius(4px);
 }
-.postform .cont form > .foot > div{
+.postform .cont form > .foot > .Sel,
+.postform .cont form > .foot > input{
   float: right;
   line-height: 25px;
   width: 140px;
@@ -324,4 +325,46 @@
       text-align: center;
     }
   }
+}
+.feedFooterLeft{
+  display:block;
+  float:left;
+  height:100%;
+  .block{
+    display:block;
+    float:left;
+    height:100%;
+    width:40px;
+    .Btn{
+      display:block;
+      float:left;
+      height:100%;
+      width:40px;
+      background:rgba(255,255,255,0.1);
+      text-align:center;
+      line-height:30px;
+      border-right:1px solid rgba(0,0,0,0.15);
+    }
+    .selPerson{
+      display:block;
+      float:left;
+      width:300px;
+      min-height:150px;
+      max-height:500px;
+      overflow-y:scroll;
+      .head,.foot{
+        display:block;
+        float:left;
+        width:100%;
+        height:30px;
+        line-height:30px;
+        padding:0 10px;
+      }
+      .cont{
+        display:block;
+        float:left;
+        padding:10px;
+      }
+    }
+  }  
 }

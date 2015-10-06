@@ -12,7 +12,7 @@ angular.module('bluroeApp')
         
         var vm = this;
 
-        vm.selectedTab = 1;
+        vm.selectedTab = 2;
 
         vm.selectTab = function(tab) {
             vm.selectedTab = tab;

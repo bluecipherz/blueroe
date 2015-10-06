@@ -52,5 +52,4 @@ $(document).on('click','.selectGrp > .foot > span',function(){
     var name = that.html();
     that.parent().parent().find('.text-slot').html(name);
     that.parent().parent().find('input').val(id);
-    that.parent().hide();
 });

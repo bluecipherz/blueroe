@@ -29,6 +29,13 @@ angular.module('bluroeApp')
             vm.fileupload = {project: $stateParams.id};
             vm.forum = {project: $stateParams.id};
             vm.bug = {project: $stateParams.id};
+        } else {
+            vm.status = {};
+            vm.task = {};
+            vm.milestone = {};
+            vm.fileupload = {};
+            vm.forum = {};
+            vm.bug = {};
         }
 
         $scope.dropzoneConfig = {

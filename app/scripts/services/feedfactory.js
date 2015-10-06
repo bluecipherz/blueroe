@@ -34,6 +34,7 @@
     }
 
     var notifyObservers = function() {
+        // console.log('feeds notifying observers');
         angular.forEach(observerCallbacks, function(callback, key) {
             callback();
             observerCallbacks.splice(key, 1);
@@ -72,11 +73,17 @@
             // params['project'] = projectid;
         },
         pushFeed: function(feed) {
+            console.log('pushing feed');
+            console.log(feed);
             feeds.push(feed);
         },
         update: function(callback) {
             observerCallbacks.push(callback);
             fetchFeeds(params);
+        },
+        removeFeed: function(feed) {
+            console.log('splicing ' + feeds.indexOf(feed) + ' feed');
+            feeds.splice(feeds.indexOf(feed), 1);
         }
     }
 

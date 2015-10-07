@@ -17,10 +17,38 @@ angular.module('bluroeApp')
       ['query']
     );
 
+    var observerCallbacks = [];
+
+    var users;
+
+    var fetchUsers = function() {
+      Users.query().$promise.then(function(results) {
+        // console.log(results);
+        users = results;
+        notifyObservers();
+      });
+    }
+
+    if(TokenHandler.isTempLogged()) {
+        fetchUsers();
+    } else {
+        TokenHandler.onTempLogin(fetchUsers);
+    }
+
+    var notifyObservers = function() {
+      angular.forEach(observerCallbacks, function(callback) {
+        callback();
+      })
+    }
+
+
     // Public API here
     return {
       getUsers : function() {
-        return Users.query();
+        return users;
+      },
+      onFetchUsers : function(callback) {
+        observerCallbacks.push(callback);
       }
     };
   });

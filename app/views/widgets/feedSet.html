@@ -10,28 +10,28 @@
         </div>
     </div>
     <div  class="contHead">
-        <div  ng-show="feed.additional_type =='CommentPosted'" >{{ feed.origin.email }} posted comment {{ feed.subject.commentable_id }}</div>
+        <div  ng-show="feed.additional_type =='CommentPosted'" >{{ feed.additional_origin.profile.first_name + " " + feed.additional_origin.profile.last_name }} posted comment {{ feed.subject.commentable_id }}</div>
     </div>
     <div class="cont">
         <div class="left bgrid -bg-s-80">
             <div class="img">
-
+                <img src="{{feed.origin.profile.avatar_url}}"/>
             </div>
         </div>
         <div class="right  bgrid -bg-s-80-w">
             <div class="head">
-                <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.email }} posted status <span ng-if="feed.project">in {{ feed.project.name }}</span></div>
-                <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} project</div>
-                <div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.email }} deleted {{ feed.subject.name }} project</div>
-                <div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} project</div>
+                <div ng-if="feed.type == 'StatusPosted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} posted status <span ng-if="feed.project">in {{ feed.project.name }}</span></div>
+                <div ng-if="feed.type == 'ProjectCreated'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} created {{ feed.subject.name }} project</div>
+                <div ng-if="feed.type == 'ProjectDeleted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} deleted {{ feed.subject.name }} project</div>
+                <div ng-if="feed.type == 'ProjectCompleted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} completed {{ feed.subject.name }} project</div>
 
-                <div ng-if="feed.type == 'UserRemovedFromProject'">{{ feed.origin.email }} removed {{ feed.subject.email }} from {{ feed.context.name }} project</div>
-                <div ng-if="feed.type == 'UserAddedToProject'">{{ feed.origin.email }} added {{ feed.subject.email }} to {{ feed.context.name }} project</div>
+                <div ng-if="feed.type == 'UserRemovedFromProject'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} removed {{ feed.subject.profile.first_name + " " + feed.subject.profile.last_name }} from {{ feed.context.name }} project</div>
+                <div ng-if="feed.type == 'UserAddedToProject'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} added {{ feed.subject.profile.first_name + " " + feed.subject.profile.last_name }} to {{ feed.context.name }} project</div>
 
-                <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.email }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
-                <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.email }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
-                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.email }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
-                <div ng-if="feed.type == 'DocumentUploaded'">{{ feed.origin.email }} uploaded document in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskCreated'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} created {{ feed.subject.name }} task in {{ feed.project.name}}</div>
+                <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'DocumentUploaded'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} uploaded document in {{ feed.project.name }}</div>
             </div>
 
             <div class="mid">

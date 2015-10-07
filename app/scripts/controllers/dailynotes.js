@@ -10,9 +10,9 @@
 angular.module('bluroeApp')
   .controller('DailynotesCtrl', function ($scope,$interval) {
 
-        var dailyNotesData = [ {'head':'Enth kundi aneda ith ???','description': 'Puller onnum ponnilla bellatha kali','foot':'03 Oct'},
-            {'head':'Ninte andi njan nale kanchera...!!!','description': 'shaaji','foot':'03 Oct' },
-            {'head':'baaa baa ','description': 'sagaav basi','foot':'03 Oct' },
+        var dailyNotesData = [ {'head':'I never thought i ill be here','description': 'But somehow..Here iam','foot':'03 Oct'},
+            {'head':'Still you are felling unconfirtable ?? ','description': 'Im damn sure you got wrongs concepts in your mind','foot':'03 Oct' },
+            {'head':'Stay there tight','description': 'yeah i know you will','foot':'03 Oct' },
         ];
 
         this.dailyNotes = dailyNotesData;

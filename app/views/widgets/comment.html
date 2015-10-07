@@ -1,8 +1,10 @@
 <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
-    <div class="img"> </div>
+    <div class="img">
+    	<img src="{{comment.owner.profile.avatar_url}}"/>
+    </div>
 </div>
 <div class="contSec bgrid -bg-s-80-w">
-    <div class="head">{{ comment.owner.email }}</div>
+    <div class="head">{{ comment.owner.profile.first_name + " " + comment.owner.profile.lastname_name }}</div>
     <div class="mid">{{ comment.comment }}</div>
     <div class="foot">
         <div >

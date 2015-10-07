@@ -177,7 +177,19 @@
 .feed-slot > .feedSet .cont > .left > .img {
   width: 60px;
   height: 60px;
-  margin: 10px; }
+  margin: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.feed-slot > .feedSet .cont > .left > .img > img {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden; }
 
 .feed-slot > .feedSet .cont > .right > .head,
 .feed-slot > .feedSet .cont > .right > .mid,
@@ -234,7 +246,19 @@
   float: left;
   height: 50px;
   width: 50px;
-  margin: 5px; }
+  margin: 5px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.commentSet > .imgSec > .img > img {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden; }
 
 .commentSet > div > .foot > div > .date {
   display: block;
@@ -326,10 +350,7 @@
     .feedFooterLeft .block .selPerson {
       display: block;
       float: left;
-      width: 300px;
-      min-height: 150px;
-      max-height: 500px;
-      overflow-y: scroll; }
+      padding: 10px; }
       .feedFooterLeft .block .selPerson .head, .feedFooterLeft .block .selPerson .foot {
         display: block;
         float: left;
@@ -341,6 +362,44 @@
         display: block;
         float: left;
         padding: 10px; }
+        .feedFooterLeft .block .selPerson .cont .imgHead {
+          display: block;
+          float: left;
+          width: 45px;
+          height: 45px;
+          margin: 0 5px;
+          -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -ms-border-radius: 50%;
+          border-radius: 50%;
+          background: #ddd;
+          border: 1px solid #ddd;
+          transition: margin 0.5s, background 0.5s; }
+          .feedFooterLeft .block .selPerson .cont .imgHead .check {
+            display: block;
+            float: left;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 3;
+            line-height: 45px;
+            text-align: center;
+            font-size: 200%;
+            color: #fff;
+            padding-top: 45px;
+            transition: padding 0.4s , background 0.8s; }
+        .feedFooterLeft .block .selPerson .cont .imgHead > img {
+          max-width: 100%;
+          max-height: 100%;
+          min-width: 100%;
+          min-height: 100%;
+          overflow: hidden; }
 
 .chatSystem {
   display: block;
@@ -402,6 +461,13 @@
     width: 7px;
     height: 8px; }
 
+.popBox.show {
+  width: 300px;
+  min-height: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0px; }
+
 .popBox.-l {
   right: 0px; }
   .popBox.-l .topArrow {
@@ -422,6 +488,10 @@
 
 .popBox.-t-30 {
   top: 30px; }
+
+.popBox.-free {
+  max-width: 1000px;
+  max-height: 1000px; }
 
 .sBtn {
   display: block;

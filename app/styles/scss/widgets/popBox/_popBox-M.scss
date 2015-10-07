@@ -3,6 +3,8 @@
   background:#fff;
   border:1px solid rgba(0,0,0,0.1);
   @include shadow(0,0,7px,rgba(0,0,0,0.3));
+  opacity:1;
+  transition: .5s;
   .topArrow{
     transform:rotate(45deg);
     background: #fff;
@@ -19,4 +21,7 @@
     z-index: 3;
     color:#ccc;
   }
+}
+.popBox.show{
+  transition: .5s;
 }

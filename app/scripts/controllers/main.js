@@ -54,9 +54,11 @@ angular.module('bluroeApp')
                 var comment = result.comment;
                 comment.owner = TokenHandler.getUser();
                 if(feed.additional_type != 'CommentPosted') {
-                    feed.additional_type == 'CommentPosted';
+                    feed.additional_type = 'CommentPosted';
+                    // console.log(feed.additional_type)
                     feed.additional_subject_id = comment.id;
                     feed.additional_subject_type = 'App\\Comment';
+                    feed.additional_origin = comment.owner;
                 }
                 feed.comments.push(comment);
             });
@@ -65,7 +67,7 @@ angular.module('bluroeApp')
         }
 
         $scope.deleteComment = function(index, feed, comment) {
-            var d = Comment.deleteComment({
+            Comment.deleteComment({
                 feedid:feed.id, commentid:comment.id
             }).$promise.then(function(result) {
                 if(feed.type == 'CommentPosted') {

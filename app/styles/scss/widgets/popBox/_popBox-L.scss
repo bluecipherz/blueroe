@@ -6,6 +6,7 @@
   top:40px;
   min-height: 50px;
   min-width: 50px;
+
   .topArrow{
     display: block;
     float: left;
@@ -32,9 +33,20 @@
     height:8px;
   }
 }
+.popBox.show{
+    width:300px;
+    min-height:0px;
+    max-height:0px; 
+    overflow:hidden;
+    opacity:0px;
+  }
 .popBox.-l{  right:0px; .topArrow{ right:10px; }}
 .popBox.-r{  left:0px; .topArrow{ left:10px; }}
 .popBox.-r-10{  left:10px; .topArrow{ left:10px; }}
 
 .popBox.-t-20{  top:20px; }
 .popBox.-t-30{  top:30px; }
+.popBox.-free{
+  max-width:1000px;
+  max-height:1000px;
+}

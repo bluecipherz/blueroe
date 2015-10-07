@@ -50,6 +50,12 @@
 
 .feedFooterLeft .block .Btn:hover {
   cursor: pointer; }
+.feedFooterLeft .block .selPerson .cont .imgHead:hover {
+  cursor: pointer; }
+.feedFooterLeft .block .selPerson .cont .imgHead .active {
+  opacity: 1;
+  padding-top: 0px;
+  background: rgba(0, 0, 0, 0.3); }
 
 .chatSystem .head .rows .Btn:hover, .chatSystem .head .rows .clBtn:hover {
   cursor: pointer;

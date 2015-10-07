@@ -166,7 +166,9 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: .5s; }
   .popBox .topArrow {
     transform: rotate(45deg);
     background: #fff;
@@ -182,6 +184,9 @@
     font-size: 80%;
     z-index: 3;
     color: #ccc; }
+
+.popBox.show {
+  transition: .5s; }
 
 /* Colors */
 /* images */

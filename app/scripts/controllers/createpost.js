@@ -8,9 +8,16 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory){
+  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users){
         
         var vm = this;
+
+        vm.users = [];
+
+        Users.onFetchUsers(function() {
+            vm.users = Users.getUsers();
+            // console.log(vm.users)
+        });
 
         vm.selectedTab = 2;
 

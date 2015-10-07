@@ -52,6 +52,22 @@
     .Btn:hover{ 
       cursor:pointer;
     }
+    .selPerson{ 
+      .head,.foot{ 
+      }
+      .cont{ 
+        .imgHead:hover{
+          cursor:pointer; 
+        } 
+        .imgHead {
+          .active{
+            opacity:1;
+            padding-top:0px;
+            background:rgba(0,0,0,0.3);
+          }
+        }
+      }
+    }
   }
-}
+} 
 

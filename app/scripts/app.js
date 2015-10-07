@@ -13,7 +13,8 @@ angular
     'ngMessages',
     'ngResource',
     'ui.router',
-    'nvd3'
+    'nvd3',
+    '720kb.datepicker'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/');

@@ -8,14 +8,14 @@
  * Factory in the bluroeApp.
  */
 angular.module('bluroeApp')
-  .factory('TokenHandler', function ($http, Hoster) {
+  .factory('TokenHandler', function ($http, Hoster, $rootScope) {
     // Service logic
     // ...
 
     var tokenHandler = {};
     var token;
     var user;
-    var projects; // temp implementation
+    // var projects; // temp implementation
     var tempLoggedin = false;
 
     var observerCallbacks = [];
@@ -24,7 +24,8 @@ angular.module('bluroeApp')
     $http.post(Hoster.getHost() + '/api/authenticate', {email:'asd@g.com',password:'asdasd'})
       .then(function(response, status, header, config) {
           set(response.data.token);
-          // user = response.data.user;
+          user = response.data.user;
+          $rootScope.authUser = response.data.user;
           // projects = response.data.projects;
           console.log('token : ' + token);
           tempLoggedin = true;

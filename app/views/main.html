@@ -77,27 +77,36 @@
                                 <div class="foot b-layer-3">
                                     <div class='feedFooterLeft'>
                                         <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T1 = ! showF1T1">1</div>
+                                            <div class='Btn' ng-click="showF1T1 = ! showF1T1; showF1T2 = false; showF1T3 = false; ">1</div>
                                             <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
-                                                <div class="selPerson">
-                                                    <div class="head">Select Person</div>
-                                                    <div class="cont">  </div>
-                                                    <div class="foot">  </div>
+                                                <div class="selPerson -bg-s-240">
+                                                    <div class="head">Assign to </div>
+                                                    <div class="cont">
+                                                        <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
+                                                            <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
+                                                            <img src="{{ user.profile.avatar_url }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="foot"></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T2 = ! showF1T2">2</div>
-                                            <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
+                                            <div class='Btn' ng-click="showF1T2 = ! showF1T2 ;showF1T1 = false;showF1T3 = false;">2</div>
+                                            <div class="popBox -free -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
                                                 <div class="selPerson">
                                                     <div >Select Person</div>
-                                                    <div>  </div>
+                                                    <div>
+                                                        <datepicker>
+                                                          <input ng-model="date" type="text"/>
+                                                        </datepicker>
+                                                    </div>
                                                     <div>  </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T3 = ! showF1T3">3</div>
+                                            <div class='Btn' ng-click="showF1T3 = ! showF1T3;showF1T1 = false;showF1T2 = false;">3</div>
                                             <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T3 }">
                                                 <div class="selPerson">
                                                     <div>Select Person</div>

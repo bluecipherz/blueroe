@@ -14,7 +14,8 @@ angular
     'ngResource',
     'ui.router',
     'nvd3',
-    '720kb.datepicker'
+    '720kb.datepicker',
+    'ngAnimate'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/');

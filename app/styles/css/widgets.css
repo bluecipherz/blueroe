@@ -544,6 +544,13 @@
 .b-link {
   color: #1B98C2; }
 
+.form-error-msg {
+  padding: 4px;
+  background: #FF4500;
+  border-radius: 1px;
+  margin: 5px 0 0 5px;
+  font-size: 12px; }
+
 /* Colors */
 /* images */
 .postform > .heading > span:hover {
@@ -602,6 +609,26 @@
   opacity: 1;
   padding-top: 0px;
   background: rgba(0, 0, 0, 0.3); }
+
+.feed-slide.ng-enter,
+.feed-slide.ng-leave {
+  -webkit-transition: 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -moz-transition: 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -ms-transition: 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -o-transition: 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  transition: 300ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all; }
+
+.feed-slide.ng-enter {
+  left: 100%; }
+
+.feed-slide.ng-enter.ng-enter-active {
+  left: 0; }
+
+.feed-slide.ng-leave {
+  left: 0; }
+
+.feed-slide.ng-leave.ng-leave-active {
+  left: -100%; }
 
 .chatSystem {
   display: block;

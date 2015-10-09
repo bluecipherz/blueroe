@@ -9,6 +9,7 @@
 angular.module('bluroeApp')
   .directive('feed', function () {
     return {
+      replace: true,
       templateUrl: 'views/widgets/feedSet.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {

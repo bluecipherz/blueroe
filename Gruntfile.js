@@ -405,8 +405,24 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    sass: {                              // Task
+      dist: {                            // Target
+        // options: {                       // Target options
+        //   style: 'expanded'
+        // },
+        files: [{
+          expand: true,
+          cwd: 'app/styles/scss',
+          src: ['*.scss'],
+          dest: '../css',
+          ext: '.css'
+        }]
+      }
     }
   });
+
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -456,9 +472,14 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+  grunt.loadNpmTasks('grunt-contrib-sass'); // new addition
+
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
-    'build'
+    'build',
+    'sass'
   ]);
+
+
 };

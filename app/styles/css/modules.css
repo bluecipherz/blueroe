@@ -141,6 +141,13 @@
 .b-link {
   color: #1B98C2; }
 
+.form-error-msg {
+  padding: 4px;
+  background: #FF4500;
+  border-radius: 1px;
+  margin: 5px 0 0 5px;
+  font-size: 12px; }
+
 /* Colors */
 /* images */
 .chatSystem {

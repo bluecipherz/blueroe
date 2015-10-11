@@ -1,15 +1,17 @@
-<div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
-    <div class="img">
-    	<img src="{{comment.owner.profile.avatar_url}}"/>
+<div>
+    <div class="imgSec bgrid -bg-s-60 -bg-s-10-off">
+        <div class="img">
+        	<img src="{{comment.owner.profile.avatar_url}}"/>
+        </div>
     </div>
-</div>
-<div class="contSec bgrid -bg-s-80-w">
-    <div class="head">{{ comment.owner.profile.first_name + " " + comment.owner.profile.lastname_name }}</div>
-    <div class="mid">{{ comment.comment }}</div>
-    <div class="foot">
-        <div >
-            <span class="date" >{{ comment.updated_at }}</span>
-            <span class="b-link" ng-click="deleteComment($index, feed, comment)"> Delete </span>
+    <div class="contSec bgrid -bg-s-80-w">
+        <div class="head">{{ comment.owner.profile.first_name + " " + comment.owner.profile.lastname_name }}</div>
+        <div class="mid">{{ comment.comment }}</div>
+        <div class="foot">
+            <div >
+                <span class="date" >{{ comment.updated_at }}</span>
+                <span class="b-link" ng-click="fc.deleteComment($index, feed, comment)"> Delete </span>
+            </div>
         </div>
     </div>
 </div>

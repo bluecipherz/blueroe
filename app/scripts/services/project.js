@@ -16,7 +16,7 @@ angular.module('bluroeApp')
 
     var observers = [];
 
-    var projects;
+    var projects = [];
 
     var fetched = false;
 
@@ -65,6 +65,7 @@ angular.module('bluroeApp')
     }
 
     projectFactory.getProjects = function() {
+      // console.log('projects count ' + projects.length)
       return projects;
     }
 

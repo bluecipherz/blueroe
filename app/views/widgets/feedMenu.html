@@ -1,0 +1,10 @@
+<div class="RoundDropDown" >
+    <div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>
+    <!--<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>-->
+    <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
+        <button ng-if="feed.subject_type == 'App\\Status'" ng-click="fc.removeStatus($index, feed)">Delete</button>
+        <button ng-if="feed.subject_type == 'App\\Task'">Set Progress</button>
+        <button ng-if="feed.subject_type == 'App\\Task'">Set Priority</button>
+        <button ng-if="feed.subject_type == 'App\\Task'">Mark as complete</button>
+    </div>
+</div>

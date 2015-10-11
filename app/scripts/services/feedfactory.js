@@ -16,10 +16,12 @@
 
     var reloadEverytime = false;
 
-    var fetched = false;
+    var fetching = false;
 
     var feeds = [];
 
+    // default params, used for initial loading
+    // and occasionally for reloading
     var params = {};
 
     var Feed = TokenHandler.wrapActions(
@@ -27,10 +29,15 @@
         ['query']
     );
 
+    // automatic initial loading with params
+    // set params using setProject() method
     if(TokenHandler.isTempLogged()) {
-        fetchFeeds({});
+        fetchFeeds(params);
     } else {
-        TokenHandler.onTempLogin(fetchFeeds);
+        fetching = true;
+        TokenHandler.onTempLogin(function() {
+            fetchFeeds(params)
+        });
     }
 
     var notifyObservers = function() {
@@ -41,12 +48,13 @@
         });
     };
 
-    function fetchFeeds() {
+    function fetchFeeds(params) {
         console.log('params')
         console.log(params)
+        fetching = true;
         Feed.query(params).$promise.then(function(results) {
             feeds = results;
-            fetched = true;
+            fetching = false;
             notifyObservers();
         });
     }
@@ -55,21 +63,16 @@
         getFeeds: function() {
             return feeds;
         },
-        onFetchFeeds: function(callback, data) {
+        onFetchFeeds: function(callback) {
             observerCallbacks.push(callback);
             // new auto refresh on every page load "implementation"
             if(TokenHandler.isTempLogged()) {
-                if(params == undefined) fetchFeeds(params);
-                else fetchFeeds(data);
+                fetchFeeds(params); // if parameters are null, then use default params
             } // end
-            console.log('feedFactory callbacks : ' + observerCallbacks.length);
+            // console.log('feedFactory callbacks : ' + observerCallbacks.length);
         },
-        feedsAlreadyFetched: function() {
-            if(reloadEverytime) return false;
-            return fetched;
-        },
-        setProject: function(projectid) {
-            params = {project:projectid};
+        setParams: function(data) {
+            params = data;
             // params['project'] = projectid;
         },
         pushFeed: function(feed) {
@@ -84,6 +87,9 @@
         removeFeed: function(feed) {
             console.log('splicing ' + feeds.indexOf(feed) + ' feed');
             feeds.splice(feeds.indexOf(feed), 1);
+        },
+        isFetching: function() {
+            return fetching;
         }
     }
 

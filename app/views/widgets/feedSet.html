@@ -1,14 +1,8 @@
 <div class="feedSetMain">
-    <div class="RoundDropDown" >
-        <div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>
-        <!--<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>-->
-        <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
-            <button ng-if="feed.subject_type == 'App\\Status'" ng-click="removeStatus($index, feed)">Delete</button>
-            <button ng-if="feed.subject_type == 'App\\Task'">Set Progress</button>
-            <button ng-if="feed.subject_type == 'App\\Task'">Set Priority</button>
-            <button ng-if="feed.subject_type == 'App\\Task'">Mark as complete</button>
-        </div>
-    </div>
+    <feed-menu ng-if="
+        feed.subject_type == 'App\\Status' ||
+        feed.subject_type == 'App\\Task'">
+    </feed-menu>
     <div  class="contHead">
         <div  ng-show="feed.additional_type =='CommentPosted'" >{{ feed.additional_origin.profile.first_name + " " + feed.additional_origin.profile.last_name }} posted comment {{ feed.subject.commentable_id }}</div>
     </div>
@@ -62,10 +56,11 @@
                     <!--COMMENT SLOT-->
                     <comment ng-repeat="comment in feed.comments" class="commentSet">
                     </comment>
-                <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
-                    <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
-                    <div>
-                        <button class="b-btn-sm" ng-click="postComment(feed)">Submit</button>
+                    <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
+                        <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
+                        <div>
+                            <button class="b-btn-sm" ng-click="fc.postComment(feed)">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>

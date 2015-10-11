@@ -18,7 +18,6 @@
                         <div class="cont tab1" ng-show="panel.isSelected(1)">
                             <form name="statusForm" novalidate>
                                 <div ng-messages="statusForm.message.$error" ng-if="statusForm.$submitted">
-                                    <span ng-message="minlength" class="form-error-msg">Status message must be atleast 5 characters long.</span>
                                     <span ng-message="required" class="form-error-msg">Status message required.</span>
                                 </div>
                                 <div class="head">
@@ -38,7 +37,7 @@
                                         </div>
                                         <div class="foot b-p-rel b-layer-2">
                                             <span value="0" ng-click="panel.status.project = 0">All users</span>
-                                            <span ng-repeat="project in main.projects" value="{{ project.id }}" ng-click="panel.status.project = project.id">{{ project.name }}</span>
+                                            <span ng-repeat="project in panel.projects" value="{{ project.id }}" ng-click="panel.status.project = project.id">{{ project.name }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +62,7 @@
                                         <div ng-if="$state.current.name == 'home'">
                                             <div>Project name</div>
                                             <select>
-                                                <option value="{{ project.id }}" ng-repeat="project in main.projects">{{ project.name }}</option>
+                                                <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>
                                         <div ng-class="{ 'hidden':  panel.task.taskListAct }">
@@ -76,23 +75,23 @@
                                 </div>
                                 <div class="foot b-layer-3">
                                     <div class='feedFooterLeft'>
-                                        <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T1 = ! showF1T1; showF1T2 = false; showF1T3 = false; "><span class="fa fa-user"></span></div>
-                                            <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
-                                                <div class="selPerson -bg-s-240">
-                                                    <div class="head">Assign to </div>
-                                                    <div class="cont">
-                                                        <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
-                                                            <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
-                                                            <img src="{{ user.profile.avatar_url }}">
+                                        <div class='block b-p-rel' popup-menu="F1T1">
+                                                <div class='Btn' ng-click="toggleMenu('F1T1')"><span class="fa fa-user"></span></div>
+                                                <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
+                                                    <div class="selPerson -bg-s-240">
+                                                        <div class="head">Assign to </div>
+                                                        <div class="cont">
+                                                            <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
+                                                                <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
+                                                                <img src="{{ user.profile.avatar_url }}">
+                                                            </div>
                                                         </div>
+                                                        <div class="foot"></div>
                                                     </div>
-                                                    <div class="foot"></div>
                                                 </div>
-                                            </div>
                                         </div>
-                                        <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T2 = ! showF1T2 ;showF1T1 = false;showF1T3 = false;"><span class="fa fa-calendar"></span></div>
+                                        <div class='block b-p-rel' popup-menu="F1T2">
+                                            <div class='Btn' ng-click="toggleMenu('F1T2')"><span class="fa fa-calendar"></span></div>
                                             <div class="popBox -free -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
                                                 <div class="selPerson">
                                                     <div >Select Person</div>
@@ -105,8 +104,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class='block b-p-rel'>
-                                            <div class='Btn' ng-click="showF1T3 = ! showF1T3;showF1T1 = false;showF1T2 = false;"><span class="fa fa-wrench"></span></div>
+                                        <div class='block b-p-rel' popup-menu="F1T3">
+                                            <div class='Btn' ng-click="toggleMenu('F1T3')"><span class="fa fa-wrench"></span></div>
                                             <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T3 }">
                                                 <div class="selPerson">
                                                     <div>Set Priority</div>
@@ -139,7 +138,7 @@
                                         <div ng-if="$state.current.name == 'home'">
                                             <div>Project name</div>
                                             <select>
-                                                <option value="{{ project.id }}" ng-repeat="project in main.projects">{{ project.name }}</option>
+                                                <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -165,7 +164,7 @@
                                         <div ng-if="$state.current.name == 'home'">
                                             <div>Project name</div>
                                             <select ng-model="panel.uploadfile.project">
-                                                <option value="{{ project.id }}" ng-repeat="project in main.projects">{{ project.name }}</option>
+                                                <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>
                                         <div >
@@ -200,7 +199,7 @@
                                         <div ng-if="$state.current.name == 'home'">
                                             <div>Project name</div>
                                             <select>
-                                                <option value="{{ project.id }}" ng-repeat="project in main.projects">{{ project.name }}</option>
+                                                <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>
                                         <div >
@@ -220,10 +219,10 @@
 
                 <!-- FEEDS -->
 
-                    <div class="feed-slot bgrid ">
+                    <div class="feed-slot bgrid" ng-controller="FeedCtrl as fc">
                         <!--FEED SET-->
 
-                        <feed class="feedSet feed-slide" ng-repeat="feed in main.feeds | orderBy: 'updated_at':true">
+                        <feed class="feedSet feed-slide" ng-repeat="feed in fc.feeds | orderBy: 'updated_at':true">
                         </feed>
 
                     </div>
@@ -231,100 +230,104 @@
             </div>
         </div>
     </div>
-    <div class="flex-4">
-        <div class="flex-5 -h-200 -p"  ng-controller="DailynotesCtrl as ds" >
-            <div class="fluidGrid  Bslider greenBlue">
-                <div  ng-repeat="data in ds.dailyNotes" class="Bframe">
-                    <div class="bf-4"> </div>
-                    <div class="bf-1 bf-FS-1 bf-FO-4">{{ data.foot }}</div>
-                    <div class="bf-FS-4">{{ data.head }} </div>
-                    <div class="bf-FS-2  bf-FO-3">{{ data.description }}</div>
+
+    <div ng-controller="DailystatsCtrl as DS">
+
+        <div class="flex-4">
+            <div class="flex-5 -h-200 -p"  ng-controller="DailynotesCtrl as ds" >
+                <div class="fluidGrid  Bslider greenBlue">
+                    <div  ng-repeat="data in ds.dailyNotes" class="Bframe">
+                        <div class="bf-4"> </div>
+                        <div class="bf-1 bf-FS-1 bf-FO-4">{{ data.foot }}</div>
+                        <div class="bf-FS-4">{{ data.head }} </div>
+                        <div class="bf-FS-2  bf-FO-3">{{ data.description }}</div>
+                    </div>
+                </div>
+            </div>
+            <div ng-controller="TaskstatsCtrl as TS" class="flex-5 -h-200 -p " >
+                <div class="fluidGrid  blue" >
+                    <div class="MultiBars">
+                        <div class="head">Monthly Progress</div>
+
+                            <nvd3 options="options" data="data"></nvd3>
+
+                            <!-- <div class="bar"ng-repeat="data in DS.dailyStats" style="width: calc( 100% / {{ data.barWidth }} );">
+                                <div class="line" >
+                                    <div class="bar2" style="top: {{ data.bar2 }}%"></div>
+                                    <div class="bar1" style="top: {{ data.bar1 }}%"></div>
+                                </div>
+                            </div> -->
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div ng-controller="TaskstatsCtrl as TS" class="flex-5 -h-200 -p " >
-            <div class="fluidGrid  blue" >
-                <div class="MultiBars">
-                    <div class="head">Monthly Progress</div>
+        <div class="flex-4 -h-500 -p">
+            <div class="fluidGrid  cloud b-p-rel">
 
-                        <nvd3 options="options" data="data"></nvd3>
-
-                        <!-- <div class="bar"ng-repeat="data in DS.dailyStats" style="width: calc( 100% / {{ data.barWidth }} );">
-                            <div class="line" >
-                                <div class="bar2" style="top: {{ data.bar2 }}%"></div>
-                                <div class="bar1" style="top: {{ data.bar1 }}%"></div>
-                            </div>
-                        </div> -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex-4 -h-500 -p" ng-controller="DailystatsCtrl as DS" >
-        <div class="fluidGrid  cloud b-p-rel">
-
-            <!-- <spinner ng-class="{'hidden':StateSpinner}"></spinner> -->
-            <nvd3 options="options" data="data"></nvd3>
-        </div>
-    </div>
-    <!--New row-->
-    <div class="flex-10">
-        <div class="flex-3 ">
-            <div class="flex-10 -h-450 -p">
-                <div class="fluidGrid  green">
-
-                </div>
-            </div>
-        </div>
-        <div class="flex-5">
-            <div class="flex-10 -h-450 -p">
-                <div class="fluidGrid  cloud">
-
-                </div>
-            </div>
-        </div>
-        <div class="flex-2 ">
-            <div class="flex-10 -h-150 -p">
-                <div class="fluidGrid  grey">
-
-                </div>
-            </div>
-            <div class="flex-10 -h-150 -p">
-                <div class="fluidGrid  cloud">
-
-                </div>
-            </div>
-            <div class="flex-10 -h-150 -p">
-                <div class="fluidGrid  asphalt">
-
-                </div>
-            </div>
-        </div>
-        <!--New row-->
-        <div class="flex-5">
-            <div class="flex-10 -h-450 -p">
-                <div class="fluidGrid  cloud">
-
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-5">
-            <div class="flex-10 -h-450 -p">
-                <div class="fluidGrid  cloud">
-
-                </div>
+                <!-- <spinner ng-class="{'hidden':StateSpinner}"></spinner> -->
+                <nvd3 options="options" data="data"></nvd3>
             </div>
         </div>
         <!--New row-->
         <div class="flex-10">
-            <div class="flex-10 -h-200 -p">
-                <div class="fluidGrid  cloud">
+            <div class="flex-3 ">
+                <div class="flex-10 -h-450 -p">
+                    <div class="fluidGrid  green">
 
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="flex-5">
+                <div class="flex-10 -h-450 -p">
+                    <div class="fluidGrid cloud">
+                        <h4>Blueroe Stats</h4>
+                        <nvd3 options="git_options" data="git_data"></nvd3>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-2 ">
+                <div class="flex-10 -h-150 -p">
+                    <div class="fluidGrid  grey">
 
-    </div>
+                    </div>
+                </div>
+                <div class="flex-10 -h-150 -p">
+                    <div class="fluidGrid  cloud">
+
+                    </div>
+                </div>
+                <div class="flex-10 -h-150 -p">
+                    <div class="fluidGrid  asphalt">
+
+                    </div>
+                </div>
+            </div>
+            <!--New row-->
+            <div class="flex-5">
+                <div class="flex-10 -h-450 -p">
+                    <div class="fluidGrid  cloud">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-5">
+                <div class="flex-10 -h-450 -p">
+                    <div class="fluidGrid  cloud">
+
+                    </div>
+                </div>
+            </div>
+            <!--New row-->
+            <div class="flex-10">
+                <div class="flex-10 -h-200 -p">
+                    <div class="fluidGrid  cloud">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- stat controller -->
 </div>

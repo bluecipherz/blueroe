@@ -19,7 +19,7 @@ angular.module('bluroeApp')
 
     var observerCallbacks = [];
 
-    var users;
+    var users = [];
 
     var fetchUsers = function() {
       Users.query().$promise.then(function(results) {
@@ -45,6 +45,7 @@ angular.module('bluroeApp')
     // Public API here
     return {
       getUsers : function() {
+        // console.log('users count ' + users.length)
         return users;
       },
       onFetchUsers : function(callback) {

@@ -8,16 +8,26 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users){
+  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users, Project){
         
         var vm = this;
 
-        vm.users = [];
+        vm.users = Users.getUsers();
+        // console.log('user count ' + Users.getUsers().length)
 
         Users.onFetchUsers(function() {
+            // console.log('fetching users :' + Users.getUsers().length)
             vm.users = Users.getUsers();
-            // console.log(vm.users)
+            console.log('user fetching complete ' + vm.users.length);
         });
+
+        vm.projects = Project.getProjects();
+        // console.log('project count ' + Project.getProjects().length)
+
+        Project.onFetchProjects(function() {
+            vm.projects = Project.getProjects();
+            console.log('projects fetching complete ' + vm.projects.length);
+        })
 
         vm.selectedTab = 2;
 

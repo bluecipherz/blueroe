@@ -50,10 +50,10 @@
                 </div>
             </div>
             <div class="bgrid -bg-s-500-w">
-                a
+                &nbsp;
             </div>
             <div class="bgrid -bg-s-300"> 
-                <div class="navLink -f-right" ng-click="chatSystemAct = ! chatSystemAct"> CHAT </div>
+                <div class="navLink -f-right" ng-click="chatSystemAct = ! chatSystemAct"><i class="fa fa-navicon fa-2x"></i></div>
             </div>
             <div id="powerProgress"></div>
         </div>
@@ -64,9 +64,7 @@
                 <div class="asideLink" ng-if="checkIsLink(aside)"   ng-class="{active:$state.current.name ==  aside.ngClick}"  ng-click="AsController.selectTab(aside.id);"  ui-sref="{{ aside.ngClick }}">
                     <div class="asideName"> {{ aside.name }} </div>
                     <div class="asideIcon">
-                        <div class="img">
-                            <img src="images/{{ aside.img }}">
-                        </div>
+                        <i class="{{ aside.icon }} fa-2x"></i>
                     </div>
                 </div>
                 <!--Aside LinkList-->
@@ -75,9 +73,7 @@
                     <div ng-click="showDetails = ! showDetails"  class="asideButton asideListBase" >
                         <div class="asideName"> {{ aside.name }} </div>
                         <div class="asideIcon">
-                            <div class="img">
-                                <img src="images/{{ aside.img }}">
-                            </div>
+                            <i class="{{ aside.icon }} fa-2x"></i>
                         </div>
                     </div>
                     <!--Aside LinkList-->
@@ -100,9 +96,9 @@
         <div ng-class="{ 'chatSystemAct':  chatSystemAct }" ng-controller="ChatsystemCtrl as CS" class="chatSystem" >
              <div class="head" >
                 <div class="rows">
-                    <div ng-click="CS.VNotes = true; CS.VAlerts = false; CS.VChats = false;" ng-class="{'active':CS.VNotes}" class="Btn">NOTES</div>
-                    <div ng-click="CS.VNotes = false; CS.VAlerts = true; CS.VChats = false;" ng-class="{'active':CS.VAlerts}" class="Btn">ALERTS</div>
-                    <div ng-click="CS.VNotes = false; CS.VAlerts = false; CS.VChats = true;" ng-class="{'active':CS.VChats}" class="Btn">CHATS</div> 
+                    <div ng-click="CS.VNotes = true; CS.VAlerts = false; CS.VChats = false;" ng-class="{'active':CS.VNotes}" class="Btn"><i class="fa fa-sticky-note">&nbsp;</i>Notes</div>
+                    <div ng-click="CS.VNotes = false; CS.VAlerts = true; CS.VChats = false;" ng-class="{'active':CS.VAlerts}" class="Btn"><i class="fa fa-exclamation-circle">&nbsp;</i>Alerts</div>
+                    <div ng-click="CS.VNotes = false; CS.VAlerts = false; CS.VChats = true;" ng-class="{'active':CS.VChats}" class="Btn"><i class="fa fa-envelope">&nbsp;</i>Chats</div> 
                 </div>
                <!--  <div class="rows">
                     <div ng-class="{'hidden':!CS.VNotes}" class="title">DAILY NOTES</div>

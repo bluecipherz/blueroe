@@ -760,7 +760,9 @@
   display: inline-block;
   float: left;
   width: 60px;
-  height: 100%; }
+  height: 100%;
+  padding: 5px 15px;
+  text-align: center; }
 
 .asideIcon > .img {
   display: block;

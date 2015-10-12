@@ -70,6 +70,7 @@ angular.module('bluroeApp')
                 },
                 fail: function(response) {
                     console.log('upload failed');
+                    console.log(response)
                 }
             }
         };

@@ -197,14 +197,14 @@
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin: 16px;
+    margin: 16px 16px 3px;
     min-height: 100px; }
 .dropzone .dz-preview:hover {
     z-index: 1000; }
 .dropzone .dz-preview:hover .dz-details {
     opacity: 1; }
 .dropzone .dz-preview.dz-file-preview .dz-image {
-    border-radius: 20px;
+    border-radius: 2px;
     background: #999;
     background: linear-gradient(to bottom, #eee, #ddd); }
 .dropzone .dz-preview.dz-file-preview .dz-details {
@@ -218,11 +218,13 @@
     -o-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear; }
 .dropzone .dz-preview .dz-remove {
-    font-size: 14px;
+    font-size: 11px;
     text-align: center;
     display: block;
     cursor: pointer;
-    border: none; }
+    margin-top:-6px;
+    border: none; 
+    height:20px; }
 .dropzone .dz-preview .dz-remove:hover {
     text-decoration: underline; }
 .dropzone .dz-preview:hover .dz-details {
@@ -236,13 +238,16 @@
     font-size: 13px;
     min-width: 100%;
     max-width: 100%;
-    padding: 2em 1em;
+    padding: 10px 1em;
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
-    line-height: 150%; }
+    line-height: 120%; }
 .dropzone .dz-preview .dz-details .dz-size {
-    margin-bottom: 1em;
-    font-size: 16px; }
+    margin-bottom: 33px;
+    font-size: 10px; /*shikku*/}
+
+.dropzone .dz-preview .dz-details .dz-filename {/*shikku*/ 
+    font-size: 10px; }
 .dropzone .dz-preview .dz-details .dz-filename {
     white-space: nowrap; }
 .dropzone .dz-preview .dz-details .dz-filename:hover span {
@@ -266,10 +271,10 @@
     -webkit-filter: blur(8px);
     filter: blur(8px); }
 .dropzone .dz-preview .dz-image {
-    border-radius: 20px;
+    border-radius: 2px;
     overflow: hidden;
-    width: 120px;
-    height: 120px;
+    width: 80px;/*shikku*/
+    height: 80px;/*shikku*/
     position: relative;
     display: block;
     z-index: 10; }
@@ -294,14 +299,12 @@
     z-index: 500;
     position: absolute;
     display: block;
-    top: 50%;
-    left: 50%;
-    margin-left: -27px;
-    margin-top: -27px; }
+    top: 52px;/*shikku*/
+    left: 52px;/*shikku*/  }
 .dropzone .dz-preview .dz-success-mark svg, .dropzone .dz-preview .dz-error-mark svg {
     display: block;
-    width: 54px;
-    height: 54px; }
+    width: 30px;/*shikku*/
+    height: 30px;/*shikku*/ }
 .dropzone .dz-preview.dz-processing .dz-progress {
     opacity: 1;
     -webkit-transition: all 0.2s linear;
@@ -328,14 +331,14 @@
     pointer-events: none;
     position: absolute;
     height: 16px;
-    left: 50%;
-    top: 50%;
+    left: 50px;
+    top: 41px;
     margin-top: -8px;
-    width: 80px;
+    width: 60px;
     margin-left: -40px;
     background: rgba(255, 255, 255, 0.9);
     -webkit-transform: scale(1);
-    border-radius: 8px;
+    border-radius: 1px;
     overflow: hidden; }
 .dropzone .dz-preview .dz-progress .dz-upload {
     background: #333;
@@ -367,20 +370,22 @@
     -ms-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
-    border-radius: 8px;
-    font-size: 13px;
-    top: 130px;
+    border-radius: 2px;
+    font-size: 10px;/*shikku*/
+    line-height:120%;
+    top: 110px;
     left: -10px;
-    width: 140px;
+    width: 100px;
     background: #be2626;
     background: linear-gradient(to bottom, #be2626, #a92222);
-    padding: 0.5em 1.2em;
+    padding: 0.5em 0;
+    text-align: center;
     color: white; }
 .dropzone .dz-preview .dz-error-message:after {
     content: '';
     position: absolute;
     top: -6px;
-    left: 64px;
+    left: 45px;
     width: 0;
     height: 0;
     border-left: 6px solid transparent;

@@ -29,7 +29,7 @@ angular.module('bluroeApp')
   	        scope.$apply(function(){
   	            scope.feed.showDropList = false;
   	        });
-	    });
+	        });
       }
     };
   });

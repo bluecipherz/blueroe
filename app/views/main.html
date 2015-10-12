@@ -77,40 +77,49 @@
                                     <div class='feedFooterLeft'>
                                         <div class='block b-p-rel' popup-menu="F1T1">
                                                 <div class='Btn' ng-click="toggleMenu('F1T1')"><span class="fa fa-user"></span></div>
-                                                <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
-                                                    <div class="selPerson -bg-s-240">
-                                                        <div class="head">Assign to </div>
-                                                        <div class="cont">
-                                                            <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
-                                                                <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
-                                                                <img src="{{ user.profile.avatar_url }}">
+                                                <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
+                                                    <div class="topArrow"></div>
+                                                    <div class="cont">
+                                                        <div class="selPerson -bg-s-240">
+                                                            <div class="head">Assign to </div>
+                                                            <div class="cont">
+                                                                <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
+                                                                    <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
+                                                                    <img src="{{ user.profile.avatar_url }}">
+                                                                </div>
                                                             </div>
+                                                            <div class="foot"></div>
                                                         </div>
-                                                        <div class="foot"></div>
                                                     </div>
                                                 </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F1T2">
                                             <div class='Btn' ng-click="toggleMenu('F1T2')"><span class="fa fa-calendar"></span></div>
-                                            <div class="popBox -free -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
-                                                <div class="selPerson">
-                                                    <div >Select Person</div>
-                                                    <div>
-                                                        <datepicker>
-                                                          <input ng-model="date" type="text"/>
-                                                        </datepicker>
+                                            <div class="popBox -free -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                        <div >Select Person</div>
+                                                        <div>
+                                                            <datepicker>
+                                                              <input ng-model="date" type="text"/>
+                                                            </datepicker>
+                                                        </div>
+                                                        <div>  </div>
                                                     </div>
-                                                    <div>  </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F1T3">
-                                            <div class='Btn' ng-click="toggleMenu('F1T3')"><span class="fa fa-wrench"></span></div>
-                                            <div class="popBox -r -t-30 b-layer-3" ng-class="{ 'hidden' : ! showF1T3 }">
-                                                <div class="selPerson">
-                                                    <div>Set Priority</div>
-                                                    <div>  </div>
-                                                    <div>  </div>
+                                            <div class='Btn' ng-click="toggleMenu('F1T3')"><span class="fa fa-warning"></span></div>
+                                            <div class="popBox -r -t-40 " ng-class="{ 'hidden' : ! showF1T3 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                        <div>Set&nbsp;Priority</div>
+                                                        <div>  </div>
+                                                        <div>  </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -144,6 +153,39 @@
                                     </div>
                                 </div>
                                 <div class="foot b-layer-3">
+                                    <div class="feedFooterLeft">
+
+                                        <div class='block b-p-rel' popup-menu="F2T1">
+                                            <div class='Btn' ng-click="toggleMenu('F2T1')"><span class="fa fa-user"></span></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T1 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='block b-p-rel' popup-menu="F2T2">
+                                            <div class='Btn' ng-click="toggleMenu('F2T2')"><span class="fa fa-calendar"></span></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T2 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='block b-p-rel' popup-menu="F2T3">
+                                            <div class='Btn' ng-click="toggleMenu('F2T3')"><span class="fa fa-flag"></span></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T3 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button ng-click="panel.addMilestone()">Submit</button>
                                 </div>
                             </form>
@@ -176,6 +218,19 @@
                                     </div>
                                 </div>
                                 <div class="foot b-layer-3">
+                                    <div class="feedFooterLeft">
+
+                                        <div class='block b-p-rel' popup-menu="F3T1">
+                                            <div class='Btn' ng-click="toggleMenu('F3T1')"><span class="fa fa-user"></span></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF3T1 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button ng-click="panel.uploadFile()">Submit</button>
                                 </div>
                             </form>
@@ -211,6 +266,19 @@
                                     </div>
                                 </div>
                                 <div class="foot b-layer-3">
+                                    <div class="feedFooterLeft">
+
+                                        <div class='block b-p-rel' popup-menu="F4T1">
+                                            <div class='Btn' ng-click="toggleMenu('F4T1')"><span class="fa fa-user"></span></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF4T1 }">
+                                                <div class="topArrow"></div>
+                                                <div class="cont">
+                                                    <div class="selPerson">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button ng-click="panel.postForum()">Submit</button>
                                 </div>
                             </form>

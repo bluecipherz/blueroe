@@ -146,9 +146,7 @@
   background: #FF4500;
   border-radius: 1px;
   margin: 5px 0 0 5px;
-  font-size: 11px;
-  float: left;
-  overflow: none; }
+  font-size: 11px; }
 
 /* Colors */
 /* images */
@@ -183,10 +181,12 @@
     background: #fff;
     -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    z-index: 30; }
   .popBox .cont {
     padding: 10px;
-    background: #fff; }
+    background: #fff;
+    z-index: 33; }
   .popBox .closeBtn {
     border-radius: 50%;
     background: #ccc;

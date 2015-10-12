@@ -444,8 +444,7 @@
     position: absolute;
     top: -6px;
     width: 15px;
-    height: 15px;
-    z-index: 30px; }
+    height: 15px; }
   .popBox .cont {
     display: block;
     float: left;
@@ -488,6 +487,15 @@
 
 .popBox.-t-30 {
   top: 30px; }
+
+.popBox.-t-40 {
+  top: 40px; }
+
+.popBox.-t-50 {
+  top: 50px; }
+
+.popBox.-t-60 {
+  top: 60px; }
 
 .popBox.-free {
   max-width: 1000px;

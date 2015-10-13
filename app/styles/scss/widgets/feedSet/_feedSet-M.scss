@@ -15,10 +15,12 @@
   border-bottom:2px transparent solid;
 }
 .postform .cont,.postform .cont form > .head,.postform .cont form > .mid,.postform .cont form > .foot{
-  background:rgba($blueR,$blueG,$blueB,0.02);
+  /*background:rgba($blueR,$blueG,$blueB,0.02);shikku*/
 }
 .postform > .cont {
-  background:rgba($blueR,$blueG,$blueB,0.02);
+  /*background:rgba($blueR,$blueG,$blueB,0.02);shikku*/
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);/*shikku*/
 }
 .postform .cont form > .head textarea{
   border:none;
@@ -41,8 +43,14 @@
 }
 .postform .cont form > .foot{
   width: 100%;
-  background:rgba($blueR,$blueG,$blueB,0.2);
+  /*background:rgba($blueR,$blueG,$blueB,0.2);
+  background: $lightSlateGray;shikku*/
+  border-top: 1px solid rgba(0, 0, 0, 0.15);/*shikku*/
   height:30px;
+}
+.postform .cont form > .foot > .Sel {/*shikku*/
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
 }
 .postform .cont form > .foot > button{
   font-size: 80%;
@@ -54,8 +62,8 @@
 .postform .cont form > .foot > div{
   font-size: 80%;
   line-height: 25px;
-  background: rgba($blueR,$blueG,$blueB,0.3);
-  color:#444;
+  /*background: rgba($blueR,$blueG,$blueB,0.3);shikku*/
+  color:$defFont;/*shikku*/
 }
 .postform .cont form > .foot > div .text-slot{
   text-align: center;

@@ -7,12 +7,13 @@
             <div class="page-feeds ">
                 <div class="p-feeds bgrid">
                     <div class="postform"  ng-controller="CreatepostCtrl as panel" >
-                        <div class="heading">
-                            <span ng-class="{active:panel.isSelected(1)}"  ng-click="panel.selectTab(1)" >Status</span>
-                            <span ng-class="{active:panel.isSelected(2)}"  ng-click="panel.selectTab(2)" >Add Task</span>
-                            <span ng-class="{active:panel.isSelected(3)}"  ng-click="panel.selectTab(3)" >Add MileStone</span>
-                            <span ng-class="{active:panel.isSelected(4)}"  ng-click="panel.selectTab(4)" >Upload file</span>
-                            <span ng-class="{active:panel.isSelected(5)}"  ng-click="panel.selectTab(5)" >Post a message</span>
+                        <div class="heading b-p-rel">
+                            <span class='navLH' ng-class="{active:panel.isSelected(1)}"  ng-click="panel.selectTab(1)" >Status</span>
+                            <span class='navLH' ng-class="{active:panel.isSelected(2)}"  ng-click="panel.selectTab(2)" >Add Task</span>
+                            <span class='navLH' ng-class="{active:panel.isSelected(3)}"  ng-click="panel.selectTab(3)" >Add MileStone</span>
+                            <span class='navLH' ng-class="{active:panel.isSelected(4)}"  ng-click="panel.selectTab(4)" >Upload file</span>
+                            <span class='navLH' ng-class="{active:panel.isSelected(5)}"  ng-click="panel.selectTab(5)" >Post a message</span>
+                            <div class="navLine" id="creatPostNavLine"></div> 
                         </div>
                         <!-- STATUSES -->
                         <div class="cont tab1" ng-show="panel.isSelected(1)">

@@ -8,7 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users, Project){
+  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users, Project,navLine){
         
         var vm = this;
 
@@ -31,8 +31,22 @@ angular.module('bluroeApp')
 
         vm.selectedTab = 2;
 
+        // drawLine($('#creatPostNavLine'),vm.selectedTab); 
+        navLine.navLine($('#creatPostNavLine'),vm.selectedTab); 
         vm.selectTab = function(tab) {
-            vm.selectedTab = tab;
+            vm.selectedTab = tab; 
+            var ele =  $('#creatPostNavLine');
+            drawLine(ele,tab);
+        }
+        function drawLine($ele,$tab){  
+            var parent = $ele.parent();
+            var currEle = parent.find('.navLH:nth-child('+$tab+')');
+            var lineWidth = currEle.outerWidth(); 
+            var left = 0,$i;
+            for($i = 1; $i < $tab; $i++){
+                left = left + parent.find('.navLH:nth-child('+$i+')').outerWidth(); 
+            }
+            $ele.css({'width':lineWidth , 'margin-left':left});  
         }
 
         vm.isSelected = function(tab) {

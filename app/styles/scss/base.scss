@@ -241,5 +241,15 @@ option{
 }
 option{
   margin: 0;
-}
+} 
 
+.navLine{
+  display:block;
+  float:left;
+  position:absolute; 
+  height:2px;
+  width:0px; 
+  top:28px;
+  background:rgba($themeColorR,$themeColorG,$themeColorB,.6); 
+  transition: 0.5s;
+}

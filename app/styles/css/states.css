@@ -2,16 +2,14 @@
 /* images */
 .postform > .heading > span:hover {
   cursor: pointer;
-  border-bottom: 2px rgba(52, 152, 219, 0.3) solid;
+  border-bottom: 2px rgba(231, 76, 60, 0.2) solid;
   color: #111; }
 
 .postform > .heading > .active {
-  border-bottom: 2px rgba(52, 152, 219, 0.6) solid;
   color: #111; }
 
 .postform > .heading > .active:hover {
-  cursor: default;
-  border-bottom: 2px rgba(52, 152, 219, 0.6) solid; }
+  cursor: default; }
 
 .postform .cont form > .foot > button:hover {
   background: #5fcf80;

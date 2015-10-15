@@ -399,6 +399,13 @@
       line-height:30px;
       border-right:1px solid rgba(0,0,0,0.15);
     }
+    .selDate{
+      width:460px;
+    }
+    .selDate > div {
+      width:220px;
+      float:left;
+    }
     .selPerson{
       display:block;
       float:left; 

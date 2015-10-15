@@ -1,5 +1,6 @@
 @import '../base/variables';
 .myTasks{
+	min-height:100px;
 	.cont{
 		display:block;
 		float:left;
@@ -25,16 +26,58 @@
 				float:left;
 				padding:3px 10px;
 			}
+			.taskList{
+				display:block;
+				float:left;
+			} 
 			.taskList .td{
 				font-size:120%;
 				font-weight:bold;
 				color:#555; 
-			}
-			.sector{
+				padding:4px 10px;
+				width:100%;  
+			} 
+			.sector,
+			.sectorList{
 				display:block;
 				float:left;
 				width:100%;
-				padding:8px 0;
+				padding:8px;  
+				border-bottom:1px solid rgba(0,0,0,0.05);
+				border-radius:3px;
+			}
+			.sector{
+				padding:1px 8px;
+			}
+
+
+			.sector:hover{
+				cursor:pointer; 
+				color:#fff;  
+				background:rgba($themeColorR,$themeColorG,$themeColorB,0.7); 	
+			} 
+			.sectorList:hover{
+				cursor:pointer;
+				background:$themeColor; 
+				color:rgba(255,255,255,.8);
+				.taskList .td{
+					color:rgba(255,255,255,.9);
+				}
+				.taskList .td:hover{
+					color:rgba(255,255,255,1);
+				}
+				.tr:hover{ 
+						background:rgba(225,225,225,0.1); 
+				}
+				.progTrack{
+					background:rgba(225,225,225,0.9);
+				}
+				.progBar:hover{
+					background:rgba(0,0,0,0.4);
+					.progTrack{
+						background:rgba(225,225,225,1);
+					}
+				}
 			}
 		}
 	}

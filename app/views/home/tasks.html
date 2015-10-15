@@ -1,5 +1,5 @@
-<div class="flexPage myTasks"> 
-    <div class="flex-10 -h-500 -p">
+<div class="flexPage "> 
+    <div class="flex-10 myTasks -p">
         <div class="fluidGrid ">
         	<div class="heading ">
         		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Classic  </span> 
@@ -11,32 +11,48 @@
         	<div class="cont" ng-show="tasks.isSelected(1)">
         		<div class="table">	
         			<div  class="bgrid  -b-d-100">
-        				<div class='head -b-d-30'>TASK</div>
+        				<div class='head -b-d-40'>TASK</div>
         				<div class='head -b-d-10'>OWNER</div>
         				<div class='head -b-d-10'>START</div>
         				<div class='head -b-d-10'>DUE</div>
         				<div class='head -b-d-10'>DURATION</div>
-        				<div class='head -b-d-20'>PROGRESS</div>
+        				<div class='head -b-d-10'>PROGRESS</div>
         				<div class='head -b-d-10'>CREATED BY</div>
         			</div>
         			<!-- ng-repeat main -->
-		    		<div  class="sector -b-d-100" ng-repeat="task in tasks.tasks"> 
-		        		<div class=" taskList">
-		        			<div class="td">shitzem </div> 
-		        		</div> 
-        				<!-- ng-repeat tasks -->
-			    		<div  class="bgrid  -b-d-100" >
-			        		<div class="bgrid  -b-d-100">
-			        			<div class='td -b-d-30'>Go to Hell</div>
-		        				<div class='td -b-d-10'>basi</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-20'>0</div>
-		        				<div class='td -b-d-10'>Basi</div>
-			        		</div>
-			    		</div>
-
+                    <div  class="-b-d-100" ng-repeat="task in tasks.tasks"> 
+    		    		<div  class="sectorList -b-d-100"ng-if="task.type == 'taskList'" > 
+    		        		<div class=" taskList"   >
+    		        			<div class="td">{{task.name}} </div> 
+    		        		</div> 
+            				<!-- ng-repeat tasks -->
+    			    		<div  class="bgrid  -b-d-100" ng-repeat="child in task.children">
+    			        		<div class="bgrid tr -b-d-100">
+    			        			<div class='td -b-d-40'>{{child.name}}</div>
+    		        				<div class='td -b-d-10'>{{child.owner}}</div>
+    		        				<div class='td -b-d-10'>{{child.start}}</div>
+    		        				<div class='td -b-d-10'>{{child.due}}</div>
+    		        				<div class='td -b-d-10'>{{child.duration}}</div>
+    		        				<div class='td -b-d-10'>
+                                        <div class="progBar">
+                                            <div class="progTrack" style="width:{{child.progress}}%;"></div>
+                                        </div>
+                                    </div>
+    		        				<div class='td -b-d-10'>{{child.createdBy}}</div>
+    			        		</div>
+    			    		</div> 
+                        </div>
+                        <div class="sector -b-d-100" ng-if="task.type == 'task' " >
+                            <div class="bgrid tr -b-d-100" >
+                                <div class='td -b-d-40'>{{task.name}}</div>
+                                <div class='td -b-d-10'>{{task.owner}}</div>
+                                <div class='td -b-d-10'>{{task.start}}</div>
+                                <div class='td -b-d-10'>{{task.due}}</div>
+                                <div class='td -b-d-10'>{{task.duration}}</div>
+                                <div class='td -b-d-10'>{{task.progress}}</div>
+                                <div class='td -b-d-10'>{{task.createdBy}}</div>
+                            </div>
+                        </div>
 		    		</div>
         		</table>
         	</div>

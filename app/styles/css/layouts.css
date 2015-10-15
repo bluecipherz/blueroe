@@ -845,36 +845,68 @@
 
 /* Colors */
 /* images */
-.myTasks .cont {
-  display: block;
-  float: left;
-  width: 100%;
-  padding: 10px 5px;
-  font-size: 90%;
-  color: #666; }
-  .myTasks .cont .table {
+.myTasks {
+  min-height: 100px; }
+  .myTasks .cont {
+    display: block;
+    float: left;
     width: 100%;
-    margin-top: 10px; }
-    .myTasks .cont .table .head {
-      display: block;
-      float: left;
-      padding: 0 10px;
-      height: 20px;
-      text-align: 20px;
-      border-bottom: 1px solid rgba(231, 76, 76, 0.3); }
-    .myTasks .cont .table .td {
-      display: block;
-      float: left;
-      padding: 3px 10px; }
-    .myTasks .cont .table .taskList .td {
-      font-size: 120%;
-      font-weight: bold;
-      color: #555; }
-    .myTasks .cont .table .sector {
-      display: block;
-      float: left;
+    padding: 10px 5px;
+    font-size: 90%;
+    color: #666; }
+    .myTasks .cont .table {
       width: 100%;
-      padding: 8px 0; }
+      margin-top: 10px; }
+      .myTasks .cont .table .head {
+        display: block;
+        float: left;
+        padding: 0 10px;
+        height: 20px;
+        text-align: 20px;
+        border-bottom: 1px solid rgba(231, 76, 76, 0.3); }
+      .myTasks .cont .table .td {
+        display: block;
+        float: left;
+        padding: 3px 10px; }
+      .myTasks .cont .table .taskList {
+        display: block;
+        float: left; }
+      .myTasks .cont .table .taskList .td {
+        font-size: 120%;
+        font-weight: bold;
+        color: #555;
+        padding: 4px 10px;
+        width: 100%; }
+      .myTasks .cont .table .sector,
+      .myTasks .cont .table .sectorList {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 3px; }
+      .myTasks .cont .table .sector {
+        padding: 1px 8px; }
+      .myTasks .cont .table .sector:hover {
+        cursor: pointer;
+        color: #fff;
+        background: rgba(231, 76, 60, 0.7); }
+      .myTasks .cont .table .sectorList:hover {
+        cursor: pointer;
+        background: #e74c3c;
+        color: rgba(255, 255, 255, 0.8); }
+        .myTasks .cont .table .sectorList:hover .taskList .td {
+          color: rgba(255, 255, 255, 0.9); }
+        .myTasks .cont .table .sectorList:hover .taskList .td:hover {
+          color: white; }
+        .myTasks .cont .table .sectorList:hover .tr:hover {
+          background: rgba(225, 225, 225, 0.1); }
+        .myTasks .cont .table .sectorList:hover .progTrack {
+          background: rgba(225, 225, 225, 0.9); }
+        .myTasks .cont .table .sectorList:hover .progBar:hover {
+          background: rgba(0, 0, 0, 0.4); }
+          .myTasks .cont .table .sectorList:hover .progBar:hover .progTrack {
+            background: #e1e1e1; }
 
 /* Colors */
 /* images */

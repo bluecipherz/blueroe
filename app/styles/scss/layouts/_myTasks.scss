@@ -1,0 +1,41 @@
+@import '../base/variables';
+.myTasks{
+	.cont{
+		display:block;
+		float:left;
+		width:100%;
+
+		padding:10px 5px;
+		font-size:90%;
+		color:#666;
+		.table{
+			width:100%;
+			margin-top:10px;
+			.head{
+				display:block;
+				float:left;
+				padding:0 10px;
+				height:20px;
+
+				text-align:20px;
+				border-bottom:1px solid rgba($themeColorR,$themeColorG,$themeColorG,.3);
+			}
+			.td{
+				display:block;
+				float:left;
+				padding:3px 10px;
+			}
+			.taskList .td{
+				font-size:120%;
+				font-weight:bold;
+				color:#555; 
+			}
+			.sector{
+				display:block;
+				float:left;
+				width:100%;
+				padding:8px 0;
+			}
+		}
+	}
+}

@@ -1,1 +1,45 @@
-<p>This is the tasks view.</p>
+<div class="flexPage myTasks"> 
+    <div class="flex-10 -h-500 -p">
+        <div class="fluidGrid ">
+        	<div class="heading ">
+        		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Classic  </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Plain </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(3)}"  ng-click="tasks.selectTab(3)" > Dependancy </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
+                <div class="navLine" id="myTasksNavLine"></div>
+        	</div>
+        	<div class="cont" ng-show="tasks.isSelected(1)">
+        		<div class="table">	
+        			<div  class="bgrid  -b-d-100">
+        				<div class='head -b-d-30'>TASK</div>
+        				<div class='head -b-d-10'>OWNER</div>
+        				<div class='head -b-d-10'>START</div>
+        				<div class='head -b-d-10'>DUE</div>
+        				<div class='head -b-d-10'>DURATION</div>
+        				<div class='head -b-d-20'>PROGRESS</div>
+        				<div class='head -b-d-10'>CREATED BY</div>
+        			</div>
+        			<!-- ng-repeat main -->
+		    		<div  class="sector -b-d-100" ng-repeat="task in tasks.tasks"> 
+		        		<div class=" taskList">
+		        			<div class="td">shitzem </div> 
+		        		</div> 
+        				<!-- ng-repeat tasks -->
+			    		<div  class="bgrid  -b-d-100" >
+			        		<div class="bgrid  -b-d-100">
+			        			<div class='td -b-d-30'>Go to Hell</div>
+		        				<div class='td -b-d-10'>basi</div>
+		        				<div class='td -b-d-10'>0</div>
+		        				<div class='td -b-d-10'>0</div>
+		        				<div class='td -b-d-10'>0</div>
+		        				<div class='td -b-d-20'>0</div>
+		        				<div class='td -b-d-10'>Basi</div>
+			        		</div>
+			    		</div>
+
+		    		</div>
+        		</table>
+        	</div>
+        </div>
+    </div>
+</div>

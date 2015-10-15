@@ -8,10 +8,27 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('TasksCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('TasksCtrl', function (navLine) {
+
+    var vm = this;
+
+    vm.selectedTab = 1; 
+    navLine.navLine($('#myTasksNavLine'),vm.selectedTab);  
+  	vm.selectTab = function(tab) {
+        vm.selectedTab = tab; 
+        var ele =  $('#myTasksNavLine');
+        navLine.navLine(ele,tab); 
+    } 
+
+    vm.isSelected = function(tab) {
+        return vm.selectedTab == tab;
+    }
+
+    this.tasks = [
+    	{'name':'Shizu','type':'taskList'},
+    	{'name':'Shizu','type':'taskList'},
+    	{'name':'Shizu','type':'taskList'},
+    	{'name':'Shizu','type':'taskList'},
+    	{'name':'Shizu','type':'taskList'}
+    ]
   });

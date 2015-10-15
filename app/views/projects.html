@@ -56,9 +56,9 @@
                     </tr>
                     <tr ng-repeat="project in projects.projectList" ui-sref="projectShow({id:project.id})">
                         <td>{{project.name}}</td>
-                        <td>{{project.owner.email}}</td>
+                        <td>{{project.owner.email }} {{ project.completedTasks }} {{  project.tasks.length }}</td>
                         <td>
-                            <div style="display:block; float:left; height:20px; width:100%; background:red;" ></div>
+                            <div style="display:block; float:left; height:20px; width:{{ (  project.completedTasks / project.tasks.length) * 100 }}%; background:red;" ></div>
                         </td>
                         <td>{{project.completedMilestones}} / {{project.milestones.length}}</td>
                         <td>{{project.projectCompletion}} %</td>

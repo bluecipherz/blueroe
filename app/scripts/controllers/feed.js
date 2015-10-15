@@ -52,6 +52,7 @@ angular.module('bluroeApp')
             });
             feed.comment = "";
             feed.showDetails = false;
+            feed.showPostComment = true;
         }
 
         this.deleteComment = function(index, feed, comment) {
@@ -59,6 +60,7 @@ angular.module('bluroeApp')
                 feedid:feed.id, commentid:comment.id
             }).$promise.then(function(result) {
                 feed.comments.splice(index, 1);
+                if(feed.comments.length == 0) feed.showPostComment = false;
             });
         }
 

@@ -50,17 +50,21 @@
             </div>
             <div class="foot">
                 <div class="head">
-                    <span class="cnmtBtn" ng-click="feed.showDetails = ! feed.showDetails" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
+                    <span class="cnmtBtn" ng-click="feed.toggleCommentDetails()" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
                 </div>
-                <div class="comment-slot">
+                <div class="comment-slot" ng-show="feed.comments.length > 0 || feed.showDetails">
                     <!--COMMENT SLOT-->
                     <comment ng-repeat="comment in feed.comments" class="commentSet">
                     </comment>
-                    <div class="commentForm foot" ng-class="{ 'hidden': ! feed.showDetails }" >
-                        <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
-                        <div>
-                            <button class="b-btn-sm" ng-click="fc.postComment(feed)">Submit</button>
-                        </div>
+                    <div class="commentForm foot"  >
+                        <div  ng-class="{ 'hidden': !feed.showDetails }" >
+                            <textarea class="bgrid" type="text" ng-model="feed.comment"></textarea>
+                            <button class="b-btn-sm clip">
+                                <span class="fa fa-paperclip" ></span>
+                            </button> 
+                            <button class="b-btn-sm" ng-click="fc.postComment(feed)">Submit</button>  
+                        </div> 
+                        <span  ng-click="feed.toggleCommentPost()" class="b-link" ng-class="{ 'hidden':  !feed.showPostComment }" >Share your comment</span>
                     </div>
                 </div>
             </div>

@@ -1,15 +1,15 @@
 
 @import "../../base/variables";
 @import "../../functions/baseFunctions";
-.postform > .heading > span:hover{
+.heading > span:hover{
   cursor: pointer;
   border-bottom:2px rgba($themeColorR,$themeColorG,$themeColorB,.2) solid;
   color:#111;
 }
-.postform > .heading > .active{ 
+.heading > .active{ 
   color:#111;
 }
-.postform > .heading > .active:hover{
+.heading > .active:hover{
   cursor: default;  
 }
 .postform .cont form > .foot > button:hover{

@@ -1,14 +1,14 @@
 /* Colors */
 /* images */
-.postform > .heading > span:hover {
+.heading > span:hover {
   cursor: pointer;
   border-bottom: 2px rgba(231, 76, 60, 0.2) solid;
   color: #111; }
 
-.postform > .heading > .active {
+.heading > .active {
   color: #111; }
 
-.postform > .heading > .active:hover {
+.heading > .active:hover {
   cursor: default; }
 
 .postform .cont form > .foot > button:hover {
@@ -167,8 +167,44 @@
 .Aside .active .asideIcon .img > img {
   opacity: 0.8; }
 
+.NestedAsideLink {
+  background: #252525; }
+
 /* Colors */
 /* images */
+/* Colors */
+/* images */
+.myTasks .cont {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 90%;
+  color: #666; }
+  .myTasks .cont .table {
+    width: 100%;
+    margin-top: 10px; }
+    .myTasks .cont .table .head {
+      display: block;
+      float: left;
+      padding: 0 10px;
+      height: 20px;
+      text-align: 20px;
+      border-bottom: 1px solid rgba(231, 76, 76, 0.3); }
+    .myTasks .cont .table .td {
+      display: block;
+      float: left;
+      padding: 3px 10px; }
+    .myTasks .cont .table .taskList .td {
+      font-size: 120%;
+      font-weight: bold;
+      color: #555; }
+    .myTasks .cont .table .sector {
+      display: block;
+      float: left;
+      width: 100%;
+      padding: 8px 0; }
+
 /* Colors */
 /* images */
 .projects .mid tr:nth-child(1):hover {

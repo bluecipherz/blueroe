@@ -99,14 +99,20 @@
                                             <div class="popBox -free -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
-                                                    <div class="selPerson">
-                                                        <div >Select Person</div>
+                                                    <div class="selPerson selDate">
+                                                        <div class="head">Date Definition</div>
                                                         <div>
-                                                            <datepicker>
+                                                            <div>Start Date</div>
+                                                            <datepicker visible-on-load>
                                                               <input ng-model="date" type="text"/>
                                                             </datepicker>
                                                         </div>
-                                                        <div>  </div>
+                                                        <div>
+                                                            <div>End Date</div>
+                                                            <datepicker visible-on-load>
+                                                              <input ng-model="date" type="text"/>
+                                                            </datepicker>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

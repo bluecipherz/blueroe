@@ -1,25 +1,55 @@
 @import '../base/variables';
 .myTasks{
-	min-height:100px;
+	min-height:400px;
+	.p-dropzone {
+		margin:5px;
+		width:90%;
+	}
+	.half{ width:calc(50% - 12px); }
+	.heading{
+		.oneBy3{ width:calc(33.3% - 12px); }
+	}
 	.cont{
 		display:block;
 		float:left;
 		width:100%;
+		.oneBy3{ width:calc(33.3% - 12px); }
 
 		padding:10px 5px;
 		font-size:90%;
 		color:#666;
+		.popBox{
+			font-size:110%;
+		}
 		.table{
+			display:block;
+			float:left;
 			width:100%;
-			margin-top:10px;
+			margin-top:5px; 
+			input[type='text']{
+				height:20px;
+				min-height:20px;
+				line-height:20px;
+			}
+			.popBox{
+				input[type='text']{
+					height:30px;
+					min-height:30px;
+					line-height:30px;
+				}
+			}
 			.head{
 				display:block;
 				float:left;
-				padding:0 10px;
-				height:20px;
+				padding:0px 10px;
+				height:30px;
 
-				text-align:20px;
+				line-height:30px;
 				border-bottom:1px solid rgba($themeColorR,$themeColorG,$themeColorG,.3);
+				input{
+					margin-left:20px;
+					line-height:20px;
+				}
 			}
 			.td{
 				display:block;
@@ -67,18 +97,24 @@
 					color:rgba(255,255,255,1);
 				}
 				.tr:hover{ 
-						background:rgba(225,225,225,0.1); 
+						background:rgba(255,255,255,0.1); 
+						.progBar{
+							background:rgba(0,0,0,0.2); 
+						} 
 				}
 				.progTrack{
-					background:rgba(225,225,225,0.9);
-				}
-				.progBar:hover{
-					background:rgba(0,0,0,0.4);
-					.progTrack{
-						background:rgba(225,225,225,1);
-					}
+					background:rgba(255,255,255,0.9);
+				} 
+				option{
+					color:#333;
 				}
 			}
 		}
+	}
+	option{
+		color:#333;
+	}
+	option:hover{
+		background:#ddd;
 	}
 }

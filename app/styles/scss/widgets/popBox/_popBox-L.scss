@@ -40,8 +40,15 @@
     opacity:0px;
   }
 .popBox.-l{  right:0px; .topArrow{ right:10px; }}
+.popBox.-l-20{  right:0px; .topArrow{ right:20px; }}
+.popBox.-l-30{  right:0px; .topArrow{ right:30px; }}
+.popBox.-l-40{  right:0px; .topArrow{ right:40px; }}
+.popBox.-l-50{  right:0px; .topArrow{ right:50px; }}
+
 .popBox.-r{  left:0px; .topArrow{ left:10px; }}
 .popBox.-r-10{  left:10px; .topArrow{ left:10px; }}
+
+.popBox.-h{  left:50px; top:-70px; .topArrow{ left:-5px; top:75px; }}
 
 .popBox.-t-20{  top:20px; }
 .popBox.-t-30{  top:30px; }

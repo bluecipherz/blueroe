@@ -12,7 +12,7 @@ angular.module('bluroeApp')
     // Service logic
     // ...
 
-    var host = 'http://localhost:8000';
+    var host = 'http://localhost:8000/api';
 
     // Public API here
     return {

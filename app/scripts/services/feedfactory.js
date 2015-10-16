@@ -25,7 +25,7 @@
     var params = {};
 
     var Feed = TokenHandler.wrapActions(
-        $resource(Hoster.getHost() + '/api/me/feeds/:project'),
+        $resource(Hoster.getHost() + '/me/feeds/:project'),
         ['query']
     );
 

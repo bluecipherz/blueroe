@@ -21,7 +21,7 @@ angular.module('bluroeApp')
     var observerCallbacks = [];
 
     // temp login
-    $http.post(Hoster.getHost() + '/api/authenticate', {email:'asd@g.com',password:'asdasd'})
+    $http.post(Hoster.getHost() + '/authenticate', {email:'asd@g.com',password:'asdasd'})
       .then(function(response, status, header, config) {
           set(response.data.token);
           user = response.data.user;

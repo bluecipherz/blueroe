@@ -23,12 +23,12 @@ angular.module('bluroeApp')
     var reloadEverytime = false;
 
     var Project = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/projects/:projectid'),
+      $resource(Hoster.getHost() + '/projects/:projectid'),
       ['query', 'save', 'update', 'delete']
     );
     
     var MeProject = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/me/projects'),
+      $resource(Hoster.getHost() + '/me/projects'),
       ['query']
     )
 

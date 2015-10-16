@@ -2,9 +2,12 @@
     <div class="flexPage">
         <div class="fluidGrid">
             <div class="head">
-                View by Group
-                <div class="bgrid -bg-s-100 -f-right b-p-rel ">
+                <div class="bgrid -bg-s-200">
+                    <div class="custHead">View by Group</div>
+                </div>
+                <div class="bgrid -bg-s-130 -f-right b-p-rel ">
                     <div class="custButton -blue" ng-click="showNoti = ! showNoti">New Project</div>
+                    <div class="custButton"><i class="fa fa-bars"></i></div>
                     <div class="popBox -l" ng-class="{ 'hidden' : ! showNoti }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showNoti = ! showNoti"></div>
@@ -12,6 +15,12 @@
                             <div class="createProjectPopup">
                                 <h5>Create New Project</h5>
                                 <input type="text" placeholder="Project name" ng-model="projects.projectname"/>
+                                <h6>Project Owner</h6>
+                                <select>
+                                    <option>Owner 1</option>
+                                    <option>Owner 2</option>
+                                    <option>Owner 3</option>
+                                </select>
                                 <h6>Project Overview</h6>
                                 <textarea placeholder="project overview" rows="4" ng-model="projects.projectoverview"></textarea>
                                 <div>

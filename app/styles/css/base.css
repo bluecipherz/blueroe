@@ -281,6 +281,10 @@ div:hover::-webkit-scrollbar-thumb {
   font-family: Walkway;
   src: url("../../fonts/Dosis-Bold.ttf");
   font-weight: 500; }
+.custHead {
+  font-size: 14px;
+  padding: 10px 0; }
+
 .custButton {
   display: block;
   float: left;

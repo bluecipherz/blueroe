@@ -7,6 +7,15 @@
         		<span class='navLH' ng-class="{active:tasks.isSelected(3)}"  ng-click="tasks.selectTab(3)" > Dependancy </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
                 <div class="navLine" id="myTasksNavLine"></div>
+
+
+                <div class="">
+                    <div>
+                        <div class="custButton -blue">New Tasks</div>
+                        <div class="custButton"><i class="fa fa-filter"></i></div>
+                        <div class="custButton"><i class="fa fa-bars"></i></div>
+                    </div>
+                <div>
         	</div>
         	<div class="cont" ng-show="tasks.isSelected(1)">
         		<div class="table">	
@@ -20,20 +29,20 @@
         				<div class='head -b-d-10'>CREATED BY</div>
         			</div>
         			<!-- ng-repeat main -->
-		    		<div  class="sector -b-d-100" ng-repeat="task in tasks.tasks"> 
-		        		<div class=" taskList">
-		        			<div class="td">shitzem </div> 
+		    		<div  class="sector -b-d-100" ng-repeat="tasklist in tasks.tasklists"> 
+		        		<div class="tasklist.name">
+		        			<div class="td">{{ tasklist.name }}</div> 
 		        		</div> 
         				<!-- ng-repeat tasks -->
-			    		<div  class="bgrid  -b-d-100" >
-			        		<div class="bgrid  -b-d-100">
-			        			<div class='td -b-d-30'>Go to Hell</div>
-		        				<div class='td -b-d-10'>basi</div>
+			    		<div  class="bgrid -b-d-100" ng-repeat="task in tasklist.tasks">
+			        		<div class="bgrid -b-d-100">
+			        			<div class='td -b-d-30'>{{ task.name }}</div>
+		        				<div class='td -b-d-10'>{{ task.user | filter : {type:'owner'} }}</div>
+		        				<div class='td -b-d-10'>{{ task.start_date }}</div>
 		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-20'>0</div>
-		        				<div class='td -b-d-10'>Basi</div>
+		        				<div class='td -b-d-10'>{{ task.duration }}</div>
+		        				<div class='td -b-d-20'>{{ task.percentage_completed }} %</div>
+		        				<div class='td -b-d-10'>{{ task.created_by }}</div>
 			        		</div>
 			    		</div>
 

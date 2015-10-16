@@ -179,7 +179,8 @@
 
 .selPerson ._720kb-datepicker-calendar {
   margin: 5px auto 0 -.5%;
-  position: relative; }
+  position: relative;
+  visibility: visible; }
 
 ._720kb-datepicker-calendar > div {
   font: 11px Helvetica; }
@@ -383,5 +384,8 @@
     padding: 10px; }
   .projects .mid tr:nth-child(1) {
     border-bottom: 1px solid #ddd; }
+
+.createProjectPopup input[type=text], .createProjectPopup input[type=password], .createProjectPopup select, .createProjectPopup textarea {
+  background: inherit; }
 
 /*# sourceMappingURL=modules.css.map */

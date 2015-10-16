@@ -13,7 +13,7 @@ angular.module('bluroeApp')
     // ...
 
     var Comment = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/feeds/:feedid/comments/:commentid'),
+      $resource(Hoster.getHost() + '/feeds/:feedid/comments/:commentid'),
       ['save', 'delete']
     );
 

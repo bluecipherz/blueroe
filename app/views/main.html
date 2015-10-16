@@ -84,7 +84,7 @@
                                                         <div class="selPerson -bg-s-240">
                                                             <div class="head">Assign to </div>
                                                             <div class="cont">
-                                                                <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added" > 
+                                                                <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added;panel.task.addUser(user)" > 
                                                                     <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
                                                                     <img src="{{ user.profile.avatar_url }}">
                                                                 </div>
@@ -99,19 +99,21 @@
                                             <div class="popBox -free -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
-                                                    <div class="selPerson selDate">
+                                                    <div class="selPerson">
                                                         <div class="head">Date Definition</div>
-                                                        <div>
-                                                            <div>Start Date</div>
-                                                            <datepicker visible-on-load>
-                                                              <input ng-model="date" type="text"/>
-                                                            </datepicker>
-                                                        </div>
-                                                        <div>
-                                                            <div>End Date</div>
-                                                            <datepicker visible-on-load>
-                                                              <input ng-model="date" type="text"/>
-                                                            </datepicker>
+                                                        <div class="bgrid -bg-s-480">
+                                                            <div class="-bg-s-220 -bg-mar-hor-5">
+                                                                <div>Start Date</div>
+                                                                <datepicker >
+                                                                  <input ng-model="panel.task.start_date" type="text"/>
+                                                                </datepicker>
+                                                            </div>
+                                                            <div class="-bg-s-220 -bg-mar-hor-5">
+                                                                <div>End Date</div>
+                                                                <datepicker >
+                                                                  <input ng-model="panel.task.end_date" type="text"/>
+                                                                </datepicker>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -122,10 +124,14 @@
                                             <div class="popBox -r -t-40 " ng-class="{ 'hidden' : ! showF1T3 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
-                                                    <div class="selPerson">
-                                                        <div>Set&nbsp;Priority</div>
-                                                        <div>  </div>
-                                                        <div>  </div>
+                                                    <div class="selPerson -bg-s-160">
+                                                        <div class="head">Set Priority</div>
+                                                        <div class="cont">
+                                                            <div><input type="radio" name="priority" ng-model="panel.task.priority" value="0" checked> No Priority</div>
+                                                            <div><input type="radio" name="priority" ng-model="panel.task.priority" value="1" checked> Low Priority</div>
+                                                            <div><input type="radio" name="priority" ng-model="panel.task.priority" value="2" checked> Medium Priority</div>
+                                                            <div><input type="radio" name="priority" ng-model="panel.task.priority" value="3" checked> High Priority</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

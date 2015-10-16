@@ -619,3 +619,40 @@ ________________________________________________________________________________
 .bg-reset{ padding:0px;  margin:0px;  }
 .bg-reset-m{margin:0px;  }
 .bg-reset-p{ padding:0px;}
+
+/*
+ *  VERTICAL PADDING
+ */
+.-bg-pad-ver-5  { padding:5px 0;  }
+.-bg-pad-ver-10 { padding:10px 0; }
+.-bg-pad-ver-15 { padding:15px 0; }
+.-bg-pad-ver-20 { padding:20px 0; }
+.-bg-pad-ver-25 { padding:25px 0; }
+
+/*
+ *  HORIZONTAL PADDING
+ */
+
+.-bg-pad-hor-5  { padding:0 5px;  }
+.-bg-pad-hor-10 { padding:0 10px; }
+.-bg-pad-hor-15 { padding:0 15px; }
+.-bg-pad-hor-20 { padding:0 20px; }
+.-bg-pad-hor-25 { padding:0 25px; }
+
+/*
+ *  VERTICAL MARGIN
+ */
+.-bg-mar-ver-5  { padding:5px 0;  }
+.-bg-mar-ver-10 { padding:10px 0; }
+.-bg-mar-ver-15 { padding:15px 0; }
+.-bg-mar-ver-20 { padding:20px 0; }
+.-bg-mar-ver-25 { padding:25px 0; }
+
+/*
+ *  HORIZONTAL MARGIN
+ */
+.-bg-mar-hor-5  { padding:0 5px;  }
+.-bg-mar-hor-10 { padding:0 10px; }
+.-bg-mar-hor-15 { padding:0 15px; }
+.-bg-mar-hor-20 { padding:0 20px; }
+.-bg-mar-hor-25 { padding:0 25px; }

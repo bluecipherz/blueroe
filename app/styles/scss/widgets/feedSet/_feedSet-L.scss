@@ -399,13 +399,6 @@
       line-height:30px;
       border-right:1px solid rgba(0,0,0,0.15);
     }
-    .selDate{
-      width:460px;
-    }
-    .selDate > div {
-      width:220px;
-      float:left;
-    }
     .selPerson{
       display:block;
       float:left; 
@@ -417,6 +410,19 @@
         height:30px;
         line-height:30px;
         padding:0 10px;
+      }
+      .dateCont {
+        display:block;
+        float:left;
+        width:460px;
+        .dates{
+          width:220px;
+          float:left;
+          margin:0 5px;
+          div{
+            float:left;
+          }
+        }
       }
       .cont{
         display:block;

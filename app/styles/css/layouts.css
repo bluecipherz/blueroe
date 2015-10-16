@@ -383,11 +383,6 @@
       text-align: center;
       line-height: 30px;
       border-right: 1px solid rgba(0, 0, 0, 0.15); }
-    .feedFooterLeft .block .selDate {
-      width: 460px; }
-    .feedFooterLeft .block .selDate > div {
-      width: 220px;
-      float: left; }
     .feedFooterLeft .block .selPerson {
       display: block;
       float: left;
@@ -399,6 +394,16 @@
         height: 30px;
         line-height: 30px;
         padding: 0 10px; }
+      .feedFooterLeft .block .selPerson .dateCont {
+        display: block;
+        float: left;
+        width: 460px; }
+        .feedFooterLeft .block .selPerson .dateCont .dates {
+          width: 220px;
+          float: left;
+          margin: 0 5px; }
+          .feedFooterLeft .block .selPerson .dateCont .dates div {
+            float: left; }
       .feedFooterLeft .block .selPerson .cont {
         display: block;
         float: left;

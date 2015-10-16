@@ -9,9 +9,13 @@
  */
 angular.module('bluroeApp')
   .controller('MilestonesCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    
+  	this.milestones = [
+  		{id:1,name:'Shitzu',owner:'prickzen',start_date:'today',end_date:'tommorow',tasks:'10'},
+  		{id:1,name:'Shitzu',owner:'prickzen',start_date:'today',end_date:'tommorow',tasks:'10'},
+  		{id:1,name:'Shitzu',owner:'prickzen',start_date:'today',end_date:'tommorow',tasks:'10'},
+  		{id:1,name:'Shitzu',owner:'prickzen',start_date:'today',end_date:'tommorow',tasks:'10'},
+  		{id:1,name:'Shitzu',owner:'prickzen',start_date:'today',end_date:'tommorow',tasks:'10'}
+  	];
+
   });

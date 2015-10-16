@@ -1,1 +1,35 @@
-<p>This is the milestones view.</p>
+<div class="flexPage myTasks"> 
+    <div class="flex-10 -h-500 -p">
+        <div class="fluidGrid ">
+        	<div class="cont">
+        		<div>
+        			<div>Milestones</div>
+        			<div>
+        				<button>New Milestone</button>
+        				<button>Filter</button>
+        				<button>Menu</button>
+        			</div>
+        		<div>
+        		<div class="table">	
+        			<div  class="bgrid  -b-d-100">
+        				<div class='head -b-d-40'>MILESTONE</div>
+        				<div class='head -b-d-15'>OWNER</div>
+        				<div class='head -b-d-15'>START DATE</div>
+        				<div class='head -b-d-15'>END DATE</div>
+        				<div class='head -b-d-15'>TASKS</div>
+        			</div>
+        			<!-- ng-repeat main -->
+		    		<div  class="sector -b-d-100" ng-repeat="milestone in milestones.milestones"> 
+		        		<div class="bgrid -b-d-100">
+		        			<div class='td -b-d-40'>{{ milestone.name }}</div>
+	        				<div class='td -b-d-15'>{{ milestone.owner }}</div>
+	        				<div class='td -b-d-15'>{{ milestone.start_date }}</div>
+	        				<div class='td -b-d-15'>{{ milestone.end_date }}</div>
+	        				<div class='td -b-d-15'>{{ milestone.tasks }}</div>
+		        		</div>
+	        		</div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+</div>

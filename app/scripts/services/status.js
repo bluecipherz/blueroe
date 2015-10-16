@@ -13,12 +13,12 @@ angular.module('bluroeApp')
     // ...
 
     var Status = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/statuses/:statusid'),
+      $resource(Hoster.getHost() + '/statuses/:statusid'),
       ['all', 'save', 'delete', 'update']
     );
     
     var ProjectStatus = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/projects/:projectid/statuses/:statusid'),
+      $resource(Hoster.getHost() + '/projects/:projectid/statuses/:statusid'),
       ['all', 'save', 'delete', 'update']
     );
 

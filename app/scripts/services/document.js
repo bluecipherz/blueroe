@@ -13,7 +13,7 @@ angular.module('bluroeApp')
     // ...
 
     var Document = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/projects/:projectid/documents'),
+      $resource(Hoster.getHost() + '/projects/:projectid/documents'),
       ['query', 'save', 'delete']
     );
 

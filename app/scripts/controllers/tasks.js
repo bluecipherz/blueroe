@@ -8,7 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('TasksCtrl', function (navLine) {
+  .controller('TasksCtrl', function (navLine, Task) {
 
     var vm = this;
 
@@ -24,11 +24,9 @@ angular.module('bluroeApp')
         return vm.selectedTab == tab;
     }
 
-    this.tasks = [
-    	{'name':'Shizu','type':'taskList'},
-    	{'name':'Shizu','type':'taskList'},
-    	{'name':'Shizu','type':'taskList'},
-    	{'name':'Shizu','type':'taskList'},
-    	{'name':'Shizu','type':'taskList'}
-    ]
+    Task.onFetch(function() {
+        vm.tasklists = Task.getTaskLists();
+        console.log(vm.tasklists);
+    });
+
   });

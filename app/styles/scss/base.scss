@@ -275,6 +275,10 @@ div:hover::-webkit-scrollbar-thumb {
 @font-face{font-family:Walkway;src:url('../../fonts/Dosis-SemiBold.ttf');font-weight:400}
 @font-face{font-family:Walkway;src:url('../../fonts/Dosis-Bold.ttf');font-weight:500}
 
+.custHead {
+  font-size: 14px;
+  padding:10px 0;
+}
 .custButton{
   display: block;
   float: left;

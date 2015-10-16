@@ -13,7 +13,7 @@ angular.module('bluroeApp')
     // ...
 
     var Users = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/api/users'),
+      $resource(Hoster.getHost() + '/users'),
       ['query']
     );
 

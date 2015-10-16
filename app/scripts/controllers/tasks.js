@@ -28,5 +28,4 @@ angular.module('bluroeApp')
         vm.tasklists = Task.getTaskLists();
         console.log(vm.tasklists);
     });
-
   });

@@ -1,11 +1,92 @@
-<div class="flexPage myTasks"> 
-    <div class="flex-10 -h-500 -p">
-        <div class="fluidGrid ">
+<div class="flexPage "> 
+    <div class="flex-10  -p">
+        <div class="fluidGrid myTasks">
         	<div class="heading ">
         		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Classic  </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Plain </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(3)}"  ng-click="tasks.selectTab(3)" > Dependancy </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
+                <!-- Create tasklist -->
+                <div class="bgrid -bg-s-100 -f-right b-p-rel ">
+                    <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Task List</div>
+                    <div class="popBox -l-20" ng-class="{ 'hidden' : ! showTaskListPop }">
+                        <div class="topArrow" ></div>
+                        <div class="closeBtn" ng-click="showTaskListPop = ! showTaskListPop"></div>
+                        <div class="cont">
+                            <div class="createProjectPopup">
+                                <h5>Create New Task List</h5>
+                                <input type="text" placeholder="Project name" ng-model="projects.projectname"/>
+                                <h6>Select project</h6> 
+                                <select>
+                                    <option>SHit one</option>
+                                    <option>SHit Zu</option>
+                                    <option>SHiZree</option>
+                                </select>
+                                <div class="rowspace"></div>
+                                <div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
+                                    <div class="custButton " ng-click="showTaskListPop = ! showTaskListPop">Cancel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Create task  -->
+                <div class="bgrid -bg-s-80 -f-right b-p-rel ">
+                    <div class="custButton -green" ng-click="showTaskPop = ! showTaskPop">New Task</div>
+                    <div class="popBox -l-30" ng-class="{ 'hidden' : ! showTaskPop }">
+                        <div class="topArrow" ></div>
+                        <div class="closeBtn" ng-click="showTaskPop = ! showTaskPop"></div>
+                        <div class="cont">
+                            <div class="createProjectPopup">
+                                <h5>Create New Task</h5>
+                                <textarea rows="4" placeholder="Task name"></textarea> 
+
+                                
+                                <div class="bgrid flex-9"> 
+                                    <h6 class="bgrid half" >Select project</h6> 
+                                    <h6 class="bgrid half" >Select TaskList</h6> 
+                                    <select class=" half">
+                                        <option>SHit one</option>
+                                        <option>SHit Zu</option>
+                                        <option>SHiZree</option>
+                                    </select> 
+                                    <select  class="half">
+                                        <option>SHit one</option>
+                                        <option>SHit Zu</option>
+                                        <option>SHiZree</option>
+                                    </select> 
+                                </div>
+                                <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                    <div class="dz-message">Drop your files here</div>
+                                </div>
+                                <h6>Assign to crews</h6> 
+                                <input type="text" placeholder="Project name" />
+
+                                <div class="bgrid flex-9"> 
+                                    <h6 class="bgrid oneBy3" >Start date</h6> 
+                                    <h6 class="bgrid oneBy3" >End date</h6> 
+                                    <h6 class="bgrid oneBy3" >Priority</h6> 
+                                    <input type="text" class="bgrid oneBy3"  placeholder="Start date" />
+                                    <input type="text" class="bgrid oneBy3"  placeholder="End date" />
+                                    <select  class="oneBy3">
+                                        <option>None</option>
+                                        <option>Low</option>
+                                        <option>Medium</option>
+                                        <option>Hight</option>
+                                    </select> 
+                                </div>
+
+                                <div class="rowspace"></div>
+                                <div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
+                                    <div class="custButton " ng-click="showTaskPop = ! showTaskPop">Cancel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="navLine" id="myTasksNavLine"></div>
 
 
@@ -20,32 +101,129 @@
         	<div class="cont" ng-show="tasks.isSelected(1)">
         		<div class="table">	
         			<div  class="bgrid  -b-d-100">
-        				<div class='head -b-d-30'>TASK</div>
+        				<div class='head -b-d-40'><span>TASK</span> <input type='text' ng-model='search'  placeholder="Type a keyword"  /></div>
         				<div class='head -b-d-10'>OWNER</div>
         				<div class='head -b-d-10'>START</div>
         				<div class='head -b-d-10'>DUE</div>
         				<div class='head -b-d-10'>DURATION</div>
-        				<div class='head -b-d-20'>PROGRESS</div>
+        				<div class='head -b-d-10'>PROGRESS</div>
         				<div class='head -b-d-10'>CREATED BY</div>
         			</div>
         			<!-- ng-repeat main -->
-		    		<div  class="sector -b-d-100" ng-repeat="tasklist in tasks.tasklists"> 
-		        		<div class="tasklist.name">
-		        			<div class="td">{{ tasklist.name }}</div> 
-		        		</div> 
-        				<!-- ng-repeat tasks -->
-			    		<div  class="bgrid -b-d-100" ng-repeat="task in tasklist.tasks">
-			        		<div class="bgrid -b-d-100">
-			        			<div class='td -b-d-30'>{{ task.name }}</div>
-		        				<div class='td -b-d-10'>{{ task.user | filter : {type:'owner'} }}</div>
-		        				<div class='td -b-d-10'>{{ task.start_date }}</div>
-		        				<div class='td -b-d-10'>0</div>
-		        				<div class='td -b-d-10'>{{ task.duration }}</div>
-		        				<div class='td -b-d-20'>{{ task.percentage_completed }} %</div>
-		        				<div class='td -b-d-10'>{{ task.created_by }}</div>
-			        		</div>
-			    		</div>
+                    <div  class="-b-d-100" ng-repeat="tasklist in tasks.tasklists | filter : search" > 
+    		    		<div class="sectorList -b-d-100"> 
+    		        		<div class="taskList">
+    		        			<div class="td">{{ tasklist.name }}</div> 
+    		        		</div> 
+            				<!-- ng-repeat tasks -->
+    			    		<div  class="bgrid  -b-d-100" ng-repeat="task in tasklist.tasks | filter : search">
+    			        		<div class="bgrid tr -b-d-100">
+    			        			<div class='td -b-d-40'>{{task.name}} </div>
+    		        				<div class='td -b-d-10'>{{task.owner.profile.first_name + ' ' + task.owner.profile.last_name}}</div>
+    		        				<div class='td -b-d-10'>{{task.start_date}}</div>
+    		        				<div class='td -b-d-10'>{{task.due}}</div>
+    		        				<div class='td -b-d-10'>{{task.duration}}</div>
+    		        				<div class='td -b-d-10'>
+                                        <div class="progBar">
+                                            <div class="progTrack" style="width:{{task.progress}}%;"></div> 
+                                            <select type='text' ng-model='task.progress'>
+                                                <option value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                                <option value="60">60</option>
+                                                <option value="70">70</option>
+                                                <option value="80">80</option>
+                                                <option value="90">90</option>
+                                                <option value="100">100</option>
+                                            </select> 
+                                        </div>
+                                    </div>
+    		        				<div class='td -b-d-10'>{{task.createdBy}}</div>
+    			        		</div>
+    			    		</div>
+                            <div class="bgrid -bg-s-80  b-p-rel ">
+                                <div class="custButton -green" ng-click="task.showTaskPop = ! task.showTaskPop">New Task</div>
+                                <div class="popBox -h" ng-class="{ 'hidden' : ! task.showTaskPop }">
+                                    <div class="topArrow" ></div>
+                                    <div class="closeBtn" ng-click="task.showTaskPop = ! task.showTaskPop"></div>
+                                    <div class="cont">
+                                        <div class="createProjectPopup">
+                                            <h5>Create New Task</h5>
+                                            <textarea rows="4" placeholder="Task name"></textarea> 
 
+                                            
+                                            <div class="bgrid flex-9"> 
+                                                <h6 class="bgrid half" >Select project</h6> 
+                                                <h6 class="bgrid half" >Select TaskList</h6> 
+                                                <select class=" half">
+                                                    <option>SHit one</option>
+                                                    <option>SHit Zu</option>
+                                                    <option>SHiZree</option>
+                                                </select> 
+                                                <select  class="half">
+                                                    <option>SHit one</option>
+                                                    <option>SHit Zu</option>
+                                                    <option>SHiZree</option>
+                                                </select> 
+                                            </div>
+                                            <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                                <div class="dz-message">Drop your files here</div>
+                                            </div>
+                                            <h6>Assign to crews</h6> 
+                                            <input type="text" placeholder="Project name" />
+
+                                            <div class="bgrid flex-9"> 
+                                                <h6 class="bgrid oneBy3" >Start date</h6> 
+                                                <h6 class="bgrid oneBy3" >End date</h6> 
+                                                <h6 class="bgrid oneBy3" >Priority</h6> 
+                                                <input type="text" class="bgrid oneBy3"  placeholder="Start date" />
+                                                <input type="text" class="bgrid oneBy3"  placeholder="End date" />
+                                                <select  class="oneBy3">
+                                                    <option>None</option>
+                                                    <option>Low</option>
+                                                    <option>Medium</option>
+                                                    <option>Hight</option>
+                                                </select> 
+                                            </div>
+
+                                            <div class="rowspace"></div>
+                                            <div>
+                                                <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
+                                                <div class="custButton " ng-click="task.showTaskPop = ! task.showTaskPop">Cancel</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sector -b-d-100" ng-if="task.type == 'task' " >
+                            <div class="bgrid tr -b-d-100" >
+                                <div class='td -b-d-40'>{{task.name}}</div>
+                                <div class='td -b-d-10'>{{task.owner}}</div>
+                                <div class='td -b-d-10'>{{task.start}}</div>
+                                <div class='td -b-d-10'>{{task.due}}</div>
+                                <div class='td -b-d-10'>{{task.duration}}</div>
+                                <div class='td -b-d-10'>
+                                        <div class="progBar">
+                                            <div class="progTrack" style="width:{{task.progress}}%;"></div> 
+                                            <select type='text' ng-model='task.progress'>
+                                                <option value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                                <option value="60">60</option>
+                                                <option value="70">70</option>
+                                                <option value="80">80</option>
+                                                <option value="90">90</option>
+                                                <option value="100">100</option>
+                                            </select> 
+                                        </div></div>
+                                <div class='td -b-d-10'>{{task.createdBy}}</div>
+                            </div>
+                        </div>
 		    		</div>
         		</table>
         	</div>

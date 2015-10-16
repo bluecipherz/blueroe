@@ -305,8 +305,11 @@ div:hover::-webkit-scrollbar-thumb {
   background: #3498db;
   color: #eee; }
 
-.custButton.-blue:hover {
-  background: #3498db;
+.custButton.-green {
+  background: #2ecc71;
+  color: #eee; }
+
+.custButton {
   color: #fff; }
 
 .custButton.-right {
@@ -347,5 +350,46 @@ option {
   top: 28px;
   background: rgba(231, 76, 60, 0.6);
   transition: 0.5s; }
+
+.progBar {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(100% - 20px );
+  height: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px; }
+  .progBar .progTrack {
+    display: block;
+    float: left;
+    position: relative;
+    height: 15px;
+    background: #e74c3c;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: width 1s;
+    -moz-transition: width 1s;
+    -o-transition: width 1s;
+    transition: width 1s; }
+  .progBar select {
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    height: 15px;
+    min-height: 15px;
+    line-height: 15px;
+    background: transparent;
+    color: transparent;
+    border: none; }
+  .progBar option {
+    border: 1px solid #aaa;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
 
 /*# sourceMappingURL=base.css.map */

@@ -42,6 +42,9 @@ angular.module('bluroeApp')
             var tasklist = tasklists.filter(function(tasklist) {
                 return tasklist.id === task.task_list_id;
             })[0];
+            task.owner = task.users.filter(function(user) {
+              return user.pivot.type == 'owner';
+            })[0];
             tasklist.tasks.push(task);
         });
         // console.log(tasklists)

@@ -642,17 +642,17 @@ ________________________________________________________________________________
 /*
  *  VERTICAL MARGIN
  */
-.-bg-mar-ver-5  { padding:5px 0;  }
-.-bg-mar-ver-10 { padding:10px 0; }
-.-bg-mar-ver-15 { padding:15px 0; }
-.-bg-mar-ver-20 { padding:20px 0; }
-.-bg-mar-ver-25 { padding:25px 0; }
+.-bg-mar-ver-5  { margin:5px 0;  }
+.-bg-mar-ver-10 { margin:10px 0; }
+.-bg-mar-ver-15 { margin:15px 0; }
+.-bg-mar-ver-20 { margin:20px 0; }
+.-bg-mar-ver-25 { margin:25px 0; }
 
 /*
  *  HORIZONTAL MARGIN
  */
-.-bg-mar-hor-5  { padding:0 5px;  }
-.-bg-mar-hor-10 { padding:0 10px; }
-.-bg-mar-hor-15 { padding:0 15px; }
-.-bg-mar-hor-20 { padding:0 20px; }
-.-bg-mar-hor-25 { padding:0 25px; }
+.-bg-mar-hor-5  { margin:0 5px;  }
+.-bg-mar-hor-10 { margin:0 10px; }
+.-bg-mar-hor-15 { margin:0 15px; }
+.-bg-mar-hor-20 { margin:0 20px; }
+.-bg-mar-hor-25 { margin:0 25px; }

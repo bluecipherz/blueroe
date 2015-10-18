@@ -1,5 +1,31 @@
 /* Colors */
 /* images */
+.custButton {
+  display: block;
+  float: left;
+  background: #ddd;
+  margin: 5px;
+  padding: 7px 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 90%;
+  color: #fff; }
+
+.custButton.-blue {
+  background: #3498db;
+  color: #eee; }
+
+.custButton.-green {
+  background: #2ecc71;
+  color: #eee; }
+
+.custButton.-right {
+  float: right; }
+
+/* Colors */
+/* images */
 .postform {
   background: #fff;
   color: #333333; }
@@ -25,7 +51,7 @@
   border: none;
   outline: none;
   resize: vertical;
-  background: rgba(52, 152, 219, 0.02); }
+  /*background:rgba($blueR,$blueG,$blueB,0.02);*/ }
 
 .postform .cont form > .head input {
   resize: none; }
@@ -169,7 +195,8 @@
   background: #FF4500;
   border-radius: 1px;
   margin: 5px 0 0 5px;
-  font-size: 11px; }
+  font-size: 11px;
+  float: left; }
 
 .comment-slot {
   background: #eee; }
@@ -181,6 +208,11 @@
   margin: 5px auto 0 -.5%;
   position: relative;
   visibility: visible; }
+.selPerson input[type='text'] {
+  font-family: Helvetica;
+  min-height: 25px;
+  line-height: 25px;
+  width: 125px; }
 
 ._720kb-datepicker-calendar > div {
   font: 11px Helvetica; }
@@ -333,10 +365,10 @@
 
 .BCZIcon {
   text-align: center;
-  line-height: 50px;
+  line-height: 55px;
   color: #e74c3c;
   font-family: Masterblast;
-  font-size: 130%;
+  font-size: 160%;
   font-weight: 500; }
 
 /* Colors */

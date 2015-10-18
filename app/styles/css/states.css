@@ -1,3 +1,7 @@
+.custButton:hover {
+  cursor: pointer;
+  background: #d5d5d5; }
+
 /* Colors */
 /* images */
 .heading > span:hover {

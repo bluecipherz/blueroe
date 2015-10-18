@@ -26,6 +26,7 @@
                 <div ng-if="feed.type == 'TaskRemoved'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} removed {{ feed.subject.name }} task from {{ feed.project.name }}</div>
                 <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
                 <div ng-if="feed.type == 'DocumentUploaded'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} uploaded document in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskListCreated'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} created {{ feed.subject.name }} tasklist in {{ feed.project.name }}</div>
             </div>
 
             <div class="mid">

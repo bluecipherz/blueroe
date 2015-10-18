@@ -14,15 +14,17 @@ angular.module('bluroeApp')
 
         this.feeds = feedFactory.getFeeds;
 
+        this.feedLoading = true;
+
         var updateFeeds = function() {
             vm.feeds = feedFactory.getFeeds();
             console.log('feedFetching complete : ' + feedFactory.getFeeds().length);
-            vm.feedLoader = true;
+            vm.feedLoading = false;
         }
 
 
         this.refreshFeeds = function(){
-            vm.feedLoader = false;
+            vm.feedLoading = true;
             feedFactory.update(updateFeeds);
         }
         

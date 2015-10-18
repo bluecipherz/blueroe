@@ -8,9 +8,13 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users, Project,navLine){
+  .controller('CreatepostCtrl', function ($scope, Status, Hoster, TokenHandler, $state, $stateParams, Document, feedFactory, Users, Project,navLine, Task){
         
         var vm = this;
+
+        // form variables
+
+        this.projects = [];
 
         vm.users = Users.getUsers();
         // console.log('user count ' + Users.getUsers().length)
@@ -25,6 +29,7 @@ angular.module('bluroeApp')
         // console.log('project count ' + Project.getProjects().length)
 
         Project.onFetchProjects(function() {
+            // vm.projects.push({id:0,name:'Select Project'});
             vm.projects = Project.getProjects();
             console.log('projects fetching complete ' + vm.projects.length);
         })
@@ -93,6 +98,17 @@ angular.module('bluroeApp')
 
         vm.addTask = function() {
             console.log('addtask')
+            // console.log(vm.task);
+            if(vm.task.project == undefined) {
+                alert('Please select a project');
+                console.log('goddammit');
+            } else {
+                Task.createTask(vm.task).$promise.then(function(results) {
+                    console.log(results);
+                    feedFactory.pushFeed(results.feed);
+                    vm.task.name = '';
+                });   
+            }
         }
 
         vm.addMilestone = function() {
@@ -116,6 +132,23 @@ angular.module('bluroeApp')
 
         vm.postForum = function() {
             console.log('postforum')
+        }
+
+        // set project for TASK
+        this.setProject = function() {
+            vm.task.project = vm.projects.filter(function(project) {
+                return project.id == vm.task.project_id;
+            })[0];
+        }
+
+        // add user for TASK
+        vm.addUser = function(user) {
+            console.log(user);
+            if(user.added == true) {
+                vm.task.users.push(user);
+            } else {
+                vm.task.users.splice(vm.task.users.indexOf(user),1);
+            }
         }
 
     }).controller('AsideController', function (){

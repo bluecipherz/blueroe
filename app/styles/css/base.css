@@ -1,8 +1,5 @@
 /* Colors */
 /* images */
-* {
-  -webkit-font-smoothing: antialiased; }
-
 @font-face {
   font-family: Walkway;
   src: url("../../fonts/Walkway Bold.ttf");
@@ -52,12 +49,15 @@
   src: url("../../fonts/CODE-Light.otf");
   font-weight: normal;
   font-stretch: condensed; }
+* {
+  -webkit-font-smoothing: antialiased; }
+
 body {
   font-size: 88%;
   min-width: 100%;
   min-height: 100%;
   background: #eee;
-  font: 12px Helvetica, Code;
+  font: 12px Helvetica, sans-serif, Code;
   color: #313131; }
 
 .blueNav {
@@ -261,59 +261,9 @@ div:hover::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px; }
 
-@font-face {
-  font-family: Walkway;
-  src: url("../../fonts/Dosis-Light.ttf");
-  font-weight: 100; }
-@font-face {
-  font-family: Walkway;
-  src: url("../../fonts/Dosis-Book.ttf");
-  font-weight: 200; }
-@font-face {
-  font-family: Walkway;
-  src: url("../../fonts/Dosis-Medium.ttf");
-  font-weight: 300; }
-@font-face {
-  font-family: Walkway;
-  src: url("../../fonts/Dosis-SemiBold.ttf");
-  font-weight: 400; }
-@font-face {
-  font-family: Walkway;
-  src: url("../../fonts/Dosis-Bold.ttf");
-  font-weight: 500; }
 .custHead {
   font-size: 14px;
   padding: 10px 0; }
-
-.custButton {
-  display: block;
-  float: left;
-  background: #ddd;
-  margin: 5px;
-  padding: 7px 10px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  font-size: 90%; }
-
-.custButton:hover {
-  cursor: pointer;
-  background: #d5d5d5; }
-
-.custButton.-blue {
-  background: #3498db;
-  color: #eee; }
-
-.custButton.-green {
-  background: #2ecc71;
-  color: #eee; }
-
-.custButton {
-  color: #fff; }
-
-.custButton.-right {
-  float: right; }
 
 input[type='text'], input[type='password'], textarea, select {
   min-height: 30px;

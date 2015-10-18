@@ -2,9 +2,31 @@
     <div class="DropBtn" ng-click="feed.showDropList = ! feed.showDropList" ng-class="{ 'DropBtnAct':  feed.showDropList }"> </div>
     <!--<div class="closeBtn"ng-click="feed.showDropList = ! feed.showDropList"  ng-class="{ 'hidden': ! feed.showDropList }"></div>-->
     <div class="DropCont" ng-class="{ 'hidden': ! feed.showDropList }">
-        <button ng-if="feed.subject_type == 'App\\Status'" ng-click="fc.removeStatus($index, feed)">Delete</button>
-        <button ng-if="feed.subject_type == 'App\\Task'">Set Progress</button>
-        <button ng-if="feed.subject_type == 'App\\Task'">Set Priority </button>
-        <button ng-if="feed.subject_type == 'App\\Task'">Mark&nbsp;as&nbsp;complete&nbsp;<b>&#x2714;</b></button>
+        <button ng-click="fc.removeStatus($index, feed)">Delete</button>
+    	<div ng-if="feed.subject_type == 'App\\Task'" popup-menu="showProgress">
+        	<button>Set Progress</button>
+		    <div class="DropCont" ng-show="showProgress == true">
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">0%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">10%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">20%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">30%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">40%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">50%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">60%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">70%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">80%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">90%</button>
+		    	<button ng-click="fc.setTaskProgress(feed, 10)">100%</button>
+		    </div>
+	   	</div>
+        <div ng-if="feed.subject_type == 'App\\Task'" popup-menu="showPriority">
+	        <button>Set Priority </button>
+			<div class="DropCont" ng-show="showPriority == true">
+		    	<button ng-click="fc.setTaskPriority(feed,1)">Low</button>
+		    	<button ng-click="fc.setTaskPriority(feed,2)">Medium</button>
+		    	<button ng-click="fc.setTaskPriority(feed,3)">High</button>
+		    </div>
+		</div>
+        <button ng-if="feed.subject_type == 'App\\Task'" ng-click="fc.setTaskProgress(feed, 100)">Mark&nbsp;as&nbsp;complete&nbsp;<b>&#x2714;</b></button>
     </div>
 </div>

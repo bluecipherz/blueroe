@@ -6,6 +6,11 @@
         		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Plain </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(3)}"  ng-click="tasks.selectTab(3)" > Dependancy </span> 
         		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
+
+                <div class="bgrid -bg-s-100 -f-right -b-p-rel">
+                    <div class="custButton"><i class="fa fa-filter"></i></div>
+                    <div class="custButton"><i class="fa fa-bars"></i></div>
+                </div>
                 <!-- Create tasklist -->
                 <div class="bgrid -bg-s-100 -f-right b-p-rel ">
                     <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Task List</div>
@@ -89,14 +94,6 @@
 
                 <div class="navLine" id="myTasksNavLine"></div>
 
-
-                <div class="">
-                    <div>
-                        <div class="custButton -blue">New Tasks</div>
-                        <div class="custButton"><i class="fa fa-filter"></i></div>
-                        <div class="custButton"><i class="fa fa-bars"></i></div>
-                    </div>
-                <div>
         	</div>
         	<div class="cont" ng-show="tasks.isSelected(1)">
         		<div class="table">	
@@ -110,7 +107,7 @@
         				<div class='head -b-d-10'>CREATED BY</div>
         			</div>
         			<!-- ng-repeat main -->
-                    <div  class="-b-d-100" ng-repeat="tasklist in tasks.tasklists | filter : search" > 
+                    <div  class="-b-d-100" ng-repeat="tasklist in tasks.tasklists | filter : search"> 
     		    		<div class="sectorList -b-d-100"> 
     		        		<div class="taskList">
     		        			<div class="td">{{ tasklist.name }}</div> 

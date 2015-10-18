@@ -382,7 +382,10 @@
       background: rgba(255, 255, 255, 0.1);
       text-align: center;
       line-height: 30px;
-      border-right: 1px solid rgba(0, 0, 0, 0.15); }
+      border-right: 1px solid rgba(0, 0, 0, 0.15);
+      padding: 1px; }
+      .feedFooterLeft .block .Btn i.fa {
+        font-size: 15px; }
     .feedFooterLeft .block .selPerson {
       display: block;
       float: left;
@@ -394,16 +397,6 @@
         height: 30px;
         line-height: 30px;
         padding: 0 10px; }
-      .feedFooterLeft .block .selPerson .dateCont {
-        display: block;
-        float: left;
-        width: 460px; }
-        .feedFooterLeft .block .selPerson .dateCont .dates {
-          width: 220px;
-          float: left;
-          margin: 0 5px; }
-          .feedFooterLeft .block .selPerson .dateCont .dates div {
-            float: left; }
       .feedFooterLeft .block .selPerson .cont {
         display: block;
         float: left;
@@ -834,8 +827,10 @@
   float: left;
   width: 60px;
   height: 100%;
-  padding: 5px 15px;
+  padding: 8px 15px;
   text-align: center; }
+  .asideIcon i.fa {
+    font-size: 24px; }
 
 .asideIcon > .img {
   display: block;

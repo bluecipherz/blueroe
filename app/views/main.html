@@ -1,8 +1,8 @@
 <div class="flexPage ">
-    <div class="flex-6 -p ">
+    <div class="flex-6 -p" ng-controller="FeedCtrl as fc">
         <div class="fluidGrid b-p-rel ">
-            <div class="sBtn -r20" ng-click="main.refreshFeeds()"></div>
-			<spinner ng-class="{'hidden':main.feedLoader}"></spinner>
+            <div class="sBtn -r20" ng-click="fc.refreshFeeds()"></div>
+			<spinner ng-class="{'hidden':!fc.feedLoading}"></spinner>
 
             <div class="page-feeds ">
                 <div class="p-feeds bgrid">
@@ -22,7 +22,7 @@
                                     <span ng-message="required" class="form-error-msg">Status message required.</span>
                                 </div>
                                 <div class="head">
-                                    <textarea name="message" placeholder="Type your message here" rows="3" ng-model="panel.status.message" ng-minlength="5" required></textarea>
+                                    <textarea name="message" placeholder="Type your message here" rows="3" ng-model="panel.status.message" required></textarea>
                                 </div>
                                 <div class="mid">
                                     <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
@@ -47,8 +47,11 @@
                         <!-- ADD TASK -->
                         <div class="cont tab2"  ng-show="panel.isSelected(2)">
                             <form name="taskForm" novalidate>
+                                <div ng-messages="taskForm.taskname.$error" ng-if="taskForm.$submitted">
+                                    <span ng-message="required" class="form-error-msg">Task name required.</span>
+                                </div>
                                 <div class="head">
-                                    <input name="" placeholder="Task Title" >
+                                    <input name="taskname" placeholder="{{ panel.task.taskListAct == true ? 'Tasklist name' : 'Task name' }}" ng-model="panel.task.name" required>
                                 </div>
                                 <div class="head">
                                     <input ng-click="panel.task.taskListAct = ! panel.task.taskListAct" type="checkbox"/><span>Make this as a Task list</span>
@@ -61,30 +64,31 @@
                                 <div class="head">
                                     <div class="half">
                                         <div ng-if="$state.current.name == 'home'">
-                                            <div>Project name</div>
-                                            <select>
+                                            <div>Project</div>
+                                            <select name="project" required ng-change="panel.setProject()" ng-model="panel.task.project_id">
                                                 <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>
                                         <div ng-class="{ 'hidden':  panel.task.taskListAct }">
                                             <div>Task list name</div>
-                                            <select>
-                                                <option value="1">General</option>
+                                            <select ng-model="panel.task.tasklist" ng-init="panel.task.tasklist = panel.task.tasklist || '0'">
+                                                <option value="0" selected>General</option>
+                                                <option value="{{ tasklist.id }}" ng-repeat="tasklist in panel.task.project">{{ tasklist.name }}</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="foot b-layer-3">
-                                    <div class='feedFooterLeft'>
-                                        <div class='block b-p-rel' popup-menu="F1T1">
-                                                <div class='Btn' ng-click="toggleMenu('F1T1')"><span class="fa fa-user"></span></div>
-                                                <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T1 }">
+                                    <div class='feedFooterLeft' ng-class="{'hidden': panel.task.taskListAct}">
+                                        <div class='block b-p-rel' popup-menu="F1T1" required="panel.task.project" msg="Project not selected">
+                                                <div class='Btn'><i class="fa fa-user"></i></div>
+                                                <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F1T1 }">
                                                     <div class="topArrow"></div>
                                                     <div class="cont">
                                                         <div class="selPerson -bg-s-240">
                                                             <div class="head">Assign to </div>
                                                             <div class="cont">
-                                                                <div class="imgHead b-p-rel" ng-repeat="user in panel.users" ng-click="user.added = ! user.added;panel.task.addUser(user)" > 
+                                                                <div class="imgHead b-p-rel" ng-repeat="user in panel.task.project.users" ng-click="user.added = ! user.added;panel.addUser(user)" ng-init="panel.task.users = []"> 
                                                                     <div class="check fa fa-check" ng-class="{'active': user.added}" ></div>
                                                                     <img src="{{ user.profile.avatar_url }}">
                                                                 </div>
@@ -95,22 +99,22 @@
                                                 </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F1T2">
-                                            <div class='Btn' ng-click="toggleMenu('F1T2')"><span class="fa fa-calendar"></span></div>
-                                            <div class="popBox -free -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF1T2 }">
+                                            <div class='Btn'><i class="fa fa-calendar"></i></div>
+                                            <div class="popBox -free -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F1T2 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
                                                         <div class="head">Date Definition</div>
                                                         <div class="bgrid -bg-s-480">
-                                                            <div class="-bg-s-220 -bg-mar-hor-5">
-                                                                <div>Start Date</div>
-                                                                <datepicker >
+                                                            <div class="bgrid -bg-s-220 -bg-mar-hor-5">
+                                                                <div class="float-l">Start Date</div>
+                                                                <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format="dd-MM-yyyy">
                                                                   <input ng-model="panel.task.start_date" type="text"/>
                                                                 </datepicker>
                                                             </div>
-                                                            <div class="-bg-s-220 -bg-mar-hor-5">
-                                                                <div>End Date</div>
-                                                                <datepicker >
+                                                            <div class="bgrid -bg-s-220 -bg-mar-hor-5">
+                                                                <div class="float-l">End Date</div>
+                                                                <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format="dd-MM-yyyy">
                                                                   <input ng-model="panel.task.end_date" type="text"/>
                                                                 </datepicker>
                                                             </div>
@@ -120,8 +124,8 @@
                                             </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F1T3">
-                                            <div class='Btn' ng-click="toggleMenu('F1T3')"><span class="fa fa-warning"></span></div>
-                                            <div class="popBox -r -t-40 " ng-class="{ 'hidden' : ! showF1T3 }">
+                                            <div class='Btn'><i class="fa fa-warning"></i></div>
+                                            <div class="popBox -r -t-40 " ng-class="{ 'hidden' : ! F1T3 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson -bg-s-160">
@@ -137,7 +141,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button ng-click="panel.addTask()">Submit</button>
+                                    <button ng-click="panel.addTask()" type="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -169,8 +173,8 @@
                                     <div class="feedFooterLeft">
 
                                         <div class='block b-p-rel' popup-menu="F2T1">
-                                            <div class='Btn' ng-click="toggleMenu('F2T1')"><span class="fa fa-user"></span></div>
-                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T1 }">
+                                            <div class='Btn'><i class="fa fa-user"></i></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F2T1 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
@@ -179,8 +183,8 @@
                                             </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F2T2">
-                                            <div class='Btn' ng-click="toggleMenu('F2T2')"><span class="fa fa-calendar"></span></div>
-                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T2 }">
+                                            <div class='Btn'><i class="fa fa-calendar"></i></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F2T2 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
@@ -189,8 +193,8 @@
                                             </div>
                                         </div>
                                         <div class='block b-p-rel' popup-menu="F2T3">
-                                            <div class='Btn' ng-click="toggleMenu('F2T3')"><span class="fa fa-flag"></span></div>
-                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF2T3 }">
+                                            <div class='Btn'><i class="fa fa-flag"></i></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F2T3 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
@@ -234,8 +238,8 @@
                                     <div class="feedFooterLeft">
 
                                         <div class='block b-p-rel' popup-menu="F3T1">
-                                            <div class='Btn' ng-click="toggleMenu('F3T1')"><span class="fa fa-user"></span></div>
-                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF3T1 }">
+                                            <div class='Btn'><i class="fa fa-user"></i></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F3T1 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
@@ -282,8 +286,8 @@
                                     <div class="feedFooterLeft">
 
                                         <div class='block b-p-rel' popup-menu="F4T1">
-                                            <div class='Btn' ng-click="toggleMenu('F4T1')"><span class="fa fa-user"></span></div>
-                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! showF4T1 }">
+                                            <div class='Btn'><i class="fa fa-user"></i></div>
+                                            <div class="popBox -r -t-40 b-layer-3" ng-class="{ 'hidden' : ! F4T1 }">
                                                 <div class="topArrow"></div>
                                                 <div class="cont">
                                                     <div class="selPerson">
@@ -300,7 +304,7 @@
 
                 <!-- FEEDS -->
 
-                    <div class="feed-slot bgrid" ng-controller="FeedCtrl as fc">
+                    <div class="feed-slot bgrid">
                         <!--FEED SET-->
 
                         <feed class="feedSet feed-slide" ng-repeat="feed in fc.feeds | orderBy: 'updated_at':true">

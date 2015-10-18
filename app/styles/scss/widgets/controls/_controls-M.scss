@@ -1,0 +1,17 @@
+@import "functions/baseFunctions";
+@import "base/variables";
+.custButton{
+  display: block;
+  float: left;
+  background:#ddd;
+  margin: 5px;
+  padding:7px 10px;
+  @include border-radius(3px);
+  font-size: 90%;
+  color: #fff;
+}
+.custButton.-blue{  background: $blue;  color: #eee;  } 
+.custButton.-green{  background: #2ecc71;  color: #eee;  } 
+.custButton.-right{
+  float: right;
+}

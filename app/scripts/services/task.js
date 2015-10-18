@@ -27,6 +27,17 @@ angular.module('bluroeApp')
     }
 
     var Task = TokenHandler.wrapActions(
+      $resource(Hoster.getHost() + '/projects/:project/tasks'),
+      ['save']
+    );
+
+    var TaskList = TokenHandler.wrapActions(
+      $resource(Hoster.getHost() + '/projects/:project/tasklists'),
+      ['save']
+    );
+
+
+    var MeTask = TokenHandler.wrapActions(
       $resource(Hoster.getHost() + '/me/tasks',
         {method:'getTask',q:'*'},
         {'query': { method: 'GET' }}
@@ -53,7 +64,7 @@ angular.module('bluroeApp')
 
     var fetchTasks = function() {
       console.log('fetching tasks');
-      Task.query().$promise.then(function(results) {
+      MeTask.query().$promise.then(function(results) {
         console.log('tasks fetched ' + results.tasks.length)
         tasks = results.tasks;
         tasklists = makeTaskLists(results.tasks, results.tasklists);
@@ -62,12 +73,6 @@ angular.module('bluroeApp')
     }
 
 
-
-    // if(TokenHandler.ifTempLogged()) {
-    //   fetchTaskList();
-    // } else {
-    //   TokenHandler.onTempLogin(fetchTaskList);
-    // }
 
     // Public API here
     return {
@@ -90,6 +95,29 @@ angular.module('bluroeApp')
       getTaskLists: function() {
         return tasklists;
       },
-      fetchTasks: fetchTasks
+      fetchTasks: fetchTasks,
+      createTask: function(data) {
+        if(data.taskListAct == true) {
+          return TaskList.save({
+            name:data.name,
+            project:data.project.id
+          });
+        } else {
+          var user_list = [];
+          for(var user in data.users) {
+            user_list.push(data.users[user].id);
+          }
+          var task_data = {
+            name:data.name,
+            project:data.project.id,
+            task_list_id:data.tasklist,
+            users:user_list,
+            start_date:data.start_date,
+            end_date:data.end_date,
+            priority:data.priority
+          }
+          return Task.save(task_data);
+        }
+      }
     };
   });

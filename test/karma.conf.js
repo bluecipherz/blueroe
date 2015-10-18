@@ -36,9 +36,9 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angularjs-datepicker/dist/angular-datepicker.min.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/dropzone/dist/min/dropzone.min.js',
       'bower_components/moment/moment.js',
+      'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

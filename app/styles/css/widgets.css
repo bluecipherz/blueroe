@@ -382,7 +382,10 @@
       background: rgba(255, 255, 255, 0.1);
       text-align: center;
       line-height: 30px;
-      border-right: 1px solid rgba(0, 0, 0, 0.15); }
+      border-right: 1px solid rgba(0, 0, 0, 0.15);
+      padding: 1px; }
+      .feedFooterLeft .block .Btn i.fa {
+        font-size: 15px; }
     .feedFooterLeft .block .selPerson {
       display: block;
       float: left;
@@ -394,16 +397,6 @@
         height: 30px;
         line-height: 30px;
         padding: 0 10px; }
-      .feedFooterLeft .block .selPerson .dateCont {
-        display: block;
-        float: left;
-        width: 460px; }
-        .feedFooterLeft .block .selPerson .dateCont .dates {
-          width: 220px;
-          float: left;
-          margin: 0 5px; }
-          .feedFooterLeft .block .selPerson .dateCont .dates div {
-            float: left; }
       .feedFooterLeft .block .selPerson .cont {
         display: block;
         float: left;
@@ -474,7 +467,7 @@
   border: none;
   outline: none;
   resize: vertical;
-  background: rgba(52, 152, 219, 0.02); }
+  /*background:rgba($blueR,$blueG,$blueB,0.02);*/ }
 
 .postform .cont form > .head input {
   resize: none; }
@@ -618,7 +611,8 @@
   background: #FF4500;
   border-radius: 1px;
   margin: 5px 0 0 5px;
-  font-size: 11px; }
+  font-size: 11px;
+  float: left; }
 
 .comment-slot {
   background: #eee; }
@@ -630,6 +624,11 @@
   margin: 5px auto 0 -.5%;
   position: relative;
   visibility: visible; }
+.selPerson input[type='text'] {
+  font-family: Helvetica;
+  min-height: 25px;
+  line-height: 25px;
+  width: 125px; }
 
 ._720kb-datepicker-calendar > div {
   font: 11px Helvetica; }

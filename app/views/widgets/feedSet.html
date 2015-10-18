@@ -27,6 +27,7 @@
                 <div ng-if="feed.type == 'TaskCompleted'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} completed {{ feed.subject.name }} task in {{ feed.project.name }}</div>
                 <div ng-if="feed.type == 'DocumentUploaded'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} uploaded document in {{ feed.project.name }}</div>
                 <div ng-if="feed.type == 'TaskListCreated'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} created {{ feed.subject.name }} tasklist in {{ feed.project.name }}</div>
+                <div ng-if="feed.type == 'TaskProgressChanged'">{{ feed.origin.profile.first_name + " " + feed.origin.profile.last_name }} changed progress of {{ feed.subject.name }} task in {{ feed.project.name }} progress:{{feed.subject.progress}}</div>
             </div>
 
             <div class="mid">
@@ -51,7 +52,7 @@
             </div>
             <div class="foot">
                 <div class="head">
-                    <span class="cnmtBtn" ng-click="feed.toggleCommentDetails()" >Comment</span> - <span class="date">{{ feed.subject.updated_at }}</span>
+                    <span class="cnmtBtn" ng-click="feed.toggleCommentDetails()" >Comment</span> - <span class="date">{{ feed.subject.updated_at | moment:'DD MMM YYYY HH:mm A' }}</span>
                 </div>
                 <div class="comment-slot" ng-show="feed.comments.length > 0 || feed.showDetails">
                     <!--COMMENT SLOT-->

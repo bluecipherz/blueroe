@@ -76,8 +76,8 @@
             // params['project'] = projectid;
         },
         pushFeed: function(feed) {
-            console.log('pushing feed');
-            console.log(feed);
+            // console.log('pushing feed');
+            // console.log(feed);
             feeds.push(feed);
         },
         update: function(callback) {
@@ -85,11 +85,21 @@
             fetchFeeds(params);
         },
         removeFeed: function(feed) {
-            console.log('splicing ' + feeds.indexOf(feed) + ' feed');
+            // console.log('splicing ' + feeds.indexOf(feed) + ' feed');
             feeds.splice(feeds.indexOf(feed), 1);
         },
         isFetching: function() {
             return fetching;
+        },
+        updateFeed: function(oldFeed, newFeed) { // not so constructive
+            oldFeed.origin = TokenHandler.getUser();
+            oldFeed.updated_at = moment().format('YYYY-MM-DD HH:mm:ss');
+            oldFeed.type = newFeed.type;
+            console.log(newFeed.type);
+            if(newFeed.subject_type == 'App\\Task') {
+                oldFeed.subject.progress = newFeed.subject.progress;
+                oldFeed.subject.name = newFeed.subject.name;
+            }
         }
     }
 

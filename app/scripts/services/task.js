@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -27,8 +28,10 @@ angular.module('bluroeApp')
     }
 
     var Task = TokenHandler.wrapActions(
-      $resource(Hoster.getHost() + '/projects/:project/tasks'),
-      ['save']
+      $resource(Hoster.getHost() + '/projects/:project/tasks/:task',
+        {},
+        {'update': { method: 'PUT' }}),
+      ['save','update']
     );
 
     var TaskList = TokenHandler.wrapActions(
@@ -118,6 +121,9 @@ angular.module('bluroeApp')
           }
           return Task.save(task_data);
         }
+      },
+      updateTask: function(data) {
+        return Task.update(data);
       }
     };
   });

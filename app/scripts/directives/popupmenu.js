@@ -24,7 +24,7 @@ angular.module('bluroeApp')
           if(attrs.required != undefined && scope.required == undefined && scope.showMenu == false) {
             alert(attrs.msg);
           } else {
-            console.log('popsicle');
+            // console.log('popsicle');
             if(element.find('.popBox').first().find(event.target).length > 0) return;
             scope.showMenu = !scope.showMenu;
           }

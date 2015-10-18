@@ -8,7 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('FeedCtrl', function (feedFactory, $stateParams, Comment, Status, TokenHandler) {
+  .controller('FeedCtrl', function (feedFactory, $stateParams, Comment, Status, TokenHandler, Task) {
     
     	var vm = this;
 
@@ -81,6 +81,30 @@ angular.module('bluroeApp')
             });
         }
 
+        this.setTaskPriority = function(feed, priority) {
+            console.log(priority);
+        }
 
+        this.setTaskProgress = function(feed, progress) {
+            var prevProgress = feed.subject.progress;
+            if(prevProgress != progress) {
+                Task.updateTask({
+                    project:feed.project.id,
+                    task:feed.subject.id,
+                    progress:progress
+                }).$promise.then(function(results) {
+                    feed.origin = TokenHandler.getUser();
+                    feed.updated_at = moment().format('YYYY-MM-DD HH:mm:ss');
+                    feed.subject.progress = progress;
+                    if(progress == 100) {
+                        feed.type = "TaskCompleted";
+                    } else {
+                        feed.type = "TaskProgressChanged";
+                    }
+                });
+                // console.log(progress);
+                // console.log(moment());
+            }
+        }
 
   });

@@ -149,21 +149,13 @@
                         <div class="cont tab2"  ng-show="panel.isSelected(3)">
                             <form name="milestoneForm" novalidate>
                                 <div class="head">
-                                    <input name="" placeholder="Milestone Title" >
-                                </div>
-                                <div class="mid">
-                                    <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
-                                        <div class="dz-message">Drop your files here</div>
-                                    </div>
-                                </div>
-                                <div class="head">
-                                    <textarea name="" placeholder="Type your message here" rows="3"></textarea>
+                                    <input name="" placeholder="Milestone Title" ng-model="panel.milestone.name">
                                 </div>
                                 <div class="head">
                                     <div class="half">
                                         <div ng-if="$state.current.name == 'home'">
                                             <div>Project name</div>
-                                            <select>
+                                            <select ng-model="panel.milestone.project">
                                                 <option value="{{ project.id }}" ng-repeat="project in panel.projects">{{ project.name }}</option>
                                             </select>
                                         </div>

@@ -143,12 +143,15 @@ angular.module('bluroeApp')
 
         // add user for TASK
         vm.addUser = function(user) {
-            console.log(user);
+            // console.log(user);
             if(user.added == true) {
+                console.log('adding user ' + user.id);
                 vm.task.users.push(user);
             } else {
+                console.log('removing user ' + user.id);
                 vm.task.users.splice(vm.task.users.indexOf(user),1);
             }
+            console.log('users ' + vm.task.users.length);
         }
 
     }).controller('AsideController', function (){

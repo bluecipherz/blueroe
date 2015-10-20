@@ -73,4 +73,12 @@
   right: 0px;
   min-height: 900px; }
 
+.mainLeft {
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  width: calc(40% - 20px);
+  overflow: scroll; }
+
 /*# sourceMappingURL=layouts.css.map */

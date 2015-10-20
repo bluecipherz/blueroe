@@ -1,5 +1,5 @@
-@import "functions/baseFunctions";
-@import "base/variables";
+@import "../../functions/baseFunctions";
+@import "../../base/variables";
 .custButton{
   display: block;
   float: left;
@@ -12,6 +12,9 @@
 }
 .custButton.-blue{  background: $blue;  color: #eee;  } 
 .custButton.-green{  background: #2ecc71;  color: #eee;  } 
+.custButton.-theme{  background: $themeColor;  color: #eee;  } 
+.custButton.-red{  background: #c0392b;  color: #eee;  } 
+.custButton.-grey{  background: #5b5b5b;  color: #eee;  } 
 .custButton.-right{
   float: right;
 }

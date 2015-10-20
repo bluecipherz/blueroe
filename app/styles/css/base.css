@@ -157,7 +157,7 @@ a:hover {
       outline: 0;
       border: 0; }
   .RoundDropDown .DropBtnAct {
-    border: 6px solid rgba(231, 76, 60, 0.5); }
+    border: 6px solid rgba(52, 152, 219, 0.5); }
   .RoundDropDown .closeBtn {
     display: block;
     float: left;
@@ -172,7 +172,7 @@ a:hover {
 .RoundDropDown:hover {
   cursor: pointer; }
   .RoundDropDown:hover .DropBtn {
-    border: 6px solid rgba(231, 76, 60, 0.5); }
+    border: 6px solid rgba(52, 152, 219, 0.5); }
 
 /* images */
 .flexPage .bg1 {
@@ -298,7 +298,7 @@ option {
   height: 2px;
   width: 0px;
   top: 28px;
-  background: rgba(231, 76, 60, 0.6);
+  background: rgba(52, 152, 219, 0.6);
   transition: 0.5s; }
 
 .progBar {
@@ -317,7 +317,7 @@ option {
     float: left;
     position: relative;
     height: 15px;
-    background: #e74c3c;
+    background: #3498db;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     -ms-border-radius: 2px;

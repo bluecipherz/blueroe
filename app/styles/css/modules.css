@@ -21,6 +21,18 @@
   background: #2ecc71;
   color: #eee; }
 
+.custButton.-theme {
+  background: #3498db;
+  color: #eee; }
+
+.custButton.-red {
+  background: #c0392b;
+  color: #eee; }
+
+.custButton.-grey {
+  background: #5b5b5b;
+  color: #eee; }
+
 .custButton.-right {
   float: right; }
 
@@ -366,10 +378,13 @@
 .BCZIcon {
   text-align: center;
   line-height: 55px;
-  color: #e74c3c;
+  color: #3498db;
   font-family: Masterblast;
   font-size: 160%;
   font-weight: 500; }
+
+.mainLeft {
+  background: #eee; }
 
 /* Colors */
 /* images */

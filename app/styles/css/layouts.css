@@ -17,11 +17,7 @@
   left: 0px;
   top: 0px;
   right: 300px;
-  height: 670px;
-  max-height: 670px;
-  padding: 0;
-  overflow-y: scroll;
-  -ms-overflow-y: scroll; }
+  padding: 0; }
 
 .postform {
   display: block;
@@ -674,12 +670,11 @@
   float: left;
   position: relative;
   width: 100%;
-  padding: 10px; }
+  padding: 5px; }
   .flexPage .flex-1, .flexPage .flex-2, .flexPage .flex-3, .flexPage .flex-4, .flexPage .flex-5,
   .flexPage .flex-6, .flexPage .flex-7, .flexPage .flex-8, .flexPage .flex-9, .flexPage .flex-10 {
     display: block;
-    float: left;
-    overflow: hidden; }
+    float: left; }
   .flexPage .flex-1 {
     width: 10%; }
   .flexPage .flex-2 {
@@ -735,6 +730,36 @@
     height: 650px; }
   .flexPage .-h-700 {
     height: 700px; }
+
+.flex-1 {
+  width: 10%; }
+
+.flex-2 {
+  width: 20%; }
+
+.flex-3 {
+  width: 30%; }
+
+.flex-4 {
+  width: 40%; }
+
+.flex-5 {
+  width: 50%; }
+
+.flex-6 {
+  width: 60%; }
+
+.flex-7 {
+  width: 70%; }
+
+.flex-8 {
+  width: 80%; }
+
+.flex-9 {
+  width: 90%; }
+
+.flex-10 {
+  width: 100%; }
 
 .Bframe {
   display: none;
@@ -875,6 +900,14 @@
   right: 0px;
   min-height: 900px; }
 
+.mainLeft {
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  width: calc(40% - 20px);
+  overflow: scroll; }
+
 /* Colors */
 /* images */
 .myTasks {
@@ -916,10 +949,15 @@
         padding: 0px 10px;
         height: 30px;
         line-height: 30px;
-        border-bottom: 1px solid rgba(231, 76, 76, 0.3); }
+        border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
         .myTasks .cont .table .head input {
           margin-left: 20px;
           line-height: 20px; }
+      .myTasks .cont .table .tr {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px; }
       .myTasks .cont .table .td {
         display: block;
         float: left;
@@ -940,27 +978,33 @@
         width: 100%;
         padding: 8px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        border-radius: 3px; }
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-transition: 0.1s;
+        -moz-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s; }
       .myTasks .cont .table .sector {
         padding: 1px 8px; }
       .myTasks .cont .table .sector:hover {
         cursor: pointer;
-        color: #fff;
-        background: rgba(231, 76, 60, 0.7); }
+        color: #000;
+        background: rgba(52, 152, 219, 0.2); }
       .myTasks .cont .table .sectorList:hover {
         cursor: pointer;
-        background: #e74c3c;
-        color: rgba(255, 255, 255, 0.8); }
-        .myTasks .cont .table .sectorList:hover .taskList .td {
-          color: rgba(255, 255, 255, 0.9); }
-        .myTasks .cont .table .sectorList:hover .taskList .td:hover {
-          color: white; }
+        background: #fff;
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        color: rgba(0, 0, 0, 0.8); }
         .myTasks .cont .table .sectorList:hover .tr:hover {
-          background: rgba(255, 255, 255, 0.1); }
-          .myTasks .cont .table .sectorList:hover .tr:hover .progBar {
-            background: rgba(0, 0, 0, 0.2); }
-        .myTasks .cont .table .sectorList:hover .progTrack {
-          background: rgba(255, 255, 255, 0.9); }
+          background: rgba(52, 152, 219, 0.2); }
+        .myTasks .cont .table .sectorList:hover .taskList .td {
+          color: rgba(0, 0, 0, 0.9); }
+        .myTasks .cont .table .sectorList:hover .taskList .td:hover {
+          color: black; }
         .myTasks .cont .table .sectorList:hover option {
           color: #333; }
   .myTasks option {

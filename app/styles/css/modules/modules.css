@@ -32,9 +32,12 @@
 .BCZIcon {
   text-align: center;
   line-height: 55px;
-  color: #e74c3c;
+  color: #3498db;
   font-family: Masterblast;
   font-size: 160%;
   font-weight: 500; }
+
+.mainLeft {
+  background: #eee; }
 
 /*# sourceMappingURL=modules.css.map */

@@ -1,4 +1,10 @@
+@import '../../base/variables';
 .custButton:hover{
   cursor: pointer;
   background:#d5d5d5;
 }
+.custButton.-blue:hover{  background: #49aef1;  color: #fff;  } 
+.custButton.-green:hover{  background: #38e180;  color: #fff;  } 
+.custButton.-theme:hover{  background: $themeColorL;  color: #fff;  } 
+.custButton.-grey:hover{  background: #808080;  color: #fff;  } 
+.custButton.-red:hover{  background: #d54b3c;  color: #fff;  } 

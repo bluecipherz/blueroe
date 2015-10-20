@@ -1,4 +1,4 @@
-<div class="flexPage "> 
+<div class="flexPage bg-grey"> 
     <div class="flex-10  -p">
         <div class="fluidGrid myTasks">
         	<div class="heading ">
@@ -8,8 +8,8 @@
         		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
 
                 <div class="bgrid -bg-s-100 -f-right -b-p-rel">
-                    <div class="custButton"><i class="fa fa-filter"></i></div>
-                    <div class="custButton"><i class="fa fa-bars"></i></div>
+                    <div class="custButton -grey"><i class="fa fa-filter"></i></div>
+                    <div class="custButton -grey"><i class="fa fa-bars"></i></div>
                 </div>
                 <!-- Create tasklist -->
                 <div class="bgrid -bg-s-100 -f-right b-p-rel ">
@@ -30,7 +30,7 @@
                                 <div class="rowspace"></div>
                                 <div>
                                     <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
-                                    <div class="custButton " ng-click="showTaskListPop = ! showTaskListPop">Cancel</div>
+                                    <div class="custButton -red" ng-click="showTaskListPop = ! showTaskListPop">Cancel</div>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +84,8 @@
 
                                 <div class="rowspace"></div>
                                 <div>
-                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
-                                    <div class="custButton " ng-click="showTaskPop = ! showTaskPop">Cancel</div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task</div>
+                                    <div class="custButton -red" ng-click="showTaskPop = ! showTaskPop">Cancel</div>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                             <div class="rowspace"></div>
                                             <div>
                                                 <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
-                                                <div class="custButton " ng-click="task.showTaskPop = ! task.showTaskPop">Cancel</div>
+                                                <div class="custButton -red" ng-click="task.showTaskPop = ! task.showTaskPop">Cancel</div>
                                             </div>
                                         </div>
                                     </div>
@@ -223,7 +223,24 @@
                         </div>
 		    		</div>
         		</table>
-        	</div>
+        	</div> 
+        </div>
+
+        <!-- second tab -->
+        <div  class="cont" ng-show="tasks.isSelected(2)">
+            this is plain
+        </div>
+
+        <!-- third tab -->
+        <div  class="cont" ng-show="tasks.isSelected(3)">
+            this is dependancy
+        </div>
+
+        <!-- forth row -->
+        <div  class="cont" ng-show="tasks.isSelected(4)">
+            <div class="k-outer">
+                
+            </div>
         </div>
     </div>
 </div>

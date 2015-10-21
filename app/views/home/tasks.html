@@ -223,42 +223,43 @@
         		</table>
         	</div> 
         </div>  --> 
-    </div>
-    <div class="backlogOuter">
-        <!-- backlog tab -->
-        <div  class="cont"  ng-show="tasks.isSelected(1)" >
-            <div class="storyBlock" ng-repeat="data in tasks.tlist" ng-click="data.released = !data.released" >
-                <div class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released}">
-                    <div ></div> 
-                    <span ng-show="data.released">Added</span>
-                    <span ng-show="!data.released">Removed</span>
-                </div>
-                <div class="title">{{data.title}}</div>
-                <div class="description">{{data.description}}</div> 
-                <div class="date" >
-                    <table>
-                        <tr>
-                            <td class="c1">From : </td>
-                            <td class="c2">{{data.startDate}}</td>
-                        </tr>  
-                        <tr>
-                            <td class="c1">To : </td>
-                            <td class="c2"> {{data.endDate}}</td>
-                        </tr>  
-                        <tr>
-                            <td class="c1">Status : </td>
-                            <td class="c2S"> {{data.released}}</td>
-                        </tr>  
-                    </table>
-                </div>
-                <div class="time">{{data.duration}}<span>h</span></div> 
-                <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
-            </div>
         </div>
+        <div class="backlogOuter">
+            <!-- backlog tab -->
+            <div  class="cont"  ng-show="tasks.isSelected(1)" >
+                <div class="storyBlock" ng-repeat="data in tasks.tlist" ng-click="data.released = !data.released" >
+                    <div class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released}">
+                        <div ></div> 
+                        <span ng-show="data.released">Added</span>
+                        <span ng-show="!data.released">Removed</span>
+                    </div>
+                    <div class="title">{{data.title}}</div>
+                    <div class="description">{{data.description}}</div> 
+                    <div class="date" >
+                        <table>
+                            <tr>
+                                <td class="c1">From : </td>
+                                <td class="c2">{{data.startDate}}</td>
+                            </tr>  
+                            <tr>
+                                <td class="c1">To : </td>
+                                <td class="c2"> {{data.endDate}}</td>
+                            </tr>  
+                            <tr>
+                                <td class="c1">Status : </td>
+                                <td class="c2S"> {{data.released}}</td>
+                            </tr>  
+                        </table>
+                    </div>
+                    <div class="time">{{data.duration}}<span>h</span></div> 
+                    <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
+                </div>
+            </div>
 
-        <!-- release tab -->
-        <div  class="cont" ng-show="tasks.isSelected(2)">
-            this is dependancy
+            <!-- release tab -->
+            <div  class="cont" ng-show="tasks.isSelected(2)">
+                this is dependancy
+            </div>
         </div>
     </div>
 </div>

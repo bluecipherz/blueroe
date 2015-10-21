@@ -1015,126 +1015,113 @@
   float: left;
   width: 100%;
   padding: 5px 0; }
-  .backlogOuter .storyBlock {
-    display: inline-block;
+
+.storyBlock {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 180px;
+  height: 200px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin: 5px 10px 5px 0;
+  border-bottom: 3px solid #aaa;
+  overflow: hidden; }
+  .storyBlock .title, .storyBlock .date, .storyBlock .description, .storyBlock .time, .storyBlock .releaseTag {
+    display: block;
     float: left;
-    width: 200px;
-    height: 250px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    margin: 5px 10px 5px 0; }
-  .backlogOuter .storyBlock {
-    display: inline-block;
+    width: 100%;
+    padding: 5px; }
+  .storyBlock .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 130%;
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd; }
+  .storyBlock .description {
+    height: 100px;
+    color: #777;
+    padding: 10px; }
+  .storyBlock .date {
+    height: 70px;
+    width: 65%;
+    color: #666; }
+    .storyBlock .date table {
+      width: 100%; }
+    .storyBlock .date td {
+      padding: 0 3px; }
+    .storyBlock .date .c1 {
+      width: 40px;
+      color: #aaa; }
+  .storyBlock .time {
+    margin-top: -10px;
+    color: #bbb;
+    height: 70px;
+    width: 35%;
+    font-size: 530%; }
+    .storyBlock .time span {
+      font-size: 24px;
+      color: #ddd; }
+  .storyBlock .priority {
+    display: block;
     float: left;
-    position: relative;
-    width: 180px;
-    height: 200px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    margin: 5px 10px 5px 0;
-    border-bottom: 3px solid #aaa;
-    overflow: hidden; }
-    .backlogOuter .storyBlock .title, .backlogOuter .storyBlock .date, .backlogOuter .storyBlock .description, .backlogOuter .storyBlock .time, .backlogOuter .storyBlock .releaseTag {
+    width: 100%;
+    position: absolute;
+    height: 5px;
+    bottom: 0px;
+    background: #ddd; }
+  .storyBlock .priority.p1 {
+    background: #40d47e; }
+  .storyBlock .priority.p2 {
+    background: #f1c40f; }
+  .storyBlock .priority.p3 {
+    background: #e67e22; }
+  .storyBlock .releaseTag {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    right: 0px;
+    max-width: 100%;
+    max-height: 100%; }
+    .storyBlock .releaseTag div {
       display: block;
       float: left;
-      width: 100%;
-      padding: 5px; }
-    .backlogOuter .storyBlock .title {
-      height: 30px;
-      line-height: 30px;
-      font-size: 130%;
-      padding: 0 10px;
-      border-bottom: 1px solid #ddd; }
-    .backlogOuter .storyBlock .description {
-      height: 100px;
-      color: #777;
-      padding: 10px; }
-    .backlogOuter .storyBlock .date {
-      height: 70px;
-      width: 65%;
-      color: #666; }
-      .backlogOuter .storyBlock .date table {
-        width: 100%; }
-      .backlogOuter .storyBlock .date td {
-        padding: 0 3px; }
-      .backlogOuter .storyBlock .date .c1 {
-        width: 40px;
-        color: #aaa; }
-    .backlogOuter .storyBlock .time {
-      margin-top: -10px;
-      color: #bbb;
-      height: 70px;
-      width: 35%;
-      font-size: 530%; }
-      .backlogOuter .storyBlock .time span {
-        font-size: 24px;
-        color: #ddd; }
-    .backlogOuter .storyBlock .priority {
-      display: block;
-      float: left;
-      width: 100%;
       position: absolute;
-      height: 5px;
-      bottom: 0px;
-      background: #ddd; }
-    .backlogOuter .storyBlock .priority.p1 {
-      background: #40d47e; }
-    .backlogOuter .storyBlock .priority.p2 {
-      background: #f1c40f; }
-    .backlogOuter .storyBlock .priority.p3 {
-      background: #e67e22; }
-    .backlogOuter .storyBlock .releaseTag {
+      top: -35px;
+      right: -35px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
       width: 50px;
-      height: 50px;
-      position: absolute;
-      overflow: hidden;
-      top: 0px;
-      right: 0px;
-      max-width: 100%;
-      max-height: 100%; }
-      .backlogOuter .storyBlock .releaseTag div {
-        display: block;
-        float: left;
-        position: absolute;
-        top: -35px;
-        right: -35px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        width: 50px;
-        height: 50px; }
-      .backlogOuter .storyBlock .releaseTag span {
-        display: block;
-        float: left;
-        width: 100%;
-        font-size: 300%;
-        color: rgba(0, 0, 0, 0.7);
-        text-align: center;
-        line-height: 180px;
-        margin-top: -180px; }
-    .backlogOuter .storyBlock .actv {
-      -webkit-animation: activated 2s 1;
-      animation: activated 2s 1; }
-      .backlogOuter .storyBlock .actv div {
-        background: #27ae60; }
-    .backlogOuter .storyBlock .inact {
-      -webkit-animation: activated 3s 1;
-      animation: activated 2s 1; }
-      .backlogOuter .storyBlock .inact div {
-        background: #ddd; }
+      height: 50px; }
+    .storyBlock .releaseTag span {
+      display: block;
+      float: left;
+      width: 100%;
+      font-size: 300%;
+      color: #aaa;
+      text-align: center;
+      line-height: 180px;
+      margin-top: -180px; }
+  .storyBlock .actv {
+    -webkit-animation: activated 2s 1;
+    animation: activated 2s 1; }
+    .storyBlock .actv div {
+      background: #27ae60; }
+  .storyBlock .inact {
+    -webkit-animation: activated 3s 1;
+    animation: activated 2s 1; }
+    .storyBlock .inact div {
+      background: #ddd; }
 @-webkit-keyframes activated {
   0% {
     background: rgba(255, 255, 255, 0);
@@ -1185,8 +1172,8 @@
     background: transparent;
     width: 50px;
     height: 50px; } }
-  .backlogOuter .storyBlock {
-    cursor: pointer; }
+.storyBlock {
+  cursor: pointer; }
 
 /* Colors */
 /* images */

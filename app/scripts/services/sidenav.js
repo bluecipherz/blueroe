@@ -13,18 +13,21 @@ angular.module('bluroeApp')
     // ...
 
     var AsideListHome = [
-        {'id':'1','type':'link','name':'Feeds','ngClick':'home','img':'icons/fb-50.png', 'icon':'fa fa-feed'},
-        {'id':'2','type':'link','name':'My Tasks','ngClick':'mytasks','img':'icons/twitter-50.png', 'icon':'fa fa-tasks'},
-        {'id':'3','type':'link','name':'My Milestones','ngClick':'mymilestones','img':'icons/gplus-50.png', 'icon':'fa fa-map-marker'},
-        {'id':'4','type':'link','name':'My Bugs','ngClick':'mybugs','img':'icons/twitter-50.png', 'icon':'fa fa-bug'},
-        {'id':'5','type':'link','name':'My Calender','ngClick':'mycalendar','img':'icons/fb-50.png', 'icon':'fa fa-calendar'},
-        {'id':'6','type':'link','name':'Reports ','ngClick':'reports','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
+        {'id':'1','type':'link','name':'DASHBOARD','ngClick':'home','img':'icons/fb-50.png', 'icon':'fa fa-feed'},
+        {'id':'2','type':'link','name':'STORIES','ngClick':'mytasks','img':'icons/twitter-50.png', 'icon':'fa fa-tasks'},
+        {'id':'3','type':'link','name':'SPRINTS','ngClick':'mymilestones','img':'icons/gplus-50.png', 'icon':'fa fa-map-marker'},
+        {'id':'4','type':'link','name':'KANBAN','ngClick':'mybugs','img':'icons/twitter-50.png', 'icon':'fa fa-bug'},
+        {'id':'5','type':'link','name':'BUGS','ngClick':'mycalendar','img':'icons/fb-50.png', 'icon':'fa fa-calendar'},
+        {'id':'6','type':'link','name':'CALENDAR ','ngClick':'reports','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
+        {'id':'7','type':'link','name':'CHATS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
+        {'id':'8','type':'link','name':'GITHUB ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
+        {'id':'9','type':'link','name':'TIMESHEETS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
         //{'type':'linkList','name':'Extras','img':'icons/twitter-50.png','list': [
         //    {'id':'7','type':'link','name':'Themes','ngClick':'themes','img':'icons/fb-50.png'},
         //    {'id':'8','type':'link','name':'Templates','ngClick':' ','img':'icons/gplus-50.png'},
         //]},
 
-        {'id':'7','type':'link','name':'Themes','ngClick':'themes','img':'icons/fb-50.png', 'icon':'fa fa-sliders'},
+        {'id':'7','type':'link','name':'THEMES','ngClick':'themes','img':'icons/fb-50.png', 'icon':'fa fa-sliders'},
     ];
 
         var AsideListProjectIndex = [

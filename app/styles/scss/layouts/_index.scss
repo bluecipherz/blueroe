@@ -61,7 +61,7 @@ $navigationHeight: 50px;
   left:60px;
   right:0px;
   top:50px;
-  min-height:calc( 100% - 50px ); 
+   
 }
 .BCZIcon{
   display: block;
@@ -90,12 +90,11 @@ $navigationHeight: 50px;
   display:block;
   float:left;
   position:fixed;
-  left:0px;
-  right:0px;
-  height:30px;
-  top:$navigationHeight - 40px;
-  width:100%; 
+  width:600px;
+  left:calc(50% - 300px); 
+  min-height:30px;
+  top: -90px;  
 }
 .showNotification{
-  top:$navigationHeight;
+  top:0px;
 }

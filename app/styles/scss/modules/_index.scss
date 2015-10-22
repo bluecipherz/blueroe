@@ -46,8 +46,9 @@
   padding-left:10px;
   line-height:30px;
   font-size:90%;
-  z-index:1;
+  z-index:150;
   padding:0 60px;
   text-align:center;
   @include transition(top 0.8s);
+  @include border-radius(0 0 8px 8px);
 }

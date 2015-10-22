@@ -1,128 +1,169 @@
 @import '../base/variables';
-.myTasks{ 
-	.p-dropzone {
-		margin:5px;
-		width:90%;
+.myTasks{
+	display:block;
+	float:left;
+	padding:5px 10px;
+}
+.p-dropzone {
+	margin:5px;
+	width:90%;
+}
+.half{ width:calc(50% - 12px); }
+.heading{
+	.oneBy3{ width:calc(33.3% - 12px); }
+	.custButton,
+	.custButtonPop{ margin-top:1px;}
+}
+.cont{
+	display:block;
+	float:left; 
+	.oneBy3{ width:calc(33.3% - 12px); }
+
+	padding:10px 5px;
+	font-size:90%;
+	color:#666;
+	.popBox{
+		font-size:110%;
 	}
-	.half{ width:calc(50% - 12px); }
-	.heading{
-		.oneBy3{ width:calc(33.3% - 12px); }
-	}
-	.cont{
+	.table{
 		display:block;
 		float:left;
 		width:100%;
-		.oneBy3{ width:calc(33.3% - 12px); }
-
-		padding:10px 5px;
-		font-size:90%;
-		color:#666;
-		.popBox{
-			font-size:110%;
+		margin-top:5px; 
+		input[type='text']{
+			height:20px;
+			min-height:20px;
+			line-height:20px;
 		}
-		.table{
+		.popBox{
+			input[type='text']{
+				height:30px;
+				min-height:30px;
+				line-height:30px;
+			}
+		}
+		.head{
+			display:block;
+			float:left;
+			padding:0px 10px;
+			height:30px;
+
+			line-height:30px;
+			border-bottom:1px solid rgba($themeColorR,$themeColorG,$themeColorG,.3);
+			input{
+				margin-left:20px;
+				line-height:20px;
+			}
+		}
+		.tr{
+			@include border-radius(3px);
+		}
+		.td{
+			display:block;
+			float:left;
+			padding:3px 10px;
+		}
+		.taskList{
+			display:block;
+			float:left;
+		} 
+		.taskList .td{
+			font-size:120%;
+			font-weight:bold;
+			color:#555; 
+			padding:4px 10px;
+			width:100%;  
+		} 
+		.sector,
+		.sectorList{
 			display:block;
 			float:left;
 			width:100%;
-			margin-top:5px; 
-			input[type='text']{
-				height:20px;
-				min-height:20px;
-				line-height:20px;
-			}
-			.popBox{
-				input[type='text']{
-					height:30px;
-					min-height:30px;
-					line-height:30px;
-				}
-			}
-			.head{
-				display:block;
-				float:left;
-				padding:0px 10px;
-				height:30px;
+			padding:8px;  
+			border-bottom:1px solid rgba(0,0,0,0.05);
+			@include border-radius(3px);
+			@include transition(0.1s);
+		}
+		.sector{
+			padding:1px 8px;
+		}
 
-				line-height:30px;
-				border-bottom:1px solid rgba($themeColorR,$themeColorG,$themeColorG,.3);
-				input{
-					margin-left:20px;
-					line-height:20px;
-				}
-			}
-			.tr{
-				@include border-radius(3px);
-			}
-			.td{
-				display:block;
-				float:left;
-				padding:3px 10px;
-			}
-			.taskList{
-				display:block;
-				float:left;
-			} 
+
+		.sector:hover{
+			cursor:pointer; 
+			color:#000;  
+			background:rgba($themeColorR,$themeColorG,$themeColorB,0.2); 	
+		} 
+		.sectorList:hover{
+			cursor:pointer;
+			background:#fff;  
+			@include shadow(0,0,5px,rgba(0,0,0,0.3)); 
+			color:rgba(0,0,0,.8);
+			.tr:hover{ background:rgba($themeColorR,$themeColorG,$themeColorB,0.2); }
 			.taskList .td{
-				font-size:120%;
-				font-weight:bold;
-				color:#555; 
-				padding:4px 10px;
-				width:100%;  
-			} 
-			.sector,
-			.sectorList{
-				display:block;
-				float:left;
-				width:100%;
-				padding:8px;  
-				border-bottom:1px solid rgba(0,0,0,0.05);
-				@include border-radius(3px);
-				@include transition(0.1s);
+				color:rgba(0,0,0,.9);
 			}
-			.sector{
-				padding:1px 8px;
-			}
-
-
-			.sector:hover{
-				cursor:pointer; 
-				color:#000;  
-				background:rgba($themeColorR,$themeColorG,$themeColorB,0.2); 	
-			} 
-			.sectorList:hover{
-				cursor:pointer;
-				background:#fff;  
-				@include shadow(0,0,5px,rgba(0,0,0,0.3)); 
-				color:rgba(0,0,0,.8);
-				.tr:hover{ background:rgba($themeColorR,$themeColorG,$themeColorB,0.2); }
-				.taskList .td{
-					color:rgba(0,0,0,.9);
-				}
-				.taskList .td:hover{
-					color:rgba(0,0,0,1);
-				}  
-				option{
-					color:#333;
-				}
+			.taskList .td:hover{
+				color:rgba(0,0,0,1);
+			}  
+			option{
+				color:#333;
 			}
 		}
 	}
-	option{
-		color:#333;
-	}
-	option:hover{
-		background:#ddd;
-	}
-
 }
- 
+option{
+	color:#333;
+}
+option:hover{
+	background:#ddd;
+}
+
+
 /* new views - ice blocks */ 
 .backlogOuter{
 	display:block;
-	float:left;
-	width:100%;
-	padding:5px 0;
+	float:left; 
+	position:fixed;
+	left:60px;
+	top:100px;
+	bottom:26px;
+	right:0px;
+	overflow:scroll;
+	padding:5px 0;  
+	border-top:1px solid #ddd; 
+	.psudoShadow{
+		display:block;
+		float:left;
+		position:fixed;
+		left:60px;
+		top:100px; 
+		right:0px;
+		width:100%;
+		height:5px;
+		z-index:300;
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.28+0,0+100 */
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.28)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+	}
 } 
+/*SCROLL BAR*/
+
+.backlogOuter::-webkit-scrollbar  {
+  background: rgba(0,0,0,0.0);
+  border-radius:3px;
+  height:10px;
+}
+.backlogOuter::-webkit-scrollbar-track  {
+  background: rgba(0,0,0,0.0); 
+}
 .storyBlock{
 	display:inline-block;
 	float:left;
@@ -134,6 +175,7 @@
 	background:#fff;
 	margin: 5px 10px 5px 0;
 	border-bottom:0px solid #aaa;  
+	@include transition(height 0.5s);
 	.RoundDropDown{@include transition(0.3s);} 
 	.title,.date,.description,.time,.releaseTag{
 		display:block;
@@ -290,20 +332,39 @@
 		}
 	}  
 }
+.quickView{
+	height:60px;
+}
+.mainBacklog{
+	padding-left:10px;
+}
 .storyBlock:hover{
 	cursor:pointer;
 	.RoundDropDown{opacity:1; }
 }
 .storyBlock.inactive{ .RoundDropDown{opacity:0; } }
-.storyBlock.inactive:hover{ .RoundDropDown{opacity:1; } }
-.sprintBlock{
-	display:table;
-	float:left;
+.storyBlock.inactive:hover{ .RoundDropDown{opacity:1; } } 
+
+.sprintBlockOuter{ 
+    display: table;  
+    float:left;
+    table-layout: fixed; /* optional, for equal spacing */
+    border-collapse: collapse; 
+    padding-top:0px;
+    margin-top:0px;
+}
+.sprintScroll{ 
+    padding-top:0px;
+    margin-top:0px;
+}
+.sprintBlock{ 
+	display: table-cell; 
+    vertical-align: top; 
+
 	width:200px;
 	margin:5px 10px 5px 0; 
-	padding-left:10px;
-	background:#ddd;
-	@include border-radius(3px); 
+	padding-left:10px; 
+	/*border-right:1px dashed #ccc;*/  
 	.sprintTitle{
 		display:block;
 		float:left;
@@ -314,7 +375,14 @@
 		@include shadow(0,2px,4px,rgba(0,0,0,0.2)); 
 		padding:10px;
 	}
+	.storyBlock{
+		display:inline;
+		float:left;
+	}
 }
+.sprintBlock:nth-child(odd){
+	background:rgba(0,0,0,0.05);
+} 
 .storyList{
 	display:table;
 	float:left;
@@ -349,4 +417,50 @@
 	.storyBlock:nth-child(10){ z-index:91;}
 	.storyBlock:nth-child(11){ z-index:90;}
 	.storyBlock:nth-child(12){ z-index:89;} 
+}
+.-p-0{
+	padding:0px;
+}
+.solidHeader{
+	background:#fff;
+	height:50px;
+	position:relative; 
+	z-index:200;
+	.fluidGrid{
+		@include shadow(0,0,0,0); 
+	}
+}
+.story-anim.ng-enter
+{ 
+  -webkit-transition: .5s linear all;
+  -moz-transition: .5s linear all;
+  -ms-transition: .5s linear all;
+  -o-transition: .5s linear all;  
+  transition: .5s linear all;
+
+  
+  /* 200ms will be applied between each sucessive enter operation */ 
+  -webkit-transition-delay:0.1s;
+  transition-delay:0.1s;
+
+  /* this is here to avoid accidental CSS inheritance */
+  -webkit-transition-duration:0;
+  transition-duration:0;
+}
+.story-anim.ng-enter {
+  opacity:0;
+  line-height:0;
+}
+.story-anim.ng-enter.ng-enter-active {
+  opacity:1;
+  line-height:20px;
+}
+.story-anim.ng-enter-stagger {
+  /* 200ms will be applied between each sucessive enter operation */ 
+  -webkit-transition-delay:0.1s;
+  transition-delay:0.1s;
+
+  /* this is here to avoid accidental CSS inheritance */
+  -webkit-transition-duration:0;
+  transition-duration:0;
 }

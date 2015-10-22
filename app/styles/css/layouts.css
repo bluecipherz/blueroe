@@ -775,6 +775,10 @@
 .flex-10 {
   width: 100%; }
 
+.fit-10 {
+  width: 100%;
+  height: 100%; }
+
 .Bframe {
   display: none;
   float: left;
@@ -897,8 +901,7 @@
   display: block;
   left: 60px;
   right: 0px;
-  top: 50px;
-  min-height: calc( 100% - 50px ); }
+  top: 50px; }
 
 .BCZIcon {
   display: block;
@@ -926,14 +929,13 @@
   display: block;
   float: left;
   position: fixed;
-  left: 0px;
-  right: 0px;
-  height: 30px;
-  top: 10px;
-  width: 100%; }
+  width: 600px;
+  left: calc(50% - 300px);
+  min-height: 30px;
+  top: -90px; }
 
 .showNotification {
-  top: 50px; }
+  top: 0px; }
 
 .right-side {
   float: left;
@@ -953,67 +955,77 @@
 
 /* Colors */
 /* images */
-.myTasks .p-dropzone {
-  margin: 5px;
-  width: 90%; }
-.myTasks .half {
-  width: calc(50% - 12px); }
-.myTasks .heading .oneBy3 {
-  width: calc(33.3% - 12px); }
-.myTasks .cont {
+.myTasks {
   display: block;
   float: left;
-  width: 100%;
+  padding: 5px 10px; }
+
+.p-dropzone {
+  margin: 5px;
+  width: 90%; }
+
+.half {
+  width: calc(50% - 12px); }
+
+.heading .oneBy3 {
+  width: calc(33.3% - 12px); }
+.heading .custButton,
+.heading .custButtonPop {
+  margin-top: 1px; }
+
+.cont {
+  display: block;
+  float: left;
   padding: 10px 5px;
   font-size: 90%;
   color: #666; }
-  .myTasks .cont .oneBy3 {
+  .cont .oneBy3 {
     width: calc(33.3% - 12px); }
-  .myTasks .cont .popBox {
+  .cont .popBox {
     font-size: 110%; }
-  .myTasks .cont .table {
+  .cont .table {
     display: block;
     float: left;
     width: 100%;
     margin-top: 5px; }
-    .myTasks .cont .table input[type='text'] {
+    .cont .table input[type='text'] {
       height: 20px;
       min-height: 20px;
       line-height: 20px; }
-    .myTasks .cont .table .popBox input[type='text'] {
+    .cont .table .popBox input[type='text'] {
       height: 30px;
       min-height: 30px;
       line-height: 30px; }
-    .myTasks .cont .table .head {
+    .cont .table .head {
       display: block;
       float: left;
       padding: 0px 10px;
       height: 30px;
       line-height: 30px;
       border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
-      .myTasks .cont .table .head input {
+      .cont .table .head input {
         margin-left: 20px;
         line-height: 20px; }
-    .myTasks .cont .table .tr {
+    .cont .table .tr {
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
       -ms-border-radius: 3px;
       border-radius: 3px; }
-    .myTasks .cont .table .td {
+    .cont .table .td {
       display: block;
       float: left;
       padding: 3px 10px; }
-    .myTasks .cont .table .taskList {
+    .cont .table .taskList {
       display: block;
       float: left; }
-    .myTasks .cont .table .taskList .td {
+    .cont .table .taskList .td {
       font-size: 120%;
       font-weight: bold;
       color: #555;
       padding: 4px 10px;
       width: 100%; }
-    .myTasks .cont .table .sector,
-    .myTasks .cont .table .sectorList {
+    .cont .table .sector,
+    .cont .table .sectorList {
       display: block;
       float: left;
       width: 100%;
@@ -1027,38 +1039,80 @@
       -moz-transition: 0.1s;
       -o-transition: 0.1s;
       transition: 0.1s; }
-    .myTasks .cont .table .sector {
+    .cont .table .sector {
       padding: 1px 8px; }
-    .myTasks .cont .table .sector:hover {
+    .cont .table .sector:hover {
       cursor: pointer;
       color: #000;
       background: rgba(52, 152, 219, 0.2); }
-    .myTasks .cont .table .sectorList:hover {
+    .cont .table .sectorList:hover {
       cursor: pointer;
       background: #fff;
       -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       color: rgba(0, 0, 0, 0.8); }
-      .myTasks .cont .table .sectorList:hover .tr:hover {
+      .cont .table .sectorList:hover .tr:hover {
         background: rgba(52, 152, 219, 0.2); }
-      .myTasks .cont .table .sectorList:hover .taskList .td {
+      .cont .table .sectorList:hover .taskList .td {
         color: rgba(0, 0, 0, 0.9); }
-      .myTasks .cont .table .sectorList:hover .taskList .td:hover {
+      .cont .table .sectorList:hover .taskList .td:hover {
         color: black; }
-      .myTasks .cont .table .sectorList:hover option {
+      .cont .table .sectorList:hover option {
         color: #333; }
-.myTasks option {
+
+option {
   color: #333; }
-.myTasks option:hover {
+
+option:hover {
   background: #ddd; }
 
 /* new views - ice blocks */
 .backlogOuter {
   display: block;
   float: left;
-  width: 100%;
-  padding: 5px 0; }
+  position: fixed;
+  left: 60px;
+  top: 100px;
+  bottom: 26px;
+  right: 0px;
+  overflow: scroll;
+  padding: 5px 0;
+  border-top: 1px solid #ddd; }
+  .backlogOuter .psudoShadow {
+    display: block;
+    float: left;
+    position: fixed;
+    left: 60px;
+    top: 100px;
+    right: 0px;
+    width: 100%;
+    height: 5px;
+    z-index: 300;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.28+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.28)), color-stop(100%, transparent));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.28) 0%, transparent 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47000000', endColorstr='#00000000',GradientType=0 );
+    /* IE6-9 */ }
+
+/*SCROLL BAR*/
+.backlogOuter::-webkit-scrollbar {
+  background: transparent;
+  border-radius: 3px;
+  height: 10px; }
+
+.backlogOuter::-webkit-scrollbar-track {
+  background: transparent; }
 
 .storyBlock {
   display: inline-block;
@@ -1075,7 +1129,11 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   background: #fff;
   margin: 5px 10px 5px 0;
-  border-bottom: 0px solid #aaa; }
+  border-bottom: 0px solid #aaa;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s; }
   .storyBlock .RoundDropDown {
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -1240,6 +1298,12 @@
   .storyBlock .actv div {
     background: #27ae60; }
 
+.quickView {
+  height: 60px; }
+
+.mainBacklog {
+  padding-left: 10px; }
+
 .storyBlock:hover {
   cursor: pointer; }
   .storyBlock:hover .RoundDropDown {
@@ -1251,17 +1315,26 @@
 .storyBlock.inactive:hover .RoundDropDown {
   opacity: 1; }
 
-.sprintBlock {
+.sprintBlockOuter {
   display: table;
   float: left;
+  table-layout: fixed;
+  /* optional, for equal spacing */
+  border-collapse: collapse;
+  padding-top: 0px;
+  margin-top: 0px; }
+
+.sprintScroll {
+  padding-top: 0px;
+  margin-top: 0px; }
+
+.sprintBlock {
+  display: table-cell;
+  vertical-align: top;
   width: 200px;
   margin: 5px 10px 5px 0;
   padding-left: 10px;
-  background: #ddd;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px; }
+  /*border-right:1px dashed #ccc;*/ }
   .sprintBlock .sprintTitle {
     display: block;
     float: left;
@@ -1276,6 +1349,12 @@
     -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 10px; }
+  .sprintBlock .storyBlock {
+    display: inline;
+    float: left; }
+
+.sprintBlock:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.05); }
 
 .storyList {
   display: table;
@@ -1345,6 +1424,48 @@
   z-index: 90; }
 .storyList.wrap .storyBlock:nth-child(12) {
   z-index: 89; }
+
+.-p-0 {
+  padding: 0px; }
+
+.solidHeader {
+  background: #fff;
+  height: 50px;
+  position: relative;
+  z-index: 200; }
+  .solidHeader .fluidGrid {
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0; }
+
+.story-anim.ng-enter {
+  -webkit-transition: .5s linear all;
+  -moz-transition: .5s linear all;
+  -ms-transition: .5s linear all;
+  -o-transition: .5s linear all;
+  transition: .5s linear all;
+  /* 200ms will be applied between each sucessive enter operation */
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  /* this is here to avoid accidental CSS inheritance */
+  -webkit-transition-duration: 0;
+  transition-duration: 0; }
+
+.story-anim.ng-enter {
+  opacity: 0;
+  line-height: 0; }
+
+.story-anim.ng-enter.ng-enter-active {
+  opacity: 1;
+  line-height: 20px; }
+
+.story-anim.ng-enter-stagger {
+  /* 200ms will be applied between each sucessive enter operation */
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  /* this is here to avoid accidental CSS inheritance */
+  -webkit-transition-duration: 0;
+  transition-duration: 0; }
 
 /* Colors */
 /* images */

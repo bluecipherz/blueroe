@@ -1,35 +1,184 @@
-<div class="flexPage myTasks"> 
-    <div class="flex-10 -h-500 -p">
-        <div class="fluidGrid ">
-        	<div class="cont">
-        		<div>
-        			<div>Milestones</div>
-        			<div>
-        				<button>New Milestone</button>
-        				<button>Filter</button>
-        				<button>Menu</button>
-        			</div>
-        		<div>
-        		<div class="table">	
-        			<div  class="bgrid  -b-d-100">
-        				<div class='head -b-d-40'>MILESTONE</div>
-        				<div class='head -b-d-15'>OWNER</div>
-        				<div class='head -b-d-15'>START DATE</div>
-        				<div class='head -b-d-15'>END DATE</div>
-        				<div class='head -b-d-15'>TASKS</div>
-        			</div>
-        			<!-- ng-repeat main -->
-		    		<div  class="sector -b-d-100" ng-repeat="milestone in milestones.milestones"> 
-		        		<div class="bgrid -b-d-100">
-		        			<div class='td -b-d-40'>{{ milestone.name }}</div>
-	        				<div class='td -b-d-15'>{{ milestone.owner }}</div>
-	        				<div class='td -b-d-15'>{{ milestone.start_date }}</div>
-	        				<div class='td -b-d-15'>{{ milestone.end_date }}</div>
-	        				<div class='td -b-d-15'>{{ milestone.tasks }}</div>
-		        		</div>
-	        		</div>
-        		</div>
-        	</div>
+<div class="flexPage bg-grey"> 
+    <div class="flex-10  -p">
+        <div class="fluidGrid myTasks">
+            <div class="heading ">
+                <span class='navLH' ng-class="{active:milestones.isSelected(1)}"  ng-click="milestones.selectTab(1)" > Sprints  </span>  
+
+                <div class="bgrid -bg-s-100 -f-right -b-p-rel">
+                    <div class="custButton -grey"><i class="fa fa-filter"></i></div>
+                    <div class="custButton -grey"><i class="fa fa-bars"></i></div>
+                </div>
+                <!-- Create tasklist -->
+                <div class="bgrid -bg-s-100 -f-right b-p-rel ">
+                    <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Sprint</div>
+                    <div class="popBox -l-20" ng-class="{ 'hidden' : ! showTaskListPop }">
+                        <div class="topArrow" ></div>
+                        <div class="closeBtn" ng-click="showTaskListPop = ! showTaskListPop"></div>
+                        <div class="cont">
+                            <div class="createProjectPopup">
+                                <h5>Create New Sprint</h5>
+                                <input type="text" placeholder="Project name" ng-model="projects.projectname"/>
+                                <h6>Select project</h6> 
+                                <select>
+                                    <option>SHit one</option>
+                                    <option>SHit Zu</option>
+                                    <option>SHiZree</option>
+                                </select>
+                                <div class="rowspace"></div>
+                                <div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Sprint</div>
+                                    <div class="custButton -red" ng-click="showTaskListPop = ! showTaskListPop">Cancel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Create task  -->
+                <div class="bgrid -bg-s-80 -f-right b-p-rel ">
+                    <div class="custButton -green" ng-click="showTaskPop = ! showTaskPop">New Story</div>
+                    <div class="popBox -l-30" ng-class="{ 'hidden' : ! showTaskPop }">
+                        <div class="topArrow" ></div>
+                        <div class="closeBtn" ng-click="showTaskPop = ! showTaskPop"></div>
+                        <div class="cont">
+                            <div class="createProjectPopup">
+                                <h5>Create New Story</h5>
+                                <textarea rows="4" placeholder="Task name"></textarea> 
+
+                                
+                                <div class="bgrid flex-9"> 
+                                    <h6 class="bgrid half" >Select project</h6> 
+                                    <h6 class="bgrid half" >Select Sprint</h6> 
+                                    <select class=" half">
+                                        <option>SHit one</option>
+                                        <option>SHit Zu</option>
+                                        <option>SHiZree</option>
+                                    </select> 
+                                    <select  class="half">
+                                        <option>SHit one</option>
+                                        <option>SHit Zu</option>
+                                        <option>SHiZree</option>
+                                    </select> 
+                                </div>
+                                <div class=" dropzone p-dropzone" dropzone="dropzoneConfig">
+                                    <div class="dz-message">Drop your files here</div>
+                                </div>
+                                <h6>Assign to crews</h6> 
+                                <input type="text" placeholder="Project name" />
+
+                                <div class="bgrid flex-9"> 
+                                    <h6 class="bgrid oneBy3" >Start date</h6> 
+                                    <h6 class="bgrid oneBy3" >End date</h6> 
+                                    <h6 class="bgrid oneBy3" >Priority</h6> 
+                                    <input type="text" class="bgrid oneBy3"  placeholder="Start date" />
+                                    <input type="text" class="bgrid oneBy3"  placeholder="End date" />
+                                    <select  class="oneBy3">
+                                        <option>None</option>
+                                        <option>Low</option>
+                                        <option>Medium</option>
+                                        <option>Hight</option>
+                                    </select> 
+                                </div>
+
+                                <div class="rowspace"></div>
+                                <div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Story</div>
+                                    <div class="custButton -red" ng-click="showTaskPop = ! showTaskPop">Cancel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navLine" id="myTasksNavLine"></div>
+
+            </div> 
+        </div>
+        <div class="backlogOuter">
+            <!-- backlog tab -->
+            <div  class="cont"  ng-show="milestones.isSelected(1)" >
+
+                <div class="sprintBlock"  ng-repeat="data in milestones.tlist"  ><!-- sprint block -->
+
+                    <div class="sprintTitle">{{data.title}}</div>
+
+                    <div class="bgrid" ng-repeat="child in data.children" >
+
+                        <div class="storyBlock" ng-if="child.type == 'Task'" ng-click="child.released = !child.released" >
+                            <div class="releaseTag" ng-class="{'actv':child.released,'inact':!child.released}">
+                                <div ></div> 
+                                <span ng-show="child.released">Added</span>
+                                <span ng-show="!child.released">Removed</span>
+                            </div>
+                            <div class="title">{{child.title}}</div>
+                            <div class="description">{{child.description}}</div> 
+                            <div class="date" >
+                                <table>
+                                    <tr>
+                                        <td class="c1">From : </td>
+                                        <td class="c2">{{child.startDate}}</td>
+                                    </tr>  
+                                    <tr>
+                                        <td class="c1">To : </td>
+                                        <td class="c2"> {{child.endDate}}</td>
+                                    </tr>  
+                                    <tr>
+                                        <td class="c1">Status : </td>
+                                        <td class="c2S"> {{child.released}}</td>
+                                    </tr>  
+                                </table>
+                            </div>
+                            <div class="time">{{child.duration}}<span>h</span></div> 
+                            <div class="priority"ng-class="{'p1':child.priority==1,'p2':child.priority==2,'p3':child.priority==3}"></div>
+                        </div><!-- Child -->
+
+                        <div class="storyList"  ng-if="child.type == 'TaskList'"  ng-class="{'wrap':!child.wrap}">
+
+                            <div class="storyBlock" ng-click="child.wrap = !child.wrap ">
+                                <div class="releaseTag" ng-class="{'actv':child.released,'inact':!child.released}">
+                                    <div ></div>  
+                                </div>
+                                <div class="title">{{child.title}}</div>
+                                <div class="description">{{child.description}}</div>  
+
+                                <div class="time">{{child.duration}}<span>h</span></div> 
+                                <div class="priority"ng-class="{'p1':child.priority==1,'p2':child.priority==2,'p3':child.priority==3}"></div>
+                            </div>
+
+                            <div class="storyBlock" ng-repeat="child2 in child.children" ng-click="child2.released = !child2.released" >
+                                <div class="releaseTag" ng-class="{'actv':child2.released,'inact':!child2.released}">
+                                    <div ></div> 
+                                    <span ng-show="child2.released">Added</span>
+                                    <span ng-show="!child2.released">Removed</span>
+                                </div>
+                                <div class="title">{{child2.title}}</div>
+                                <div class="description">{{child2.description}}</div> 
+                                <div class="date" >
+                                    <table>
+                                        <tr>
+                                            <td class="c1">From : </td>
+                                            <td class="c2">{{child2.startDate}}</td>
+                                        </tr>  
+                                        <tr>
+                                            <td class="c1">To : </td>
+                                            <td class="c2"> {{child2.endDate}}</td>
+                                        </tr>  
+                                        <tr>
+                                            <td class="c1">Status : </td>
+                                            <td class="c2S"> {{child2.released}}</td>
+                                        </tr>  
+                                    </table>
+                                </div>
+                                <div class="time">{{child2.duration}}<span>h</span></div> 
+                                <div class="priority"ng-class="{'p1':child2.priority==1,'p2':child2.priority==2,'p3':child2.priority==3}"></div>
+                            </div>
+                        </div> <!-- childList -->
+
+                    </div>
+
+                </div>
+
+            </div> 
         </div>
     </div>
 </div>
+

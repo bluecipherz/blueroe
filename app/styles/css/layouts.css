@@ -910,107 +910,394 @@
 
 /* Colors */
 /* images */
-.myTasks {
-  min-height: 400px; }
-  .myTasks .p-dropzone {
-    margin: 5px;
-    width: 90%; }
-  .myTasks .half {
-    width: calc(50% - 12px); }
-  .myTasks .heading .oneBy3 {
+.myTasks .p-dropzone {
+  margin: 5px;
+  width: 90%; }
+.myTasks .half {
+  width: calc(50% - 12px); }
+.myTasks .heading .oneBy3 {
+  width: calc(33.3% - 12px); }
+.myTasks .cont {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 90%;
+  color: #666; }
+  .myTasks .cont .oneBy3 {
     width: calc(33.3% - 12px); }
-  .myTasks .cont {
+  .myTasks .cont .popBox {
+    font-size: 110%; }
+  .myTasks .cont .table {
     display: block;
     float: left;
     width: 100%;
-    padding: 10px 5px;
-    font-size: 90%;
-    color: #666; }
-    .myTasks .cont .oneBy3 {
-      width: calc(33.3% - 12px); }
-    .myTasks .cont .popBox {
-      font-size: 110%; }
-    .myTasks .cont .table {
+    margin-top: 5px; }
+    .myTasks .cont .table input[type='text'] {
+      height: 20px;
+      min-height: 20px;
+      line-height: 20px; }
+    .myTasks .cont .table .popBox input[type='text'] {
+      height: 30px;
+      min-height: 30px;
+      line-height: 30px; }
+    .myTasks .cont .table .head {
+      display: block;
+      float: left;
+      padding: 0px 10px;
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
+      .myTasks .cont .table .head input {
+        margin-left: 20px;
+        line-height: 20px; }
+    .myTasks .cont .table .tr {
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px; }
+    .myTasks .cont .table .td {
+      display: block;
+      float: left;
+      padding: 3px 10px; }
+    .myTasks .cont .table .taskList {
+      display: block;
+      float: left; }
+    .myTasks .cont .table .taskList .td {
+      font-size: 120%;
+      font-weight: bold;
+      color: #555;
+      padding: 4px 10px;
+      width: 100%; }
+    .myTasks .cont .table .sector,
+    .myTasks .cont .table .sectorList {
       display: block;
       float: left;
       width: 100%;
-      margin-top: 5px; }
-      .myTasks .cont .table input[type='text'] {
-        height: 20px;
-        min-height: 20px;
-        line-height: 20px; }
-      .myTasks .cont .table .popBox input[type='text'] {
-        height: 30px;
-        min-height: 30px;
-        line-height: 30px; }
-      .myTasks .cont .table .head {
-        display: block;
-        float: left;
-        padding: 0px 10px;
-        height: 30px;
-        line-height: 30px;
-        border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
-        .myTasks .cont .table .head input {
-          margin-left: 20px;
-          line-height: 20px; }
-      .myTasks .cont .table .tr {
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -ms-border-radius: 3px;
-        border-radius: 3px; }
-      .myTasks .cont .table .td {
-        display: block;
-        float: left;
-        padding: 3px 10px; }
-      .myTasks .cont .table .taskList {
-        display: block;
-        float: left; }
-      .myTasks .cont .table .taskList .td {
-        font-size: 120%;
-        font-weight: bold;
-        color: #555;
-        padding: 4px 10px;
-        width: 100%; }
-      .myTasks .cont .table .sector,
-      .myTasks .cont .table .sectorList {
-        display: block;
-        float: left;
-        width: 100%;
-        padding: 8px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -ms-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-transition: 0.1s;
-        -moz-transition: 0.1s;
-        -o-transition: 0.1s;
-        transition: 0.1s; }
-      .myTasks .cont .table .sector {
-        padding: 1px 8px; }
-      .myTasks .cont .table .sector:hover {
-        cursor: pointer;
-        color: #000;
+      padding: 8px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -o-transition: 0.1s;
+      transition: 0.1s; }
+    .myTasks .cont .table .sector {
+      padding: 1px 8px; }
+    .myTasks .cont .table .sector:hover {
+      cursor: pointer;
+      color: #000;
+      background: rgba(52, 152, 219, 0.2); }
+    .myTasks .cont .table .sectorList:hover {
+      cursor: pointer;
+      background: #fff;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      color: rgba(0, 0, 0, 0.8); }
+      .myTasks .cont .table .sectorList:hover .tr:hover {
         background: rgba(52, 152, 219, 0.2); }
-      .myTasks .cont .table .sectorList:hover {
-        cursor: pointer;
-        background: #fff;
-        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        color: rgba(0, 0, 0, 0.8); }
-        .myTasks .cont .table .sectorList:hover .tr:hover {
-          background: rgba(52, 152, 219, 0.2); }
-        .myTasks .cont .table .sectorList:hover .taskList .td {
-          color: rgba(0, 0, 0, 0.9); }
-        .myTasks .cont .table .sectorList:hover .taskList .td:hover {
-          color: black; }
-        .myTasks .cont .table .sectorList:hover option {
-          color: #333; }
-  .myTasks option {
-    color: #333; }
-  .myTasks option:hover {
+      .myTasks .cont .table .sectorList:hover .taskList .td {
+        color: rgba(0, 0, 0, 0.9); }
+      .myTasks .cont .table .sectorList:hover .taskList .td:hover {
+        color: black; }
+      .myTasks .cont .table .sectorList:hover option {
+        color: #333; }
+.myTasks option {
+  color: #333; }
+.myTasks option:hover {
+  background: #ddd; }
+
+/* new views - ice blocks */
+.backlogOuter {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 5px 0; }
+
+.storyBlock {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 180px;
+  height: 200px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin: 5px 10px 5px 0;
+  border-bottom: 0px solid #aaa; }
+  .storyBlock .RoundDropDown {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .storyBlock .title, .storyBlock .date, .storyBlock .description, .storyBlock .time, .storyBlock .releaseTag {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 5px; }
+  .storyBlock .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 130%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 2px; }
+    .storyBlock .title input {
+      height: 25px;
+      line-height: 30px;
+      padding: 5px;
+      padding: 0 10px;
+      border: none;
+      width: calc(100% - 30px); }
+  .storyBlock .description {
+    height: 96px;
+    color: #777;
+    padding: 10px;
+    border: none;
+    resize: none;
+    margin: 2px;
+    width: calc(100% - 4px); }
+  .storyBlock .date {
+    height: 70px;
+    width: 65%;
+    color: #666; }
+    .storyBlock .date table {
+      width: 100%; }
+    .storyBlock .date td {
+      padding: 0 3px; }
+    .storyBlock .date .c1 {
+      width: 40px;
+      color: #aaa;
+      vertical-align: bottom; }
+    .storyBlock .date .c2 input {
+      width: 60px;
+      height: 15px;
+      max-height: 15px;
+      min-height: 15px;
+      font-size: 90%;
+      line-height: 15px;
+      border: none; }
+    .storyBlock .date .c2:hover input {
+      background: #eee;
+      cursor: pointer; }
+  .storyBlock .time {
+    margin-top: -10px;
+    color: #bbb;
+    height: 70px;
+    width: 35%;
+    font-size: 530%; }
+    .storyBlock .time span {
+      font-size: 24px;
+      color: #ddd; }
+    .storyBlock .time .popBox {
+      font-size: 20px;
+      width: 180px; }
+      .storyBlock .time .popBox .cont {
+        width: 180px; }
+        .storyBlock .time .popBox .cont .numberDay, .storyBlock .time .popBox .cont .numberHour {
+          display: block;
+          float: left;
+          width: 23%;
+          margin: 1%;
+          height: 40px;
+          background: #3498db;
+          color: #fff;
+          text-align: center;
+          line-height: 40px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -ms-border-radius: 5px;
+          border-radius: 5px; }
+          .storyBlock .time .popBox .cont .numberDay span, .storyBlock .time .popBox .cont .numberHour span {
+            font-size: 13px;
+            color: #fff; }
+        .storyBlock .time .popBox .cont .numberHour {
+          background: #27ae60; }
+        .storyBlock .time .popBox .cont .numberDay:hover {
+          background: #49aef1; }
+        .storyBlock .time .popBox .cont .numberHour:hover {
+          background: #38e180; }
+  .storyBlock .priority {
+    display: block;
+    float: left;
+    width: 100%;
+    position: absolute;
+    height: 5px;
+    bottom: 0px;
+    background: #ddd;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px; }
+  .storyBlock .priority.p1 {
+    background: #40d47e; }
+  .storyBlock .priority.p2 {
+    background: #f1c40f; }
+  .storyBlock .priority.p3 {
+    background: #e67e22; }
+  .storyBlock .releaseTag {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    right: 0px;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+    line-height: 220px; }
+    .storyBlock .releaseTag div {
+      display: block;
+      float: left;
+      position: absolute;
+      top: -35px;
+      right: -35px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 50px;
+      height: 50px; }
+    .storyBlock .releaseTag span {
+      display: block;
+      float: left;
+      width: 100%;
+      font-size: 300%;
+      color: #aaa;
+      text-align: center;
+      line-height: 180px;
+      margin-top: -180px; }
+    .storyBlock .releaseTag i {
+      color: #7d7d7d; }
+  .storyBlock .releaseTag.markMode {
+    height: 100%;
+    width: 100%;
+    z-index: 102;
+    background: rgba(255, 255, 255, 0.5); }
+  .storyBlock .releaseTag.markMode:hover {
+    cursor: pointer; }
+  .storyBlock .actv div {
+    background: #27ae60; }
+  .storyBlock .inact div {
     background: #ddd; }
+
+.storyBlock:hover {
+  cursor: pointer; }
+  .storyBlock:hover .RoundDropDown {
+    opacity: 1; }
+
+.storyBlock.inactive .RoundDropDown {
+  opacity: 0; }
+
+.storyBlock.inactive:hover .RoundDropDown {
+  opacity: 1; }
+
+.sprintBlock {
+  display: table;
+  float: left;
+  width: 200px;
+  margin: 5px 10px 5px 0;
+  padding-left: 10px;
+  background: #ddd;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .sprintBlock .sprintTitle {
+    display: block;
+    float: left;
+    width: 180px;
+    margin: 10px 10px 5px 0;
+    background: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px; }
+
+.storyList {
+  display: table;
+  float: left;
+  width: 190px; }
+  .storyList .storyBlock {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+  .storyList .storyBlock:nth-child(1) {
+    margin-top: 5px;
+    z-index: 100; }
+    .storyList .storyBlock:nth-child(1) .priority {
+      opacity: 1; }
+  .storyList .storyBlock:nth-child(2) {
+    z-index: 99; }
+  .storyList .storyBlock:nth-child(3) {
+    z-index: 98; }
+  .storyList .storyBlock:nth-child(4) {
+    z-index: 97; }
+  .storyList .storyBlock:nth-child(5) {
+    z-index: 96; }
+  .storyList .storyBlock:nth-child(6) {
+    z-index: 95; }
+  .storyList .storyBlock:nth-child(7) {
+    z-index: 94; }
+  .storyList .storyBlock:nth-child(8) {
+    z-index: 93; }
+  .storyList .storyBlock:nth-child(9) {
+    z-index: 92; }
+  .storyList .storyBlock:nth-child(10) {
+    z-index: 91; }
+  .storyList .storyBlock:nth-child(11) {
+    z-index: 90; }
+  .storyList .storyBlock:nth-child(12) {
+    z-index: 89; }
+
+.storyList.wrap .storyBlock {
+  margin-top: -200px; }
+  .storyList.wrap .storyBlock .priority {
+    opacity: 0; }
+.storyList.wrap .storyBlock:nth-child(1) {
+  margin-top: 5px;
+  z-index: 100; }
+  .storyList.wrap .storyBlock:nth-child(1) .priority {
+    opacity: 1; }
+.storyList.wrap .storyBlock:nth-child(2) {
+  z-index: 99; }
+.storyList.wrap .storyBlock:nth-child(3) {
+  z-index: 98; }
+.storyList.wrap .storyBlock:nth-child(4) {
+  z-index: 97; }
+.storyList.wrap .storyBlock:nth-child(5) {
+  z-index: 96; }
+.storyList.wrap .storyBlock:nth-child(6) {
+  z-index: 95; }
+.storyList.wrap .storyBlock:nth-child(7) {
+  z-index: 94; }
+.storyList.wrap .storyBlock:nth-child(8) {
+  z-index: 93; }
+.storyList.wrap .storyBlock:nth-child(9) {
+  z-index: 92; }
+.storyList.wrap .storyBlock:nth-child(10) {
+  z-index: 91; }
+.storyList.wrap .storyBlock:nth-child(11) {
+  z-index: 90; }
+.storyList.wrap .storyBlock:nth-child(12) {
+  z-index: 89; }
 
 /* Colors */
 /* images */

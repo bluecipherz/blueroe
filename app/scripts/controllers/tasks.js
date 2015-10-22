@@ -28,4 +28,46 @@ angular.module('bluroeApp')
         vm.tasklists = Task.getTaskLists();
         console.log(vm.tasklists);
     });
+
+    vm.tlist = [
+        {'title':'task 1', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':1,'startDate':'dec 10','endDate':'dec 30','duration':'7','durationUnit':'h'}, 
+        {'title':'task 2', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':0,'startDate':'dec 13','endDate':'dec 14','duration':'2','durationUnit':'h'}, 
+        {'title':'task 3', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':3,'startDate':'dec 10','endDate':'dec 14','duration':'8','durationUnit':'h'}, 
+        {'title':'task 4', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':2,'startDate':'dec 10','endDate':'dec 14','duration':'5','durationUnit':'h'}, 
+        {'title':'task 5', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':1,'startDate':'dec 7','endDate':'dec 14','duration':'2','durationUnit':'h'}, 
+        {'title':'task 6', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':3,'startDate':'dec 10','endDate':'dec 23','duration':'6','durationUnit':'h'}, 
+        {'title':'task 7', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':0,'startDate':'dec 10','endDate':'dec 24','duration':'7','durationUnit':'h'}, 
+        {'title':'task 8', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':3,'startDate':'dec 02','endDate':'dec 14','duration':'2','durationUnit':'h'}, 
+        {'title':'task 9', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':2,'startDate':'dec 10','endDate':'dec 14','duration':'4','durationUnit':'h'}, 
+        {'title':'task 10', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':0,'startDate':'dec 1','status':'Comleted','duration':'7','durationUnit':'h'}, 
+    ];
+
+    vm.keypress = function ($event,data){
+        if($event.keyCode == 13){ 
+            data.titleEdit = false; 
+            data.descEdit = false; 
+            $event.target.blur();
+        }
+        console.log($event.keyCode);
+        if($event.keyCode == 13){ 
+            data.titleEdit = false; 
+            data.descEdit = false; 
+            $event.target.blur();
+        }
+    }
+    vm.markModeVar = false;
+    vm.markMode = function(){
+        if(vm.markModeVar){
+            console.log('adding shits');
+            vm.markModeVar = false;
+        }else{
+            vm.markModeVar = true;
+        }
+    }
+    vm.markBlock = function(data){
+        if(vm.markModeVar){ 
+            data.released = ! data.released;
+            console.log('adding man');
+        }
+    }
   });

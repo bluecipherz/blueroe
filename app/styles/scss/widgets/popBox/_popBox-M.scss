@@ -5,6 +5,7 @@
   @include shadow(0,0,7px,rgba(0,0,0,0.3));
   opacity:1;
   transition: .5s;
+  z-index:101;
   .topArrow{
     transform:rotate(45deg);
     background: #fff;

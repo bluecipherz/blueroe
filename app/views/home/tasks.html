@@ -6,8 +6,10 @@
         		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Release Backlogs </span> 
                 <div class="custButton" ng-click="tasks.markMode()" ng-class="{'-green':tasks.markModeVar,'-blue':!tasks.markModeVar}">
                     <span ng-if="!tasks.markModeVar">Mark Stories</span>
-                    <span ng-if=" tasks.markModeVar && tasks.isSelected(1)">Add to Release Backlog  [{{tasks.markedCart.length}}] </span>
-                    <span ng-if=" tasks.markModeVar && tasks.isSelected(2)">Remove from Release Backlog  [{{tasks.markedCart.length}}] </span> 
+                    <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)">Add to Release Backlog  [{{tasks.markedCart.length}}]</span>
+                    <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove from Release Backlog  [{{tasks.markedCart.length}}] </span> 
+                    <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)"><span class="fa fa-spinner fa-pulse"></span>&nbsp; Adding...</span> 
+                    <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove...&nbsp;&nbsp;&nbsp;</span> 
                 </div>  
                 <div class="custButton -grey" ng-click="tasks.cancelMarkMode()" >Cancel</div>
 
@@ -124,9 +126,9 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-click="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-mousedown="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
                     </div>
-                    <textarea class="description " ng-click="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
+                    <textarea class="description " ng-mousedown="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
                     <div class="date" >
                         <table>
                             <tr>
@@ -200,9 +202,9 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input value="{{data.title}}" ng-focus="data.titleEdit = true" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-mousedown="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
                     </div>
-                    <textarea class="description " ng-focus="data.descEdit = true" ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}">{{data.description}}</textarea> 
+                    <textarea class="description " ng-mousedown="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
                     <div class="date" >
                         <table>
                             <tr>

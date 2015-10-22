@@ -910,107 +910,270 @@
 
 /* Colors */
 /* images */
-.myTasks {
-  min-height: 400px; }
-  .myTasks .p-dropzone {
-    margin: 5px;
-    width: 90%; }
-  .myTasks .half {
-    width: calc(50% - 12px); }
-  .myTasks .heading .oneBy3 {
+.myTasks .p-dropzone {
+  margin: 5px;
+  width: 90%; }
+.myTasks .half {
+  width: calc(50% - 12px); }
+.myTasks .heading .oneBy3 {
+  width: calc(33.3% - 12px); }
+.myTasks .cont {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 90%;
+  color: #666; }
+  .myTasks .cont .oneBy3 {
     width: calc(33.3% - 12px); }
-  .myTasks .cont {
+  .myTasks .cont .popBox {
+    font-size: 110%; }
+  .myTasks .cont .table {
     display: block;
     float: left;
     width: 100%;
-    padding: 10px 5px;
-    font-size: 90%;
-    color: #666; }
-    .myTasks .cont .oneBy3 {
-      width: calc(33.3% - 12px); }
-    .myTasks .cont .popBox {
-      font-size: 110%; }
-    .myTasks .cont .table {
+    margin-top: 5px; }
+    .myTasks .cont .table input[type='text'] {
+      height: 20px;
+      min-height: 20px;
+      line-height: 20px; }
+    .myTasks .cont .table .popBox input[type='text'] {
+      height: 30px;
+      min-height: 30px;
+      line-height: 30px; }
+    .myTasks .cont .table .head {
+      display: block;
+      float: left;
+      padding: 0px 10px;
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
+      .myTasks .cont .table .head input {
+        margin-left: 20px;
+        line-height: 20px; }
+    .myTasks .cont .table .tr {
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px; }
+    .myTasks .cont .table .td {
+      display: block;
+      float: left;
+      padding: 3px 10px; }
+    .myTasks .cont .table .taskList {
+      display: block;
+      float: left; }
+    .myTasks .cont .table .taskList .td {
+      font-size: 120%;
+      font-weight: bold;
+      color: #555;
+      padding: 4px 10px;
+      width: 100%; }
+    .myTasks .cont .table .sector,
+    .myTasks .cont .table .sectorList {
       display: block;
       float: left;
       width: 100%;
-      margin-top: 5px; }
-      .myTasks .cont .table input[type='text'] {
-        height: 20px;
-        min-height: 20px;
-        line-height: 20px; }
-      .myTasks .cont .table .popBox input[type='text'] {
-        height: 30px;
-        min-height: 30px;
-        line-height: 30px; }
-      .myTasks .cont .table .head {
-        display: block;
-        float: left;
-        padding: 0px 10px;
-        height: 30px;
-        line-height: 30px;
-        border-bottom: 1px solid rgba(52, 152, 152, 0.3); }
-        .myTasks .cont .table .head input {
-          margin-left: 20px;
-          line-height: 20px; }
-      .myTasks .cont .table .tr {
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -ms-border-radius: 3px;
-        border-radius: 3px; }
-      .myTasks .cont .table .td {
-        display: block;
-        float: left;
-        padding: 3px 10px; }
-      .myTasks .cont .table .taskList {
-        display: block;
-        float: left; }
-      .myTasks .cont .table .taskList .td {
-        font-size: 120%;
-        font-weight: bold;
-        color: #555;
-        padding: 4px 10px;
-        width: 100%; }
-      .myTasks .cont .table .sector,
-      .myTasks .cont .table .sectorList {
-        display: block;
-        float: left;
-        width: 100%;
-        padding: 8px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -ms-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-transition: 0.1s;
-        -moz-transition: 0.1s;
-        -o-transition: 0.1s;
-        transition: 0.1s; }
-      .myTasks .cont .table .sector {
-        padding: 1px 8px; }
-      .myTasks .cont .table .sector:hover {
-        cursor: pointer;
-        color: #000;
+      padding: 8px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -o-transition: 0.1s;
+      transition: 0.1s; }
+    .myTasks .cont .table .sector {
+      padding: 1px 8px; }
+    .myTasks .cont .table .sector:hover {
+      cursor: pointer;
+      color: #000;
+      background: rgba(52, 152, 219, 0.2); }
+    .myTasks .cont .table .sectorList:hover {
+      cursor: pointer;
+      background: #fff;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      color: rgba(0, 0, 0, 0.8); }
+      .myTasks .cont .table .sectorList:hover .tr:hover {
         background: rgba(52, 152, 219, 0.2); }
-      .myTasks .cont .table .sectorList:hover {
-        cursor: pointer;
-        background: #fff;
-        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        color: rgba(0, 0, 0, 0.8); }
-        .myTasks .cont .table .sectorList:hover .tr:hover {
-          background: rgba(52, 152, 219, 0.2); }
-        .myTasks .cont .table .sectorList:hover .taskList .td {
-          color: rgba(0, 0, 0, 0.9); }
-        .myTasks .cont .table .sectorList:hover .taskList .td:hover {
-          color: black; }
-        .myTasks .cont .table .sectorList:hover option {
-          color: #333; }
-  .myTasks option {
-    color: #333; }
-  .myTasks option:hover {
+      .myTasks .cont .table .sectorList:hover .taskList .td {
+        color: rgba(0, 0, 0, 0.9); }
+      .myTasks .cont .table .sectorList:hover .taskList .td:hover {
+        color: black; }
+      .myTasks .cont .table .sectorList:hover option {
+        color: #333; }
+.myTasks option {
+  color: #333; }
+.myTasks option:hover {
+  background: #ddd; }
+
+.backlogOuter {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 5px 0; }
+
+.storyBlock {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 180px;
+  height: 200px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin: 5px 10px 5px 0;
+  border-bottom: 3px solid #aaa;
+  overflow: hidden; }
+  .storyBlock .title, .storyBlock .date, .storyBlock .description, .storyBlock .time, .storyBlock .releaseTag {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 5px; }
+  .storyBlock .title {
+    height: 30px;
+    line-height: 30px;
+    font-size: 130%;
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd; }
+  .storyBlock .description {
+    height: 100px;
+    color: #777;
+    padding: 10px; }
+  .storyBlock .date {
+    height: 70px;
+    width: 65%;
+    color: #666; }
+    .storyBlock .date table {
+      width: 100%; }
+    .storyBlock .date td {
+      padding: 0 3px; }
+    .storyBlock .date .c1 {
+      width: 40px;
+      color: #aaa; }
+  .storyBlock .time {
+    margin-top: -10px;
+    color: #bbb;
+    height: 70px;
+    width: 35%;
+    font-size: 530%; }
+    .storyBlock .time span {
+      font-size: 24px;
+      color: #ddd; }
+  .storyBlock .priority {
+    display: block;
+    float: left;
+    width: 100%;
+    position: absolute;
+    height: 5px;
+    bottom: 0px;
     background: #ddd; }
+  .storyBlock .priority.p1 {
+    background: #40d47e; }
+  .storyBlock .priority.p2 {
+    background: #f1c40f; }
+  .storyBlock .priority.p3 {
+    background: #e67e22; }
+  .storyBlock .releaseTag {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    right: 0px;
+    max-width: 100%;
+    max-height: 100%; }
+    .storyBlock .releaseTag div {
+      display: block;
+      float: left;
+      position: absolute;
+      top: -35px;
+      right: -35px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 50px;
+      height: 50px; }
+    .storyBlock .releaseTag span {
+      display: block;
+      float: left;
+      width: 100%;
+      font-size: 300%;
+      color: #aaa;
+      text-align: center;
+      line-height: 180px;
+      margin-top: -180px; }
+  .storyBlock .actv {
+    -webkit-animation: activated 2s 1;
+    animation: activated 2s 1; }
+    .storyBlock .actv div {
+      background: #27ae60; }
+  .storyBlock .inact {
+    -webkit-animation: activated 3s 1;
+    animation: activated 2s 1; }
+    .storyBlock .inact div {
+      background: #ddd; }
+@-webkit-keyframes activated {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    left: 0px;
+    bottom: 0px;
+    margin-top: -140px; }
+  1% {
+    background: rgba(255, 255, 255, 0); }
+  6% {
+    background: rgba(255, 255, 255, 0.6);
+    span {
+      margin-top: 100px; } }
+  6% {
+    span {
+      margin-top: 100px; } }
+  95% {
+    background: rgba(255, 255, 255, 0.6); }
+  99% {
+    background: black; }
+  100% {
+    background: black;
+    left: none;
+    bottom: none; } }
+@keyframes activated {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 100%;
+    padding-top: 360px; }
+  1% {
+    background: rgba(255, 255, 255, 0); }
+  10% {
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 360px; }
+  30% {
+    padding-top: 180px; }
+  70% {
+    padding-top: 180px; }
+  90% {
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 0px; }
+  99% {
+    background: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 100%;
+    padding-top: 0px; }
+  100% {
+    background: transparent;
+    width: 50px;
+    height: 50px; } }
+.storyBlock {
+  cursor: pointer; }
 
 /* Colors */
 /* images */

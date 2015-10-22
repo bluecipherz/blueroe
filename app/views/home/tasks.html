@@ -2,10 +2,8 @@
     <div class="flex-10  -p">
         <div class="fluidGrid myTasks">
         	<div class="heading ">
-        		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Classic  </span> 
-        		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Plain </span> 
-        		<span class='navLH' ng-class="{active:tasks.isSelected(3)}"  ng-click="tasks.selectTab(3)" > Dependancy </span> 
-        		<span class='navLH' ng-class="{active:tasks.isSelected(4)}"  ng-click="tasks.selectTab(4)" > Kanban </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Backlogs  </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Release Backlogs </span>  
 
                 <div class="bgrid -bg-s-100 -f-right -b-p-rel">
                     <div class="custButton -grey"><i class="fa fa-filter"></i></div>
@@ -13,13 +11,13 @@
                 </div>
                 <!-- Create tasklist -->
                 <div class="bgrid -bg-s-100 -f-right b-p-rel ">
-                    <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Task List</div>
+                    <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Sprint</div>
                     <div class="popBox -l-20" ng-class="{ 'hidden' : ! showTaskListPop }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showTaskListPop = ! showTaskListPop"></div>
                         <div class="cont">
                             <div class="createProjectPopup">
-                                <h5>Create New Task List</h5>
+                                <h5>Create New Sprint</h5>
                                 <input type="text" placeholder="Project name" ng-model="projects.projectname"/>
                                 <h6>Select project</h6> 
                                 <select>
@@ -29,7 +27,7 @@
                                 </select>
                                 <div class="rowspace"></div>
                                 <div>
-                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task List</div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Sprint</div>
                                     <div class="custButton -red" ng-click="showTaskListPop = ! showTaskListPop">Cancel</div>
                                 </div>
                             </div>
@@ -38,19 +36,19 @@
                 </div>
                 <!-- Create task  -->
                 <div class="bgrid -bg-s-80 -f-right b-p-rel ">
-                    <div class="custButton -green" ng-click="showTaskPop = ! showTaskPop">New Task</div>
+                    <div class="custButton -green" ng-click="showTaskPop = ! showTaskPop">New Story</div>
                     <div class="popBox -l-30" ng-class="{ 'hidden' : ! showTaskPop }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showTaskPop = ! showTaskPop"></div>
                         <div class="cont">
                             <div class="createProjectPopup">
-                                <h5>Create New Task</h5>
+                                <h5>Create New Story</h5>
                                 <textarea rows="4" placeholder="Task name"></textarea> 
 
                                 
                                 <div class="bgrid flex-9"> 
                                     <h6 class="bgrid half" >Select project</h6> 
-                                    <h6 class="bgrid half" >Select TaskList</h6> 
+                                    <h6 class="bgrid half" >Select Sprint</h6> 
                                     <select class=" half">
                                         <option>SHit one</option>
                                         <option>SHit Zu</option>
@@ -84,7 +82,7 @@
 
                                 <div class="rowspace"></div>
                                 <div>
-                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Task</div>
+                                    <div class="custButton -blue" ng-click="projects.createProject()">Create Story</div>
                                     <div class="custButton -red" ng-click="showTaskPop = ! showTaskPop">Cancel</div>
                                 </div>
                             </div>
@@ -95,7 +93,7 @@
                 <div class="navLine" id="myTasksNavLine"></div>
 
         	</div>
-        	<div class="cont" ng-show="tasks.isSelected(1)">
+        	<!-- <div class="cont" ng-show="tasks.isSelected(1)">
         		<div class="table">	
         			<div  class="bgrid  -b-d-100">
         				<div class='head -b-d-40'><span>TASK</span> <input type='text' ng-model='search'  placeholder="Type a keyword"  /></div>
@@ -107,13 +105,13 @@
         				<div class='head -b-d-10'>CREATED BY</div>
         			</div>
         			<!-- ng-repeat main -->
-                    <div  class="-b-d-100" ng-repeat="tasklist in tasks.tasklists | filter : search"> 
+                    <!-- <div  class="-b-d-100" ng-repeat="tasklist in tasks.tasklists | filter : search"> 
     		    		<div class="sectorList -b-d-100"> 
     		        		<div class="taskList">
     		        			<div class="td">{{ tasklist.name }}</div> 
     		        		</div> 
             				<!-- ng-repeat tasks -->
-    			    		<div  class="bgrid  -b-d-100" ng-repeat="task in tasklist.tasks | filter : search">
+    			    		<!-- <div  class="bgrid  -b-d-100" ng-repeat="task in tasklist.tasks | filter : search">
     			        		<div class="bgrid tr -b-d-100">
     			        			<div class='td -b-d-40'>{{task.name}} </div>
     		        				<div class='td -b-d-10'>{{task.owner.profile.first_name + ' ' + task.owner.profile.last_name}}</div>
@@ -194,8 +192,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="sector -b-d-100" ng-if="task.type == 'task' " >
+                        </div> -->
+                       <!--  <div class="sector -b-d-100" ng-if="task.type == 'task' " >
                             <div class="bgrid tr -b-d-100" >
                                 <div class='td -b-d-40'>{{task.name}}</div>
                                 <div class='td -b-d-10'>{{task.owner}}</div>
@@ -224,22 +222,43 @@
 		    		</div>
         		</table>
         	</div> 
+        </div>  --> 
         </div>
+        <div class="backlogOuter">
+            <!-- backlog tab -->
+            <div  class="cont"  ng-show="tasks.isSelected(1)" >
+                <div class="storyBlock" ng-repeat="data in tasks.tlist" ng-click="data.released = !data.released" >
+                    <div class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released}">
+                        <div ></div> 
+                        <span ng-show="data.released">Added</span>
+                        <span ng-show="!data.released">Removed</span>
+                    </div>
+                    <div class="title">{{data.title}}</div>
+                    <div class="description">{{data.description}}</div> 
+                    <div class="date" >
+                        <table>
+                            <tr>
+                                <td class="c1">From : </td>
+                                <td class="c2">{{data.startDate}}</td>
+                            </tr>  
+                            <tr>
+                                <td class="c1">To : </td>
+                                <td class="c2"> {{data.endDate}}</td>
+                            </tr>  
+                            <tr>
+                                <td class="c1">Status : </td>
+                                <td class="c2S"> {{data.released}}</td>
+                            </tr>  
+                        </table>
+                    </div>
+                    <div class="time">{{data.duration}}<span>h</span></div> 
+                    <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
+                </div>
+            </div>
 
-        <!-- second tab -->
-        <div  class="cont" ng-show="tasks.isSelected(2)">
-            this is plain
-        </div>
-
-        <!-- third tab -->
-        <div  class="cont" ng-show="tasks.isSelected(3)">
-            this is dependancy
-        </div>
-
-        <!-- forth row -->
-        <div  class="cont" ng-show="tasks.isSelected(4)">
-            <div class="k-outer">
-                
+            <!-- release tab -->
+            <div  class="cont" ng-show="tasks.isSelected(2)">
+                this is dependancy
             </div>
         </div>
     </div>

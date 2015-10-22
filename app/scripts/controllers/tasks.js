@@ -137,6 +137,22 @@ angular.module('bluroeApp')
             $event.target.blur();
         }
     }
+    vm.cancelTitleEdit = function(data){
+        data.titleEdit = false; 
+        var asd = "alma" + data.titleEdit;
+        console.log('this the value before' + asd);
+        data.title = asd; 
+        console.log("cancel saved "+data.tempTitle);
+    }
+    vm.titleClick = function(data){
+        data.tempTitle = data.title;
+        data.titleEdit = true;
+        console.log("temp saved "+data.tempTitle);
+    }
+    vm.descClick = function(data){
+        data.descTitle = data.description;
+        data.descEdit = true
+    }
     vm.markModeVar = false;
     vm.markedCart = [];
     var markedStoriesName = '';

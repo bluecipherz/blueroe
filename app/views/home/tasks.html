@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input value="{{data.title}}" ng-focus="data.titleEdit = true" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input value="{{data.title}}" ng-click="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
                     </div>
                     <textarea class="description " ng-focus="data.descEdit = true" ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}">{{data.description}}</textarea> 
                     <div class="date" >

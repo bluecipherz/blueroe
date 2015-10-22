@@ -115,9 +115,8 @@
 	}
 
 }
-
-/* new views - ice blocks */
-
+ 
+/* new views - ice blocks */ 
 .backlogOuter{
 	display:block;
 	float:left;
@@ -130,12 +129,12 @@
 	position:relative;
 	width:180px;
 	height:200px;
-	@include border-radius(3px); 
+	@include border-radius(3px);  
 	@include shadow(0,1px,4px,rgba(0,0,0,0.2)); 
 	background:#fff;
 	margin: 5px 10px 5px 0;
 	border-bottom:0px solid #aaa;  
-	.RoundDropDown{@include transition(0.3s);}
+	.RoundDropDown{@include transition(0.3s);} 
 	.title,.date,.description,.time,.releaseTag{
 		display:block;
 		float:left;
@@ -144,7 +143,7 @@
 	}
 	.title{
 		height:30px;
-		line-height:30px;
+		line-height:30px; 
 		font-size:130%; 
 		border :none;
 		border-bottom:1px solid #ddd;
@@ -172,7 +171,7 @@
 		width:65%;
 		color:#666;
 		table{width:100%;}
-		td{padding:0 3px;}
+		td{padding:0 3px;}  
 		.c1{width:40px; color:#aaa; vertical-align: bottom;}  
 		.c2{
 			input{ 
@@ -185,7 +184,7 @@
 				border:none;
 			}
 		}
-		.c2:hover{input{  background:#eee; cursor:pointer;} }
+		.c2:hover{input{  background:#eee; cursor:pointer;} } 
 	}
 	.time{ 
 		margin-top:-10px;
@@ -196,7 +195,7 @@
 		span{
 			font-size:24px;
 			color:#ddd;
-		}
+		} 
 		.popBox{
 			font-size:20px;
 			width:180px;
@@ -222,7 +221,7 @@
 				.numberDay:hover{background:#49aef1}
 				.numberHour:hover{background:#38e180}
 			}
-		}
+		} 
 	}
 
 	.priority{
@@ -232,9 +231,9 @@
 		position:absolute;
 		height:5px;
 		bottom:0px;
-		background:#ddd;
+		background:#ddd; 
 		@include transition(0.5s);
-		@include border-radius(0 0 3px 3px);
+		@include border-radius(0 0 3px 3px); 
 	}
 	.priority.p1{ background: #40d47e; }
 	.priority.p2{ background: #f1c40f; }
@@ -247,9 +246,9 @@
 		top:0px;
 		right:0px; 
 		max-width:100%;
-		max-height:100%;
+		max-height:100%; 
 		text-align:center;
-		line-height:220px;
+		line-height:220px;  
 		div{
 			display:block;
 			float:left;
@@ -269,7 +268,7 @@
 			text-align:center; 
 			line-height:180px;
 			margin-top:-180px; 
-		}
+		} 
 		i{ color:#7d7d7d;  } 
 	}
 	.releaseTag.markMode{
@@ -279,16 +278,16 @@
 		background:rgba(255,255,255,0.5);
 	}
 	.releaseTag.markMode:hover{cursor:pointer;}
-	.actv{ 
+	.actv{  
 		div{
 			background:$green;
 		}
-	}
-	.inact{ 
+	} 
+	.inact{  
 		div{
 			background:#ddd;
 		}
-	}
+	} 
  
 }
 .storyBlock:hover{
@@ -349,5 +348,5 @@
 	.storyBlock:nth-child(9){ z-index:92;}
 	.storyBlock:nth-child(10){ z-index:91;}
 	.storyBlock:nth-child(11){ z-index:90;}
-	.storyBlock:nth-child(12){ z-index:89;}
+	.storyBlock:nth-child(12){ z-index:89;} 
 }

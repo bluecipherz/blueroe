@@ -8,7 +8,7 @@
  * Controller of the bluroeApp
  */
 angular.module('bluroeApp')
-  .controller('TasksCtrl', function (navLine, Task) {
+  .controller('TasksCtrl', function (navLine, Task, $scope, Hoster) {
 
     var vm = this;
 
@@ -24,12 +24,32 @@ angular.module('bluroeApp')
         return vm.selectedTab == tab;
     }
 
+    $scope.dropzoneConfig = {
+        options: { // passed into the Dropzone constructor
+            url: Hoster.getHost() + '/api/tempupload'
+        },
+        eventHandlers: {
+            sending: function (file, xhr, formData) {
+                // formData.append('token', TokenHandler.getToken())
+                xhr.setRequestHeader('Authorization', 'Bearer: ' + TokenHandler.getToken());
+                console.log('uploading');
+            },
+            success: function (file, response) {
+                console.log('upload success, tempfile : ' + response.file);
+            },
+            fail: function(response) {
+                console.log('upload failed');
+                console.log(response)
+            }
+        }
+    };
+
     Task.onFetch(function() {
         vm.tasklists = Task.getTaskLists();
         console.log(vm.tasklists);
     });
 
-    vm.tlist = [
+    vm.tlist = [ 
         {'title':'task 1', 'released':false,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':1,'startDate':'dec 10','endDate':'dec 30','duration':'7','durationUnit':'h'}, 
         {'title':'task 2', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':0,'startDate':'dec 13','endDate':'dec 14','duration':'2','durationUnit':'h'}, 
         {'title':'task 3', 'released':true,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':3,'startDate':'dec 10','endDate':'dec 14','duration':'8','durationUnit':'h'}, 
@@ -69,5 +89,5 @@ angular.module('bluroeApp')
             data.released = ! data.released;
             console.log('adding man');
         }
-    }
+    } 
   });

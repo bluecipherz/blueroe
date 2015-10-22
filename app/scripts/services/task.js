@@ -86,9 +86,10 @@ angular.module('bluroeApp')
           console.log('pushing observer')
         }
         if(TokenHandler.isTempLogged()) {
+          console.log('already logged, fetching tasks');
           fetchTasks();
         } else {
-          console.log('waiting for login')
+          console.log('waiting for login, tasks')
           TokenHandler.onTempLogin(fetchTasks);
         }
       },

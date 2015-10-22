@@ -2,12 +2,12 @@
     <div class="flex-10  -p">
         <div class="fluidGrid myTasks">
         	<div class="heading ">
-        		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Backlogs  </span> 
+        		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Backlogs  </span>  
         		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Release Backlogs </span> 
                 <div class="custButton" ng-click="tasks.markMode()" ng-class="{'-green':tasks.markModeVar,'-blue':!tasks.markModeVar}">
                     <span ng-if="!tasks.markModeVar">Mark Stories</span>
                     <span ng-if="tasks.markModeVar">Add to Release Backlog</span>
-                </div> 
+                </div>  
 
                 <div class="bgrid -bg-s-100 -f-right -b-p-rel">
                     <div class="custButton -grey"><i class="fa fa-filter"></i></div>
@@ -94,8 +94,7 @@
                     </div>
                 </div>
 
-                <div class="navLine" id="myTasksNavLine"></div>
-
+                <div class="navLine" id="myTasksNavLine"></div> 
         	</div> 
         </div>
         <div class="backlogOuter">
@@ -105,7 +104,7 @@
                     <div ng-click="tasks.markBlock(data)"  class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released,'markMode':tasks.markModeVar}">
                         <div></div>  
                         <i class=" fa fa-check fa-5x" ng-if="data.released"></i>
-                    </div>
+                    </div> 
 
                     <div class="RoundDropDown">
                         <div class="DropBtn" ng-click="data.showDropList = ! data.showDropList" ng-class="{ 'DropBtnAct':  data.showDropList }"></div>
@@ -119,7 +118,7 @@
                                     <button ng-click="data.priority = 2">Medium</button>
                                     <button ng-click="data.priority = 3">High</button>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     <div  class="title" >
@@ -169,8 +168,7 @@
                                 <div ng-click="data.duration = 8;data.durationUnit = 'd' " class="numberDay">8<span>d</span></div> 
                             </div>
                         </div>
-                    </div> 
-                    
+                    </div>  
                     <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
                 </div>
             </div>

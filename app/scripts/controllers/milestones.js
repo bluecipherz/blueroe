@@ -21,8 +21,7 @@ angular.module('bluroeApp')
 
     vm.isSelected = function(tab) {
         return vm.selectedTab == tab;
-    }
- 
+    } 
     vm.tlist = [ 
         {'id':1,'title':'Awesome Sprint','children':[
             {'type':'TaskList','title':'shiju','children':[
@@ -35,7 +34,7 @@ angular.module('bluroeApp')
             {'type':'Task','title':'task asdasd', 'released':0,'description':'This task is a task that you cant even tast the task of the task, because you already know that this task is not the real task','priority':0,'startDate':'dec 1','status':'Comleted','duration':7,'durationUnit':'h'}, 
             
             ]
-        }
+        } 
     ];
 
   });

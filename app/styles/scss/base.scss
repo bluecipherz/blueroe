@@ -9,7 +9,7 @@ body{
   min-width: 100%;
   min-height: 100%;
   background:#eee;
-  font: 12px $font-stack;
+  font-family: Gothic ;
   color: #313131;
 }
 .blueNav{
@@ -74,6 +74,7 @@ a:hover{cursor:pointer;}
 		border:1px solid #ddd;
 		z-index:3;
 		box-shadow:0 0 5px #ccc;
+    font-size:90%;
 		button{
 			display:block;
 			float:left;

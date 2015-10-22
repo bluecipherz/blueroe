@@ -67,3 +67,20 @@
   height:50px;
   width:60px;
 }
+.statusBar{
+  display:block;
+  float:left;
+  position:fixed;
+  left:0px;
+  right:0px;
+  height:26px;
+  bottom:0px;
+  width:100%;
+
+  background:#fcfcfc;
+  border-top:1px solid #ddd;
+  padding-left:10px;
+  line-height:26px;
+  font-size:90%;
+  z-index:105;
+}

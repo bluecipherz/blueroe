@@ -892,6 +892,22 @@
   height: 50px;
   width: 60px; }
 
+.statusBar {
+  display: block;
+  float: left;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  height: 26px;
+  bottom: 0px;
+  width: 100%;
+  background: #fcfcfc;
+  border-top: 1px solid #ddd;
+  padding-left: 10px;
+  line-height: 26px;
+  font-size: 90%;
+  z-index: 105; }
+
 .right-side {
   float: left;
   position: absolute;
@@ -1064,11 +1080,15 @@
     border: none;
     resize: none;
     margin: 2px;
-    width: calc(100% - 4px); }
+    width: calc(100% - 4px);
+    font-size: 90%; }
   .storyBlock .date {
-    height: 70px;
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
     width: 65%;
-    color: #666; }
+    color: #666;
+    font-size: 94%; }
     .storyBlock .date table {
       width: 100%; }
     .storyBlock .date td {
@@ -1083,15 +1103,17 @@
       max-height: 15px;
       min-height: 15px;
       font-size: 90%;
+      font-family: Gothic;
       line-height: 15px;
       border: none; }
     .storyBlock .date .c2:hover input {
       background: #eee;
       cursor: pointer; }
   .storyBlock .time {
-    margin-top: -10px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
     color: #bbb;
-    height: 70px;
     width: 35%;
     font-size: 530%; }
     .storyBlock .time span {
@@ -1190,8 +1212,6 @@
     cursor: pointer; }
   .storyBlock .actv div {
     background: #27ae60; }
-  .storyBlock .inact div {
-    background: #ddd; }
 
 .storyBlock:hover {
   cursor: pointer; }

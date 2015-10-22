@@ -892,6 +892,22 @@
   height: 50px;
   width: 60px; }
 
+.statusBar {
+  display: block;
+  float: left;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  height: 26px;
+  bottom: 0px;
+  width: 100%;
+  background: #fcfcfc;
+  border-top: 1px solid #ddd;
+  padding-left: 10px;
+  line-height: 26px;
+  font-size: 90%;
+  z-index: 105; }
+
 .right-side {
   float: left;
   position: absolute;
@@ -1010,10 +1026,7 @@
 .myTasks option:hover {
   background: #ddd; }
 
-<<<<<<< HEAD
 /* new views - ice blocks */
-=======
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
 .backlogOuter {
   display: block;
   float: left;
@@ -1030,7 +1043,6 @@
   -webkit-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px;
-<<<<<<< HEAD
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -1042,15 +1054,6 @@
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s; }
-=======
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  margin: 5px 10px 5px 0;
-  border-bottom: 3px solid #aaa;
-  overflow: hidden; }
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
   .storyBlock .title, .storyBlock .date, .storyBlock .description, .storyBlock .time, .storyBlock .releaseTag {
     display: block;
     float: left;
@@ -1060,7 +1063,6 @@
     height: 30px;
     line-height: 30px;
     font-size: 130%;
-<<<<<<< HEAD
     border: none;
     border-bottom: 1px solid #ddd;
     padding: 2px; }
@@ -1078,26 +1080,21 @@
     border: none;
     resize: none;
     margin: 2px;
-    width: calc(100% - 4px); }
-=======
-    padding: 0 10px;
-    border-bottom: 1px solid #ddd; }
-  .storyBlock .description {
-    height: 100px;
-    color: #777;
-    padding: 10px; }
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
+    width: calc(100% - 4px);
+    font-size: 90%; }
   .storyBlock .date {
-    height: 70px;
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
     width: 65%;
-    color: #666; }
+    color: #666;
+    font-size: 94%; }
     .storyBlock .date table {
       width: 100%; }
     .storyBlock .date td {
       padding: 0 3px; }
     .storyBlock .date .c1 {
       width: 40px;
-<<<<<<< HEAD
       color: #aaa;
       vertical-align: bottom; }
     .storyBlock .date .c2 input {
@@ -1106,24 +1103,22 @@
       max-height: 15px;
       min-height: 15px;
       font-size: 90%;
+      font-family: Gothic;
       line-height: 15px;
       border: none; }
     .storyBlock .date .c2:hover input {
       background: #eee;
       cursor: pointer; }
-=======
-      color: #aaa; }
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
   .storyBlock .time {
-    margin-top: -10px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
     color: #bbb;
-    height: 70px;
     width: 35%;
     font-size: 530%; }
     .storyBlock .time span {
       font-size: 24px;
       color: #ddd; }
-<<<<<<< HEAD
     .storyBlock .time .popBox {
       font-size: 20px;
       width: 180px; }
@@ -1152,8 +1147,6 @@
           background: #49aef1; }
         .storyBlock .time .popBox .cont .numberHour:hover {
           background: #38e180; }
-=======
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
   .storyBlock .priority {
     display: block;
     float: left;
@@ -1161,7 +1154,6 @@
     position: absolute;
     height: 5px;
     bottom: 0px;
-<<<<<<< HEAD
     background: #ddd;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -1220,108 +1212,6 @@
     cursor: pointer; }
   .storyBlock .actv div {
     background: #27ae60; }
-  .storyBlock .inact div {
-=======
->>>>>>> 6f193aa95c9b5c09afc24662a5f3e07c5376297f
-    background: #ddd; }
-  .storyBlock .priority.p1 {
-    background: #40d47e; }
-  .storyBlock .priority.p2 {
-    background: #f1c40f; }
-  .storyBlock .priority.p3 {
-    background: #e67e22; }
-  .storyBlock .releaseTag {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    overflow: hidden;
-    top: 0px;
-    right: 0px;
-    max-width: 100%;
-    max-height: 100%; }
-    .storyBlock .releaseTag div {
-      display: block;
-      float: left;
-      position: absolute;
-      top: -35px;
-      right: -35px;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      width: 50px;
-      height: 50px; }
-    .storyBlock .releaseTag span {
-      display: block;
-      float: left;
-      width: 100%;
-      font-size: 300%;
-      color: #aaa;
-      text-align: center;
-      line-height: 180px;
-      margin-top: -180px; }
-  .storyBlock .actv {
-    -webkit-animation: activated 2s 1;
-    animation: activated 2s 1; }
-    .storyBlock .actv div {
-      background: #27ae60; }
-  .storyBlock .inact {
-    -webkit-animation: activated 3s 1;
-    animation: activated 2s 1; }
-    .storyBlock .inact div {
-      background: #ddd; }
-@-webkit-keyframes activated {
-  0% {
-    background: rgba(255, 255, 255, 0);
-    left: 0px;
-    bottom: 0px;
-    margin-top: -140px; }
-  1% {
-    background: rgba(255, 255, 255, 0); }
-  6% {
-    background: rgba(255, 255, 255, 0.6);
-    span {
-      margin-top: 100px; } }
-  6% {
-    span {
-      margin-top: 100px; } }
-  95% {
-    background: rgba(255, 255, 255, 0.6); }
-  99% {
-    background: black; }
-  100% {
-    background: black;
-    left: none;
-    bottom: none; } }
-@keyframes activated {
-  0% {
-    background: rgba(255, 255, 255, 0);
-    width: 100%;
-    height: 100%;
-    padding-top: 360px; }
-  1% {
-    background: rgba(255, 255, 255, 0); }
-  10% {
-    background: rgba(255, 255, 255, 0.7);
-    padding-top: 360px; }
-  30% {
-    padding-top: 180px; }
-  70% {
-    padding-top: 180px; }
-  90% {
-    background: rgba(255, 255, 255, 0.7);
-    padding-top: 0px; }
-  99% {
-    background: rgba(255, 255, 255, 0);
-    width: 100%;
-    height: 100%;
-    padding-top: 0px; }
-  100% {
-    background: transparent;
-    width: 50px;
-    height: 50px; } }
-.storyBlock {
-  cursor: pointer; }
 
 .storyBlock:hover {
   cursor: pointer; }

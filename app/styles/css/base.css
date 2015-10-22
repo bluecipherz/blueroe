@@ -49,6 +49,12 @@
   src: url("../../fonts/CODE-Light.otf");
   font-weight: normal;
   font-stretch: condensed; }
+@font-face {
+  font-family: Gothic;
+  src: url("../../fonts/GOTHIC.ttf"); }
+@font-face {
+  font-family: GothicB;
+  src: url("../../fonts/GOTHICB.ttf"); }
 * {
   -webkit-font-smoothing: antialiased; }
 
@@ -57,7 +63,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   background: #eee;
-  font: 12px Helvetica, sans-serif, Code;
+  font-family: Gothic;
   color: #313131; }
 
 .blueNav {
@@ -135,7 +141,8 @@ a:hover {
     background: #f7f7f7;
     border: 1px solid #ddd;
     z-index: 3;
-    box-shadow: 0 0 5px #ccc; }
+    box-shadow: 0 0 5px #ccc;
+    font-size: 90%; }
     .RoundDropDown .DropCont button {
       display: block;
       float: left;

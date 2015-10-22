@@ -180,6 +180,13 @@ angular.module('bluroeApp')
             statusBar.updateStatus('Marked stories : ' + vm.markedCart.length,0);
         }
     } 
+    vm.addToReleaseBacklog = function(data){ 
+        data.released = true; 
+        statusBar.updateStatus(data.title + ' are added to release backlogs');
+    }
+    vm.removeFromReleaseBacklog = function(data){
+        data.released = false; 
+        statusBar.updateStatus(data.title + ' are removed from release backlogs');}
     vm.cancelMarkMode = function(){
         vm.markModeVar = false;
         statusBar.updateStatus('Mark mode is off');

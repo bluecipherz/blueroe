@@ -16,8 +16,8 @@
                     <div class="custButton -grey"><i class="fa fa-bars"></i></div>
                 </div>
                 <!-- Create tasklist -->
-                <div class="bgrid -bg-s-100 -f-right b-p-rel ">
-                    <div class="custButton -blue" ng-click="showTaskListPop = ! showTaskListPop">New Sprint</div>
+                <div class="bgrid -bg-s-100 -f-right b-p-rel" popup-menu="showTaskListPop">
+                    <div class="custButton -blue" >New Sprint</div>
                     <div class="popBox -l-20" ng-class="{ 'hidden' : ! showTaskListPop }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showTaskListPop = ! showTaskListPop"></div>
@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <!-- Create task  -->
-                <div class="bgrid -bg-s-100 -f-right b-p-rel ">
-                    <div class="custButton -green" ng-click="showTaskPop = ! showTaskPop">New Story</div>
+                <div class="bgrid -bg-s-100 -f-right b-p-rel " popup-menu="showTaskPop">
+                    <div class="custButton -green" >New Story</div>
                     <div class="popBox -l-30" ng-class="{ 'hidden' : ! showTaskPop }">
                         <div class="topArrow" ></div>
                         <div class="closeBtn" ng-click="showTaskPop = ! showTaskPop"></div>
@@ -102,82 +102,8 @@
         <div class="backlogOuter">
             <!-- backlog tab -->
             <div  class="cont"  ng-show="tasks.isSelected(1)" >
-                <div class="storyBlock" ng-repeat="data in tasks.tlist | filter : {'released':'false'}" ng-class="{'inactive':!data.showDropList}">
-                    <div ng-click="tasks.markBlock(data)"  class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released,'markMode':tasks.markModeVar}">
-                        <div></div>  
-                        <i class=" fa fa-check fa-5x" ng-if="data.marked"></i>
-                    </div> 
-
-                    <div class="RoundDropDown">
-                        <div class="DropBtn" ng-click="data.showDropList = ! data.showDropList" ng-class="{ 'DropBtnAct':  data.showDropList }"></div>
-                        <div class="DropCont bgrid -bg-s-160" ng-show="data.showDropList">
-                            <button class="bgrid ">Add to Release backlog</button>
-                            <div  popup-menu="showPriority">
-                                <button>Set Priority </button>
-                                <div class="DropCont" ng-show="showPriority == true">
-                                    <button ng-click="data.priority = 0">None</button>
-                                    <button ng-click="data.priority = 1">Low</button>
-                                    <button ng-click="data.priority = 2">Medium</button>
-                                    <button ng-click="data.priority = 3">High</button>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div  class="title" >
-                        <input value="{{data.title}}" tooltip="{{data.title}}" ng-focus="data.titleEdit = true" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
-                    </div>
-                    <textarea class="description " ng-focus="data.descEdit = true" ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}">{{data.description}}</textarea> 
-                    <div class="date" >
-                        <table>
-                            <tr>
-                                <td class="c1">From </td>
-                                <td class="c2">
-                                    <!-- <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format=" MMM dd ">
-                                    <input class="c2Input" ng-model="data.startDate" type="text"/> 
-                                    </datepicker> -->
-                                </td>
-                            </tr>  
-                            <tr>
-                                <td class="c1">To </td>
-                                <td class="c2">
-                                    <!-- <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format=" MMM-dd ">
-                                    <input class="c2Input" ng-model="data.endDate" type="text"/> 
-                                    </datepicker> -->
-                                </td>
-                            </tr>   
-                        </table>
-                    </div>
-                    <div class="time" ng-click="data.showTaskPop = ! data.showTaskPop">
-                        {{data.duration}}<span>{{ data.durationUnit }}</span>
-
-                        <div class="popBox -l-30" ng-class="{ 'hidden' : ! data.showTaskPop }">
-                            <div class="topArrow" ></div>
-                            <div class="closeBtn" ng-click="data.showTaskPop = ! data.showTaskPop"></div>
-                            <div class="cont">
-                                <div ng-click="data.duration = 1;data.durationUnit = 'h' " class="numberHour">1<span>h</span></div> 
-                                <div ng-click="data.duration = 2;data.durationUnit = 'h' " class="numberHour">2<span>h</span></div> 
-                                <div ng-click="data.duration = 4;data.durationUnit = 'h' " class="numberHour">4<span>h</span></div> 
-                                <div ng-click="data.duration = 6;data.durationUnit = 'h' " class="numberHour">6<span>h</span></div> 
-                                <div ng-click="data.duration = 8;data.durationUnit = 'h' " class="numberHour">8<span>h</span></div>  
-                                <div ng-click="data.duration = 1;data.durationUnit = 'd' " class="numberDay">1<span>d</span></div> 
-                                <div ng-click="data.duration = 2;data.durationUnit = 'd' " class="numberDay">2<span>d</span></div> 
-                                <div ng-click="data.duration = 4;data.durationUnit = 'd' " class="numberDay">4<span>d</span></div> 
-                                <div ng-click="data.duration = 6;data.durationUnit = 'd' " class="numberDay">6<span>d</span></div> 
-                                <div ng-click="data.duration = 8;data.durationUnit = 'd' " class="numberDay">8<span>d</span></div> 
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
-                </div>
-            </div>
-
-
-
-
-            <!-- release tab -->
-            <div  class="cont" ng-show="tasks.isSelected(2)">
-                <div class="storyBlock" ng-repeat="data in tasks.tlist | filter : {'released':'true'}" ng-class="{'inactive':!showDropList}">
-                    <div ng-click="tasks.markBlock(data)"  class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released,'markMode':tasks.markModeVar}">
+                <div class="storyBlock" ng-repeat="data in tasks.tlist | filter : {'released':'false'}" ng-class="{'inactive':!showDropList}">
+                 <div ng-click="tasks.markBlock(data)"  class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released,'markMode':tasks.markModeVar}">
                         <div></div>  
                         <i class=" fa fa-check fa-5x" ng-if="data.marked"></i>
                     </div> 
@@ -185,7 +111,7 @@
                     <div class="RoundDropDown" popup-menu="showDropList">
                         <div class="DropBtn" ng-class="{ 'DropBtnAct':  showDropList }"></div>
                         <div class="DropCont pop-child bgrid -bg-s-160" ng-show="showDropList">
-                            <button class="bgrid " ng-click="showDropList=false;">Add to Release backlog</button>
+                            <button class="bgrid " ng-click="showDropList=false;tasks.addToReleaseBacklog(data)">Add to release backlog</button>
                             <div popup-menu="showPriorityList">
                                 <button>Set Priority </button>
                                 <div class="DropCont" ng-show="showPriorityList">
@@ -221,21 +147,99 @@
                             </tr>    
                         </table>
                     </div>
-                    <div class="time " ng-click="data.showTaskPop = ! data.showTaskPop">
-                        {{data.duration}}<span>{{ data.durationUnit }}</span> 
+                    <div class="time" popup-menu="data.showTaskPop">
+                        <div >{{data.duration}}<span>{{ data.durationUnit }}</span></div>
                         <div class="popBox -l-30" ng-class="{ 'hidden' : ! data.showTaskPop }">
                             <div class="topArrow" ></div>
                             <div class="closeBtn" ng-click="data.showTaskPop = ! data.showTaskPop"></div>
                             <div class="cont">
                                 <div ng-click="data.duration = 1;data.durationUnit = 'h' " class="numberHour">1<span>h</span></div> 
                                 <div ng-click="data.duration = 2;data.durationUnit = 'h' " class="numberHour">2<span>h</span></div> 
-                                <div ng-click="data.duration = 4;data.durationUnit = 'h' " class="numberHour">4<span>h</span></div> 
-                                <div ng-click="data.duration = 6;data.durationUnit = 'h' " class="numberHour">6<span>h</span></div> 
+                                <div ng-click="data.duration = 4;data.durationUnit = 'h' " class="numberHour">4<span>h</span></div>  
                                 <div ng-click="data.duration = 8;data.durationUnit = 'h' " class="numberHour">8<span>h</span></div>  
                                 <div ng-click="data.duration = 1;data.durationUnit = 'd' " class="numberDay">1<span>d</span></div> 
                                 <div ng-click="data.duration = 2;data.durationUnit = 'd' " class="numberDay">2<span>d</span></div> 
+                                <div ng-click="data.duration = 3;data.durationUnit = 'd' " class="numberDay">3<span>d</span></div> 
                                 <div ng-click="data.duration = 4;data.durationUnit = 'd' " class="numberDay">4<span>d</span></div> 
+                                <div ng-click="data.duration = 5;data.durationUnit = 'd' " class="numberDay">5<span>d</span></div> 
                                 <div ng-click="data.duration = 6;data.durationUnit = 'd' " class="numberDay">6<span>d</span></div> 
+                                <div ng-click="data.duration = 7;data.durationUnit = 'd' " class="numberDay">7<span>d</span></div> 
+                                <div ng-click="data.duration = 8;data.durationUnit = 'd' " class="numberDay">8<span>d</span></div> 
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="priority"ng-class="{'p1':data.priority==1,'p2':data.priority==2,'p3':data.priority==3}"></div>
+                </div>    
+
+            </div>
+
+
+
+
+            <!-- release tab -->
+            <div  class="cont" ng-show="tasks.isSelected(2)">
+                <div class="storyBlock" ng-repeat="data in tasks.tlist | filter : {'released':'true'}" ng-class="{'inactive':!showDropList}">
+                    <div ng-click="tasks.markBlock(data)"  class="releaseTag" ng-class="{'actv':data.released,'inact':!data.released,'markMode':tasks.markModeVar}">
+                        <div></div>  
+                        <i class=" fa fa-check fa-5x" ng-if="data.marked"></i>
+                    </div> 
+
+                    <div class="RoundDropDown" popup-menu="showDropList">
+                        <div class="DropBtn" ng-class="{ 'DropBtnAct':  showDropList }"></div>
+                        <div class="DropCont pop-child bgrid -bg-s-120" ng-show="showDropList">
+                            <button class="bgrid " ng-click="showDropList=false;tasks.removeFromReleaseBacklog(data)">Remove story</button>
+                            <div popup-menu="showPriorityList">
+                                <button>Set Priority </button>
+                                <div class="DropCont" ng-show="showPriorityList">
+                                    <button ng-click="data.priority = 0;showDropList=false;">None</button>
+                                    <button ng-click="data.priority = 1;showDropList=false;">Low</button>
+                                    <button ng-click="data.priority = 2;showDropList=false;">Medium</button>
+                                    <button ng-click="data.priority = 3;showDropList=false;">High</button>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div  class="title" >
+                        <input value="{{data.title}}" ng-focus="data.titleEdit = true" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                    </div>
+                    <textarea class="description " ng-focus="data.descEdit = true" ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}">{{data.description}}</textarea> 
+                    <div class="date" >
+                        <table>
+                            <tr>
+                                <td class="c1">From </td>
+                                <td class="c2">
+                                    <!-- <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format=" MMM dd ">
+                                    <input class="c2Input" ng-model="data.startDate" type="text"/> 
+                                    </datepicker> -->
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td class="c1">To </td>
+                                <td class="c2">
+                                    <!-- <datepicker class="float-l" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>" date-format=" MMM-dd ">
+                                    <input class="c2Input" ng-model="data.endDate" type="text"/> 
+                                    </datepicker> -->
+                                </td>
+                            </tr>    
+                        </table>
+                    </div>
+                    <div class="time" popup-menu="data.showTaskPop">
+                        <div >{{data.duration}}<span>{{ data.durationUnit }}</span></div>
+                        <div class="popBox -l-30" ng-class="{ 'hidden' : ! data.showTaskPop }">
+                            <div class="topArrow" ></div>
+                            <div class="closeBtn" ng-click="data.showTaskPop = ! data.showTaskPop"></div>
+                            <div class="cont">
+                                <div ng-click="data.duration = 1;data.durationUnit = 'h' " class="numberHour">1<span>h</span></div> 
+                                <div ng-click="data.duration = 2;data.durationUnit = 'h' " class="numberHour">2<span>h</span></div> 
+                                <div ng-click="data.duration = 4;data.durationUnit = 'h' " class="numberHour">4<span>h</span></div>  
+                                <div ng-click="data.duration = 8;data.durationUnit = 'h' " class="numberHour">8<span>h</span></div>  
+                                <div ng-click="data.duration = 1;data.durationUnit = 'd' " class="numberDay">1<span>d</span></div> 
+                                <div ng-click="data.duration = 2;data.durationUnit = 'd' " class="numberDay">2<span>d</span></div> 
+                                <div ng-click="data.duration = 3;data.durationUnit = 'd' " class="numberDay">3<span>d</span></div> 
+                                <div ng-click="data.duration = 4;data.durationUnit = 'd' " class="numberDay">4<span>d</span></div> 
+                                <div ng-click="data.duration = 5;data.durationUnit = 'd' " class="numberDay">5<span>d</span></div> 
+                                <div ng-click="data.duration = 6;data.durationUnit = 'd' " class="numberDay">6<span>d</span></div> 
+                                <div ng-click="data.duration = 7;data.durationUnit = 'd' " class="numberDay">7<span>d</span></div> 
                                 <div ng-click="data.duration = 8;data.durationUnit = 'd' " class="numberDay">8<span>d</span></div> 
                             </div>
                         </div>

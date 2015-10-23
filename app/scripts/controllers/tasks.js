@@ -114,44 +114,68 @@ angular.module('bluroeApp')
         {'id':28,'title':'Trapped module refactoring', 'released':false,'description':'Super awesome task you will love it i know ...!!','priority':3,'startDate':'dec 02','endDate':'dec 14','duration':'2','durationUnit':'h'}, 
         
     ];
-
+    vm.keyPressed = false;
     vm.titleSave = function ($event,data){
         if($event.keyCode == 13){ 
             data.titleEdit = false; 
             data.title = $event.target.value;
             $event.target.blur();
-        }  
+            vm.keyPressed = true;
+            statusBar.updateStatus('Title saved');
+        }else
         if($event.keyCode == 27){ 
             data.titleEdit = false;  
-            $event.target.blur();
-        }
+            $event.target.blur(); 
+            vm.keyPressed = true;
+            data.title = data.tempTitle;  
+            statusBar.updateStatus('Title is not saved');
+        }else{
+            statusBar.updateStatus('Press "Enter" to save or "Esc" to cancel',0);
+        } 
     }
     vm.descSave = function ($event,data){
         if($event.keyCode == 13){   
             data.descEdit = false; 
             data.description = $event.target.value;
             $event.target.blur();
-        }  
+            vm.keyPressed = true;
+            statusBar.updateStatus('Description saved');
+        }else
         if($event.keyCode == 27){  
             data.descEdit = false; 
-            $event.target.blur();
-        }
+            $event.target.blur(); 
+            vm.keyPressed = true;
+            data.description = data.tempDesc;  
+            statusBar.updateStatus('Description in not saved');
+        }else{
+            statusBar.updateStatus('Press "Enter" to save or "Esc" to cancel',0);
+        } 
     }
     vm.cancelTitleEdit = function(data){
-        data.titleEdit = false; 
-        var asd = "alma" + data.titleEdit;
-        console.log('this the value before' + asd);
-        data.title = asd; 
-        console.log("cancel saved "+data.tempTitle);
+        if(!vm.keyPressed){
+            data.titleEdit = false;  
+            data.title = data.tempTitle;  
+            statusBar.updateStatus('Title is not saved'); 
+        } 
+        vm.keyPressed = false;  
+    }
+    vm.cancelDescEdit = function(data){
+        if(!vm.keyPressed){
+            data.descEdit = false;  
+            data.description = data.tempDesc;   
+            statusBar.updateStatus('Description is not saved');
+        } 
+        vm.keyPressed = false;  
     }
     vm.titleClick = function(data){
         data.tempTitle = data.title;
-        data.titleEdit = true;
-        console.log("temp saved "+data.tempTitle);
+        data.titleEdit = true; 
+        statusBar.updateStatus('Now you can edit the Title');
     }
     vm.descClick = function(data){
-        data.descTitle = data.description;
+        data.tempDesc = data.description;
         data.descEdit = true
+        statusBar.updateStatus('Now you can edit the Description');
     }
     vm.markModeVar = false;
     vm.markedCart = [];

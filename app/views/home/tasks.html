@@ -124,9 +124,9 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input value="{{data.title}}" ng-click="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-click="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
                     </div>
-                    <textarea class="description " ng-focus="data.descEdit = true" ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}">{{data.description}}</textarea> 
+                    <textarea class="description " ng-click="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
                     <div class="date" >
                         <table>
                             <tr>

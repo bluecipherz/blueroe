@@ -14,7 +14,7 @@ angular.module('bluroeApp')
 
         // form variables
 
-        this.projects = [];
+        vm.projects = [];
 
         vm.users = Users.getUsers();
         // console.log('user count ' + Users.getUsers().length)

@@ -4,14 +4,48 @@
         	<div class="heading ">
         		<span class='navLH' ng-class="{active:tasks.isSelected(1)}"  ng-click="tasks.selectTab(1)" > Backlogs  </span>  
         		<span class='navLH' ng-class="{active:tasks.isSelected(2)}"  ng-click="tasks.selectTab(2)" > Release Backlogs </span> 
-                <div class="custButton" ng-click="tasks.markMode()" ng-class="{'-green':tasks.markModeVar,'-blue':!tasks.markModeVar}">
-                    <span ng-if="!tasks.markModeVar">Mark Stories</span>
-                    <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)">Add to Release Backlog  [{{tasks.markedCart.length}}]</span>
-                    <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove from Release Backlog  [{{tasks.markedCart.length}}] </span> 
-                    <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)"><span class="fa fa-spinner fa-pulse"></span>&nbsp; Adding...</span> 
-                    <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove...&nbsp;&nbsp;&nbsp;</span> 
+                <div class=" custButtonPop"   >
+                    <div 
+                        class="custButton b-p-rel" 
+                        ng-click="tasks.markMode()" 
+                        ng-class="{
+                            '-green':tasks.markModeVar && tasks.markedCart.length > 0,
+                            '-blue':!tasks.markModeVar,
+                            '-disabled':tasks.markModeVar && tasks.markedCart.length < 1
+                            }"
+                    >
+                        <span ng-if="!tasks.markModeVar">Mark Stories</span>
+                        <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)">Add to Release Backlog  [{{tasks.markedCart.length}}]</span>
+                        <span ng-if="!tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove from Release Backlog  [{{tasks.markedCart.length}}] </span> 
+                        <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(1)"><span class="fa fa-spinner fa-pulse"></span>&nbsp; Adding...</span> 
+                        <span ng-if="tasks.processingMB && tasks.markModeVar && tasks.isSelected(2)">Remove...&nbsp;&nbsp;&nbsp;</span> 
+                    </div>  
+                    <div ng-if="tasks.selectSprint && tasks.markModeVar && tasks.markedCart.length > 0" class="popBox">
+                        <div ng-click="tasks.updateBacklog(1);" class="nestBtn">Sprint 1</div> 
+                        <div ng-click="tasks.updateBacklog(2);" class="nestBtn">Sprint 2</div> 
+                        <div ng-click="tasks.updateBacklog(3);" class="nestBtn">Sprint 3</div> 
+                        <div ng-click="tasks.updateBacklog(4);" class="nestBtn">Sprint 4</div> 
+                        <div ng-click="tasks.updateBacklog(5);" class="nestBtn">Sprint 5</div> 
+                        <div ng-click="tasks.updateBacklog(6);" class="nestBtn">Sprint 6</div> 
+                        <div ng-click="tasks.updateBacklog(7);" class="nestBtn">Sprint 7</div> 
+                        <div ng-click="tasks.updateBacklog(8);" class="nestBtn">Sprint 8</div> 
+                        <div ng-click="tasks.updateBacklog(9);" class="nestBtn">Sprint 9</div> 
+                        <div ng-click="tasks.updateBacklog(10);" class="nestBtn">Sprint 10</div> 
+                        <div ng-click="tasks.updateBacklog(11);" class="nestBtn">Sprint 11</div> 
+                        <div ng-click="tasks.updateBacklog(12);" class="nestBtn">Sprint 12</div> 
+                        <div ng-click="tasks.updateBacklog(13);" class="nestBtn">Sprint 13</div> 
+                        <div ng-click="tasks.updateBacklog(14);" class="nestBtn">Sprint 14</div> 
+                        <div ng-click="tasks.updateBacklog(15);" class="nestBtn">Sprint 15</div> 
+                        <div ng-click="tasks.updateBacklog(16);" class="nestBtn">Sprint 16</div> 
+                        <div ng-click="tasks.updateBacklog(17);" class="nestBtn">Sprint 17</div> 
+                        <div ng-click="tasks.updateBacklog(18);" class="nestBtn">Sprint 18</div> 
+                    </div>
                 </div>  
-                <div class="custButton -grey" ng-click="tasks.cancelMarkMode()" >Cancel</div>
+                <div 
+                    class="custButton" 
+                    ng-class="{'-grey':tasks.markModeVar,'-disabled':!tasks.markModeVar}" 
+                    ng-click="tasks.cancelMarkMode()" 
+                >Cancel</div>
 
                 <div class="bgrid -bg-s-100 -f-right -b-p-rel">
                     <div class="custButton -grey"><i class="fa fa-filter"></i></div>
@@ -126,7 +160,7 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-mousedown="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input class="ellip" title="{{data.name}}" ng-model="data.name" ng-mousedown="tasks.nameClick(data)" ng-blur="tasks.cancelNameEdit(data)" ng-keydown="tasks.nameSave($event,data)"  ng-class="{'bg-grey':data.nameEdit}" > 
                     </div>
                     <textarea class="description " ng-mousedown="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
                     <div class="date" >
@@ -202,10 +236,10 @@
                         </div>
                     </div>
                     <div  class="title" >
-                        <input class="ellip" title="{{data.title}}" ng-model="data.title" ng-mousedown="tasks.titleClick(data)" ng-blur="tasks.cancelTitleEdit(data)" ng-keydown="tasks.titleSave($event,data)"  ng-class="{'bg-grey':data.titleEdit}" > 
+                        <input class="ellip" title="{{data.name}}" ng-model="data.name" ng-mousedown="tasks.nameClick(data)" ng-blur="tasks.cancelNameEdit(data)" ng-keydown="tasks.nameSave($event,data)"  ng-class="{'bg-grey':data.nameEdit}" > 
                     </div>
                     <textarea class="description " ng-mousedown="tasks.descClick(data)" ng-blur="tasks.cancelDescEdit(data)"  ng-keydown="tasks.descSave($event,data)" ng-class="{'bg-grey':data.descEdit}" ng-model="data.description">{{data.description}}</textarea> 
-                    <div class="date" >
+                    <div class="date">
                         <table>
                             <tr>
                                 <td class="c1">From </td>

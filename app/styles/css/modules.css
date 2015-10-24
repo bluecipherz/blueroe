@@ -36,6 +36,23 @@
 .custButton.-right {
   float: right; }
 
+.custButtonPop {
+  display: block;
+  float: left;
+  position: relative;
+  margin: 5px; }
+  .custButtonPop .custButton {
+    margin: 0px; }
+  .custButtonPop .popBox {
+    top: 100%;
+    left: 0px;
+    right: 0xp;
+    width: 100%;
+    min-height: 0px;
+    max-height: 200px;
+    overflow: scroll;
+    padding: 0; }
+
 /* Colors */
 /* images */
 .postform {
@@ -267,7 +284,7 @@
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   opacity: 1;
   transition: .5s;
-  z-index: 101; }
+  z-index: 151; }
   .popBox .topArrow {
     transform: rotate(45deg);
     background: #fff;
@@ -349,6 +366,9 @@
 /* images */
 .sec-left {
   background: #313131;
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  -o-transition: left 0.3s;
   transition: left 0.3s;
   color: #ccc;
   font-size: 95%;
@@ -383,6 +403,27 @@
   font-family: Masterblast;
   font-size: 160%;
   font-weight: 500; }
+
+.sec-mid {
+  margin-bottom: 40px;
+  -webkit-transition: top 0.8s;
+  -moz-transition: top 0.8s;
+  -o-transition: top 0.8s;
+  transition: top 0.8s; }
+
+.notificationBar {
+  background: #fcfcfc;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+  line-height: 30px;
+  font-size: 90%;
+  z-index: 1;
+  padding: 0 60px;
+  text-align: center;
+  -webkit-transition: top 0.8s;
+  -moz-transition: top 0.8s;
+  -o-transition: top 0.8s;
+  transition: top 0.8s; }
 
 .mainLeft {
   background: #eee; }

@@ -24,6 +24,10 @@
   background: #d54b3c;
   color: #fff; }
 
+.custButton.-disabled:hover {
+  background: #ddd;
+  cursor: default; }
+
 /* Colors */
 /* images */
 .heading > span:hover {

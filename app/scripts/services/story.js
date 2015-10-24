@@ -8,14 +8,14 @@
  * Factory in the bluroeApp.
  */
 angular.module('bluroeApp')
-  .factory('story', function ($resource, TokenHandler, Hoster) {
+  .factory('Story', function ($resource, TokenHandler, Hoster) {
     // Service logic
     // ...
 
     var createStory = TokenHandler.wrapActions(
       $resource(Hoster.getHost() + '/project/:project/stories'),
       ['save']
-    );
+    ); 
 
     var Story = TokenHandler.wrapActions(
       $resource(Hoster.getHost() + '/stories/:story', {}, {'update': { method: 'PUT' }}),

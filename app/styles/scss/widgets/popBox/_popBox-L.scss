@@ -30,6 +30,22 @@
     right:2px;
     width:7px;
     height:8px;
+  } 
+  .nestBtn{
+    display:block;
+    float:left;
+    width:calc(100% - 20px);
+    margin:0 10px; 
+    color:#444;
+    height:25px;
+    line-height:25px;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    padding-left:5px;
+  }
+  .nestBtn:hover{ 
+    cursor:pointer;
+    border-bottom:1px solid $themeColor;
+    color:$themeColor;
   }
 }
 .popBox.show{

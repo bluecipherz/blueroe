@@ -13,15 +13,15 @@ angular.module('bluroeApp')
     // ...
 
     var AsideListHome = [
-        {'id':'1','type':'link','name':'DASHBOARD','ngClick':'home','img':'icons/fb-50.png', 'icon':'fa fa-feed'},
-        {'id':'2','type':'link','name':'STORIES','ngClick':'mytasks','img':'icons/twitter-50.png', 'icon':'fa fa-tasks'},
-        {'id':'3','type':'link','name':'SPRINTS','ngClick':'mymilestones','img':'icons/gplus-50.png', 'icon':'fa fa-map-marker'},
-        {'id':'4','type':'link','name':'KANBAN','ngClick':'mybugs','img':'icons/twitter-50.png', 'icon':'fa fa-bug'},
-        {'id':'5','type':'link','name':'BUGS','ngClick':'mycalendar','img':'icons/fb-50.png', 'icon':'fa fa-calendar'},
-        {'id':'6','type':'link','name':'CALENDAR ','ngClick':'reports','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
-        {'id':'7','type':'link','name':'CHATS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
-        {'id':'8','type':'link','name':'GITHUB ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
-        {'id':'9','type':'link','name':'TIMESHEETS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-exclamation-circle'},
+        {'id':'1','type':'link','name':'DASHBOARD','ngClick':'home','img':'icons/fb-50.png', 'icon':'fa fa-television'},
+        {'id':'2','type':'link','name':'STORIES','ngClick':'mytasks','img':'icons/twitter-50.png', 'icon':'fa fa-file-text'},
+        {'id':'3','type':'link','name':'SPRINTS','ngClick':'mymilestones','img':'icons/gplus-50.png', 'icon':'fa fa-th-list'},
+        {'id':'4','type':'link','name':'KANBAN','ngClick':'mybugs','img':'icons/twitter-50.png', 'icon':'fa fa-clone '},
+        {'id':'5','type':'link','name':'BUGS','ngClick':'mycalendar','img':'icons/fb-50.png', 'icon':'fa fa-bug'},
+        {'id':'6','type':'link','name':'CALENDAR ','ngClick':'reports','img':'icons/gplus-50.png', 'icon':'fa fa-calendar'},
+        {'id':'7','type':'link','name':'CHATS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-comments'},
+        {'id':'8','type':'link','name':'GITHUB ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-github'},
+        {'id':'9','type':'link','name':'TIMESHEETS ','ngClick':'','img':'icons/gplus-50.png', 'icon':'fa fa-clock-o'},
         //{'type':'linkList','name':'Extras','img':'icons/twitter-50.png','list': [
         //    {'id':'7','type':'link','name':'Themes','ngClick':'themes','img':'icons/fb-50.png'},
         //    {'id':'8','type':'link','name':'Templates','ngClick':' ','img':'icons/gplus-50.png'},
